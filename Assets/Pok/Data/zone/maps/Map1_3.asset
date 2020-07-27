@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3500e3dde7ed07640bcb9f87186aff1e, type: 3}
+  m_Name: Map1_3
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: limitInInventory
+      Entry: 6
+      Data: 
+    - Name: timeToRestore
+      Entry: 6
+      Data: 
+  itemID: Map1_3
+  displayNameItem:
+    normalString: 
+    isI2String: 0
+    value: 
+  descriptionItem:
+    normalString: 
+    isI2String: 0
+    value: 
+  categoryItem: 0
+  attribute: 0
+  icons:
+  - State: Default
+    Icon:
+      m_AssetGUID: 155840f6f4f451d45b78938b66d35f41
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: BG
+    Icon:
+      m_AssetGUID: f17dedf48219e4a40a541ebb4cb3a7f9
+      m_SubObjectName: 3
+    size: {x: 0, y: 0}
+  - State: IconPok13
+    Icon:
+      m_AssetGUID: 9f50fd10d81d5e146b6ec686d9dc0a16
+      m_SubObjectName: 3
+    size: {x: 0, y: 0}
+  - State: IconPok19
+    Icon:
+      m_AssetGUID: aba551a361f97c64caad54415fa7f3d4
+      m_SubObjectName: 4
+    size: {x: 0, y: 0}
+  - State: IconPok25
+    Icon:
+      m_AssetGUID: a52a6f97860b0e74fb1c88dab85976f0
+      m_SubObjectName: 5
+    size: {x: 0, y: 0}
+  model:
+  - State: Default
+    Icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: '[Preview]Pok12'
+    Icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: '[Preview]Pok18'
+    Icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: '[Preview]Pok24'
+    Icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  score: 0
+  quantityRestore:
+    startUnit: 1
+    algrothimTypeUpgrade: 0
+    stepUnit: 0
+    isSpecifiedUnit: 0
+    unitDefines: []
+  limitLevel: 1
+  childCreatures:
+  - {fileID: 11400000, guid: 399295eb43313674a9cad54f5b151d8a, type: 2}
+  - {fileID: 11400000, guid: aeb734f219aa74e4d991fa6e9952890f, type: 2}
+  - {fileID: 11400000, guid: 8c839b91b8e7132428860bee5aca1fec, type: 2}
+  - {fileID: 11400000, guid: d8c83407ea9e1574bb2927cc58126f52, type: 2}
+  - {fileID: 11400000, guid: a057130feb7c166498570f4d779ed8e5, type: 2}
+  - {fileID: 11400000, guid: fae9f2364d40e9242bbee46008de739a, type: 2}
+  - {fileID: 11400000, guid: a085093480554eb43ac4eb33cb385c53, type: 2}
+  - {fileID: 11400000, guid: b7f70e2d3b221a4478bd1c633c2eee9a, type: 2}
+  - {fileID: 11400000, guid: 24250850b523afc4fb7754adfbb8d664, type: 2}
+  - {fileID: 11400000, guid: 5baa675e1750fad4c87088eb55b37762, type: 2}
+  - {fileID: 11400000, guid: abeace0b591a8ce43b39cc3abc63f127, type: 2}
+  - {fileID: 11400000, guid: a2c46a2e216c0d646ba40bfc37bb60ca, type: 2}
+  - {fileID: 11400000, guid: 3213e515e200bfd4d847af1663fa7db7, type: 2}
+  - {fileID: 11400000, guid: c4715af6a23be01469962a48350bfb88, type: 2}
+  - {fileID: 11400000, guid: 864827bbe01257441ae2d19e15a8d1fc, type: 2}
+  - {fileID: 11400000, guid: 6e4c43106d3740a4aa2dd8c11d2e187d, type: 2}
+  - {fileID: 11400000, guid: 25384c30899e12642881be4b712ef362, type: 2}
+  - {fileID: 11400000, guid: dbf590a43d6b46c4c9adb07b8338159e, type: 2}
+  limitSlot: 16

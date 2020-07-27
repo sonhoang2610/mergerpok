@@ -1,0 +1,410 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Data
+  m_EditorClassIdentifier: 
+  m_GroupName: Data
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2cc7840518c899b4fa68a42f2e54fc3f
+  m_SerializeEntries:
+  - m_GUID: 01048c9497107104e88224fe12e519d9
+    m_Address: Assets/Pok/Data/creatures/Pok56.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 06c72f467e499d24e8f05e7620200217
+    m_Address: Assets/Pok/Data/creatures/Pok35.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 08afcca0bc4676b4fb47563b0205430e
+    m_Address: Assets/Pok/Data/creatures/Pok39.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0a7c6bd9b6b2a1142a4e63a66711d36b
+    m_Address: Assets/Pok/Data/creatures/Pok36.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 11400000, guid: 0a7c6bd9b6b2a1142a4e63a66711d36b, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 0a7c6bd9b6b2a1142a4e63a66711d36b, type: 2}
+  - m_GUID: 119a199d98c302643a141e26e95c5a0f
+    m_Address: Assets/Pok/Data/creatures/Pok68.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 11400000, guid: 119a199d98c302643a141e26e95c5a0f, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 119a199d98c302643a141e26e95c5a0f, type: 2}
+  - m_GUID: 13488145bb060cd41807a35a64ab2a65
+    m_Address: Assets/Pok/Data/creatures/Pok63.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 11400000, guid: 13488145bb060cd41807a35a64ab2a65, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 13488145bb060cd41807a35a64ab2a65, type: 2}
+  - m_GUID: 208e3d2d13d473b408c023f073ac5a5a
+    m_Address: Assets/Pok/Data/creatures/Pok41.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 11400000, guid: 208e3d2d13d473b408c023f073ac5a5a, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 208e3d2d13d473b408c023f073ac5a5a, type: 2}
+  - m_GUID: 24250850b523afc4fb7754adfbb8d664
+    m_Address: Assets/Pok/Data/creatures/Pok21.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 25384c30899e12642881be4b712ef362
+    m_Address: Assets/Pok/Data/creatures/Pok29.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 11400000, guid: 25384c30899e12642881be4b712ef362, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 25384c30899e12642881be4b712ef362, type: 2}
+  - m_GUID: 2cf3c3dc03d4e4a4987e28447c700095
+    m_Address: Assets/Pok/Data/creatures/Pok69.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 31f3f2b2a1310744781db01ec8e68783
+    m_Address: Assets/Pok/Data/creatures/Pok50.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3213e515e200bfd4d847af1663fa7db7
+    m_Address: Assets/Pok/Data/creatures/Pok25.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 3612670b0c136f34f87ddf30e2004992
+    m_Address: Assets/Pok/Data/creatures/Pok52.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 399295eb43313674a9cad54f5b151d8a
+    m_Address: Assets/Pok/Data/creatures/Pok13.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 39a7d1a1d76f0f44e9312ed5e9d36cbe
+    m_Address: Assets/Pok/Data/creatures/Pok60.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 415053256b282ca4ba8e6956a6518902
+    m_Address: Assets/Pok/Data/creatures/Pok70.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 451450564db04244baa368fabc229958
+    m_Address: Assets/Pok/Data/creatures/Pok43.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 49f1ff6b117eab646af97b251a8f3073
+    m_Address: Assets/Pok/Data/creatures/Pok59.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 55fe18c057e497045943256963fb9feb
+    m_Address: Assets/Pok/Data/creatures/Pok58.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5889ad76ce32437489a6088244bdbd18
+    m_Address: Assets/Pok/Data/creatures/Pok44.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5baa675e1750fad4c87088eb55b37762
+    m_Address: Assets/Pok/Data/creatures/Pok22.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 5f6dfcdcfc7b33c498270763bf8e953d
+    m_Address: Assets/Pok/Data/creatures/Pok62.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6890b998fb574e24c94d8b47e767c164
+    m_Address: Assets/Pok/Data/creatures/Pok31.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6d60c64e642ac924da9d4201a476e72d
+    m_Address: Assets/Pok/Data/creatures/Pok42.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6e4c43106d3740a4aa2dd8c11d2e187d
+    m_Address: Assets/Pok/Data/creatures/Pok28.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 853e04ffa864bf44fbaa6bf0992d3b34
+    m_Address: Data/GameDatabase
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Database
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8555fa9f2cfd1204fa4fc0fb935ea767
+    m_Address: Assets/Pok/Data/creatures/Pok45.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 864827bbe01257441ae2d19e15a8d1fc
+    m_Address: Assets/Pok/Data/creatures/Pok27.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 870dd73180513d342aa1e31ab4a06d61
+    m_Address: Assets/Pok/Data/creatures/Pok47.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8c32199aec57cf74489161ea890e6f89
+    m_Address: Assets/Pok/Data/creatures/Pok67.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8c839b91b8e7132428860bee5aca1fec
+    m_Address: Assets/Pok/Data/creatures/Pok15.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8e398b39ccf921941b0ef09d9e1fe262
+    m_Address: Assets/Pok/Data/creatures/Pok51.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 9203d1bb84100d7439c4579af0f2f39e
+    m_Address: Assets/Pok/Data/creatures/Pok37.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 936051386837c634d8cb86284db9a860
+    m_Address: Assets/Pok/Data/creatures/Pok61.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 96745e9c816db114cb960066f7c7d9bf
+    m_Address: Assets/Pok/Data/creatures/Pok40.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a057130feb7c166498570f4d779ed8e5
+    m_Address: Assets/Pok/Data/creatures/Pok17.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a085093480554eb43ac4eb33cb385c53
+    m_Address: Assets/Pok/Data/creatures/Pok19.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a2c46a2e216c0d646ba40bfc37bb60ca
+    m_Address: Assets/Pok/Data/creatures/Pok24.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a4ed4aafcb9c1e14c81fd01663173783
+    m_Address: Assets/Pok/Data/creatures/Pok54.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a78011bffe1dfcc4f9e5627bf3d54f90
+    m_Address: Assets/Pok/Data/creatures/Pok48.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a947ec2bc06579e4b88ae4c3511026cb
+    m_Address: Data/Map1_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: abeace0b591a8ce43b39cc3abc63f127
+    m_Address: Assets/Pok/Data/creatures/Pok23.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ad0e7fd426398b5498a2ddf74109c4de
+    m_Address: Assets/Pok/Data/creatures/Pok46.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: aeb734f219aa74e4d991fa6e9952890f
+    m_Address: Assets/Pok/Data/creatures/Pok14.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: b7f70e2d3b221a4478bd1c633c2eee9a
+    m_Address: Assets/Pok/Data/creatures/Pok20.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c35712688dfd935459969cd5741e2f63
+    m_Address: Assets/Pok/Data/creatures/Pok65.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c4715af6a23be01469962a48350bfb88
+    m_Address: Assets/Pok/Data/creatures/Pok26.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ca501f065332a4c44b8f519cf9c86d5e
+    m_Address: Assets/Pok/Data/creatures/Pok66.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: cf8a6035f1f0707488e4f39a6681f2e5
+    m_Address: Assets/Pok/Data/creatures/Pok55.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d35b85ec1f0f93f4f9f39972fd7202d2
+    m_Address: Assets/Pok/Data/creatures/Pok72.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d3aa2262c5109c44fa3f69981cbdbc95
+    m_Address: Assets/Pok/Data/creatures/Pok38.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d715a05bde5f5f2409d7fe6d22869839
+    m_Address: Assets/Pok/Data/creatures/Pok33.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d7ff3dda42eab3944bb278af64ca3ddb
+    m_Address: Assets/Pok/Data/creatures/Pok49.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d8c83407ea9e1574bb2927cc58126f52
+    m_Address: Assets/Pok/Data/creatures/Pok16.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d91d602e1813b47458920cd15b1509ac
+    m_Address: Egg1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d936b3bc245dabc4bb4e40cd9d868ea9
+    m_Address: Assets/Pok/Data/creatures/Pok53.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d969f0f94d13255428c64d335e3d30f2
+    m_Address: Assets/Pok/Data/creatures/Pok57.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: dbf590a43d6b46c4c9adb07b8338159e
+    m_Address: Assets/Pok/Data/creatures/Pok30.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: e5e2851f4fc70a940b442c51456e7392
+    m_Address: Assets/Pok/Data/creatures/Pok71.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: e7d3663ef6bd67f4cba67072bfe04275
+    m_Address: Data/Map1_1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: edc7aa26261e02a438ab7820672b88d4
+    m_Address: Assets/Pok/Data/creatures/Pok34.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f583113cde5ad464aa10e14952f5d5b6
+    m_Address: Assets/Pok/Data/creatures/Pok64.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fae9f2364d40e9242bbee46008de739a
+    m_Address: Assets/Pok/Data/creatures/Pok18.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fe32bb7b221cc5a43954e8dadeee68ff
+    m_Address: Assets/Pok/Data/creatures/Pok32.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 97dc02305a3266740a1d0632b6f35a45, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9388eafa4f3793040bb43911765484b9, type: 2}
+    - {fileID: 11400000, guid: 061597f450d2cbb4a8af919a09ad537a, type: 2}

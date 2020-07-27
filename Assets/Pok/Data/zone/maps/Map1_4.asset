@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3500e3dde7ed07640bcb9f87186aff1e, type: 3}
+  m_Name: Map1_4
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: limitInInventory
+      Entry: 6
+      Data: 
+    - Name: timeToRestore
+      Entry: 6
+      Data: 
+  itemID: Map1_3
+  displayNameItem:
+    normalString: 
+    isI2String: 0
+    value: 
+  descriptionItem:
+    normalString: 
+    isI2String: 0
+    value: 
+  categoryItem: 0
+  attribute: 0
+  icons:
+  - State: Default
+    Icon:
+      m_AssetGUID: 155840f6f4f451d45b78938b66d35f41
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: BG
+    Icon:
+      m_AssetGUID: 723bf4a0444256344a2750f9358ae175
+      m_SubObjectName: 3
+    size: {x: 0, y: 0}
+  - State: IconPok31
+    Icon:
+      m_AssetGUID: bc5a89a5cbeb2734b9aa33d7480c118c
+      m_SubObjectName: 6
+    size: {x: 0, y: 0}
+  - State: IconPok37
+    Icon:
+      m_AssetGUID: ca37e3d3cb9702846823ca571b05c081
+      m_SubObjectName: 7
+    size: {x: 0, y: 0}
+  - State: IconPok43
+    Icon:
+      m_AssetGUID: 68e165793dcd0074bbc158b9986c085a
+      m_SubObjectName: 8
+    size: {x: 0, y: 0}
+  - State: IconPok49
+    Icon:
+      m_AssetGUID: 8641dc855fe5da64590a6b286647577b
+      m_SubObjectName: 9
+    size: {x: 0, y: 0}
+  - State: IconPok55
+    Icon:
+      m_AssetGUID: f2980f4895c7d3e4f904381c7a073b8c
+      m_SubObjectName: 10
+    size: {x: 0, y: 0}
+  - State: IconPok61
+    Icon:
+      m_AssetGUID: 57ddf0018b7d0b249a492014b9e5a6f4
+      m_SubObjectName: 11
+    size: {x: 0, y: 0}
+  model:
+  - State: Default
+    Icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  score: 0
+  quantityRestore:
+    startUnit: 1
+    algrothimTypeUpgrade: 0
+    stepUnit: 0
+    isSpecifiedUnit: 0
+    unitDefines: []
+  limitLevel: 1
+  childCreatures:
+  - {fileID: 11400000, guid: 6890b998fb574e24c94d8b47e767c164, type: 2}
+  - {fileID: 11400000, guid: fe32bb7b221cc5a43954e8dadeee68ff, type: 2}
+  - {fileID: 11400000, guid: d715a05bde5f5f2409d7fe6d22869839, type: 2}
+  - {fileID: 11400000, guid: edc7aa26261e02a438ab7820672b88d4, type: 2}
+  - {fileID: 11400000, guid: 06c72f467e499d24e8f05e7620200217, type: 2}
+  - {fileID: 11400000, guid: 0a7c6bd9b6b2a1142a4e63a66711d36b, type: 2}
+  - {fileID: 11400000, guid: 9203d1bb84100d7439c4579af0f2f39e, type: 2}
+  - {fileID: 11400000, guid: d3aa2262c5109c44fa3f69981cbdbc95, type: 2}
+  - {fileID: 11400000, guid: 08afcca0bc4676b4fb47563b0205430e, type: 2}
+  - {fileID: 11400000, guid: 96745e9c816db114cb960066f7c7d9bf, type: 2}
+  - {fileID: 11400000, guid: 208e3d2d13d473b408c023f073ac5a5a, type: 2}
+  - {fileID: 11400000, guid: 6d60c64e642ac924da9d4201a476e72d, type: 2}
+  - {fileID: 11400000, guid: 451450564db04244baa368fabc229958, type: 2}
+  - {fileID: 11400000, guid: 5889ad76ce32437489a6088244bdbd18, type: 2}
+  - {fileID: 11400000, guid: 8555fa9f2cfd1204fa4fc0fb935ea767, type: 2}
+  - {fileID: 11400000, guid: ad0e7fd426398b5498a2ddf74109c4de, type: 2}
+  - {fileID: 11400000, guid: 870dd73180513d342aa1e31ab4a06d61, type: 2}
+  - {fileID: 11400000, guid: a78011bffe1dfcc4f9e5627bf3d54f90, type: 2}
+  - {fileID: 11400000, guid: d7ff3dda42eab3944bb278af64ca3ddb, type: 2}
+  - {fileID: 11400000, guid: 31f3f2b2a1310744781db01ec8e68783, type: 2}
+  - {fileID: 11400000, guid: 8e398b39ccf921941b0ef09d9e1fe262, type: 2}
+  - {fileID: 11400000, guid: 3612670b0c136f34f87ddf30e2004992, type: 2}
+  - {fileID: 11400000, guid: d936b3bc245dabc4bb4e40cd9d868ea9, type: 2}
+  - {fileID: 11400000, guid: a4ed4aafcb9c1e14c81fd01663173783, type: 2}
+  - {fileID: 11400000, guid: cf8a6035f1f0707488e4f39a6681f2e5, type: 2}
+  - {fileID: 11400000, guid: 01048c9497107104e88224fe12e519d9, type: 2}
+  - {fileID: 11400000, guid: d969f0f94d13255428c64d335e3d30f2, type: 2}
+  - {fileID: 11400000, guid: 55fe18c057e497045943256963fb9feb, type: 2}
+  - {fileID: 11400000, guid: 49f1ff6b117eab646af97b251a8f3073, type: 2}
+  - {fileID: 11400000, guid: 39a7d1a1d76f0f44e9312ed5e9d36cbe, type: 2}
+  - {fileID: 11400000, guid: 936051386837c634d8cb86284db9a860, type: 2}
+  - {fileID: 11400000, guid: 5f6dfcdcfc7b33c498270763bf8e953d, type: 2}
+  - {fileID: 11400000, guid: 13488145bb060cd41807a35a64ab2a65, type: 2}
+  - {fileID: 11400000, guid: f583113cde5ad464aa10e14952f5d5b6, type: 2}
+  - {fileID: 11400000, guid: c35712688dfd935459969cd5741e2f63, type: 2}
+  - {fileID: 11400000, guid: ca501f065332a4c44b8f519cf9c86d5e, type: 2}
+  limitSlot: 16

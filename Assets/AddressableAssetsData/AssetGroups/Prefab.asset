@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Prefab
+  m_EditorClassIdentifier: 
+  m_GroupName: Prefab
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a98dd1e3f09a577419f5d4c2b02e0762
+  m_SerializeEntries:
+  - m_GUID: 06391de0d42ee154b929ea45fe02d564
+    m_Address: egg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 08afd025660ee014897d5af39d3a497c
+    m_Address: pok1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 1e273d20edc1a874881979682bf5fb6c
+    m_Address: Prefab/ContainerDatabase
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Database
+    m_MainAsset: {fileID: 5673028766609384443, guid: 1e273d20edc1a874881979682bf5fb6c,
+      type: 3}
+    m_TargetAsset: {fileID: 5673028766609384443, guid: 1e273d20edc1a874881979682bf5fb6c,
+      type: 3}
+  - m_GUID: 3f35565b23ed0ed4ca2b6cf1535b1d8b
+    m_Address: pok2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 482e82467bd7f0a4982ea220079daa12
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok6.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 6a676f3c720cf144f90ebff6272e9042
+    m_Address: base
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 1528011676194621357, guid: 6a676f3c720cf144f90ebff6272e9042,
+      type: 3}
+    m_TargetAsset: {fileID: 1528011676194621357, guid: 6a676f3c720cf144f90ebff6272e9042,
+      type: 3}
+  - m_GUID: e606665f6cacbaa4f8793a8faf7ec3a1
+    m_Address: Assets/Pok/Prefabs/uiconfig/base_model_era.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 5682637041466185231, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+      type: 3}
+    m_TargetAsset: {fileID: 5682637041466185231, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 97dc02305a3266740a1d0632b6f35a45, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fc993940e01977e4b99c431beac3a2a2, type: 2}
+    - {fileID: 11400000, guid: b693db3b27bbb964ab4433f5b6cf6501, type: 2}

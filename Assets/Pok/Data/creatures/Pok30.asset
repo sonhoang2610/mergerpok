@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed19b19728ec1644abe5bf825d8e0405, type: 3}
+  m_Name: Pok30
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: limitInInventory
+      Entry: 6
+      Data: 
+    - Name: timeToRestore
+      Entry: 6
+      Data: 
+  itemID: Pok30
+  displayNameItem:
+    normalString: Pok30
+    isI2String: 0
+    value: 
+  descriptionItem:
+    normalString: 
+    isI2String: 0
+    value: 
+  categoryItem: 2
+  attribute: 0
+  icons:
+  - State: Default
+    Icon:
+      m_AssetGUID: 8cf547c3ca7f1814381a7e81f4b23aac
+      m_SubObjectName: 30
+    size: {x: 0, y: 0}
+  model:
+  - State: Default
+    Icon:
+      m_AssetGUID: 3f35565b23ed0ed4ca2b6cf1535b1d8b
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  score: 0
+  quantityRestore:
+    startUnit: 1
+    algrothimTypeUpgrade: 0
+    stepUnit: 0
+    isSpecifiedUnit: 0
+    unitDefines: []
+  limitLevel: 1
+  creatureChilds:
+  - {fileID: 11400000, guid: cf8a6035f1f0707488e4f39a6681f2e5, type: 2}
+  - {fileID: 11400000, guid: 936051386837c634d8cb86284db9a860, type: 2}

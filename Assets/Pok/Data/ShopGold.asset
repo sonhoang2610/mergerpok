@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bfed0a514502c40beee76d575d80eb, type: 3}
+  m_Name: ShopGold
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  nameShop: ShopGold
+  items:
+  - itemSell: {fileID: 11400000, guid: 8cbfdd749492be9428fd8347a03a88e1, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit:
+      - groupID: 0
+        exchangeItems:
+        - item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+          quantity: 10
+      algrothimTypeUpgrade: 0
+      stepUnit: []
+      isSpecifiedUnit: 0
+      unitDefines: []
+  - itemSell: {fileID: 11400000, guid: 18afb8860b6c3fe4eadd89e075a2144d, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit:
+      - groupID: 0
+        exchangeItems:
+        - item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+          quantity: 50
+      algrothimTypeUpgrade: 0
+      stepUnit: []
+      isSpecifiedUnit: 0
+      unitDefines: []
+  - itemSell: {fileID: 11400000, guid: 90ca99ae2e2abed44959b0a80efb0915, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit:
+      - groupID: 0
+        exchangeItems:
+        - item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+          quantity: 100
+      algrothimTypeUpgrade: 0
+      stepUnit: []
+      isSpecifiedUnit: 0
+      unitDefines: []

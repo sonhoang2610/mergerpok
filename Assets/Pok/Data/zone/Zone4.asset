@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e413db38b9f83e045822eb8993ace413, type: 3}
+  m_Name: Zone4
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: limitInInventory
+      Entry: 6
+      Data: 
+    - Name: timeToRestore
+      Entry: 6
+      Data: 
+  itemID: Zone4
+  displayNameItem:
+    normalString: Belinda
+    isI2String: 0
+    value: 
+  descriptionItem:
+    normalString: 
+    isI2String: 0
+    value: 
+  categoryItem: 0
+  attribute: 0
+  icons:
+  - State: Default
+    Icon:
+      m_AssetGUID: 5e52e487728a2104ca26901543c61988
+      m_SubObjectName: planet4
+    size: {x: 0, y: 0}
+  - State: BG
+    Icon:
+      m_AssetGUID: 155840f6f4f451d45b78938b66d35f41
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: DefaultDisable
+    Icon:
+      m_AssetGUID: 5e16d95b1b17dbf49a5ff160896d4ff8
+      m_SubObjectName: planet4dark
+    size: {x: 0, y: 0}
+  model:
+  - State: Default
+    Icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  score: 0
+  quantityRestore:
+    startUnit: 1
+    algrothimTypeUpgrade: 0
+    stepUnit: 0
+    isSpecifiedUnit: 0
+    unitDefines: []
+  limitLevel: 1
+  packages:
+  - id: Default
+    package: {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
+  shopCreature: {fileID: 0}
