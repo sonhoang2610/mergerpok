@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139716759681057363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 222, y: -125, z: 0}
+  m_LocalPosition: {x: 21, y: 124, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8536699959066664716}
@@ -114,7 +114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2559544822432625846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 183, y: 288, z: 0}
+  m_LocalPosition: {x: 305, y: 335, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8536699959066664716}
@@ -203,7 +203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3766285169271847649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -199, y: 89, z: 0}
+  m_LocalPosition: {x: -242, y: 341, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8536699959066664716}
@@ -292,7 +292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4215242239047027560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -211, z: 0}
   m_LocalScale: {x: 0.83, y: 0.83, z: 1}
   m_Children:
   - {fileID: 1979430546093218869}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 5682637041466185228}
   - component: {fileID: 5682637041466185229}
   m_Layer: 9
-  m_Name: Panel
+  m_Name: base_model_era
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,11 +430,11 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3035
-  mClipTexture: {fileID: 2800000, guid: 699ded2633021a542a92b25cb45d5de4, type: 3}
+  startingRenderQueue: 3040
+  mClipTexture: {fileID: 2800000, guid: 018517cb51ab2934fb02250a5dfe1d84, type: 3}
   mAlpha: 1
   mClipping: 1
-  mClipRange: {x: 5, y: 100, z: 1000, w: 900}
+  mClipRange: {x: 0, y: 0, z: 714, w: 428}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 5
   mSortingOrder: 0

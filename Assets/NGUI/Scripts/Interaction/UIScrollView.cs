@@ -777,7 +777,7 @@ public class UIScrollView : MonoBehaviour
 					if (onDragStarted != null) onDragStarted();
 				}
 			}
-			else if (centerOnChild)
+			else if (centerOnChild && !centerOnChild.disableRecenter)
 			{
 				if (mDragStarted && onDragFinished != null) onDragFinished();
 				centerOnChild.Recenter();

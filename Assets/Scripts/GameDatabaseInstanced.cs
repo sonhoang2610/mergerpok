@@ -23,6 +23,9 @@ namespace Pok
         public CreatureInstanceSaved creature;
         public string zoneid;
         public bool manualByHand;
+        public int change;
+
+  
     }
 
     [System.Serializable]
@@ -112,6 +115,18 @@ namespace Pok
     {
         public string instanceID;
         public string id;
+
+        public CreatureInstanceSaved autoFindParent(CreatureItem item)
+        {
+            mapParent = GameManager.Instance.Database.worldData.zones.Find(x=>x.id == GameManager.Instance.ZoneChoosed).maps.Find(x=> item.parentMap && x.id == item.parentMap.ItemID);
+            return this;
+        }
+        public CreatureInstanceSaved autoFindParent()
+        {
+            var item = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == id);
+            mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => item.parentMap && x.id == item.parentMap.ItemID);
+            return this;
+        }
         public void onInit()
         {
         }
@@ -137,28 +152,22 @@ namespace Pok
 
         public MapInstanceSaved addCreature(CreatureInstanceSaved creature, string address)
         {
+        
             var zone = zones.Find(x => x.id == address);
+            var map = creature.mapParent;
+            if(map == null)
+            {
+                var creatureInside = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == creature.id);
+                var parentFind = zone.maps.Find(x => creatureInside.parentMap && x.id == creatureInside.parentMap.ItemID);
+                creature.mapParent = parentFind;
+                map = parentFind;
+            }
+            if (map == null) return null;
             if (zone != null)
             {
-                var creatureOriginal = GameDatabase.Instance.CreatureCollection.Find(a => a.ItemID == creature.id);
-                if (creatureOriginal.categoryItem == CategoryItem.PACKAGE_CREATURE)
-                {
-                    var creaturePackage = (PackageCreatureInstanceSaved)creature;
-                    var creatureInside = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == creaturePackage.creature);
-                    var map = zone.maps.Find(x => x.id == creatureInside.parentMap.ItemID);
-                    creature.mapParent = map;
-                    map.creatures.Add(creature);
-                    return map;
-                }
-                else
-                {
-                    var map = zone.maps.Find(x => x.id == creatureOriginal.parentMap.ItemID);
-                    creature.mapParent = map;
-                    map.creatures.Add(creature);
-                    return map;
-                }
-
-
+                creature.mapParent = map;
+                map.creatures.Add(creature);
+                return map;
             }
             return null;
         }
@@ -190,9 +199,13 @@ namespace Pok
                 timeRestore[i].counterTime = 0;
                 GameManager.Instance.timeCollection.Add(timeRestore[i]);
             }
-            for (int i = 0; i < inventory.Count; ++i)
+            for (int i = inventory.Count -1; i >= 0; --i)
             {
-                inventory[i].onInit();
+                bool pBool = inventory[i].onInit();
+                if (!pBool)
+                {
+                    inventory.RemoveAt(i);
+                }
             }
 
 
@@ -247,7 +260,7 @@ namespace Pok
             }
             for (int i = 0; i < GameDatabase.Instance.CreatureCollection.Count; ++i)
             {
-                if (creatureInfos.Count <= i)
+                if (!creatureInfos.Exists(x=>x.id == GameDatabase.Instance.CreatureCollection[i].ItemID))
                 {
                     creatureInfos.Add(new CreatureInfoSaved()
                     {
@@ -258,6 +271,11 @@ namespace Pok
 
 
             }
+        
+        }
+
+        public void checkTimeForAll()
+        {
             for (int i = 0; i < GameDatabase.Instance.ItemInventoryCollection.Count; ++i)
             {
                 var item = GameDatabase.Instance.ItemInventoryCollection[i];
@@ -283,7 +301,7 @@ namespace Pok
             return new CreatureInfoSaved[0];
         }
 
-        public CreatureItem[] getAllCreatureInfoInZone(string zoneID)
+        public CreatureItem[] getAllCreatureInfoInZone(string zoneID,bool unlockOnly = false)
         {
             var zone = zoneInfos.Find(x => x.id == zoneID);
             List<CreatureItem> creatures = new List<CreatureItem>();
@@ -311,6 +329,29 @@ namespace Pok
                     break;
                 }
             }
+            if (unlockOnly)
+            {
+                List<CreatureItem> tempList = new List<CreatureItem>(creatures);
+                int removeIndex = 0;
+                for (int i = tempList.Count - 1; i >= 0; --i)
+                {
+                    if (i == 0)
+                    {
+                        break;
+                    }
+                    if (removeIndex == 4)
+                    {
+                        break;
+                    }
+                    var element = tempList[i];
+                    tempList.RemoveAt(i);
+                    if (GameManager.Instance.Database.creatureInfos.Find(x => x.id == element.ItemID).isUnLock)
+                    {
+                        removeIndex++;
+                    }
+                }
+                creatures = tempList;
+            }
             return creatures.ToArray();
         }
 
@@ -321,6 +362,16 @@ namespace Pok
             foreach(var map in maps)
             {
                 listCreatures.addFromList(map.creatures.ToArray());
+            }
+            return listCreatures;
+        }
+        public List<CreatureInstanceSaved> getAllCreatureInstanceInAdress(string zoneID,string map)
+        {
+            var mapFind = GameManager.Instance.Database.worldData.zones.Find(x => x.id == zoneID).maps.Find(x=>x.id == map);
+            var listCreatures = new List<CreatureInstanceSaved>();
+            if (mapFind != null)
+            {
+                listCreatures.addFromList(mapFind.creatures.ToArray());
             }
             return listCreatures;
         }
@@ -374,7 +425,7 @@ namespace Pok
                     bool restore = true;
                     if ((item.attribute & AttributeItem.Limit) == AttributeItem.Limit)
                     {
-                        if (itemExist.Quantity >= item.limitInInventory.getUnit(itemExist.CurrentLevel))
+                        if (itemExist.QuantityBig >= item.limitInInventory.getUnit(itemExist.CurrentLevel))
                         {
                             restore = false;
                         }
@@ -382,47 +433,75 @@ namespace Pok
                     if (restore)
                     {
                         var existTime = GameManager.Instance.Database.timeRestore.Exists(x => x.id == "[Restore]" + adress + (string.IsNullOrEmpty(adress) ? "" : "/") + item.ItemID);
+                        bool continueRestore = true;
+                        bool isCreature = item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE;
+                        var limitSlot = isCreature ? ((CreatureItem)item).parentMap.limitSlot : item.limitInInventory.getUnit(itemExist.CurrentLevel);
+                        var quantitySource = isCreature ? getAllCreatureInstanceInAdress(adress, ((CreatureItem)item).parentMap.ItemID).Count : itemExist.QuantityBig;
+                        if (item.isLimit && itemExist.QuantityBig < item.limitInInventory.getUnit(itemExist.CurrentLevel))
+                        {
+                            if (limitSlot <= quantitySource)
+                            {
+                                continueRestore = false;
+                            }
+                        }
 
-                        if (!existTime)
+                        if (!existTime && continueRestore)
                         {
                                 var timer = new TimeCounterInfo() { firstTimeAdd = TimeCounter.CounterValue, counterTime = 0, id = "[Restore]" + adress + (string.IsNullOrEmpty(adress) ? "" : "/") + item.ItemID, destinyIfHave = (double)itemExist.item.timeToRestore.getUnit(itemExist.CurrentLevel) };
-                                GameManager.Instance.Database.timeRestore.Add(timer);
-                                GameManager.Instance.timeCollection.Add(timer);
+                                addTime(timer);
                         }
-                        else
+                        else if(existTime)
                         {
                             var time = GameManager.Instance.Database.timeRestore.Find(x => x.id == "[Restore]" + adress + (string.IsNullOrEmpty(adress) ? "" : "/") + item.ItemID);
                             if (time != null)
                             {
                                 time.destinyIfHave = (double)itemExist.item.timeToRestore.getUnit(itemExist.CurrentLevel);
                             }
-                            bool continueRestore = true;
-                            var creautres = getCreatureExist(itemExist.item.ItemID, adress);
-                            var map = ((CreatureItem)item).parentMap;
-                            if (item.isLimit && itemExist.Quantity < item.limitInInventory.getUnit(itemExist.CurrentLevel))
-                            {
-                                if (map.limitSlot > creatureInfos.Count)
-                                {
-                                    continueRestore = true;
-                                }
-                            }
+                            bool _removeTime = false;
                             if (continueRestore)
                             {
-                                int quantity = (int)(time.CounterTime / item.timeToRestore.getUnit(itemExist.CurrentLevel));
+                                System.Numerics.BigInteger quantity = System.Numerics.BigInteger.Parse(((long) time.CounterTime).ToString()) / System.Numerics.BigInteger.Parse(((long)item.timeToRestore.getUnit(itemExist.CurrentLevel)).ToString());
                                 if (quantity > 0)
                                 {
                                     time.firstTimeAdd = TimeCounter.CounterValue;
-                                    itemExist.Quantity += quantity;
+                                    if (quantitySource + quantity < limitSlot)
+                                    {
+                                        itemExist.addQuantity(quantity.ToString());
+                                    }
+                                    else
+                                    {
+                                        quantity -= quantitySource + quantity - limitSlot;
+                                        itemExist.addQuantity(quantity.ToString());
+                                        _removeTime = true;
+                                    }
                                 }
+                               
                             }
                             else
                             {
-                                GameManager.Instance.Database.timeRestore.Remove(time);
+                               
+                                _removeTime = true;
+                            }
+                            if (_removeTime)
+                            {
+                                removeTime(time);
                             }
                         }
                     }
                 }
             }
+        }
+
+        public void removeTime(TimeCounterInfo time)
+        {
+            GameManager.Instance.Database.timeRestore.Remove(time);
+            GameManager.Instance.timeCollection.Remove(time);
+            EazyEngine.Tools.EzEventManager.TriggerEvent<RemoveTimeEvent>(new RemoveTimeEvent() { timeInfo = time });
+        }
+        public void addTime(TimeCounterInfo time)
+        {
+            GameManager.Instance.Database.timeRestore.Add(time);
+            GameManager.Instance.timeCollection.Add(time);
         }
         public List<CreatureInstanceSaved> getCreatureExist(string idCreature, string zoneID)
         {
@@ -449,9 +528,9 @@ namespace Pok
             return 0;
         }
 
-        public void addItem(string itemID, long quantity, string address)
+        public bool addItem(string itemID, string address)
         {
-            if (string.IsNullOrEmpty(address)) return;
+            if (string.IsNullOrEmpty(address)) return false;
             var pItemOriginal = GameDatabase.Instance.getItemInventory(itemID);
             if (pItemOriginal)
             {
@@ -460,12 +539,18 @@ namespace Pok
                 {
                     int levelCreature = creatureInfos.Find(x => x.id == itemID).level;
                     var package = (PackageCreatureObject)pItemOriginal;
+                    var map = package.parentMap;
+                    var creatures = GameManager.Instance.Database.getAllInfoCreatureInAddress(address, map.ItemID);
+                    if(creatures.Length >= map.limitSlot)
+                    {
+                        return false;
+                    }
                     if (package.creatureExtra.Length > 0)
                     {
-                        var creatureFind = System.Array.Find(package.creatureExtra, x => x.levelRequire == levelCreature);
+                        var creatureFind = package.creatureExtra[levelCreature];
                         if (creatureFind != null)
                         {
-                            creatureNew = new PackageCreatureInstanceSaved() { creature = creatureFind.unit.ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), id = itemID };
+                            creatureNew = new PackageCreatureInstanceSaved() { creature = creatureFind.ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), id = itemID };
                             GameManager.Instance.GenerateID++;
                         }
 
@@ -474,9 +559,12 @@ namespace Pok
                 if (creatureNew != null)
                 {
                     worldData.addCreature(creatureNew, address);
-                    EazyEngine.Tools.EzEventManager.TriggerEvent(new AddCreatureEvent() { creature = creatureNew, zoneid = address,manualByHand= false });
+                    EazyEngine.Tools.EzEventManager.TriggerEvent(new AddCreatureEvent() {change =1,  creature = creatureNew, zoneid = address,manualByHand= false });
+                    return true;
                 }
+            
             }
+            return false;
         }
 
         public BaseItemGameInstanced getCreatureItem(string itemID, string zone)
@@ -487,7 +575,7 @@ namespace Pok
             {
                 if (pItemOriginal.categoryItem == CategoryItem.CREATURE || pItemOriginal.categoryItem == CategoryItem.PACKAGE_CREATURE)
                 {
-                    var itemnew = new BaseItemGameInstanced() { quantity = getQuantityCreatureExist(pItemOriginal.ItemID, zone), address = $"{zone}", itemID = pItemOriginal.ItemID, item = pItemOriginal };
+                    var itemnew = new BaseItemGameInstanced() { quantity = getQuantityCreatureExist(pItemOriginal.ItemID, zone).ToString(), address = $"{zone}", itemID = pItemOriginal.ItemID, item = pItemOriginal };
                     return itemnew;
                 }
             }
@@ -500,12 +588,15 @@ namespace Pok
             {
                 if (pItemOriginal.categoryItem == CategoryItem.COMMON)
                 {
-                    var itemExist = inventory.Find(x => x.item.ItemID == itemID);
+                    var itemExist = inventory.Find(x => x.item != null && x.item.ItemID == itemID);
                     if (itemExist == null)
                     {
-                        var item = new BaseItemGameInstanced() { item = pItemOriginal, quantity = 0, itemID = pItemOriginal.itemID };
+                        var item = new BaseItemGameInstanced() { item = pItemOriginal, quantity = "0", itemID = pItemOriginal.itemID };
                         inventory.Add(item);
                         return item;
+                    }else if(itemExist.QuantityBig > 0)
+                    {
+                        itemExist.EmptySlot = false;
                     }
                     return itemExist;
                 }

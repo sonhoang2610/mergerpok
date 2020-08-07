@@ -43,7 +43,17 @@ public class UIElement : MonoBehaviour {
         }
         relative++;
     }
-
+    public void setActive(bool active)
+    {
+        if (active)
+        {
+            showActive(true);
+        }
+        else
+        {
+            closeActive(true);
+        }
+    }
     public void hideRelative()
     {
         relative--;
@@ -60,12 +70,25 @@ public class UIElement : MonoBehaviour {
     {
         gameObject.SetActive(!gameObject.activeSelf);
     }
-    
-    public virtual void show()
+    public  virtual void show()
     {
+        showActive(false);
+    }
+    public virtual void close()
+    {
+        closeActive(false);
+    }
+    public virtual void showActive(bool imediately = false)
+    {
+        if (imediately)
+        {
+            gameObject.SetActive(true);
+            var rect = GetComponent<UIRect>();
+            rect.alpha = 1;
+            return;
+        }
         if (!gameObject.activeSelf)
         {
-         //   SoundManager.Instance.PlaySound(AudioGroupConstrant.Appear);
         }
             showElement(
                 delegate {
@@ -82,6 +105,7 @@ public class UIElement : MonoBehaviour {
             return _fadeAnimation || !string.IsNullOrEmpty(_moveAnimation);
         }
     }
+    protected Sequence tween;
     public virtual void showElement(System.Action pComplete)
     {
         GameObject o;
@@ -95,11 +119,14 @@ public class UIElement : MonoBehaviour {
             {
                 if (rect)
                 {
-                   var tween = DOTween.To(() => rect.alpha, x => rect.alpha = x, 1, 0.25f).OnStepComplete(delegate { pComplete?.Invoke(); });
+                    if(tween != null) { tween.Kill(); }
+                    tween = DOTween.Sequence();
+                    tween.Append(
+                     DOTween.To(() => rect.alpha, x => rect.alpha = x, 1, 0.25f).OnStepComplete(delegate { pComplete?.Invoke(); }));
                     if (!string.IsNullOrEmpty(_moveAnimation))
                     {
                         transform.localPosition = new Vector3(_moveAnimation.Contains("Right") ? GameManager.Instance.resolution.x : -GameManager.Instance.resolution.x, cachePos.y, cachePos.z);
-                        transform.DOLocalMove(cachePos, 0.5f).SetEase(Ease.OutExpo);
+                        tween.Join( transform.DOLocalMove(cachePos, 0.5f).SetEase(Ease.OutExpo));
                     }
                 }
             }
@@ -110,9 +137,14 @@ public class UIElement : MonoBehaviour {
         }
     }
 
-    public virtual void close()
+    public virtual void closeActive(bool imediately = false)
     {
-     //   RootMotionController.stopAllAction(gameObject);
+        if (imediately)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+        //   RootMotionController.stopAllAction(gameObject);
         if (!gameObject.activeInHierarchy)
         {
             return;
@@ -124,11 +156,12 @@ public class UIElement : MonoBehaviour {
             gameObject.SetActive(false);
         }
         else {
-            var tween = DOTween.To(() => rect.alpha, x => rect.alpha = x, 0, 0.25f);
+            if (tween != null) { tween.Kill(); }
+            tween = DOTween.Sequence();tween.Append( DOTween.To(() => rect.alpha, x => rect.alpha = x, 0, 0.25f));
             if (!string.IsNullOrEmpty(_moveAnimation))
             {
                 var pDestiny = new Vector3(_moveAnimation.Contains("Right")? GameManager.Instance.resolution.x :-GameManager.Instance.resolution.x, cachePos.x, cachePos.y);
-                transform.DOLocalMove(pDestiny, 0.5f).SetEase(Ease.OutExpo).OnComplete(delegate () { gameObject.SetActive(false); });
+                tween.Join( transform.DOLocalMove(pDestiny, 0.5f).SetEase(Ease.OutExpo).OnComplete(delegate () { gameObject.SetActive(false); }));
             }
         }
         onStartClose?.Invoke();

@@ -13,7 +13,7 @@ namespace Pok
         public UILabel namelbl, infoGold, numberBought;
         public UILabel[] price;
         public UI2DSprite[] iconExchange;
-
+        public GameObject btnAds;
         public override void setInfo(ShopItemInfo pInfo)
         {
             base.setInfo(pInfo);
@@ -41,6 +41,10 @@ namespace Pok
                 });
 
             }
+        }
+        public void showBtnAds(bool pBool)
+        {
+            btnAds.gameObject.SetActive(pBool);
         }
     }
 }

@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53809d627ad12304892fc499ff70a540, type: 3}
+  m_Name: PackSpinADS
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: limitInInventory
+      Entry: 6
+      Data: 
+    - Name: timeToRestore
+      Entry: 6
+      Data: 
+  itemID: PackSpinADS
+  displayNameItem:
+    normalString: PackSpinADS
+    isI2String: 0
+    value: 
+  descriptionItem:
+    normalString: PackSpinADS
+    isI2String: 0
+    value: 
+  categoryItem: 1
+  attribute: 0
+  icons:
+  - State: Default
+    Icon:
+      m_AssetGUID: a37e1f860a9728f488524bf24f2e996a
+      m_SubObjectName: SlotIconSpin
+    size: {x: 0, y: 0}
+  model:
+  - State: Default
+    Icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  score: 0
+  quantityRestore:
+    startUnit: 1
+    algrothimTypeUpgrade: 0
+    stepUnit: 0
+    isSpecifiedUnit: 0
+    unitDefines: []
+  limitLevel: 1
+  alwayExtras: 0
+  item:
+    items:
+    - typePayment: 0
+      item: {fileID: 11400000, guid: 89dd29f152ebc924580e9dd7bdd95e23, type: 2}
+      quantity: 3

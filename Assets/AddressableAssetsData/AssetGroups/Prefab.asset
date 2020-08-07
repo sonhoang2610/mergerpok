@@ -29,15 +29,19 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 11affa78462a8f04ab940d567786ea97
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok13.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 1e273d20edc1a874881979682bf5fb6c
     m_Address: Prefab/ContainerDatabase
     m_ReadOnly: 0
     m_SerializedLabels:
     - Database
-    m_MainAsset: {fileID: 5673028766609384443, guid: 1e273d20edc1a874881979682bf5fb6c,
-      type: 3}
-    m_TargetAsset: {fileID: 5673028766609384443, guid: 1e273d20edc1a874881979682bf5fb6c,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 3f35565b23ed0ed4ca2b6cf1535b1d8b
     m_Address: pok2
     m_ReadOnly: 0
@@ -54,18 +58,32 @@ MonoBehaviour:
     m_Address: base
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 1528011676194621357, guid: 6a676f3c720cf144f90ebff6272e9042,
-      type: 3}
-    m_TargetAsset: {fileID: 1528011676194621357, guid: 6a676f3c720cf144f90ebff6272e9042,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 97d31f86530427d42a2a4986c4bc225f
+    m_Address: Assets/Pok/Prefabs/Pok/box.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: a654d346815ab6a48b25e1557746caec
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok25.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: e606665f6cacbaa4f8793a8faf7ec3a1
     m_Address: Assets/Pok/Prefabs/uiconfig/base_model_era.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 5682637041466185231, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
-      type: 3}
-    m_TargetAsset: {fileID: 5682637041466185231, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f212f99cf3194ea46b05c11f96e0374e
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok19.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 97dc02305a3266740a1d0632b6f35a45, type: 2}
   m_SchemaSet:

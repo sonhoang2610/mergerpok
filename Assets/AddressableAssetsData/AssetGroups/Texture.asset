@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6bf5ca309f692d7459a7ec2a7b0cc1d8
   m_SerializeEntries:
+  - m_GUID: 0050bb8bad8d7af45b549d36663f527f
+    m_Address: Assets/Pok/Textures/icons/item_goldx2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 00afe28750b35eb4dbd45ea642bde239
     m_Address: 6
     m_ReadOnly: 0
@@ -43,6 +49,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 072589e0c104e594d98a122e0b4df7de
     m_Address: Pok5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 0a67e8000b2ffbd4786036f78addbc2b
+    m_Address: Assets/Pok/Textures/upgrade/item_creatureingegg.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -113,8 +125,8 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 227142ade52340546a1298fbf00d58dc
-    m_Address: Assets/Pok/Textures/icons/noads_ico.png
+  - m_GUID: 21b10c3b6bee5944287f3bd7310bed7b
+    m_Address: Assets/Pok/Textures/missions/item_mission1.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -341,8 +353,20 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 550d17acec091274db6ae374e2256ccd
+    m_Address: Assets/Pok/Textures/icons/item_monsterbomb.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 5613e06f3d46e3c4192b4fb46c724d3e
     m_Address: 16
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 568c554ba37417542aee52bb38ea2dfa
+    m_Address: Assets/Pok/Textures/upgrade/item_eggtime.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -431,14 +455,14 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 68ab1dd644d97774da811fbfbe3370ba
-    m_Address: coin
+  - m_GUID: 68e165793dcd0074bbc158b9986c085a
+    m_Address: 8
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 68e165793dcd0074bbc158b9986c085a
-    m_Address: 8
+  - m_GUID: 6a4a3fe620e933142b6ec0f7e536ddb1
+    m_Address: Assets/Pok/Textures/icons/item_block.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -575,6 +599,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: a37e1f860a9728f488524bf24f2e996a
+    m_Address: Assets/Pok/Textures/icons/SlotIconSpin.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a52a6f97860b0e74fb1c88dab85976f0
     m_Address: 5
     m_ReadOnly: 0
@@ -689,12 +719,6 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: bc60148e4b7a784468723dfc046ccb41
-    m_Address: square32x32_1
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   - m_GUID: c1f3ae3e634bc3e4a8e31dd843795b46
     m_Address: 34
     m_ReadOnly: 0
@@ -709,6 +733,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: c322169d408711747b2f5879c287abff
     m_Address: 29
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c49cd93223ca06a42a107bc8472d58e4
+    m_Address: Assets/Pok/Textures/upgrade/item_mixingscale.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -809,6 +839,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: e13323d8599dbb64bbbfe91e18708c6f
+    m_Address: Assets/Pok/Textures/icons/item_sale25.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: e2cbd09bc32c5f34191c918d5ba8d2d3
     m_Address: Assets/Pok/Atlas/zones.spriteatlas
     m_ReadOnly: 0
@@ -901,6 +937,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: fa3fc28c5407e9a409cb136ad6322ea5
     m_Address: 40
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fcb36d9ccecddb246be83784ff158be1
+    m_Address: Assets/Pok/Textures/upgrade/item_bonus_reward.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

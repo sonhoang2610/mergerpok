@@ -27,7 +27,7 @@ public class ScaleResolution : MonoBehaviour {
             {
                 pScale.x = pScale.y;
             }
-            transform.localScale = pScale;
+           // transform.localScale = pScale;
         }
         else
         {
@@ -51,7 +51,7 @@ public class ScaleResolution : MonoBehaviour {
                     y = panel.GetWindowSize().y / defaultResolution.y
                 };
                 pScale.x = pScale.y;
-                transform.localScale = pScale;
+               // transform.localScale = pScale;
             }
         }
         if (scalePlatform)

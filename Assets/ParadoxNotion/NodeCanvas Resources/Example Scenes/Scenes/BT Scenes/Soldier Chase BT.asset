@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 7400000, guid: 6008cc211c6684caca78771af67e2602, type: 3}
   - {fileID: 7400000, guid: b80083f178d4a4a6d957d6e342950ecd, type: 3}
   _graphSource:
-    _version: 3
+    _version: 3.03
     _category: 
     _comments: Makes the agent move to target up to distance and aim only if the
       agent is able to see the target and the target is in fron of him in the first

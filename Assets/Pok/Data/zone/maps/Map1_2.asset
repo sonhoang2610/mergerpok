@@ -49,11 +49,6 @@ MonoBehaviour:
       m_AssetGUID: 7408d0bd9aaa6eb4580744ea1fcf5d04
       m_SubObjectName: 2
     size: {x: 0, y: 0}
-  - State: Default
-    Icon:
-      m_AssetGUID: 
-      m_SubObjectName: 
-    size: {x: 0, y: 0}
   model:
   - State: Default
     Icon:

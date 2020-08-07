@@ -34,7 +34,7 @@ namespace Pok
                 {
                     items[i].transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
                 }
-                attachMent.GetComponent<UIGrid>().cellWidth = 200.0f;
+                attachMent.GetComponent<UIGrid>().cellWidth = 156.5f;
             }
             else
             {
@@ -42,9 +42,10 @@ namespace Pok
                 {
                     items[i].transform.localScale = new Vector3(1, 1, 1);
                 }
-                attachMent.GetComponent<UIGrid>().cellWidth = 415.6f;
+                attachMent.GetComponent<UIGrid>().cellWidth = 225.1f;
             }
-            if(selectab != -1)
+            attachMent.GetComponent<UIGrid>().Reposition();
+            if (selectab != -1)
             {
                 tabs.changeTab(selectab);
             }
@@ -53,6 +54,7 @@ namespace Pok
         public void selectTab(int index)
         {
             indexSelect = index;
+            selectCreature = items[index]._info;
         }
 
         public void ok()

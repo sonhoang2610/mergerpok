@@ -71,7 +71,20 @@ namespace Pok
         public List<BaseItemGame> ItemInventoryCollection = new List<BaseItemGame>();
         public List<CreatureItem> CreatureCollection = new List<CreatureItem>();
         public List<CreatureCollectionTree> treeCreature = new List<CreatureCollectionTree>();
+        [InfoBox("Shop")]
         public List<ShopDatabase> ShopCollection = new List<ShopDatabase>();
+        [InfoBox("ti le quay thuong 12/12")]
+        public List<WheelConfig> wheelMainConfig = new List<WheelConfig>();
+        [InfoBox("cac item trong box magic case")]
+        public List<ItemMagicCaseConfig> containerMagicCase = new List<ItemMagicCaseConfig>();
+        [InfoBox("cac item trong box thuong quang cao")]
+        public List<ItemMagicCaseConfig> containerRewardADS = new List<ItemMagicCaseConfig>();
+        [InfoBox("Thoi gian xuat hien box magicase")]
+        public double timeAFKShowBoxTreasure = 7200;
+        [InfoBox("cac nhiem vu")]
+        public List<ItemMissionObject> missionContainer = new List<ItemMissionObject>();
+        [InfoBox("Thoi gian afk xuat hien box bank")]
+        public double timeMinToShowBoxBank = 7200;
         public List<MapObject> getAllMapInZone(string zoneID)
         {
             return MapCollection;

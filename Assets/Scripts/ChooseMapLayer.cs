@@ -36,7 +36,12 @@ namespace Pok
             for (int i = 0; i < items.Count; ++i)
             {
                 tabs.GroupTab.Add(items[i].GetComponent<EazyTabNGUI>());
-                NGUITools.BringForward(items[i].gameObject);
+              //  var objecttab = items[i].gameObject;
+                //objecttab.GetComponent<UIWidget>().onFindPanel = delegate
+                //{
+                //    NGUITools.BringForward(objecttab);
+                //};
+                //NGUITools.BringForward(items[i].gameObject);
             }
             tabs.reloadTabs();
            // tabs.changeTab(0);

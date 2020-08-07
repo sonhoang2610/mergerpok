@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 3769226098262307562}
   - component: {fileID: 2399270110925348081}
   m_Layer: 9
-  m_Name: item_unlock_small
+  m_Name: item_map_inzone_ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,9 +179,9 @@ MonoBehaviour:
   icon: {fileID: 6228569622004299987}
   statusbar: {fileID: 4370710013292272491}
   claim: {x: 193, y: 180}
-  colorBarPrevious: {r: 0.23137257, g: 0.49803925, b: 0.15686275, a: 1}
-  colorBarCurrent: {r: 0.454902, g: 0.9803922, b: 0.3019608, a: 1}
-  ColorBarlocked: {r: 0.1254902, g: 0.20000002, b: 0.1254902, a: 1}
+  colorBarPrevious: {fileID: 21300000, guid: ef29cc5f2f07c2643ad5a8cf5068ba3a, type: 3}
+  colorBarCurrent: {fileID: 21300000, guid: de7fb370f99674f42b5e1f588e8ae515, type: 3}
+  ColorBarlocked: {fileID: 21300000, guid: 0173a88ab9b15384dafebd3700975e07, type: 3}
 --- !u!1 &8438828015351332848
 GameObject:
   m_ObjectHideFlags: 0

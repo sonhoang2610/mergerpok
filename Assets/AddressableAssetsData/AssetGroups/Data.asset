@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 05e322a2c945f2347b7e9b3ee06be10e
+    m_Address: Assets/Pok/Data/items/PackageCrystal2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 06c72f467e499d24e8f05e7620200217
     m_Address: Assets/Pok/Data/creatures/Pok35.asset
     m_ReadOnly: 0
@@ -39,26 +45,26 @@ MonoBehaviour:
     m_Address: Assets/Pok/Data/creatures/Pok36.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 0a7c6bd9b6b2a1142a4e63a66711d36b, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 0a7c6bd9b6b2a1142a4e63a66711d36b, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 119a199d98c302643a141e26e95c5a0f
     m_Address: Assets/Pok/Data/creatures/Pok68.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 119a199d98c302643a141e26e95c5a0f, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 119a199d98c302643a141e26e95c5a0f, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 13488145bb060cd41807a35a64ab2a65
     m_Address: Assets/Pok/Data/creatures/Pok63.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 13488145bb060cd41807a35a64ab2a65, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 13488145bb060cd41807a35a64ab2a65, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 208e3d2d13d473b408c023f073ac5a5a
     m_Address: Assets/Pok/Data/creatures/Pok41.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 208e3d2d13d473b408c023f073ac5a5a, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 208e3d2d13d473b408c023f073ac5a5a, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 24250850b523afc4fb7754adfbb8d664
     m_Address: Assets/Pok/Data/creatures/Pok21.asset
     m_ReadOnly: 0
@@ -69,8 +75,8 @@ MonoBehaviour:
     m_Address: Assets/Pok/Data/creatures/Pok29.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 25384c30899e12642881be4b712ef362, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 25384c30899e12642881be4b712ef362, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2cf3c3dc03d4e4a4987e28447c700095
     m_Address: Assets/Pok/Data/creatures/Pok69.asset
     m_ReadOnly: 0
@@ -252,6 +258,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: a64f830ec9ff16f479268a567d8651de
+    m_Address: Assets/Pok/Data/creatures/PackageCreautre.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a78011bffe1dfcc4f9e5627bf3d54f90
     m_Address: Assets/Pok/Data/creatures/Pok48.asset
     m_ReadOnly: 0
@@ -302,6 +314,18 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: ca501f065332a4c44b8f519cf9c86d5e
     m_Address: Assets/Pok/Data/creatures/Pok66.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: ccf5151ec9dee264ca741ee719d69105
+    m_Address: Assets/Pok/Data/items/PackageCrystal3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: cd869865ab92b2443a946100094a107c
+    m_Address: Assets/Pok/Data/items/PackageCrystal1.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -366,6 +390,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: dc9301ac1beb8444a8260b6e1d76db9d
+    m_Address: Assets/Pok/Data/items/PackageCrystal5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: e5e2851f4fc70a940b442c51456e7392
     m_Address: Assets/Pok/Data/creatures/Pok71.asset
     m_ReadOnly: 0
@@ -380,6 +410,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: edc7aa26261e02a438ab7820672b88d4
     m_Address: Assets/Pok/Data/creatures/Pok34.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f186a5d9ae056274a90a544b7a80c825
+    m_Address: Assets/Pok/Data/items/PackageCrystal4.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

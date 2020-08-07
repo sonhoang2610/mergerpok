@@ -69,8 +69,7 @@ MonoBehaviour:
     unitDefines: []
   limitLevel: 1
   packages:
-  - id: Egg
-    package: {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
   - id: Default
     package: {fileID: 11400000, guid: a64f830ec9ff16f479268a567d8651de, type: 2}
+  coinBank: {fileID: 11400000, guid: 35d5f3f9429eba349a8ca26e0229664b, type: 2}
   shopCreature: {fileID: 11400000, guid: 4848aabde1294a64c83a29c8311c0efc, type: 2}

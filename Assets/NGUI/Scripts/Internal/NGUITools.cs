@@ -911,31 +911,31 @@ static public class NGUITools
 		{
 			UIPanel panel = go.GetComponent<UIPanel>();
 
-			if (panel != null)
-			{
-				UIPanel[] panels = go.GetComponentsInChildren<UIPanel>(true);
+            if (panel != null)
+            {
+                UIPanel[] panels = go.GetComponentsInChildren<UIPanel>(true);
 
-				for (int i = 0; i < panels.Length; ++i)
-				{
-					UIPanel p = panels[i];
+                for (int i = 0; i < panels.Length; ++i)
+                {
+                    UIPanel p = panels[i];
 #if UNITY_EDITOR
-					RegisterUndo(p, "Depth Change");
+                    RegisterUndo(p, "Depth Change");
 #endif
-					p.depth = p.depth + adjustment;
-				}
-				return 1;
-			}
-			else
-			{
-				panel = FindInParents<UIPanel>(go);
-				if (panel == null) return 0;
+                    p.depth = p.depth + adjustment;
+                }
+                return 1;
+            }
+            else
+            {
+                panel = FindInParents<UIPanel>(go);
+                if (panel == null) return 0;
 
-				UIWidget[] widgets = go.GetComponentsInChildren<UIWidget>(true);
+                UIWidget[] widgets = go.GetComponentsInChildren<UIWidget>(true);
 
-				for (int i = 0, imax = widgets.Length; i < imax; ++i)
-				{
-					UIWidget w = widgets[i];
-					if (w.panel != panel) continue;
+                for (int i = 0, imax = widgets.Length; i < imax; ++i)
+                {
+                    UIWidget w = widgets[i];
+                    if (w.panel != panel) continue;
 #if UNITY_EDITOR
 					RegisterUndo(w, "Depth Change");
 #endif
@@ -947,22 +947,93 @@ static public class NGUITools
 		return 0;
 	}
 
-	/// <summary>
-	/// Bring all of the widgets on the specified object forward.
-	/// </summary>
+    static public int AdjustDepthWrapped(GameObject go, int adjustment)
+    {
+        if (go != null)
+        {
+            UIPanel panel = go.GetComponent<UIPanel>();
 
-	static public void BringForward (GameObject go)
+            if (panel != null)
+            {
+                UIPanel[] panels = go.GetComponentsInChildren<UIPanel>(true);
+
+                for (int i = 0; i < panels.Length; ++i)
+                {
+                    UIPanel p = panels[i];
+
+#if UNITY_EDITOR
+                    RegisterUndo(p, "Depth Change");
+#endif
+                    p.depth = p.depth + adjustment;
+                }
+                return 1;
+            }
+            else
+            {
+                panel = FindInParents<UIPanel>(go);
+                if (panel == null) return 0;
+
+                UIWidget[] widgets = go.GetComponentsInChildren<UIWidget>(true);
+
+                for (int i = 0, imax = widgets.Length; i < imax; ++i)
+                {
+                    UIWidget w = widgets[i];
+                    UIPanel panelFuture = null;
+                    if (!w.panel)
+                    {
+                        panelFuture = w.GetComponentInParent<UIPanel>();
+                    }
+
+                    if (w.panel != panel && (!panelFuture || panelFuture != panel)) continue;
+#if UNITY_EDITOR
+                    RegisterUndo(w, "Depth Change");
+#endif
+                    w.depth = w.depth + adjustment;
+                }
+//                UIPanel[] panels = go.GetComponentsInChildren<UIPanel>(true);
+
+//                for (int i = 0; i < panels.Length; ++i)
+//                {
+//                    UIPanel p = panels[i];
+//#if UNITY_EDITOR
+//                    RegisterUndo(p, "Depth Change");
+//#endif
+//                    p.depth = p.depth + adjustment;
+//                }
+                return 2;
+            }
+        }
+        return 0;
+    }
+
+    /// <summary>
+    /// Bring all of the widgets on the specified object forward.
+    /// </summary>
+
+    static public void BringForward (GameObject go)
 	{
-		int val = AdjustDepth(go, 1000);
-		if (val == 1) NormalizePanelDepths();
-		else if (val == 2) NormalizeWidgetDepths();
-	}
+       BringForwardWrapped(go);
 
-	/// <summary>
-	/// Push all of the widgets on the specified object back, making them appear behind everything else.
-	/// </summary>
+        //int val = AdjustDepth(go, 1000);
+        //if (val == 1) NormalizePanelDepths();
+        //else if (val == 2) NormalizeWidgetDepths();
+    }
+    static public void BringForwardWrapped(GameObject go)
+    {
+        int val = AdjustDepthWrapped(go, 1000);
+        if (val == 1) NormalizePanelDepths();
+        else if (val == 2)
+        {
+            NormalizeWidgetDepths(go.GetComponentInParent<UIPanel>().gameObject);
+          //  NormalizePanelDepths(go);
+        }
+    }
 
-	static public void PushBack (GameObject go)
+    /// <summary>
+    /// Push all of the widgets on the specified object back, making them appear behind everything else.
+    /// </summary>
+
+    static public void PushBack (GameObject go)
 	{
 		int val = AdjustDepth(go, -1000);
 		if (val == 1) NormalizePanelDepths();
@@ -994,7 +1065,7 @@ static public class NGUITools
 
 	static public void NormalizeWidgetDepths (GameObject go)
 	{
-		NormalizeWidgetDepths(go.GetComponentsInChildren<UIWidget>());
+		NormalizeWidgetDepths(go.GetComponentsInChildren<UIWidget>(true));
 	}
 
 	/// <summary>
@@ -1029,11 +1100,11 @@ static public class NGUITools
 		}
 	}
 
-	/// <summary>
-	/// Normalize the depths of all the panels in the scene, making them start from 0 and remain in order.
-	/// </summary>
+    /// <summary>
+    /// Normalize the depths of all the panels in the scene, making them start from 0 and remain in order.
+    /// </summary>
 
-	static public void NormalizePanelDepths ()
+    static public void NormalizePanelDepths ()
 	{
 		UIPanel[] list = FindActive<UIPanel>();
 		int size = list.Length;
@@ -1062,11 +1133,11 @@ static public class NGUITools
 		}
 	}
 
-	/// <summary>
-	/// Create a new UI.
-	/// </summary>
+    /// <summary>
+    /// Create a new UI.
+    /// </summary>
 
-	static public UIPanel CreateUI (bool advanced3D) { return CreateUI(null, advanced3D, -1); }
+    static public UIPanel CreateUI (bool advanced3D) { return CreateUI(null, advanced3D, -1); }
 
 	/// <summary>
 	/// Create a new UI.

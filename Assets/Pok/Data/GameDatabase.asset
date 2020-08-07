@@ -120,9 +120,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18afb8860b6c3fe4eadd89e075a2144d, type: 2}
   - {fileID: 11400000, guid: 90ca99ae2e2abed44959b0a80efb0915, type: 2}
   - {fileID: 11400000, guid: cd869865ab92b2443a946100094a107c, type: 2}
-  - {fileID: 11400000, guid: 22e23a4ed0faf9f46ada2dfe48680a0b, type: 2}
-  - {fileID: 11400000, guid: 105867675d525924b937608528be3cff, type: 2}
-  - {fileID: 11400000, guid: e9aec644ea946a8429c36f8469b99bf9, type: 2}
+  - {fileID: 11400000, guid: 05e322a2c945f2347b7e9b3ee06be10e, type: 2}
+  - {fileID: 11400000, guid: ccf5151ec9dee264ca741ee719d69105, type: 2}
+  - {fileID: 11400000, guid: f186a5d9ae056274a90a544b7a80c825, type: 2}
+  - {fileID: 11400000, guid: dc9301ac1beb8444a8260b6e1d76db9d, type: 2}
+  - {fileID: 11400000, guid: 10b2fa8c3f7266e4583a34b603438a2e, type: 2}
+  - {fileID: 11400000, guid: abc89684b2d3d534fae0c9d97391e2cd, type: 2}
+  - {fileID: 11400000, guid: cda74abee3b80f74b83883ebe569ce9e, type: 2}
+  - {fileID: 11400000, guid: 635fa7e18cdc5d542a287764abd41de0, type: 2}
+  - {fileID: 11400000, guid: f641bf8e705bcf147906e88d8910a9f8, type: 2}
+  - {fileID: 11400000, guid: b8ec41d680dc51f448ec859b0e842084, type: 2}
+  - {fileID: 11400000, guid: f0f8cc07db10aeb41b7cde8b946d7836, type: 2}
+  - {fileID: 11400000, guid: 91f61c547c51bac4ca1bc255fde75742, type: 2}
+  - {fileID: 11400000, guid: 89dd29f152ebc924580e9dd7bdd95e23, type: 2}
+  - {fileID: 11400000, guid: 35d5f3f9429eba349a8ca26e0229664b, type: 2}
+  - {fileID: 11400000, guid: 52e3ead37e461d344ae654cc5f176460, type: 2}
+  - {fileID: 11400000, guid: 71ae073a75f82874b9fbcd728f31b318, type: 2}
+  - {fileID: 11400000, guid: 4aaffe179b598ef48a516544ca52d5b8, type: 2}
+  - {fileID: 11400000, guid: f229c959786a9ca4e918dab4a7dc96ea, type: 2}
+  - {fileID: 11400000, guid: 71bff0cb6d211a04cad3181092d71e22, type: 2}
   CreatureCollection:
   - {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
   - {fileID: 11400000, guid: a64f830ec9ff16f479268a567d8651de, type: 2}
@@ -233,7 +249,7 @@ MonoBehaviour:
       normalString: 
       isI2String: 0
       value: 
-    amountCreature: 0
+    amountCreature: 6
   - creatureLeader: {fileID: 11400000, guid: 6890b998fb574e24c94d8b47e767c164, type: 2}
     map: {fileID: 11400000, guid: d3d4f1a8dd68093489efc11140b0ff32, type: 2}
     className:
@@ -322,3 +338,90 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4848aabde1294a64c83a29c8311c0efc, type: 2}
   - {fileID: 11400000, guid: bcbe177e4a284fe43a4b5b1b29ed94db, type: 2}
   - {fileID: 11400000, guid: bc96de69392f4494f936df3b1b2576ab, type: 2}
+  - {fileID: 11400000, guid: 4295b1a3ef58f91498f13b01c7fa7272, type: 2}
+  - {fileID: 11400000, guid: 371030608ae0b3841b4be0ea5258ddb9, type: 2}
+  wheelMainConfig:
+  - itemType: 0
+    percentRoll:
+    - 0.4
+    - 0.4
+    - 0.2
+    icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    change: 0.1
+  - itemType: 1
+    percentRoll:
+    - 0.4
+    - 0.4
+    - 0.2
+    icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    change: 0.1
+  - itemType: 4
+    percentRoll:
+    - 0.4
+    - 0.4
+    - 0.2
+    icon:
+      m_AssetGUID: 6484a3ce4dfcf41488768c397c40bca0
+      m_SubObjectName: Pack_Gems_Handful
+    change: 0.15
+  - itemType: 2
+    percentRoll:
+    - 0.4
+    - 0.4
+    - 0.2
+    icon:
+      m_AssetGUID: 50b1910da57b5ca4aaa26f553db269d3
+      m_SubObjectName: Pack_Gold_Sack
+    change: 0.35
+  - itemType: 3
+    percentRoll:
+    - 0.4
+    - 0.4
+    - 0.2
+    icon:
+      m_AssetGUID: c2c40b7e3905b014bb5e1e11283dab47
+      m_SubObjectName: Pack_Gold_Mountain
+    change: 0.15
+  - itemType: 5
+    percentRoll:
+    - 0.4
+    - 0.4
+    - 0.2
+    icon:
+      m_AssetGUID: a37e1f860a9728f488524bf24f2e996a
+      m_SubObjectName: SlotIconSpin
+    change: 0.15
+  containerMagicCase:
+  - item: {fileID: 11400000, guid: 40ee4c54d5fc2414e97c7431892f677d, type: 2}
+    rate: 0.25
+  - item: {fileID: 11400000, guid: 5ddf471cc6d4db54aa84cc59af6e4c8b, type: 2}
+    rate: 0.25
+  - item: {fileID: 11400000, guid: e56200353a1742b4fae0cf6b3b0bdbab, type: 2}
+    rate: 0.25
+  - item: {fileID: 11400000, guid: 5dc092181133fe846ba797192966b0b5, type: 2}
+    rate: 0.25
+  - item: {fileID: 11400000, guid: d21bbc653d9202c44887155967f8bdce, type: 2}
+    rate: 0.25
+  containerRewardADS:
+  - item: {fileID: 11400000, guid: 2144b90312c4b334e8c28d574f24f288, type: 2}
+    rate: 0.1
+  - item: {fileID: 11400000, guid: d60eb05b81af23344898eba6a22598ae, type: 2}
+    rate: 0.1
+  - item: {fileID: 11400000, guid: 0f93fc87735f7454c85afb9806c88e64, type: 2}
+    rate: 0.2
+  - item: {fileID: 11400000, guid: 23ab21faca236b14b8079951629546dc, type: 2}
+    rate: 0.2
+  - item: {fileID: 11400000, guid: 6491c59b26722974094982237600367c, type: 2}
+    rate: 0.2
+  - item: {fileID: 11400000, guid: 2e5816dcf486a7a4e9885c8a6ffaae8a, type: 2}
+    rate: 0.2
+  timeAFKShowBoxTreasure: 10
+  missionContainer:
+  - {fileID: 11400000, guid: 9cf91cf15f1907c4aad1fa8abc1e1afa, type: 2}
+  - {fileID: 11400000, guid: 89dad6a3aeb79144d9d404095a0af96a, type: 2}
+  - {fileID: 11400000, guid: ec5a33406aa43b84d9f96650aa684b93, type: 2}
+  timeMinToShowBoxBank: 300

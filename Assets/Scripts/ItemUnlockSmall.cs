@@ -14,11 +14,11 @@ namespace Pok
         public UI2DSprite icon;
         public UI2DSprite statusbar;
         public Vector2Int claim;
-        public Color colorBarPrevious, colorBarCurrent, ColorBarlocked;
+        public Sprite colorBarPrevious, colorBarCurrent, ColorBarlocked;
         public override void setInfo(CreatureInfoSatus pInfo)
         {
             base.setInfo(pInfo);
-            statusbar.color = pInfo.current ? colorBarCurrent : (pInfo.mainInfo.isUnLock ? colorBarPrevious : ColorBarlocked);
+            statusbar.sprite2D = pInfo.current ? colorBarCurrent : (pInfo.mainInfo.isUnLock ? colorBarPrevious : ColorBarlocked);
             var originalItem = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == pInfo.mainInfo.id);
             originalItem.getSpriteForState((o) => {
                 icon.sprite2D = o;

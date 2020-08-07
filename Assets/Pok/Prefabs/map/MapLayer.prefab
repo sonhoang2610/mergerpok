@@ -208,6 +208,7 @@ MonoBehaviour:
   alpha: {fileID: 8951894282174930685}
   mainZone: {fileID: 7668617125249963579}
   attachMent: {fileID: 4492395202690379141}
+  currentMap: {fileID: 11400000, guid: c34df40a6f439b348b92dddf36ac008e, type: 2}
   creatureAlive: []
   creatureAnimAble: []
 --- !u!114 &8951894282174930685

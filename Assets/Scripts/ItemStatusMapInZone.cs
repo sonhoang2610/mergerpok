@@ -16,11 +16,11 @@ namespace Pok
         public UI2DSprite icon,iconLeader;
         public UI2DSprite statusbar;
         public Vector2Int claim;
-        public Color colorBarPrevious, colorBarCurrent, ColorBarlocked;
+        public Sprite colorBarPrevious, colorBarCurrent, ColorBarlocked;
         public override void setInfo(MapStatusInZoneInfo pInfo)
         {
             base.setInfo(pInfo);
-            statusbar.color = pInfo.current ? colorBarCurrent : (pInfo.isUnlock ? colorBarPrevious : ColorBarlocked);
+            statusbar.sprite2D = pInfo.current ? colorBarCurrent : (pInfo.isUnlock ? colorBarPrevious : ColorBarlocked);
             var originalItem = GameDatabase.Instance.MapCollection.Find(x => x.ItemID == pInfo.id);
            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
             if (zone.leaderSelected.ContainsKey(pInfo.id))
@@ -30,7 +30,7 @@ namespace Pok
                 originalItem.getSpriteForState((o) => {
                     icon.sprite2D = o;
                     icon.MakePixelPerfectClaimIn(new Vector2Int(96, 96));
-                });
+                }, $"Icon{pInfo.leader}");
                 var leader = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == zone.leaderSelected[pInfo.id]);
                 leader.getSpriteForState((o) =>
                 {

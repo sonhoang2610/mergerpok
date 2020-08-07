@@ -3,19 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using EazyEngine.Tools;
 using DG.Tweening;
+using BigInt = System.Numerics.BigInteger;
 
 
 namespace Pok {
-    public class MainScene : Singleton<MainScene>,EzEventListener<UnlockNewEra>
+    public class MainScene : Singleton<MainScene>,EzEventListener<UnlockNewEra>,EzEventListener<AddCreatureEvent>
     {
         public List<MapLayer> mapPool;
         public float threshHoldDragLayerPage = 540;
         public EazyGroupTabNGUI ChoseMapLayer;
         [System.NonSerialized]
         public List<MapInstanceSaved> MapObjects = new List<MapInstanceSaved>();
-
+        public GameObject boxTreasure;
         private int currentPageMapLayer = 0;
         protected int currentIndexPool = 0,cacheSizeDrag = 0;
+
+        bool isMinized = false;
+
+        private void OnApplicationFocus(bool focus)
+        {
+            if (!focus)
+            {
+                isMinized = true;
+            }else if(isMinized && !TimeCounter.InstanceRaw.IsDestroyed() && TimeCounter.Instance.minimizeTime > GameDatabase.Instance.timeAFKShowBoxTreasure)
+            {
+                isMinized = false;
+                boxTreasure.gameObject.SetActive(true);
+            }
+        }
+        public void showBoxMagicCaseContain()
+        {
+            HUDManager.Instance.showBoxMagicCaseContain();
+        }
+
+
+        public IEnumerator onEnableLateUpdate()
+        {
+            if (!GameManager.readyForThisState("Main"))
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            var quantitySecIncome = BigInt.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (int)GameManager.Instance.getFactorIncome().x;
+            HUDManager.Instance.quanityHour.text = quantitySecIncome.ToString().ToKMBTA();
+        }
+        
 
         private void Start()
         {
@@ -25,6 +56,15 @@ namespace Pok {
         public void chooseZone(object pChoose)
         {
             var pZone = (ZoneObject)pChoose;
+            for(int i = 0; i < GameDatabase.Instance.ZoneCollection.Count; ++i)
+            {
+                var itemCoinBank = GameDatabase.Instance.ZoneCollection[i].coinBank;
+                var timing = GameManager.Instance.Database.timeRestore.Find(x => x.id.Contains(itemCoinBank.ItemID));
+                if(timing != null)
+                {
+                    timing.pauseTime(GameDatabase.Instance.ZoneCollection[i] != pZone);
+                }
+            }
             GameManager.Instance.ZoneChoosed = pZone.ItemID;
             CurrentPageMapLayer = 0;
             CurrentIndexPool = 0;
@@ -162,12 +202,16 @@ namespace Pok {
         }
         private void OnEnable()
         {
-            EzEventManager.AddListener(this);
+            StartCoroutine(onEnableLateUpdate());
+            EzEventManager.AddListener<UnlockNewEra>(this);
+            EzEventManager.AddListener<AddCreatureEvent>(this);
         }
 
         private void OnDisable()
         {
-            EzEventManager.RemoveListener(this);
+            StopAllCoroutines();
+            EzEventManager.RemoveListener<UnlockNewEra>(this);
+            EzEventManager.RemoveListener<AddCreatureEvent>(this);
         }
         public void OnEzEvent(UnlockNewEra eventType)
         {
@@ -181,6 +225,18 @@ namespace Pok {
             //cacheSizeDrag = 1;
             //ChoseMapLayer.changeTabUI(CurrentPageMapLayer);
             //updateMapLayer(false);
+        }
+
+        public void OnEzEvent(AddCreatureEvent eventType)
+        {
+            if (GameManager.readyForThisState("Main"))
+            {
+                var quantitySecIncome = BigInt.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (int)GameManager.Instance.getFactorIncome().x;
+                HUDManager.Instance.quanityHour.text = quantitySecIncome.ToString().ToKMBTA();
+                var creature = GameManager.Instance.Database.getAllCreatureInstanceInAdress(eventType.zoneid, eventType.creature.mapParent.id);
+                var map = GameDatabase.Instance.MapCollection.Find(x => x.ItemID == eventType.creature.mapParent.id);
+                HUDManager.Instance.fullSlotIcon.gameObject.SetActive(creature.Count >= map.limitSlot);
+            }
         }
     }
 }

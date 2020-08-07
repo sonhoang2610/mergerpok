@@ -6,6 +6,7 @@ using System;
 using Sirenix.Serialization;
 using UnityEngine.AddressableAssets;
 using EazyEngine.Tools;
+using System.Numerics;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -15,7 +16,7 @@ public enum CategoryItem
    NONE,
    COMMON,
    CREATURE,
-   PACKAGE_CREATURE
+   PACKAGE_CREATURE,
 }
 [Flags]
 public enum AttributeItem
@@ -34,71 +35,126 @@ namespace Pok
         [System.NonSerialized]
         public BaseItemGame item;
         public string itemID;
-        public long quantity = 1;
-        public string bigQuantity = "0";
-        [System.NonSerialized]
-        public bool isRequire = false;
+        public string quantity = "1";
         public bool EmptySlot = true;
-        protected bool isFree = true;
         [System.NonSerialized]
-        public long changeQuantity;
+        public string changeQuantity = "0";
         public int boughtNumber;
         private long beforeQuantity = 0;
 
 
         public string address;
-        public void onInit()
+        public bool onInit()
         {
             item = GameDatabase.Instance.getItemInventory(itemID);
-        }
-        public bool IsFree
-        {
-            get
-            {
-                return isFree;
-            }
-            set
-            {
-                isFree = value;
-            }
+            return item;
         }
         public string getQuantity()
         {
-            return quantity.ToString();
+            return quantity.clearDot();
         }
-        public virtual long Quantity
+
+        public void setQuantity(string valueStr)
         {
-            get => quantity;
-            set
+            var quantityNumber= System.Numerics.BigInteger.Parse(quantity);
+            var value = System.Numerics.BigInteger.Parse(valueStr);
+            if(value < 0)
             {
-                if ((item.attribute & AttributeItem.Limit) == AttributeItem.Limit)
+                value = 0;
+            }
+            var localChangeQuantity = System.Numerics.BigInteger.Parse(changeQuantity);
+            if ((item.attribute & AttributeItem.Limit) == AttributeItem.Limit)
+            {
+                if (value > item.limitInInventory.getUnit(CurrentLevel))
                 {
-                    if (value > item.limitInInventory.getUnit(CurrentLevel))
-                    {
-                        value = item.limitInInventory.getUnit(CurrentLevel);
-                    }
+                    value = item.limitInInventory.getUnit(CurrentLevel);
                 }
-                changeQuantity = value - quantity;
-                quantity = value;
-                if(quantity < 0)
-                    quantity = 0;
-                if (item.categoryItem == CategoryItem.COMMON)
+            }
+            localChangeQuantity = value - quantityNumber;
+            changeQuantity = localChangeQuantity.toString();
+            quantityNumber = value;
+            quantity = quantityNumber.toString();
+            if (quantityNumber < 0)
+                quantityNumber = 0;
+            if (item.categoryItem == CategoryItem.COMMON)
+            {
+                if (localChangeQuantity > 0 && EmptySlot)
                 {
-                    if (changeQuantity > 0 && EmptySlot)
-                    {
-                        EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.NEWITEM, this));
-                    }
-                    else if (changeQuantity != 0)
-                    {
-                        EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.CHANGE_QUANTITY_ITEM, this));
-                    }
+                    EmptySlot = false;
+                    EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.NEWITEM, this));
                 }
-                else
+                else if (localChangeQuantity != 0)
                 {
-                    GameManager.Instance.Database.addItem(item.ItemID, changeQuantity,address);
+                    EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.CHANGE_QUANTITY_ITEM, this));
+                }
+            }
+            else
+            {
+                if (localChangeQuantity > 0)
+                {
+                    for(int i = 0; i < localChangeQuantity; ++i)
+                    {
+                        if(!GameManager.Instance.Database.addItem(item.ItemID, address))
+                        {
+                            break;
+                        }
+                    }
+                    
                 }
             }
         }
+
+        public void addQuantity(string add)
+        {
+            setQuantity((BigInteger.Parse(quantity) + BigInteger.Parse(add)).toString());
+        }
+
+        public long QuantityLong
+        {
+            get
+            {
+                return long.Parse(quantity);
+            }
+        }
+        public BigInteger QuantityBig { 
+            get
+            {
+                return BigInteger.Parse(quantity);
+            }
+        }
+        //public virtual long Quantity
+        //{
+        //    get => quantity;
+        //    set
+        //    {
+        //        if ((item.attribute & AttributeItem.Limit) == AttributeItem.Limit)
+        //        {
+        //            if (value > item.limitInInventory.getUnit(CurrentLevel))
+        //            {
+        //                value = item.limitInInventory.getUnit(CurrentLevel);
+        //            }
+        //        }
+        //        changeQuantity = value - quantity;
+        //        quantity = value;
+        //        if(quantity < 0)
+        //            quantity = 0;
+        //        if (item.categoryItem == CategoryItem.COMMON)
+        //        {
+        //            if (changeQuantity > 0 && EmptySlot)
+        //            {
+        //                EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.NEWITEM, this));
+        //            }
+        //            else if (changeQuantity != 0)
+        //            {
+        //                EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.CHANGE_QUANTITY_ITEM, this));
+        //            }
+        //        }
+        //        else
+        //        {
+        //            GameManager.Instance.Database.addItem(item.ItemID, changeQuantity,address);
+        //        }
+        //    }
+        //}
         [SerializeField]
         protected int level = 0;
         public int CurrentLevel
@@ -123,7 +179,7 @@ namespace Pok
     {
         public string State = "Default";
         public T Icon;
-        public Vector2 size;
+        public UnityEngine.Vector2 size;
     }
     [System.Serializable]
     public class IconBehavior : GenericBehavior<AssetReferenceSprite>
@@ -149,10 +205,11 @@ namespace Pok
             for(int i = 0; i < Selection.objects.Length; ++i)
             {
                 GameDatabase.Instance.addItemInventory((BaseItemGame)Selection.objects[i]);
-                EditorUtility.SetDirty(GameDatabase.Instance);
-                AssetDatabase.SaveAssets();
+       
             }
-           
+            GameDatabase.Instance.ItemInventoryCollection.RemoveAll(x => x == null);
+            EditorUtility.SetDirty(GameDatabase.Instance);
+            AssetDatabase.SaveAssets();
         }
 #endif
         public string itemID;
@@ -164,6 +221,10 @@ namespace Pok
         public List<GameObjectBehavior> model = new List<GameObjectBehavior>() { new GameObjectBehavior() };
         public int score;
 
+        public virtual string getContent()
+        {
+            return Desc;
+        }
         public bool isLimit
         {
             get

@@ -9,18 +9,42 @@ public class EventOnDataItem : UnityEvent<object>
 
 }
 
-public  class BaseItem<T> : MonoBehaviour where T : new() {
-   // [HideInInspector]
+public class BaseItem<T> : MonoBehaviour where T : new()
+{
+    // [HideInInspector]
     public T _info;
     [HideInInspector]
-    public List<EventOnDataItem> _onData =new List<EventOnDataItem>();
+    public List<EventOnDataItem> _onData = new List<EventOnDataItem>();
     [HideInInspector]
     public int _indexItem;
+    protected int cacheDepth = 999999;
+    public void setDepth(int depth)
+    {
+        if (cacheDepth == depth) return;
+        cacheDepth = depth;
+        var widgets = GetComponentsInChildren<UIWidget>();
+        int minDepth = 99999;
+        foreach (var widget in widgets)
+        {
+            if (widget.depth < minDepth)
+            {
+                minDepth = widget.depth;
+            }
+        }
+       if(minDepth < depth)
+        {
+            int delta = depth - minDepth;
+            foreach (var widget in widgets)
+            {
+                widget.depth += delta;
+            }
+        }
+    }
 
     public virtual void empty()
     {
-       var pLabels =  GetComponentsInChildren<UILabel>();
-        foreach(UILabel pLabel in pLabels)
+        var pLabels = GetComponentsInChildren<UILabel>();
+        foreach (UILabel pLabel in pLabels)
         {
             pLabel.text = "";
         }
@@ -34,7 +58,7 @@ public  class BaseItem<T> : MonoBehaviour where T : new() {
 
     public virtual void onExecute(int index)
     {
-       if(_onData != null && index < _onData.Count)
+        if (_onData != null && index < _onData.Count)
         {
             _onData[index].Invoke(_info);
         }

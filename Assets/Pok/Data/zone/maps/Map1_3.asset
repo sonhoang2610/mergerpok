@@ -70,19 +70,19 @@ MonoBehaviour:
       m_AssetGUID: 
       m_SubObjectName: 
     size: {x: 0, y: 0}
-  - State: '[Preview]Pok12'
+  - State: '[Preview]Pok13'
     Icon:
-      m_AssetGUID: 
+      m_AssetGUID: 11affa78462a8f04ab940d567786ea97
       m_SubObjectName: 
     size: {x: 0, y: 0}
-  - State: '[Preview]Pok18'
+  - State: '[Preview]Pok19'
     Icon:
-      m_AssetGUID: 
+      m_AssetGUID: f212f99cf3194ea46b05c11f96e0374e
       m_SubObjectName: 
     size: {x: 0, y: 0}
-  - State: '[Preview]Pok24'
+  - State: '[Preview]Pok25'
     Icon:
-      m_AssetGUID: 
+      m_AssetGUID: a654d346815ab6a48b25e1557746caec
       m_SubObjectName: 
     size: {x: 0, y: 0}
   score: 0

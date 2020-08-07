@@ -13,66 +13,73 @@ namespace Pok
         ADD_DOT,
         ADD_TEXT,
     }
-    
-    public class InventorySlot : BaseItem<BaseItemGameInstanced>,EzEventListener<GameDatabaseInventoryEvent>
+
+    public class InventorySlot : BaseItem<BaseItemGameInstanced>, EzEventListener<GameDatabaseInventoryEvent>, EzEventListener<TimeEvent>, EzEventListener<RemoveTimeEvent>
     {
         public bool independence;
         [ShowIf("independence")]
         public string itemID;
         [ShowIf("independence")]
         public string stateReadyToLoad = "Main";
-       // public QuantityType typeQuantity;
+        // public QuantityType typeQuantity;
         public UILabel quantityLbl;
         public UI2DSprite iconSprite;
-        public bool recoverItem;
-        public UI2DSprite process;
-
+        public UI2DSprite process, processQuantity;
+        public UILabel timerLabel;
+        public bool reserveTime;
+        public string format = @"mm\:ss";
         protected Coroutine enableCorountine;
-        protected bool registerUpdateTime; 
         public IEnumerator onEnable()
         {
             while (!GameManager.readyForThisState(stateReadyToLoad))
             {
                 yield return new WaitForEndOfFrame();
             }
+            EzEventManager.AddListener<GameDatabaseInventoryEvent>(this);
+            EzEventManager.AddListener<TimeEvent>(this);
+            EzEventManager.AddListener<RemoveTimeEvent>(this);
             if (independence)
             {
-                var infoItem = GameManager.Instance.Database.getItem( itemID);
+                var infoItem = GameManager.Instance.Database.getItem(itemID);
+                if (infoItem == null)
+                {
+                    infoItem = GameManager.Instance.Database.getCreatureItem(itemID, GameManager.Instance.ZoneChoosed);
+                }
                 setInfo(infoItem);
             }
- 
+
         }
 
-        public void updateTime(TimeEvent eventTime){
+        public void updateTime(TimeEvent eventTime)
+        {
             if (eventTime.timeInfo.destinyIfHave != -1)
             {
-               var localprocess = Mathf.Clamp((float)(eventTime.timeInfo.CounterTime / eventTime.timeInfo.destinyIfHave), 0, 1);
+                var localprocess = Mathf.Clamp((float)(eventTime.timeInfo.CounterTime / eventTime.timeInfo.destinyIfHave), 0, 1);
                 if (process)
                 {
                     process.fillAmount = localprocess;
+                }
+                if (timerLabel)
+                {
+                    var sec = (eventTime.timeInfo.destinyIfHave - eventTime.timeInfo.CounterTime).Clamp(eventTime.timeInfo.destinyIfHave, 0);
+                    timerLabel.text = TimeSpan.FromSeconds(!reserveTime ? eventTime.timeInfo.CounterTime : sec).ToString(format);
                 }
             }
         }
         protected virtual void OnEnable()
         {
-            if (process)
-            {
-                var item = GameDatabase.Instance.getItemInventory(itemID);
-                string extra = (item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE) ? (GameManager.Instance.ZoneChoosed + "/") : "";
-                registerUpdateTime = TimeCounter.Instance.registerUpdateTime("[Restore]"+ extra + itemID, updateTime);
-            }
+
             enableCorountine = StartCoroutine(onEnable());
-            EzEventManager.AddListener<GameDatabaseInventoryEvent>(this);
+
+
         }
 
         protected virtual void OnDisable()
         {
-            if (registerUpdateTime && !TimeCounter.InstanceRaw.IsDestroyed() && !GameManager.InstanceRaw.IsDestroyed())
-            {
-                var item = GameDatabase.Instance.getItemInventory(itemID);
-                string extra = (item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE) ? (GameManager.Instance.ZoneChoosed + "/") : "";
-                TimeCounter.Instance.unRegisterUpdateTime("[Restore]"+extra + itemID, updateTime);
-            }
+
+            EzEventManager.RemoveListener<TimeEvent>(this);
+            EzEventManager.RemoveListener<RemoveTimeEvent>(this);
+
             EzEventManager.RemoveListener<GameDatabaseInventoryEvent>(this);
             if (enableCorountine != null)
             {
@@ -97,22 +104,80 @@ namespace Pok
             if (quantityLbl)
             {
                 quantityLbl.text = pInfo.getQuantity().ToKMBTA();
+                if ((pInfo.item.attribute & AttributeItem.Limit) == AttributeItem.Limit)
+                {
+                    quantityLbl.text = pInfo.getQuantity().ToKMBTA() + "/" + pInfo.item.limitInInventory.getUnit(pInfo.CurrentLevel).ToString();
+                }
+                else
+                {
+                    quantityLbl.text = pInfo.getQuantity().ToKMBTA();
+                }
+            }
+            if ((pInfo.item.attribute & AttributeItem.Limit) == AttributeItem.Limit)
+            {
+                if (processQuantity)
+                {
+                    processQuantity.fillAmount = float.Parse(pInfo.getQuantity()) / (float)pInfo.item.limitInInventory.getUnit(pInfo.CurrentLevel);
+                }
             }
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+
         }
 
         public void OnEzEvent(GameDatabaseInventoryEvent eventType)
         {
-            if((eventType.item.item.ItemID == itemID && independence) || (!independence && _info != null && _info.item.ItemID == eventType.item.item.ItemID) )
+            if ((eventType.item.item.ItemID == itemID && independence) || (!independence && _info != null && _info.item.ItemID == eventType.item.item.ItemID))
             {
                 if (quantityLbl)
                 {
-                    quantityLbl.text = eventType.item.getQuantity().ToKMBTA();
+                    if ((_info.item.attribute & AttributeItem.Limit) == AttributeItem.Limit)
+                    {
+                        quantityLbl.text = _info.getQuantity().ToKMBTA() + "/" + _info.item.limitInInventory.getUnit(_info.CurrentLevel).ToString();
+                    }
+                    else
+                    {
+                        quantityLbl.text = _info.getQuantity().ToKMBTA();
+                    }
+                }
+                if ((_info.item.attribute & AttributeItem.Limit) == AttributeItem.Limit)
+                {
+                    if (processQuantity)
+                    {
+                        processQuantity.fillAmount = float.Parse(_info.getQuantity()) / (float)_info.item.limitInInventory.getUnit(_info.CurrentLevel);
+                    }
+                }
+            }
+        }
+
+        public void OnEzEvent(TimeEvent eventType)
+        {
+            var item = GameDatabase.Instance.getItemInventory(itemID);
+            string extra = (item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE) ? (GameManager.Instance.ZoneChoosed + "/") : "";
+
+            if ("[Restore]" + extra + itemID == eventType.timeInfo.id)
+            {
+                updateTime(eventType);
+            }
+        }
+
+        public void OnEzEvent(RemoveTimeEvent eventType)
+        {
+            var item = GameDatabase.Instance.getItemInventory(itemID);
+            string extra = (item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE) ? (GameManager.Instance.ZoneChoosed + "/") : "";
+
+            if ("[Restore]" + extra + itemID == eventType.timeInfo.id)
+            {
+                if (process)
+                {
+                    process.fillAmount = 1;
+                }
+                if (timerLabel)
+                {
+                    timerLabel.text = "FULL";
                 }
             }
         }

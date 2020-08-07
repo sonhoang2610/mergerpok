@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace Pok
 {
-    public class ItemPackageSimple : IElmentInfoExtract
+    [System.Serializable]
+    public class ItemPackageSimpleInfo : IElmentInfoExtract
     {
         public ItemWithQuantity[] items;
 
@@ -12,9 +13,15 @@ namespace Pok
         {
             return items;
         }
+
+        public string getContent()
+        {
+            return "";
+        }
     }
     [System.Serializable]
-    public class ItePackageSimple : ItemPackage<ItemPackageSimple>
+    [CreateAssetMenu(fileName = "PackageSimple",menuName ="Pok/PackageSimple")]
+    public class ItemPackageSimple : ItemPackage<ItemPackageSimpleInfo>
     {
     }
 }

@@ -24,6 +24,27 @@ MonoBehaviour:
       - New creature unlocked!
       Flags: 00
       Languages_Touch: []
+    - Term: title/creatures
+      TermType: 0
+      Description: 
+      Languages:
+      - Creatures
+      Flags: 00
+      Languages_Touch: []
+    - Term: title/upgrade
+      TermType: 0
+      Description: 
+      Languages:
+      - Upgrade
+      Flags: 00
+      Languages_Touch: []
+    - Term: title/missions
+      TermType: 0
+      Description: 
+      Languages:
+      - Missions
+      Flags: 00
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

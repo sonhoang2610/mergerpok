@@ -56,7 +56,7 @@ namespace Pok
                 seq.Join( creatureObject.transform.DOMove(transform.position, 0.5f));
                 seq.AppendCallback(delegate
                 {
-                    creatureObject.gameObject.SetActive(false);
+                    Destroy(creatureObject);
                 });
             });
 
@@ -64,7 +64,7 @@ namespace Pok
 
         public void OnEzEvent(AddCreatureEvent eventType)
         {
-            if (eventType.manualByHand ) 
+            if (eventType.manualByHand  && eventType.change == 1) 
             {
                 if (eventType.creature.mapParent.id == _info.id)
                 {

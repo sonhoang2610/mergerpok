@@ -71,4 +71,5 @@ MonoBehaviour:
   packages:
   - id: Default
     package: {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
+  coinBank: {fileID: 11400000, guid: 71bff0cb6d211a04cad3181092d71e22, type: 2}
   shopCreature: {fileID: 0}

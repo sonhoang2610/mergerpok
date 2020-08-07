@@ -51,7 +51,12 @@ namespace Pok
         }
         private void OnEnable()
         {
-            if(_info != null)
+            if (tweenMove != null)
+            {
+                tweenMove.Kill();
+                tweenMove = null;
+            }
+            if (_info != null)
             {
                 StartCoroutine(startEffect());
             }
@@ -79,7 +84,13 @@ namespace Pok
         }
         private void OnDisable()
         {
-            if(timer != null){
+            if (tweenMove != null)
+            {
+                tweenMove.Kill();
+                tweenMove = null;
+            }
+           // transform.localPosition = new Vector3(9999, 9999, 0);
+            if (timer != null){
                 StopCoroutine(timer);
                 timer = null;
             }
@@ -98,7 +109,17 @@ namespace Pok
         [ContextMenu("Born")]
         public void born()
         {
+            if (_info.id.Contains("Egg"))
+            {
+                skin.transform.localPosition = new Vector3(0, 1920, 0);
+            }
             GetComponent<FSMOwner>().SendEvent("Born");
+        }
+
+        protected Vector3 oldPos;
+        private void Awake()
+        {
+             oldPos = skin.transform.localPosition;
         }
         public void bornScale()
         {
@@ -108,14 +129,14 @@ namespace Pok
         public void bornDrop(System.Action onComplete = null)
         {
             effecting = true;
-            var oldPos = skin.transform.localPosition;
-            skin.transform.localPosition += new Vector3(0, 1920, 0);
+       
+            skin.transform.localPosition = new Vector3(0, 1920, 0);
             var seq = DOTween.Sequence();
             skin.transform.localScale = new Vector3(scale.x*0.7f, scale.y , scale.z);
             seq.Append(skin.transform.DOLocalMove(oldPos, 0.8f).SetEase(Ease.InQuad));
             seq.Append(skin.transform.DOScale(new Vector3(scale.x, scale.y * 0.7f, scale.z), 0.25f).SetEase(Ease.OutQuad));
             seq.Append(skin.transform.DOScale(scale , 1).SetEase(Ease.OutElastic));
-            seq.AppendCallback(delegate { effecting = false; onComplete?.Invoke(); });
+            seq.AppendCallback(delegate { effecting = false; onComplete?.Invoke(); GetComponent<BoxCollider>().enabled = true; });
         }
 
         public void move(Vector3 destiny)

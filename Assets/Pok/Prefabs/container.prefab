@@ -171,12 +171,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeCollection: {fileID: 11400000, guid: 960a66c38e1c4544f95cdb3bc4a8a27e, type: 2}
+  currentMap: {fileID: 11400000, guid: c34df40a6f439b348b92dddf36ac008e, type: 2}
   resolution: {x: 1080, y: 1920}
   _defaultDatabase:
-    mapInfos: []
+    worldData:
+      zones: []
+    inventory:
+    - itemID: TicketSpin
+      quantity: 20
+      EmptySlot: 1
+      boughtNumber: 0
+      address: 
+      level: 0
+    timeRestore: []
     zoneInfos: []
     creatureInfos: []
-    inventory: []
-    timerRestoreCreature: []
-    timerRestoreInventory: []
   generateID: -1

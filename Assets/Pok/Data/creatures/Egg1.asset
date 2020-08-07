@@ -52,13 +52,105 @@ MonoBehaviour:
       Entry: 3
       Data: 0
     - Name: stepUnit
-      Entry: 3
+      Entry: 4
       Data: -2
     - Name: isSpecifiedUnit
       Entry: 5
       Data: false
     - Name: unitDefines
       Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: goldAFKReward
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Zone1
+    - Name: $v
+      Entry: 1
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Zone2
+    - Name: $v
+      Entry: 1
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Zone3
+    - Name: $v
+      Entry: 1
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Zone4
+    - Name: $v
+      Entry: 1
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Zone5
+    - Name: $v
+      Entry: 1
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: Zone6
+    - Name: $v
+      Entry: 1
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
       Data: 
     - Name: 
       Entry: 8
@@ -97,7 +189,9 @@ MonoBehaviour:
   creatureChilds:
   - {fileID: 11400000, guid: 55fb581e79a7da145a5d4727275d0b20, type: 2}
   creatureExtra:
-  - levelRequire: 0
-    unit: {fileID: 11400000, guid: 55fb581e79a7da145a5d4727275d0b20, type: 2}
-  - levelRequire: 1
-    unit: {fileID: 11400000, guid: e0fd176caa8dd56459bb6d5fcaa5671e, type: 2}
+  - {fileID: 11400000, guid: 55fb581e79a7da145a5d4727275d0b20, type: 2}
+  - {fileID: 11400000, guid: e0fd176caa8dd56459bb6d5fcaa5671e, type: 2}
+  - {fileID: 11400000, guid: dbea47f712ee84b4489e37fdfbb4b466, type: 2}
+  - {fileID: 11400000, guid: 6a88a608debc49c4eaac2114c81d1d00, type: 2}
+  - {fileID: 11400000, guid: 072589e0c104e594d98a122e0b4df7de, type: 2}
+  - {fileID: 11400000, guid: 33d30c9a70f30ad4a811c8a014a71b1b, type: 2}

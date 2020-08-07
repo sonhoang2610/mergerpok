@@ -4,15 +4,10 @@ using UnityEngine;
 
 namespace Pok
 {
-    [System.Serializable]
-    public class SpecifiedLevelStepUnitCreature : SpecifiedLevelStepUnitGeneric<CreatureItem>
-    {
-
-    }
 
     [CreateAssetMenu(fileName = "ItemPackageCreature", menuName = "Pok/ItemPackageCreature")]
     public class PackageCreatureObject : CreatureItem
     {
-        public SpecifiedLevelStepUnitCreature[] creatureExtra;
+        public CreatureItem[] creatureExtra;
     }
 }

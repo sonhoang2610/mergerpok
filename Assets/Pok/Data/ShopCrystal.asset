@@ -23,49 +23,71 @@ MonoBehaviour:
     SerializationNodes: []
   nameShop: ShopCrystal
   items:
-  - itemSell: {fileID: 11400000, guid: cd869865ab92b2443a946100094a107c, type: 2}
+  - isVisibleItem: 1
+    itemSell: {fileID: 11400000, guid: cd869865ab92b2443a946100094a107c, type: 2}
     typeIncrease: 0
     paymentWays:
       startUnit:
       - groupID: 0
         exchangeItems:
-        - item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+        - typePayment: 1
+          item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
           quantity: 10
       algrothimTypeUpgrade: 0
       stepUnit: []
       isSpecifiedUnit: 0
       unitDefines: []
-  - itemSell: {fileID: 11400000, guid: 22e23a4ed0faf9f46ada2dfe48680a0b, type: 2}
+  - isVisibleItem: 1
+    itemSell: {fileID: 11400000, guid: 05e322a2c945f2347b7e9b3ee06be10e, type: 2}
     typeIncrease: 0
     paymentWays:
       startUnit:
       - groupID: 0
         exchangeItems:
-        - item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+        - typePayment: 1
+          item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
           quantity: 50
       algrothimTypeUpgrade: 0
       stepUnit: []
       isSpecifiedUnit: 0
       unitDefines: []
-  - itemSell: {fileID: 11400000, guid: 105867675d525924b937608528be3cff, type: 2}
+  - isVisibleItem: 1
+    itemSell: {fileID: 11400000, guid: ccf5151ec9dee264ca741ee719d69105, type: 2}
     typeIncrease: 0
     paymentWays:
       startUnit:
       - groupID: 0
         exchangeItems:
-        - item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+        - typePayment: 1
+          item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
           quantity: 100
       algrothimTypeUpgrade: 0
       stepUnit: []
       isSpecifiedUnit: 0
       unitDefines: []
-  - itemSell: {fileID: 11400000, guid: e9aec644ea946a8429c36f8469b99bf9, type: 2}
+  - isVisibleItem: 1
+    itemSell: {fileID: 11400000, guid: f186a5d9ae056274a90a544b7a80c825, type: 2}
     typeIncrease: 0
     paymentWays:
       startUnit:
       - groupID: 0
         exchangeItems:
-        - item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+        - typePayment: 1
+          item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+          quantity: 100
+      algrothimTypeUpgrade: 0
+      stepUnit: []
+      isSpecifiedUnit: 0
+      unitDefines: []
+  - isVisibleItem: 0
+    itemSell: {fileID: 11400000, guid: dc9301ac1beb8444a8260b6e1d76db9d, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit:
+      - groupID: 0
+        exchangeItems:
+        - typePayment: 2
+          item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
           quantity: 100
       algrothimTypeUpgrade: 0
       stepUnit: []

@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2337b1ede65b1bb42a25a3e9b02f3027, type: 3}
   m_Name: TimeCounterInfoCollection
   m_EditorClassIdentifier: 
+  _list:
+  - id: '[Restore]Zone1/Egg1'
+    destinyIfHave: 2
+    counterTime: -121.49860031074284

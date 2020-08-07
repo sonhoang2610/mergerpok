@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseNormalBox< T0, T1> : MonoBehaviour where T0 : BaseItem<T1> where T1 : new()
+public class BaseNormalBox<T0, T1> : MonoBehaviour where T0 : BaseItem<T1> where T1 : new()
 {
     //[HideInInspector]
     public T1[] datas;
@@ -33,7 +33,7 @@ public class BaseNormalBox< T0, T1> : MonoBehaviour where T0 : BaseItem<T1> wher
         }
     }
 
-    public void WrapData(GameObject pObject, int index,int index1)
+    public void WrapData(GameObject pObject, int index, int index1)
     {
         pObject.GetComponent<T0>()._indexItem = -index1;
         pObject.GetComponent<T0>().setInfo(datas[-index1]);
@@ -45,7 +45,7 @@ public class BaseNormalBox< T0, T1> : MonoBehaviour where T0 : BaseItem<T1> wher
         var pWrap = AttachMent.GetComponent<UIWrapContent>();
         if (pWrap)
         {
-            pWrap.minIndex = -pInfo1s.Length +1;
+            pWrap.minIndex = -pInfo1s.Length + 1;
             pWrap.onInitializeItem = WrapData;
         }
         List<T1> pList = new List<T1>();
@@ -83,6 +83,16 @@ public class BaseNormalBox< T0, T1> : MonoBehaviour where T0 : BaseItem<T1> wher
                     pItem = Instantiate<T0>(prefabItem, AttachMent.transform);
                     items.Add(pItem);
                 }
+                var widget = attachMent.GetComponentInParent<UIWidget>();
+                if (!widget)
+                {
+                    widget = attachMent.transform.parent.GetComponent<UIWidget>();
+                }
+                if (widget)
+                {
+                    pItem.setDepth(widget.depth + 1);
+                }
+                // pItem.
                 items[i]._indexItem = oldIndex;
                 pItem.gameObject.SetActive(true);
                 items[i].setInfo(pInfos[i]);

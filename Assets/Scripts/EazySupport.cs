@@ -212,6 +212,16 @@ public static class ScriptableObjectUtility
 //}
 public static class MathExtends
 {
+    public static T Clamp<T>(this T value, T max, T min)
+    where T : System.IComparable<T>
+    {
+        T result = value;
+        if (value.CompareTo(max) > 0)
+            result = max;
+        if (value.CompareTo(min) < 0)
+            result = min;
+        return result;
+    }
     public static Vector3 paraboldDraw(Vector3 start, Vector3 end, float height, float t)
     {
         float parabolicT = t * 2 - 1;
@@ -271,6 +281,26 @@ public static class SpriteExtends
 }
 public static class StringUtils
 {
+    public static string toString(this System.Numerics.BigInteger v)
+    {
+        return v.ToString();
+    }
+    public static double toDouble(this string v)
+    {
+        return double.Parse(v);
+    }
+    public static float toFloat(this string v)
+    {
+        return float.Parse(v);
+    }
+    public static int toInt(this string v)
+    {
+        return int.Parse(v);
+    }
+    public static System.Numerics.BigInteger toBigInt(this string v)
+    {
+        return System.Numerics.BigInteger.Parse(v.clearDot());
+    }
     public static string convertMoneyAndAddDot(long i)
     {
 
@@ -591,6 +621,19 @@ public static class objExtend
 public static class ArrayExtension
 {
     public delegate void AddListCallBack<T>(T pObject);
+    public static void Shuffle<T>(this IList<T> list)
+    {
+        System.Random rng = new System.Random();
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
+    }
     public static int ClosestTo(this IEnumerable<int> collection, int target)
     {
         // NB Method will return int.MaxValue for a sequence containing no elements.

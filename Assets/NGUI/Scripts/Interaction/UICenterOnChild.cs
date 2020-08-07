@@ -15,12 +15,13 @@ using System.Collections.Generic;
 public class UICenterOnChild : MonoBehaviour
 {
 	public delegate void OnCenterCallback (GameObject centeredObject);
+    public Vector3Int offset;
+    public bool disableRecenter = false;
+    /// <summary>
+    /// The strength of the spring.
+    /// </summary>
 
-	/// <summary>
-	/// The strength of the spring.
-	/// </summary>
-
-	public float springStrength = 8f;
+    public float springStrength = 8f;
 
 	/// <summary>
 	/// If set to something above zero, it will be possible to move to the next page after dragging past the specified threshold.
@@ -67,6 +68,7 @@ public class UICenterOnChild : MonoBehaviour
 	[ContextMenu("Execute")]
 	public void Recenter ()
 	{
+        if (disableRecenter) return;
 		if (mScrollView == null)
 		{
 			mScrollView = NGUITools.FindInParents<UIScrollView>(gameObject);
@@ -280,10 +282,14 @@ public class UICenterOnChild : MonoBehaviour
 
 	public void CenterOn (Transform target)
 	{
-		if (mScrollView != null && mScrollView.panel != null)
+        if (mScrollView == null)
+        {
+            mScrollView = NGUITools.FindInParents<UIScrollView>(gameObject);
+        }
+            if (mScrollView != null && mScrollView.panel != null)
 		{
 			Vector3[] corners = mScrollView.panel.worldCorners;
-			Vector3 panelCenter = (corners[2] + corners[0]) * 0.5f;
+			Vector3 panelCenter = (corners[2] + corners[1]) * 0.5f  + transform.TransformVector( offset);
 			CenterOn(target, panelCenter);
 		}
 	}

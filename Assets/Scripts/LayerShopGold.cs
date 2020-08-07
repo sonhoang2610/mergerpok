@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 
 namespace Pok
@@ -13,9 +15,39 @@ namespace Pok
     }
     public class BaseItemShop : BaseItem<ShopItemInfo>
     {
+        public bool independence = false;
+        [ShowIf("independence")]
+        public string nameShop;
+        [ShowIf("independence")]
+        public string itemName;
+
         public UI2DSprite icon;
         public UILabel nameItem,des;
-      
+
+        private void OnEnable()
+        {
+            if (independence)
+            {
+                StartCoroutine(autoLoad());
+            }
+        }
+        public IEnumerator autoLoad()
+        {
+           while(!GameManager.readyForThisState("Main"))
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            var shop =GameDatabase.Instance.ShopCollection.Find(x => x.nameShop == nameShop);
+            if (shop)
+            {
+                var item = System.Array.Find(shop.items, x => x.itemSell.ItemID == itemName);
+                if (item != null)
+                {
+                    setInfo(item);
+                }
+            }
+        }
+
 
         public override void setInfo(ShopItemInfo pInfo)
         {
@@ -38,6 +70,8 @@ namespace Pok
     }
     public interface IShop
     {
+        GameObject getContainer();
+        string shopID();
         bool isInitDone();
     }
     public class BaseLayerShop<T0> : BaseNormalBox<T0, ShopItemInfo> , IShop where T0 : BaseItemShop 
@@ -59,7 +93,7 @@ namespace Pok
             }
         }
 
-        IEnumerator checkState()
+        protected IEnumerator checkState()
         {
             while (!GameManager.readyForThisState("Main"))
             {
@@ -74,7 +108,8 @@ namespace Pok
            var shop =  GameDatabase.Instance.ShopCollection.Find(x => x.nameShop == nameShop);
             if (shop)
             {
-                executeInfos(shop.items);
+                var items = System.Array.FindAll(shop.items, x => x.isVisibleItem);
+                executeInfos(items);
             }
         }
 
@@ -89,9 +124,49 @@ namespace Pok
             var payments = item.getCurrentPrice();
             for(int i = 0; i < payments[0].exchangeItems.Length; ++i)
             {
-                Debug.Log("Sub " + payments[0].exchangeItems[i].item.ItemID + "quantity" + payments[0].exchangeItems[i].quantity);
+                if(payments[0].exchangeItems[i].IAP)
+                {
+                    GameManager.Instance.RequestInappForItem(item.itemSell.ItemID.ToLower(),(o)=> {
+                        if (o)
+                        {
+                            var itemclaimeds = GameManager.Instance.claimItem(item.itemSell);
+                            List<ItemRewardInfo> itemRewards = new List<ItemRewardInfo>();
+                            for(int g = 0; g < itemclaimeds.Length; ++g)
+                            {
+                                itemRewards.Add(new ItemRewardInfo() { itemReward = itemclaimeds[g] });
+                            }
+                            HUDManager.Instance.boxReward.show(itemRewards.ToArray(),"BUY SUCCESS");
+                        }
+                    });
+                    return;
+                }
+                else
+                {
+                    var exist = GameManager.Instance.Database.getItem(payments[0].exchangeItems[i].item.ItemID);
+                    if (exist.QuantityBig < BigInteger.Parse(payments[0].exchangeItems[i].quantity.clearDot()))
+                    {
+                        HUDManager.Instance.showBoxNotEnough(exist.item);
+                        return;
+                    }
+                    else
+                    {
+                        exist.addQuantity((-BigInteger.Parse(payments[0].exchangeItems[i].quantity.clearDot())).ToString());
+                    }
+                }
+             
+             
             }
             GameManager.Instance.claimItem(item.itemSell);
+        }
+
+         public string shopID()
+        {
+            return nameShop;
+        }
+
+        public GameObject getContainer()
+        {
+            return gameObject;
         }
     }
     public class LayerShopGold : BaseLayerShop<SimpleItemShop>

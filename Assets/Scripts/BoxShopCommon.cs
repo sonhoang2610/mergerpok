@@ -12,6 +12,7 @@ namespace Pok
         public IShop[] elements;
 
         protected Coroutine checkStateCoroutine;
+        protected bool reposition = false;
         protected override void Awake()
         {
             base.Awake();
@@ -19,6 +20,7 @@ namespace Pok
         }
         private void OnEnable()
         {
+            reposition = false;
             checkStateCoroutine = StartCoroutine(checkState());
         }
 
@@ -28,6 +30,7 @@ namespace Pok
             {
                 StopCoroutine(checkStateCoroutine);
             }
+            planGoShop = "";
         }
         public bool isSubBoxDone
         {
@@ -50,13 +53,51 @@ namespace Pok
                 yield return new WaitForEndOfFrame();
 
             }
+   
             table.Reposition();
+            reposition = true;
+            if (!string.IsNullOrEmpty(planGoShop))
+            {
+                if (planGoShop == "ShopGold")
+                {
+                    showBoxGold();
+                }
+                else
+                {
+                    showBoxCrystal();
+                }
+            }
         }
 
         public void show()
         {
             container.show();
         }
-
+        protected string planGoShop = "";
+        public void showBoxGold() {
+            show();
+            if (reposition)
+            {
+                var element = System.Array.Find(elements, x => x.shopID() == "ShopGold");
+                GetComponentInChildren<UICenterOnChild>(true).CenterOn(element.getContainer().transform);
+            }
+            else
+            {
+                planGoShop = "ShopGold";
+            }
+        }
+        public void showBoxCrystal()
+        {
+            show();
+            if (reposition)
+            {
+                var element = System.Array.Find(elements, x => x.shopID() == "ShopCrystal");
+                GetComponentInChildren<UICenterOnChild>(true).CenterOn(element.getContainer().transform);
+            }
+            else
+            {
+                planGoShop = "ShopCrystal";
+            }
+        }
     }
 }

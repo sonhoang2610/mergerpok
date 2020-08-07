@@ -7,7 +7,7 @@ using Sirenix.OdinInspector;
 using DG.Tweening;
 using Pok;
 
-public enum TypeNotifySfx { TurnSound, TurnMusic, PlaySound, PlayMusic }
+public enum TypeNotifySfx { TurnSound, TurnMusic, PlaySound, PlayMusic,TurnVibration }
 public struct SfxNotifi
 {
     public object value;
@@ -477,10 +477,10 @@ public class SoundManager : PersistentSingleton<SoundManager>
     protected override void Awake()
     {
         base.Awake();
-        SfxOn = PlayerPrefs.GetInt("Sound", 1) == 1 ? true : false;
-        MusicOn = PlayerPrefs.GetInt("Music", 1) == 1 ? true : false;
+        sfxOn = PlayerPrefs.GetInt("Sound", 1) == 1 ? true : false;
+        musicOn = PlayerPrefs.GetInt("Music", 1) == 1 ? true : false;
+        vibaration = PlayerPrefs.GetInt("Vibration", 1) == 1 ? true : false;
     }
-
     private void Start()
     {
         foreach(var pAudio in preloadSource)
@@ -497,10 +497,32 @@ public class SoundManager : PersistentSingleton<SoundManager>
 
         set
         {
-            bool isChange = false;
+            bool isChange = sfxOn != value;
             sfxOn = value;
             PlayerPrefs.SetInt("Sound", sfxOn ? 1 : 0);
-            AudioListener.volume = value ? 1 : 0;
+            if (isChange)
+            {
+                EzEventManager.TriggerEvent(new SfxNotifi(TypeNotifySfx.TurnSound, value));
+            }
+        }
+    }
+    bool vibaration = true;
+    public bool Vibration
+    {
+        get
+        {
+            return vibaration;
+        }
+
+        set
+        {
+            bool isChange = vibaration != value;
+            vibaration = value;
+            PlayerPrefs.SetInt("Vibration", vibaration ? 1 : 0);
+            if (isChange)
+            {
+                EzEventManager.TriggerEvent(new SfxNotifi(TypeNotifySfx.TurnVibration, value));
+            }
         }
     }
 

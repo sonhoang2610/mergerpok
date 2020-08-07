@@ -1,5 +1,5 @@
 [
-    "NGUITools",
+    "System.Action",
     "System.Boolean",
     "System.Int32",
     "System.Object",
@@ -50,5 +50,5 @@
     "UnityEngine.SceneManagement.SceneManager",
     "UnityEngine.UI.Button",
     "UnityEngine.UI.Slider",
-    "System.Action"
+    "Pok.Creature"
 ]

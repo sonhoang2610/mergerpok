@@ -233,8 +233,9 @@ public class UIToggle : UIWidgetContainer
 			mIsActive = state;
 			startsActive = state;
 			if (activeSprite != null)
-				activeSprite.alpha = invertSpriteState ? (state ? 0f : 1f) : (state ? 1f : 0f);
-		}
+				//activeSprite.alpha = invertSpriteState ? (state ? 0f : 1f) : (state ? 1f : 0f);
+            activeSprite.gameObject.SetActive(  invertSpriteState ? !state : state);
+        }
 		else if (mIsActive != state)
 		{
 			// Uncheck all other toggles
@@ -262,8 +263,9 @@ public class UIToggle : UIWidgetContainer
 			{
 				if (instantTween || !NGUITools.GetActive(this))
 				{
-					activeSprite.alpha = invertSpriteState ? (mIsActive ? 0f : 1f) : (mIsActive ? 1f : 0f);
-				}
+                    //activeSprite.alpha = invertSpriteState ? (mIsActive ? 0f : 1f) : (mIsActive ? 1f : 0f);
+                    activeSprite.gameObject.SetActive(invertSpriteState ? !mIsActive : mIsActive);
+                }
 				else
 				{
 					TweenAlpha.Begin(activeSprite.gameObject, 0.15f, invertSpriteState ? (mIsActive ? 0f : 1f) : (mIsActive ? 1f : 0f));

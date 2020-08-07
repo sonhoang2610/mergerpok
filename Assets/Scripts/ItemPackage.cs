@@ -11,6 +11,12 @@ namespace Pok
     public interface IElmentInfoExtract
     {
         ItemWithQuantity[] extraItems();
+
+        string getContent();
+    }
+    public interface IUsageItem
+    {
+        bool useWhenClaim();
     }
     public interface IExtractItem
     {
@@ -31,14 +37,19 @@ namespace Pok
         Random,
         Queue,
     }
-    public class ItemPackage<T> : BaseItemGame, IExtractItem where T : IElmentInfoExtract
+    public class ItemPackage<T> : BaseItemGame, IExtractItem, IUsageItem where T : IElmentInfoExtract
     {
 
-        public bool alwayExtras = false;
+        public bool extraWhenClaimed = true;
         public T item;
+
+        public override string getContent()
+        {
+            return item.getContent();
+        }
         public bool alwayExtra()
         {
-            return alwayExtras;
+            return extraWhenClaimed;
         }
         protected ItemWithQuantity[] cacheExtra;
         public ItemWithQuantity[] ExtractHere(bool isNew = true)
@@ -141,6 +152,11 @@ namespace Pok
         public void disableExtracItem()
         {
             cacheExtra = null;
+        }
+
+        public bool useWhenClaim()
+        {
+            return alwayExtra();
         }
     }
 }

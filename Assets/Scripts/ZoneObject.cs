@@ -15,7 +15,13 @@ namespace Pok
     public class ZoneObject : BaseItemGame
     {
         public PackageInZone[] packages;
+        public BaseItemGame coinBank;
         public ShopDatabase shopCreature;
+
+        public PackageInZone getPackage(string id = "Default")
+        {
+            return System.Array.Find(packages, x => x != null && x.id == id);
+        }
     }
 }
 

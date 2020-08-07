@@ -272,10 +272,40 @@ namespace Pok
         public ItemWithQuantity[] exchangeItems;
 
     }
+    public enum TypePayment
+    {
+        Normal,
+        IAP,
+        WATCH_ADS,
+    }
     [System.Serializable]
     public struct ItemWithQuantity
     {
+        public TypePayment typePayment;
+        public bool IAP
+        {
+            get
+            {
+                return typePayment == TypePayment.IAP;
+            }
+        }
+        public bool WATCH_ADS
+        {
+            get
+            {
+                return typePayment == TypePayment.WATCH_ADS;
+            }
+        }
+        public bool Normal
+        {
+            get
+            {
+                return typePayment == TypePayment.Normal;
+            }
+        }
+        [ShowIf("Normal")]
         public BaseItemGame item;
+        [HideIf("WATCH_ADS")]
         public string quantity ;
 
         public ItemWithQuantity addQuantity(string add)
@@ -327,9 +357,9 @@ namespace Pok
                 return itemSell.ItemID;
             }
         }
+        public bool isVisibleItem = true;
         public BaseItemGame itemSell;
         public IncreaseBaseOn typeIncrease;
-        //    [ListDrawerSettings(AddCopiesLastElement = true)]
         public UnitDefineLevelPaymentWay paymentWays;
         
 
@@ -338,6 +368,10 @@ namespace Pok
             if(typeIncrease == IncreaseBaseOn.LevelItem)
             {
                 paymentWays.setLevel(() => { return GameManager.Instance.getLevelItem(itemSell.ItemID); });
+            }
+            else
+            {
+                paymentWays.setLevel(() => { return GameManager.Instance.getNumberBoughtItem(itemSell.ItemID); });
             }
         }
         public int sortGroupPrice(PaymentWay pA, PaymentWay pB)
@@ -351,6 +385,15 @@ namespace Pok
         public PaymentWay[] getCurrentPrice(int manual)
         {
             return paymentWays.getUnit(manual).ToArray();
+        }
+
+        public bool isPaymentByIAP()
+        {
+            return getCurrentPrice()[0].exchangeItems[0].IAP;
+        }
+        public BigInteger firstQuantity()
+        {
+            return BigInteger.Parse( getCurrentPrice()[0].exchangeItems[0].quantity.clearDot());
         }
     }
     [CreateAssetMenu(fileName = "Shop", menuName = "Pok/Shop")]
