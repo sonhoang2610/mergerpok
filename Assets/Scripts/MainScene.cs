@@ -59,24 +59,50 @@ namespace Pok {
             MapObjects.Sort((a, b) => { return GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == a.id).CompareTo(GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == b.id)); });
             updateMapLayer(true);
         }
-        public void chooseZone(object pChoose)
+        public bool chooseZone(object pChoose)
         {
-            var pZone = (ZoneObject)pChoose;
-            for(int i = 0; i < GameDatabase.Instance.ZoneCollection.Count; ++i)
+            var pZone1 = (ZoneObject)pChoose;
+            var zoneInfo1 = GameManager.Instance.Database.zoneInfos.Find(x => x.id == pZone1.ItemID);
+            System.Action<object> action = (object pChooseZone) =>
             {
-                var itemCoinBank = GameDatabase.Instance.ZoneCollection[i].coinBank;
-                var timing = GameManager.Instance.Database.timeRestore.Find(x => x.id.Contains(itemCoinBank.ItemID));
-                if(timing != null)
+                var pZone = (ZoneObject)pChooseZone;
+                var zoneInfo = GameManager.Instance.Database.zoneInfos.Find(x => x.id == pZone.ItemID);
+                for (int i = 0; i < GameDatabase.Instance.ZoneCollection.Count; ++i)
                 {
-                    timing.pauseTime(GameDatabase.Instance.ZoneCollection[i] != pZone);
+                    var itemCoinBank = GameDatabase.Instance.ZoneCollection[i].coinBank;
+                    var timing = GameManager.Instance.Database.timeRestore.Find(x => x.id.Contains(itemCoinBank.ItemID));
+                    if (timing != null)
+                    {
+                        timing.pauseTime(GameDatabase.Instance.ZoneCollection[i] != pZone);
+                    }
                 }
+                GameManager.Instance.ZoneChoosed = pZone.ItemID;
+                CurrentPageMapLayer = 0;
+                CurrentIndexPool = 0;
+                MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);
+                updateMapLayer(true);
+            };
+            if (!zoneInfo1.isUnLock)
+            {
+                var existCoin = GameManager.Instance.Database.getItem("Coin");
+                if(existCoin.QuantityBig >= BigInt.Parse( pZone1.moneyToUnlock.clearDot()))
+                {
+                    existCoin.addQuantity((-BigInt.Parse(pZone1.moneyToUnlock.clearDot())).ToString());
+                    zoneInfo1.isUnLock = true;
+                    action(pChoose);
+                    //close choose zone + dialog atten
+                }
+                else
+                {
+                    HUDManager.Instance.showBoxNotEnough(existCoin.item);
+                }
+                return false;
             }
-            GameManager.Instance.ZoneChoosed = pZone.ItemID;
-            CurrentPageMapLayer = 0;
-            CurrentIndexPool = 0;
-            MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);
-            updateMapLayer(true);
-            //map1.setInfo
+            else
+            {
+                action(pChoose);
+                return true;
+            }
         }
         public void updateMapLayer(bool imediately = false)
         {

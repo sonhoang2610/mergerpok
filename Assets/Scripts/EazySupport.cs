@@ -623,7 +623,7 @@ public static class objExtend
                 str += "000";
             }
         }
-        str = charShortcut ? str.Substring(0, str.Length - charEnd) : str;
+        str = (charShortcut && charEnd>0) ? str.Substring(0, str.Length - charEnd) : str;
         return str.Replace(".",string.Empty);
     }
     public static string ToKMBTA(this string numstr)

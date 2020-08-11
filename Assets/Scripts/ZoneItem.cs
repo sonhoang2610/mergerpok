@@ -23,7 +23,6 @@ namespace Pok
             price.text =$"{ pInfo.moneyToUnlock.ToKMBTA()} to unlock this planet" ;
             factorTap.text = $"x{pInfo.factorTap} money for each tap";
             layerNotUnlocked.gameObject.SetActive(!zoneinfo.isUnLock);
-              GetComponent<UIButton>().isEnabled = zoneinfo.isUnLock;
             if (!zoneinfo.isUnLock)
             {
                 state = "DefaultDisable";
