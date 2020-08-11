@@ -23,6 +23,7 @@ namespace Pok
                 icon.sprite2D = o;
                 icon.MakePixelPerfectClaimIn(size);
             });
+            nameCreature.text = creatureOriginal.displayNameItem.Value;
             List<CreatureInfoSatus> infos = new List<CreatureInfoSatus>();
             foreach(var creature in creatures)
             {

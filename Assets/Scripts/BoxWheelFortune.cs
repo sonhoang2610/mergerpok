@@ -117,7 +117,7 @@ namespace Pok
                 seq.Join(creatureObject.transform.DOMove(creatureTo.transform.position, 0.5f));
                 seq.AppendCallback(delegate
                 {
-                    Destroy(creatureObject);
+                    Destroy(creatureObject.gameObject);
                 });
             });
 
@@ -223,7 +223,13 @@ namespace Pok
                     var newCreature = new PackageCreatureInstanceSaved() { creature = creature.ItemID, id = pack.package.ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = mapParent };
                     GameManager.Instance.GenerateID++;
                     GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
-                    EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, zoneid = GameManager.Instance.ZoneChoosed, manualByHand = false });
+                    EzEventManager.TriggerEvent(new AddCreatureEvent()
+                    {
+                        change = 1,
+                        creature = newCreature,
+                        zoneid = GameManager.Instance.ZoneChoosed,
+                        manualByHand = false,
+                    });
                     addCreatureObject(new CreatureInstanceSaved() { id = creature .ItemID,instanceID ="1", mapParent = mapParent });
                 }
                 blockTouch.SetActive(false);

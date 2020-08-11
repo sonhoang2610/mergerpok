@@ -21,8 +21,21 @@ namespace Pok
             for(int i = 0; i < items.Count; ++i)
             {
                 tabs.GroupTab.Add(items[i].GetComponent<EazyTabNGUI>());
-               var info = GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[i]._info.ItemID);
-                if (!info.isUnLock && selectab != -1)
+                var listChild = new List<CreatureItem>();
+                items[i]._info.getChild(listChild, 72);
+                bool enableTab = false;
+                foreach(var child in listChild)
+                {
+                   var infoCreature = GameManager.Instance.Database.creatureInfos.Find(x => x.id == child.ItemID);
+                    if (!infoCreature.isUnLock)
+                    {
+                        enableTab = true;
+                        break;
+                    }
+                }
+                items[i].GetComponent<Collider>().enabled = enableTab;
+                items[i].setEnable(enableTab);
+                if (enableTab && selectab == -1)
                 {
                     selectab = i;
                 }
@@ -32,7 +45,7 @@ namespace Pok
             {
                 for (int i = 0; i < items.Count; ++i)
                 {
-                    items[i].transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                    items[i].transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
                 }
                 attachMent.GetComponent<UIGrid>().cellWidth = 156.5f;
             }

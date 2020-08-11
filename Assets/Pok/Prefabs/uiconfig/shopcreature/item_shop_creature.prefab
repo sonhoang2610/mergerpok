@@ -355,14 +355,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.427451, g: 0.5529412, b: 0.09019608, a: 1}
   mPivot: 3
-  mWidth: 250
+  mWidth: 167
   mHeight: 50
   mDepth: 3
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5
+  aspectRatio: 3.34
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 97239e1bd8ed1694bac928f76283b58b, type: 3}
   mFont: {fileID: 0}
@@ -456,18 +456,18 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.6117647, g: 0.2784314, b: 0.12941177, a: 1}
   mPivot: 3
-  mWidth: 166
+  mWidth: 282
   mHeight: 50
   mDepth: 3
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.32
+  aspectRatio: 5.64
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 97239e1bd8ed1694bac928f76283b58b, type: 3}
   mFont: {fileID: 0}
-  mText: Lizzard
+  mText: Sakira Ozwa
   mFontSize: 50
   mFontStyle: 1
   mAlignment: 0
@@ -1006,7 +1006,7 @@ PrefabInstance:
     - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
         type: 3}
       propertyPath: onClick.Array.data[0].mMethodName
-      value: onExecuteFirst
+      value: onExecuteThird
       objectReference: {fileID: 0}
     - target: {fileID: 6209793874483099834, guid: 2e1c02aaa3300b844af0b9e38906313c,
         type: 3}
@@ -1072,12 +1072,12 @@ PrefabInstance:
     - target: {fileID: 6773423491433496530, guid: 2e1c02aaa3300b844af0b9e38906313c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 65
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 6773423491433496530, guid: 2e1c02aaa3300b844af0b9e38906313c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -54
+      value: -57
       objectReference: {fileID: 0}
     - target: {fileID: 6773423491433496530, guid: 2e1c02aaa3300b844af0b9e38906313c,
         type: 3}

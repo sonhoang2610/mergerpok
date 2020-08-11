@@ -383,10 +383,7 @@ public static class StringUtils
         newStrMoney = money.Substring(0, pIndex) + newStrMoney;
         return newStrMoney;
     }
-    public static string clearDot(this string v)
-    {
-        return v.Replace(".", string.Empty);
-    }
+ 
     public static int convertToInt(this string v)
     {
         return int.Parse(v);
@@ -565,8 +562,73 @@ public static class StringUtils
 //}
 public static class objExtend
 {
+    public static string  toTimeHour(this int v)
+    {
+       var timespane = TimeSpan.FromSeconds(v);
+        float hour = timespane.Hours;
+        float minute = (float)timespane.Minutes / 60.0f;
+        return (hour + minute).ToString(".0#") + "H";
+    }
+    public static string clearDot(this string v)
+    {
+        var str = v;
+        int charEnd = 0;
+        bool charShortcut = false;
+        if (str.Contains('.'))
+        {
+            for(int i =str.Length-1; i >= 0; --i)
+            {
+             
+                if (str[i] == '.')
+                {
+                    break;
+                }
+                charEnd++;
+            }
+        }
+        if (str.Contains("K"))
+        {
+            charShortcut = true;
+            charEnd--;
+            str = str.Replace("K", "000");
+        }
+        if (str.Contains("M"))
+        {
+            charShortcut = true;
+            charEnd--;
+            str = str.Replace("M", "000000");
+        }
+        if (str.Contains("B"))
+        {
+            charShortcut = true;
+            charEnd--;
+            str = str.Replace("B", "000000000");
+        }
+        if (str.Contains("T"))
+        {
+            charShortcut = true;
+            charEnd--;
+            str = str.Replace("T", "000000000000");
+        }
+        if (str.Contains("a"))
+        {
+            charShortcut = true;
+            charEnd -=2;
+            str = str.Replace("a", "000000000000");
+            string[] alphab = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o" };
+            var index = System.Array.FindIndex(alphab, x => x == str.Substring(str.Length - 1, 1));
+            str = str.Substring(0, str.Length - 1);
+            for (int i = 0; i < index + 1; ++i)
+            {
+                str += "000";
+            }
+        }
+        str = charShortcut ? str.Substring(0, str.Length - charEnd) : str;
+        return str.Replace(".",string.Empty);
+    }
     public static string ToKMBTA(this string numstr)
     {
+        numstr = numstr.clearDot();
         var num = System.Numerics.BigInteger.Parse(numstr);
         if (numstr.Length > 15)
         {

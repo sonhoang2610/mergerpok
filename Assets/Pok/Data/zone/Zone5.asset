@@ -27,6 +27,10 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
   itemID: Zone5
   displayNameItem:
     normalString: Lucius
@@ -73,3 +77,5 @@ MonoBehaviour:
     package: {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
   coinBank: {fileID: 11400000, guid: f229c959786a9ca4e918dab4a7dc96ea, type: 2}
   shopCreature: {fileID: 0}
+  moneyToUnlock: 10ah
+  factorTap: 1

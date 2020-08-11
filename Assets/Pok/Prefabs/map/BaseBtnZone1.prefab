@@ -62,6 +62,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: hover.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: hover.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: hover.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: pressed.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: pressed.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: pressed.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: disabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: disabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: disabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4342224689213691645, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
       propertyPath: m_Size.x
@@ -81,11 +126,6 @@ PrefabInstance:
         type: 3}
       propertyPath: autoResizeBoxCollider
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423071080846055156, guid: 1b0f26ab5998b9448bf9454003c9f828,
-        type: 3}
-      propertyPath: mSprite
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4423071080846055156, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
@@ -121,6 +161,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseBtnZone1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757200931702313609, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: mWidth
+      value: 190
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757200931702313609, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 2.6388888
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0f26ab5998b9448bf9454003c9f828, type: 3}

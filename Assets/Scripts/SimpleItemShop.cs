@@ -26,7 +26,8 @@ namespace Pok
                     if (paymens[i].exchangeItems[0].Normal)
                     {
                         paymens[i].exchangeItems[0].item.getSpriteForState((o => { exchange.icon.sprite2D = o; exchange.icon.MakePixelPerfectClaimIn(new Vector2Int(exchange.icon.width, exchange.icon.height)); }));
-                        exchange.price.text = paymens[i].exchangeItems[0].quantity.ToKMBTA();
+                        int discount = pInfo.discountEvent == null ? 100 : (int)( (1 - pInfo.discountEvent(pInfo, i, 0)) * 100);
+                        exchange.price.text = (System.Numerics.BigInteger.Parse( paymens[i].exchangeItems[0].quantity.clearDot())*discount/100).ToString().ToKMBTA();
                     }
                     else if(paymens[i].exchangeItems[0].IAP)
                     {
@@ -41,7 +42,14 @@ namespace Pok
 
                 }
             }
-            
+            var exist= GameManager.Instance.Database.getItem(pInfo.itemSell.ItemID);
+            if(exist != null && exist.item.limitInInventory != null && exist .QuantityBig>= exist.item.limitInInventory.getCurrentUnit())
+            {
+                for (int i = 0; i < exchanges.Length; ++i)
+                {
+                    exchanges[i].container.gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

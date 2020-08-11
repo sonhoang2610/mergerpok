@@ -21,7 +21,7 @@ MonoBehaviour:
       TermType: 0
       Description: 
       Languages:
-      - New creature unlocked!
+      - Select new era!
       Flags: 00
       Languages_Touch: []
     - Term: title/creatures
@@ -43,6 +43,13 @@ MonoBehaviour:
       Description: 
       Languages:
       - Missions
+      Flags: 00
+      Languages_Touch: []
+    - Term: title/select_era
+      TermType: 0
+      Description: 
+      Languages:
+      - Select new era!
       Flags: 00
       Languages_Touch: []
     CaseInsensitiveTerms: 0

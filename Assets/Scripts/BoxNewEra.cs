@@ -12,8 +12,28 @@ namespace Pok
         public BoxMapInZone boxMap;
         public UILabel nameEra;
 
+        public IEnumerator showRate()
+        {
+            yield return new WaitForSeconds(1);
+            if(Random.Range(0,2) == 0)
+            {
+                if (!ES3.Load<bool>("Rating", false) && !EasyMobile.StoreReview.IsRatingRequestDisabled())
+                {
+                    GameManager.Instance.showBoxRate((o) =>
+                    {
+                        if (o == EasyMobile.StoreReview.UserAction.Rate)
+                        {
+                            ES3.Save("Rating", true);
+                        }
+                    });
+                }
+            }
+           
+        }
+
         public void show(string leader)
         {
+            StartCoroutine(showRate());
             var zoneInfo = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
             List<MapStatusInZoneInfo> maps = new List<MapStatusInZoneInfo>();
             var currentMap = GameDatabase.Instance.treeCreature.Find(x => x.creatureLeader.ItemID == leader);

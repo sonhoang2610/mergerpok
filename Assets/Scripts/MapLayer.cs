@@ -27,10 +27,75 @@ namespace Pok
         public CreatureItem[] creatureInMap;
         public GameObject attachMent;
         public StringVariable currentMap;
+        public GameObject coinJump;
+        List<GameObject> poolCoinJump = new List<GameObject>();
         List<PoolContainer> creatureCache = new List<PoolContainer>();
 
         public List<Creature> creatureAlive = new List<Creature>();
         public List<Creature> creatureAnimAble = new List<Creature>();
+        protected GameObject parentCoinJump;
+        private void Awake()
+        {
+            parentCoinJump = new GameObject();
+            parentCoinJump.SetLayerRecursively(gameObject.layer);
+            parentCoinJump.transform.parent = attachMent.transform;
+            parentCoinJump.transform.localScale = new Vector3(1, 1, 1);
+            var panel = parentCoinJump.AddComponent<UIPanel>();
+            panel.depth = attachMent.GetComponent<UIPanel>().depth + 1;
+            parentCoinJump.name = "[Pool]CoinJump";
+            for (int i = 0; i < 20; ++i)
+            {
+                var pObject= parentCoinJump.AddChild(coinJump);
+                pObject.gameObject.SetActive(false);
+                poolCoinJump.Add(pObject);
+            }
+        }
+
+        public GameObject getObjectCoinJump()
+        {
+            GameObject pCoin = poolCoinJump.Find(x => !x.activeSelf);
+            if (!pCoin)
+            {
+                pCoin = parentCoinJump.AddChild(coinJump);
+                poolCoinJump.Add(pCoin);
+            }
+            return pCoin;
+        }
+        public void addMoney(Creature pok)
+        {
+            pok.effect();
+            var creature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == pok._info.id);
+           var goldAdd = creature.getGoldAFK(GameManager.Instance.ZoneChoosed);
+            goldAdd = (System.Numerics.BigInteger.Parse(goldAdd.clearDot()) * (Random.Range(0, 10) > 8 ? 3 : (Random.Range(0, 10) > 7 ? 2 : 1))).ToString();
+            var coin = GameManager.Instance.Database.getItem("Coin");
+            coin.addQuantity(goldAdd.clearDot());
+           var stringMoney = goldAdd.clearDot().ToKMBTA();
+            spawnCoinJump(pok, stringMoney);
+        }
+        public void spawnCoinJump(Creature pok,string quantity)
+        {
+           var coin = getObjectCoinJump();
+            coin.gameObject.SetActive(true);
+            coin.gameObject.SetLayerRecursively(gameObject.layer);
+            coin.GetComponentInChildren<UILabel>().text = quantity;
+            coin.transform.localPosition = pok.transform.localPosition + new Vector3(0, pok.GetComponent<UIWidget>().height / 4, 0);
+            coin.transform.DOLocalMoveY(450,1.5f).SetEase(Ease.InQuad).SetRelative(true);
+            var widget = coin.GetComponent<UIWidget>();
+            widget.alpha = 1;
+            var seq = DOTween.Sequence();
+            seq.AppendInterval(1);
+
+            seq.Append(DOTween.To(() => widget.alpha, x => widget.alpha = x, 0, 0.5f)).AppendCallback(()=> { coin.gameObject.SetActive(false); });
+            if (widget.panel)
+            {
+                StartCoroutine(delayAction(0.01f, () => { NGUITools.BringForward(coin); }));
+            }
+            else
+            {
+                widget.onFindPanel = () => { StartCoroutine(delayAction(0.01f, () => { NGUITools.BringForward(coin); })); };
+            }
+
+        }
 
         public void onPressCreature(CreatureInstanceSaved infoCreature, CreatureItem item, Creature creature, bool press)
         {
@@ -48,11 +113,13 @@ namespace Pok
                     dirty = true;
                 }
             }
-            if (!press && !dirty)
+            if (!press && !dirty && effecting <= 0)
             {
                 OnPressUp();
+                addMoney(creature);
             }
         }
+        int effecting = 0;
         public void OnPressUp()
         {
             List<Creature> listToCompare = new List<Creature>(creatureAnimAble);
@@ -72,15 +139,17 @@ namespace Pok
                                 var posDes = Vector2.Lerp(creature1.transform.localPosition, creature2.transform.localPosition, 0.5f);
                                 var object1 = creature1;
                                 var object2 = creature2;
+                                effecting++;
                                 object1.transform.DOLocalMove(posDes, 0.25f);
                                 object2.transform.DOLocalMove(posDes, 0.25f).OnComplete(delegate
                                 {
+                      
                                     System.Action DestroyAction = delegate
                                     {
                                         DestroyCreature(object1._info);
                                         DestroyCreature(object2._info);
                                     };
-                                    var creatureData = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == object1._info.id);
+                                    CreatureItem creatureData = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == object1._info.id);
                                     var childs = creatureData.creatureChilds;
                                     var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
                                     var creatures = GameManager.Instance.Database.getAllInfoCreatureInAddress(GameManager.Instance.ZoneChoosed, _info.id);
@@ -99,7 +168,14 @@ namespace Pok
                                         var newCreature = new CreatureInstanceSaved() { id = creatureData.creatureChilds[0].ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = _info };
                                         GameManager.Instance.GenerateID++;
                                         _info.creatures.Add(newCreature);
-                                        addCreatureObject(newCreature, true, (o) => { o.transform.localPosition = object1.transform.localPosition; });
+                                        EzEventManager.TriggerEvent(new AddCreatureEvent()
+                                        {
+                                            change = 1,
+                                            creature = newCreature,
+                                            zoneid = GameManager.Instance.ZoneChoosed,
+                                            manualByHand = true,
+                                            onCreated = (o) => { o.transform.localPosition = object1.transform.localPosition; }
+                                        });
                                     };
                                     if (zone.curentUnlock == creatureData.ItemID || string.IsNullOrEmpty(zone.curentUnlock))
                                     {
@@ -114,7 +190,7 @@ namespace Pok
                                                     EzEventManager.TriggerEvent(new UnlockNewEra() { nameLeader = BoxSelectEra.Instance.selectCreature.ItemID, mapID = GameDatabase.Instance.MapCollection[nextMap].ItemID });
                                                     addAnother.Invoke(BoxSelectEra.Instance.selectCreature.ItemID);
                                                     DestroyAction();
-                                                    zone.curentUnlock = creatureData.creatureChilds[0].ItemID;
+                                                    GameManager.Instance.Database.calculateCurrentUnlock(zone.id);
                                                 };
                                             }
                                             else if (childs.Length == 1)
@@ -124,7 +200,7 @@ namespace Pok
                                                 {
                                                     addAnother.Invoke(childs[0].ItemID);
                                                     DestroyAction();
-                                                    zone.curentUnlock = creatureData.creatureChilds[0].ItemID;
+                                                    GameManager.Instance.Database.calculateCurrentUnlock(zone.id);
                                                 });
                                                 EzEventManager.TriggerEvent(new UnlockNewEra() { nameLeader = childs[0].ItemID, mapID = GameDatabase.Instance.MapCollection[nextMap].ItemID });
                                             }
@@ -134,7 +210,7 @@ namespace Pok
                                         {
                                             addNormal.Invoke();
                                             DestroyAction();
-                                            zone.curentUnlock = creatureData.creatureChilds[0].ItemID;
+                                            GameManager.Instance.Database.calculateCurrentUnlock(zone.id);
                                             BoxUnlockNewCreature.Instance.show(zone.curentUnlock);
                                         }
                                     }
@@ -151,10 +227,11 @@ namespace Pok
                                             DestroyAction();
                                         }
                                     }
+                                    effecting--;
                                 });
                                 destroyList.Add(object1);
                                 destroyList.Add(object2);
-
+                       
                             }
                         }
                     }
@@ -276,37 +353,42 @@ namespace Pok
             {
                 dataCreature = (CreatureItem)GameDatabase.Instance.getItemInventory(pInfo.id);
             }
-            dataCreature.getModelForState((o) =>
+            if (dataCreature != null)
             {
-                var creatureObject = poolParent.parent.transform.AddChild(o).GetComponent<Creature>();
-                creatureArray.Add(creatureObject);
-                creatureObject.transform.localScale = o.transform.localScale;
-                creatureObject.gameObject.SetActive(true);
-                creatureObject.transform.localPosition = new Vector3(Random.Range(mainZone.localCorners[0].x, mainZone.localCorners[2].x), Random.Range(mainZone.localCorners[0].y, mainZone.localCorners[2].y), 0);
-                creatureObject.setInfo(pInfo);
-                creatureObject._onPress = onPressCreature;
-                if (anim)
+                dataCreature.getModelForState((o) =>
                 {
-                    creatureObject.born();
-                }
-                creatureAlive.Add(creatureObject);
-                if (dataCreature.categoryItem == CategoryItem.CREATURE)
-                {
-                    creatureAnimAble.Add(creatureObject);
-                }
+                    var creatureObject = poolParent.parent.transform.AddChild(o).GetComponent<Creature>();
+                    creatureArray.Add(creatureObject);
+                    creatureObject.transform.localScale = o.transform.localScale;
+                    creatureObject.gameObject.SetActive(true);
+                    creatureObject.transform.localPosition = new Vector3(Random.Range(mainZone.localCorners[0].x, mainZone.localCorners[2].x), Random.Range(mainZone.localCorners[0].y, mainZone.localCorners[2].y), 0);
+                    creatureObject.setInfo(pInfo);
+                    creatureObject.GetComponent<UIDragObject>().restrictWithinPanel = true;
+                    creatureObject._onPress = onPressCreature;
+                    if (anim)
+                    {
+                        creatureObject.born();
+                    }
+                    creatureAlive.Add(creatureObject);
+                    if (dataCreature.categoryItem == CategoryItem.CREATURE)
+                    {
+                        creatureAnimAble.Add(creatureObject);
+                    }
 
-                if (!creatureObject.skin.panel)
-                {
-                    creatureObject.skin.GetComponent<UIWidget>().onFindPanel = delegate {
+                    if (!creatureObject.skin.panel)
+                    {
+                        creatureObject.skin.GetComponent<UIWidget>().onFindPanel = delegate
+                        {
+                            NGUITools.BringForward(creatureObject.gameObject);
+                        };
+                    }
+                    else
+                    {
                         NGUITools.BringForward(creatureObject.gameObject);
-                    };
-                }
-                else
-                {
-                    NGUITools.BringForward(creatureObject.gameObject);
-                }
-                onCreate?.Invoke(creatureObject);
-            });
+                    }
+                    onCreate?.Invoke(creatureObject);
+                });
+            }
             return true;
         }
 
@@ -428,7 +510,7 @@ namespace Pok
             {
                 if (eventType.creature.mapParent.id == _info.id)
                 {
-                    addCreatureObject(eventType.creature, true);
+                    addCreatureObject(eventType.creature, true,eventType.onCreated);
                 }
 
             }

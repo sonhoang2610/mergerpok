@@ -25,6 +25,8 @@ namespace Pok
                 sprite.transform.localScale = cacheScale;
             });
             label.text = pInfo.displayNameItem.Value;
+           var info = GameManager.Instance.Database.creatureInfos.Find(x => x.id == pInfo.ItemID);
+            sprite.color = info == null || !info.isUnLock ? Color.black : Color.white;
         }
     }
 }

@@ -27,6 +27,10 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
   itemID: Zone4
   displayNameItem:
     normalString: Belinda
@@ -73,3 +77,5 @@ MonoBehaviour:
     package: {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
   coinBank: {fileID: 11400000, guid: 4aaffe179b598ef48a516544ca52d5b8, type: 2}
   shopCreature: {fileID: 0}
+  moneyToUnlock: 43.7ae
+  factorTap: 1

@@ -139,6 +139,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4aaffe179b598ef48a516544ca52d5b8, type: 2}
   - {fileID: 11400000, guid: f229c959786a9ca4e918dab4a7dc96ea, type: 2}
   - {fileID: 11400000, guid: 71bff0cb6d211a04cad3181092d71e22, type: 2}
+  - {fileID: 11400000, guid: 12045b7d189e9bf4d9679561bd43f0ec, type: 2}
   CreatureCollection:
   - {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
   - {fileID: 11400000, guid: a64f830ec9ff16f479268a567d8651de, type: 2}
@@ -343,13 +344,13 @@ MonoBehaviour:
   wheelMainConfig:
   - itemType: 0
     percentRoll:
-    - 0.4
-    - 0.4
-    - 0.2
+    - 0
+    - 0
+    - 1
     icon:
       m_AssetGUID: 
       m_SubObjectName: 
-    change: 0.1
+    change: 1
   - itemType: 1
     percentRoll:
     - 0.4
@@ -358,7 +359,7 @@ MonoBehaviour:
     icon:
       m_AssetGUID: 
       m_SubObjectName: 
-    change: 0.1
+    change: 0
   - itemType: 4
     percentRoll:
     - 0.4
@@ -367,7 +368,7 @@ MonoBehaviour:
     icon:
       m_AssetGUID: 6484a3ce4dfcf41488768c397c40bca0
       m_SubObjectName: Pack_Gems_Handful
-    change: 0.15
+    change: 0
   - itemType: 2
     percentRoll:
     - 0.4
@@ -376,7 +377,7 @@ MonoBehaviour:
     icon:
       m_AssetGUID: 50b1910da57b5ca4aaa26f553db269d3
       m_SubObjectName: Pack_Gold_Sack
-    change: 0.35
+    change: 0
   - itemType: 3
     percentRoll:
     - 0.4
@@ -385,7 +386,7 @@ MonoBehaviour:
     icon:
       m_AssetGUID: c2c40b7e3905b014bb5e1e11283dab47
       m_SubObjectName: Pack_Gold_Mountain
-    change: 0.15
+    change: 0
   - itemType: 5
     percentRoll:
     - 0.4
@@ -394,7 +395,7 @@ MonoBehaviour:
     icon:
       m_AssetGUID: a37e1f860a9728f488524bf24f2e996a
       m_SubObjectName: SlotIconSpin
-    change: 0.15
+    change: 0
   containerMagicCase:
   - item: {fileID: 11400000, guid: 40ee4c54d5fc2414e97c7431892f677d, type: 2}
     rate: 0.25

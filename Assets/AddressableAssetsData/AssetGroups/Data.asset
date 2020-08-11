@@ -53,6 +53,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 12045b7d189e9bf4d9679561bd43f0ec
+    m_Address: Assets/Pok/Data/items/VipItem.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 13488145bb060cd41807a35a64ab2a65
     m_Address: Assets/Pok/Data/creatures/Pok63.asset
     m_ReadOnly: 0

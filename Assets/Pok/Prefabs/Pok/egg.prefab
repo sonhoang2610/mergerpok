@@ -102,6 +102,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 43c102d37637f4340898a3ce16d8a753,
         type: 2}
+    - target: {fileID: -2604988914614117146, guid: 08afd025660ee014897d5af39d3a497c,
+        type: 3}
+      propertyPath: _boundGraphSource._translation.x
+      value: -111
+      objectReference: {fileID: 0}
+    - target: {fileID: -2604988914614117146, guid: 08afd025660ee014897d5af39d3a497c,
+        type: 3}
+      propertyPath: _boundGraphSource._translation.y
+      value: -110
+      objectReference: {fileID: 0}
     - target: {fileID: -421763703047115689, guid: 08afd025660ee014897d5af39d3a497c,
         type: 3}
       propertyPath: m_Enabled

@@ -261,7 +261,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: 3039f11c63a451643ba4d28c254d3cf2, type: 3}
+  mSprite: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
@@ -335,8 +335,8 @@ MonoBehaviour:
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: 1.0730593
+  keepAspectRatio: 0
+  aspectRatio: 1.0737705
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -448,7 +448,7 @@ MonoBehaviour:
   icon: {fileID: 3807168195886010598}
   iconLeader: {fileID: 7108250725790411016}
   statusbar: {fileID: 608591591656639152}
-  claim: {x: 193, y: 180}
-  colorBarPrevious: {fileID: 0}
-  colorBarCurrent: {fileID: 0}
-  ColorBarlocked: {fileID: 0}
+  claim: {x: 259, y: 280}
+  colorBarPrevious: {fileID: 21300000, guid: ef29cc5f2f07c2643ad5a8cf5068ba3a, type: 3}
+  colorBarCurrent: {fileID: 21300000, guid: de7fb370f99674f42b5e1f588e8ae515, type: 3}
+  ColorBarlocked: {fileID: 21300000, guid: 0173a88ab9b15384dafebd3700975e07, type: 3}

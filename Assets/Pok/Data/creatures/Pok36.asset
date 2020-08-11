@@ -150,4 +150,5 @@ MonoBehaviour:
     isSpecifiedUnit: 0
     unitDefines: []
   limitLevel: 1
-  creatureChilds: []
+  creatureChilds:
+  - {fileID: 11400000, guid: 8c32199aec57cf74489161ea890e6f89, type: 2}

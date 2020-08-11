@@ -27,6 +27,10 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
   itemID: Zone1
   displayNameItem:
     normalString: Earth
@@ -73,3 +77,5 @@ MonoBehaviour:
     package: {fileID: 11400000, guid: a64f830ec9ff16f479268a567d8651de, type: 2}
   coinBank: {fileID: 11400000, guid: 35d5f3f9429eba349a8ca26e0229664b, type: 2}
   shopCreature: {fileID: 11400000, guid: 4848aabde1294a64c83a29c8311c0efc, type: 2}
+  moneyToUnlock: 0
+  factorTap: 1

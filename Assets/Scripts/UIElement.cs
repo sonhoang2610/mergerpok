@@ -161,8 +161,9 @@ public class UIElement : MonoBehaviour {
             if (!string.IsNullOrEmpty(_moveAnimation))
             {
                 var pDestiny = new Vector3(_moveAnimation.Contains("Right")? GameManager.Instance.resolution.x :-GameManager.Instance.resolution.x, cachePos.x, cachePos.y);
-                tween.Join( transform.DOLocalMove(pDestiny, 0.5f).SetEase(Ease.OutExpo).OnComplete(delegate () { gameObject.SetActive(false); }));
+                tween.Join( transform.DOLocalMove(pDestiny, 0.5f).SetEase(Ease.OutExpo));
             }
+            tween.AppendCallback(delegate () { gameObject.SetActive(false); });
         }
         onStartClose?.Invoke();
     }

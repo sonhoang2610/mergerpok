@@ -24,8 +24,7 @@ namespace Pok
         public string zoneid;
         public bool manualByHand;
         public int change;
-
-  
+        public System.Action<Creature> onCreated;
     }
 
     [System.Serializable]
@@ -98,8 +97,13 @@ namespace Pok
         public List<CreatureInstanceSaved> creatures = new List<CreatureInstanceSaved>();
         public void onInit()
         {
-            for (int i = 0; i < creatures.Count; ++i)
+            for (int i = creatures.Count-1; i >= 0; --i)
             {
+                if(!GameDatabase.Instance.CreatureCollection.Exists(x=>x.ItemID == creatures[i].id))
+                {
+                    creatures.RemoveAt(i);
+                    continue;
+                }
                 creatures[i].mapParent = this;
                 creatures[i].onInit();
             }
@@ -207,8 +211,6 @@ namespace Pok
                     inventory.RemoveAt(i);
                 }
             }
-
-
             for (int i = 0; i < GameDatabase.Instance.ZoneCollection.Count; ++i)
             {
                 // if (zoneInfos.Count <= i)
@@ -271,7 +273,29 @@ namespace Pok
 
 
             }
-        
+            
+            for(int i = 0; i < zoneInfos.Count; ++i)
+            {
+                calculateCurrentUnlock(zoneInfos[i].id);
+            }
+            for (int i = inventory.Count - 1; i >= 0; --i)
+            {
+                inventory[i].onEnable();
+            }
+        }
+
+        public void calculateCurrentUnlock(string zone)
+        {
+            var zoneInfo = zoneInfos.Find(x => x.id == zone);
+            var creatures = getAllCreatureInfoInZone(zone, true);
+            if (creatures .Length >  0 && zoneInfo.curentUnlock != creatures[creatures.Length - 1].ItemID)
+            {
+                zoneInfo.curentUnlock = creatures[creatures.Length - 1].ItemID;
+            }
+            if(creatures.Length == 0)
+            {
+                zoneInfo.curentUnlock = "";
+            }
         }
 
         public void checkTimeForAll()
@@ -314,43 +338,22 @@ namespace Pok
                 tree.creatureLeader.getChild(subList, tree.amountCreature);
                 foreach(var element in subList)
                 {
-                    if (!creatures.Exists(x => x.ItemID == element.ItemID)) 
-                    {
-                        creatures.Add(element);
-                    }
-                    if(element.ItemID == zone.curentUnlock)
+                    var creatureInfo = creatureInfos.Find(x => x.id == element.ItemID);
+                    if (!creatureInfo.isUnLock)
                     {
                         endFind = true;
                         break;
                     }
+                    if (!creatures.Exists(x => x.ItemID == element.ItemID)) 
+                    {
+                        creatures.Add(element);
+                    }
+                
                 }
                 if (endFind)
                 {
                     break;
                 }
-            }
-            if (unlockOnly)
-            {
-                List<CreatureItem> tempList = new List<CreatureItem>(creatures);
-                int removeIndex = 0;
-                for (int i = tempList.Count - 1; i >= 0; --i)
-                {
-                    if (i == 0)
-                    {
-                        break;
-                    }
-                    if (removeIndex == 4)
-                    {
-                        break;
-                    }
-                    var element = tempList[i];
-                    tempList.RemoveAt(i);
-                    if (GameManager.Instance.Database.creatureInfos.Find(x => x.id == element.ItemID).isUnLock)
-                    {
-                        removeIndex++;
-                    }
-                }
-                creatures = tempList;
             }
             return creatures.ToArray();
         }
@@ -397,9 +400,22 @@ namespace Pok
         public void checkTimeItem(string itemID)
         {
             var item = GameDatabase.Instance.getItemInventory(itemID);
+            if(item== null)
+            {
+                Debug.Log(itemID + "null");
+            }
             if (item.categoryItem == CategoryItem.COMMON)
             {
                 var itemExist = getItem(item.ItemID);
+                if (item.variantItem && !item.ItemID.Contains(GameManager.Instance.ZoneChoosed))
+                {
+                    var time = timeRestore.Find(x => x.id.Contains(item.ItemID) && x.id.Contains("Restore"));
+                    if (time != null)
+                    {
+                        time.pauseTime(true);
+                    }
+                    return;
+                }
                 executeTime(itemExist);
             }
             else if (item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE)
@@ -435,7 +451,7 @@ namespace Pok
                         var existTime = GameManager.Instance.Database.timeRestore.Exists(x => x.id == "[Restore]" + adress + (string.IsNullOrEmpty(adress) ? "" : "/") + item.ItemID);
                         bool continueRestore = true;
                         bool isCreature = item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE;
-                        var limitSlot = isCreature ? ((CreatureItem)item).parentMap.limitSlot : item.limitInInventory.getUnit(itemExist.CurrentLevel);
+                        var limitSlot = isCreature ? ((CreatureItem)item).parentMap.limitSlot : item.limitInInventory.getCurrentUnit();
                         var quantitySource = isCreature ? getAllCreatureInstanceInAdress(adress, ((CreatureItem)item).parentMap.ItemID).Count : itemExist.QuantityBig;
                         if (item.isLimit && itemExist.QuantityBig < item.limitInInventory.getUnit(itemExist.CurrentLevel))
                         {
@@ -447,20 +463,21 @@ namespace Pok
 
                         if (!existTime && continueRestore)
                         {
-                                var timer = new TimeCounterInfo() { firstTimeAdd = TimeCounter.CounterValue, counterTime = 0, id = "[Restore]" + adress + (string.IsNullOrEmpty(adress) ? "" : "/") + item.ItemID, destinyIfHave = (double)itemExist.item.timeToRestore.getUnit(itemExist.CurrentLevel) };
+                                var timer = new TimeCounterInfo() { firstTimeAdd = TimeCounter.CounterValue, counterTime = 0, id = "[Restore]" + adress + (string.IsNullOrEmpty(adress) ? "" : "/") + item.ItemID, destinyIfHave = (double)itemExist.item.timeToRestore.getCurrentUnit() };
                                 addTime(timer);
                         }
                         else if(existTime)
                         {
                             var time = GameManager.Instance.Database.timeRestore.Find(x => x.id == "[Restore]" + adress + (string.IsNullOrEmpty(adress) ? "" : "/") + item.ItemID);
+                            time.pauseTime(false);
                             if (time != null)
                             {
-                                time.destinyIfHave = (double)itemExist.item.timeToRestore.getUnit(itemExist.CurrentLevel);
+                                time.destinyIfHave = (double)itemExist.item.timeToRestore.getCurrentUnit();
                             }
                             bool _removeTime = false;
                             if (continueRestore)
                             {
-                                System.Numerics.BigInteger quantity = System.Numerics.BigInteger.Parse(((long) time.CounterTime).ToString()) / System.Numerics.BigInteger.Parse(((long)item.timeToRestore.getUnit(itemExist.CurrentLevel)).ToString());
+                                System.Numerics.BigInteger quantity = System.Numerics.BigInteger.Parse(((long) time.CounterTime).ToString()) / System.Numerics.BigInteger.Parse(((long)item.timeToRestore.getCurrentUnit()).ToString());
                                 if (quantity > 0)
                                 {
                                     time.firstTimeAdd = TimeCounter.CounterValue;

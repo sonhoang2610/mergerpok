@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EazyEngine.Tools;
-
+using EasyMobile;
+using UnityEngine.Purchasing;
 
 namespace Pok
 {
@@ -22,6 +23,9 @@ namespace Pok
         public UIElement boxMagicCase;
         public BoxReward boxReward;
         public BoxBank boxBank;
+        public GameObject btnVip;
+        
+        
         public void showBoxRewardADS()
         {
 
@@ -115,7 +119,49 @@ namespace Pok
         {
 
         }
+        private void OnEnable()
+        {
+            InAppPurchasing.PurchaseCompleted += PurchaseCompleted;
+            StartCoroutine(checkState());
+        }
 
-    
+        public IEnumerator checkState()
+        {
+            while (!GameManager.readyForThisState("Main"))
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            while (!InAppPurchasing.IsInitialized())
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            checkVip();
+        }
+        private void OnDisable()
+        {
+            InAppPurchasing.PurchaseCompleted -= PurchaseCompleted;
+        }
+        public void checkVip()
+        {
+            boxVip.item.loadAssetWrapped<BaseItemGame>((o) =>
+            {
+                var product = InAppPurchasing.GetIAPProductById(o.ItemID);
+                SubscriptionInfo infoPro = InAppPurchasing.GetSubscriptionInfo(product.Name);
+                if ((infoPro.isSubscribed() == Result.True || infoPro.isFreeTrial() == Result.True) && infoPro.isExpired() == Result.False)
+                {
+                    btnVip.GetComponent<UIButton>().isEnabled = true;
+                }
+                else
+                {
+                    btnVip.GetComponent<UIButton>().isEnabled = false;
+                    var exist = GameManager.Instance.Database.getItem(o.ItemID);
+                    exist.setQuantity("0");
+                }
+            });
+        }
+        public void PurchaseCompleted(IAPProduct pro)
+        {
+            checkVip();
+        }
     }
 }

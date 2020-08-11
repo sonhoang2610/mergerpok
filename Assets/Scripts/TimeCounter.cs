@@ -21,7 +21,7 @@ namespace Pok
 
         public void pauseTime(bool pBool)
         {
-
+            pause = pBool;
         }
         [System.NonSerialized]
         public System.Action<TimeEvent> onUpdateTime;
@@ -70,6 +70,10 @@ namespace Pok
                 GameManager.Instance.Database.addTime(info);
                 info.firstTimeAdd = CounterValue;
                 timeCollection.Add(info);
+            }
+            else
+            {
+                timeCollection.Value.Find(x => x.id == info.id).destinyIfHave = info.destinyIfHave;
             }
         }
 
@@ -176,7 +180,14 @@ namespace Pok
                 for (int i = 0; i < timeCollection.Count; ++i)
                 {
                     var time = timeCollection[i];
-                    time.CounterTime = CounterValue - time.firstTimeAdd;
+                    if (!time.pause)
+                    {
+                        time.CounterTime = CounterValue - time.firstTimeAdd;
+                    }
+                    else
+                    {
+                        time.firstTimeAdd = CounterValue - time.CounterTime;
+                    }
                 }
             }
             else

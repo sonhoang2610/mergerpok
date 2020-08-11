@@ -47,7 +47,7 @@ MonoBehaviour:
   - State: BG
     Icon:
       m_AssetGUID: 723bf4a0444256344a2750f9358ae175
-      m_SubObjectName: 3
+      m_SubObjectName: 5
     size: {x: 0, y: 0}
   - State: IconPok31
     Icon:
@@ -83,6 +83,36 @@ MonoBehaviour:
   - State: Default
     Icon:
       m_AssetGUID: 
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: '[Preview]Pok31'
+    Icon:
+      m_AssetGUID: 454a9b0fb0cc04849a6d77cd4804cc81
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: '[Preview]Pok37'
+    Icon:
+      m_AssetGUID: 8dd23827319983549add36bc3c5dfcc8
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: '[Preview]Pok43'
+    Icon:
+      m_AssetGUID: 566b51f47bc73e840b6ca0b185ecb6c4
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: '[Preview]Pok49'
+    Icon:
+      m_AssetGUID: 62de05b91915e6346930432e63631877
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: '[Preview]Pok55'
+    Icon:
+      m_AssetGUID: dad6cb1c1dcf1d043aca59c5ba6627c0
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  - State: '[Preview]Pok61'
+    Icon:
+      m_AssetGUID: 77b77ee499e60d94caf898713358d166
       m_SubObjectName: 
     size: {x: 0, y: 0}
   score: 0

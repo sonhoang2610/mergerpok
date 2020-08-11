@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05bfed0a514502c40beee76d575d80eb, type: 3}
+  m_Name: ShopUpgrade6
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  nameShop: ShopUpgradeZone6
+  items:
+  - isVisibleItem: 1
+    itemSell: {fileID: 11400000, guid: f641bf8e705bcf147906e88d8910a9f8, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit:
+      - groupID: 0
+        exchangeItems:
+        - typePayment: 0
+          item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+          quantity: 3000
+      algrothimTypeUpgrade: 1
+      stepUnit: []
+      isSpecifiedUnit: 1
+      unitDefines:
+      - levelRequire: 1
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 0
+      - levelRequire: 2
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 3000
+      - levelRequire: 3
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 50.000
+      - levelRequire: 4
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 500.000
+      - levelRequire: 5
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 5.000.000
+      - levelRequire: 6
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 10.000.000
+      - levelRequire: 7
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 50.000.000
+      - levelRequire: 8
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 10
+      - levelRequire: 9
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 20
+      - levelRequire: 10
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 50
+  - isVisibleItem: 1
+    itemSell: {fileID: 11400000, guid: b8ec41d680dc51f448ec859b0e842084, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit:
+      - groupID: 0
+        exchangeItems:
+        - typePayment: 0
+          item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+          quantity: 3000
+      algrothimTypeUpgrade: 1
+      stepUnit: []
+      isSpecifiedUnit: 1
+      unitDefines:
+      - levelRequire: 1
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 0
+      - levelRequire: 2
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 150000
+      - levelRequire: 3
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 750000
+      - levelRequire: 4
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 2.500.000
+      - levelRequire: 5
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 10
+      - levelRequire: 6
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 20
+  - isVisibleItem: 1
+    itemSell: {fileID: 11400000, guid: f0f8cc07db10aeb41b7cde8b946d7836, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit:
+      - groupID: 0
+        exchangeItems:
+        - typePayment: 0
+          item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+          quantity: 3000
+      algrothimTypeUpgrade: 1
+      stepUnit: []
+      isSpecifiedUnit: 1
+      unitDefines:
+      - levelRequire: 1
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 0
+      - levelRequire: 2
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 3.000
+      - levelRequire: 3
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 10.000
+      - levelRequire: 4
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 100.000
+      - levelRequire: 5
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 1.000.000
+      - levelRequire: 6
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 10.000.000
+      - levelRequire: 7
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 10
+      - levelRequire: 8
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 20
+  - isVisibleItem: 1
+    itemSell: {fileID: 11400000, guid: 91f61c547c51bac4ca1bc255fde75742, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit:
+      - groupID: 0
+        exchangeItems:
+        - typePayment: 0
+          item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+          quantity: 3000
+      algrothimTypeUpgrade: 1
+      stepUnit: []
+      isSpecifiedUnit: 1
+      unitDefines:
+      - levelRequire: 1
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 0
+      - levelRequire: 2
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 150.000
+      - levelRequire: 3
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 750.000
+      - levelRequire: 4
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 2.500.000
+      - levelRequire: 5
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 4
+      - levelRequire: 6
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 5

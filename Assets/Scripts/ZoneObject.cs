@@ -17,7 +17,8 @@ namespace Pok
         public PackageInZone[] packages;
         public BaseItemGame coinBank;
         public ShopDatabase shopCreature;
-
+        public string moneyToUnlock = "0";
+        public int factorTap = 1;
         public PackageInZone getPackage(string id = "Default")
         {
             return System.Array.Find(packages, x => x != null && x.id == id);

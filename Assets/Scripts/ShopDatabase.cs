@@ -132,7 +132,7 @@ namespace Pok
         }
         public T1 getCurrentUnit()
         {
-            return getUnit(CurrentLevel != null  ?CurrentLevel.Invoke() : 0);
+            return getUnit(CurrentLevel != null  ? CurrentLevel.Invoke() : 0);
         }
         public void setLevel(int pLevel)
         {
@@ -358,16 +358,18 @@ namespace Pok
             }
         }
         public bool isVisibleItem = true;
+        public int limitUpgrade = -1;
         public BaseItemGame itemSell;
         public IncreaseBaseOn typeIncrease;
         public UnitDefineLevelPaymentWay paymentWays;
-        
 
+        public Func<ShopItemInfo, int, int, float> discountEvent;
+        public Func<ShopItemInfo,float> bonusForItem;
         public void onInit()
         {
             if(typeIncrease == IncreaseBaseOn.LevelItem)
             {
-                paymentWays.setLevel(() => { return GameManager.Instance.getLevelItem(itemSell.ItemID); });
+                paymentWays.setLevel(() => { return GameManager.Instance.getLevelItem(itemSell.ItemID)+1; });
             }
             else
             {

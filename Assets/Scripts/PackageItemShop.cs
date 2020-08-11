@@ -23,7 +23,7 @@ namespace Pok
                     sprite.sprite2D = o;
                     //sprite.MakePixelPerfectClaimIn(new Vector2Int(sprite.width, sprite.height));
                 });
-                label.text = extras[i].quantity.ToKMBTA();
+                label.text = (System.Numerics.BigInteger.Parse( extras[i].quantity.clearDot())*(int)((1 +pInfo.bonusForItem(pInfo)) *100)/100).ToString() .ToKMBTA();
             }
         }
     }

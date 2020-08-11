@@ -27,13 +27,22 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 7
+      Data: 0|Pok.UpgradeItemLevelEgg, Assembly-CSharp
+    - Name: egg
+      Entry: 1
+      Data: Egg
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: blackBoard
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+      Data: 1|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 2|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -49,11 +58,11 @@ MonoBehaviour:
       Data: 
   itemID: UpgradeEgg
   displayNameItem:
-    normalString: UpgradeEgg
+    normalString: Pok In Egg
     isI2String: 0
     value: 
   descriptionItem:
-    normalString: UpgradeEgg
+    normalString: Increase the pok level in egg
     isI2String: 0
     value: 
   categoryItem: 1

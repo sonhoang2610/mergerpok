@@ -20,6 +20,8 @@ namespace Pok
         [ShowIf("independence")]
         public string itemID;
         [ShowIf("independence")]
+        public bool variantZoneItem = false;
+        [ShowIf("independence")]
         public string stateReadyToLoad = "Main";
         // public QuantityType typeQuantity;
         public UILabel quantityLbl;
@@ -29,6 +31,9 @@ namespace Pok
         public bool reserveTime;
         public string format = @"mm\:ss";
         protected Coroutine enableCorountine;
+
+        public string ItemID { get => itemID + (variantZoneItem ? GameManager.Instance.ZoneChoosed : ""); set => itemID = value; }
+
         public IEnumerator onEnable()
         {
             while (!GameManager.readyForThisState(stateReadyToLoad))
@@ -40,10 +45,10 @@ namespace Pok
             EzEventManager.AddListener<RemoveTimeEvent>(this);
             if (independence)
             {
-                var infoItem = GameManager.Instance.Database.getItem(itemID);
+                var infoItem = GameManager.Instance.Database.getItem(ItemID );
                 if (infoItem == null)
                 {
-                    infoItem = GameManager.Instance.Database.getCreatureItem(itemID, GameManager.Instance.ZoneChoosed);
+                    infoItem = GameManager.Instance.Database.getCreatureItem(ItemID, GameManager.Instance.ZoneChoosed);
                 }
                 setInfo(infoItem);
             }
@@ -62,7 +67,7 @@ namespace Pok
                 if (timerLabel)
                 {
                     var sec = (eventTime.timeInfo.destinyIfHave - eventTime.timeInfo.CounterTime).Clamp(eventTime.timeInfo.destinyIfHave, 0);
-                    timerLabel.text = TimeSpan.FromSeconds(!reserveTime ? eventTime.timeInfo.CounterTime : sec).ToString(format);
+                    timerLabel.text = TimeSpan.FromSeconds(!reserveTime ? eventTime.timeInfo.CounterTime : (sec+1)).ToString(format);
                 }
             }
         }
@@ -130,7 +135,7 @@ namespace Pok
 
         public void OnEzEvent(GameDatabaseInventoryEvent eventType)
         {
-            if ((eventType.item.item.ItemID == itemID && independence) || (!independence && _info != null && _info.item.ItemID == eventType.item.item.ItemID))
+            if ((eventType.item.item.ItemID == ItemID && independence) || (!independence && _info != null && _info.item.ItemID == eventType.item.item.ItemID))
             {
                 if (quantityLbl)
                 {
@@ -155,10 +160,10 @@ namespace Pok
 
         public void OnEzEvent(TimeEvent eventType)
         {
-            var item = GameDatabase.Instance.getItemInventory(itemID);
+            var item = GameDatabase.Instance.getItemInventory(ItemID);
             string extra = (item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE) ? (GameManager.Instance.ZoneChoosed + "/") : "";
 
-            if ("[Restore]" + extra + itemID == eventType.timeInfo.id)
+            if ("[Restore]" + extra + ItemID == eventType.timeInfo.id)
             {
                 updateTime(eventType);
             }
@@ -166,10 +171,10 @@ namespace Pok
 
         public void OnEzEvent(RemoveTimeEvent eventType)
         {
-            var item = GameDatabase.Instance.getItemInventory(itemID);
+            var item = GameDatabase.Instance.getItemInventory(ItemID);
             string extra = (item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE) ? (GameManager.Instance.ZoneChoosed + "/") : "";
 
-            if ("[Restore]" + extra + itemID == eventType.timeInfo.id)
+            if ("[Restore]" + extra + ItemID == eventType.timeInfo.id)
             {
                 if (process)
                 {

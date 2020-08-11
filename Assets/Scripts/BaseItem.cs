@@ -73,4 +73,8 @@ public class BaseItem<T> : MonoBehaviour where T : new()
     {
         onExecute(1);
     }
+    public virtual void onExecuteThird()
+    {
+        onExecute(2);
+    }
 }

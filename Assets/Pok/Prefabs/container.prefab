@@ -178,12 +178,73 @@ MonoBehaviour:
       zones: []
     inventory:
     - itemID: TicketSpin
-      quantity: 20
+      quantity: 12
       EmptySlot: 1
       boughtNumber: 0
       address: 
       level: 0
+    - itemID: UpgradeBank
+      quantity: 1
+      EmptySlot: 0
+      boughtNumber: 0
+      address: 
+      level: 1
+    - itemID: UpgradeEgg
+      quantity: 1
+      EmptySlot: 0
+      boughtNumber: 0
+      address: 
+      level: 1
+    - itemID: UpgradeEggTime
+      quantity: 1
+      EmptySlot: 0
+      boughtNumber: 0
+      address: 
+      level: 1
+    - itemID: UpgradeMixScale
+      quantity: 1
+      EmptySlot: 0
+      boughtNumber: 0
+      address: 
+      level: 1
     timeRestore: []
     zoneInfos: []
     creatureInfos: []
+  itemADDIfNotExist:
+  - itemID: UpgradeBank
+    quantity: 1
+    EmptySlot: 0
+    boughtNumber: 0
+    address: 
+    level: 1
+  - itemID: UpgradeEgg
+    quantity: 1
+    EmptySlot: 0
+    boughtNumber: 0
+    address: 
+    level: 1
+  - itemID: UpgradeEggTime
+    quantity: 1
+    EmptySlot: 0
+    boughtNumber: 0
+    address: 
+    level: 1
+  - itemID: UpgradeMixScale
+    quantity: 1
+    EmptySlot: 0
+    boughtNumber: 0
+    address: 
+    level: 1
+  - itemID: TicketSpin
+    quantity: 12
+    EmptySlot: 1
+    boughtNumber: 0
+    address: 
+    level: 0
   generateID: -1
+  items:
+  - {fileID: 11400000, guid: 399295eb43313674a9cad54f5b151d8a, type: 2}
+  - {fileID: 11400000, guid: 6890b998fb574e24c94d8b47e767c164, type: 2}
+  - {fileID: 11400000, guid: 9203d1bb84100d7439c4579af0f2f39e, type: 2}
+  - {fileID: 11400000, guid: 8c32199aec57cf74489161ea890e6f89, type: 2}
+  - {fileID: 11400000, guid: 119a199d98c302643a141e26e95c5a0f, type: 2}

@@ -9,7 +9,7 @@ namespace Pok
     public class MapItemInstanced : BaseItem<MapInstanceSaved>,EzEventListener<AddCreatureEvent>
     {
         public UI2DSprite icon;
-
+        public GameObject notifiFull;
         public override void setInfo(MapInstanceSaved pInfo)
         {
             base.setInfo(pInfo);
@@ -22,6 +22,7 @@ namespace Pok
                     icon.sprite2D = o;
                 },"Icon" + zoneInfo.leaderSelected[pInfo.id]);
             }
+            notifiFull.gameObject.SetActive(_info.creatures.Count >= 16);
             //nameMap.
         }
         private void OnEnable()
@@ -64,13 +65,14 @@ namespace Pok
 
         public void OnEzEvent(AddCreatureEvent eventType)
         {
-            if (eventType.manualByHand  && eventType.change == 1) 
+            if (eventType.manualByHand  && eventType.change == 1 && MainScene.Instance.MapObjects[MainScene.Instance.CurrentPageMapLayer] != _info) 
             {
                 if (eventType.creature.mapParent.id == _info.id)
                 {
                     addCreatureObject(eventType.creature);
                 }
             }
+            notifiFull.gameObject.SetActive(_info.creatures.Count >= 16);
         }
     }
 }

@@ -29,6 +29,16 @@ namespace Pok
 
         public void show()
         {
+            foreach (var group in groups)
+            {
+                var treeElement = GameDatabase.Instance.treeCreature.Find(x => x.creatureLeader.ItemID == group.leaderID);
+                var ListCreature = new List<CreatureItem>();
+                treeElement.creatureLeader.getChild(ListCreature, group.items.Length);
+                for (int i = 0; i < ListCreature.Count; ++i)
+                {
+                    group.items[i].setInfo(ListCreature[i]);
+                }
+            }
             box.show();
         }
         public void cloase()
@@ -37,16 +47,7 @@ namespace Pok
         }
         private void OnEnable()
         {
-            foreach(var group in groups)
-            {
-               var treeElement = GameDatabase.Instance.treeCreature.Find(x => x.creatureLeader.ItemID == group.leaderID);
-                var ListCreature = new List<CreatureItem>();
-                treeElement.creatureLeader.getChild(ListCreature, group.items.Length);
-                for(int i = 0; i < ListCreature.Count; ++i)
-                {
-                    group.items[i].setInfo(ListCreature[i]);
-                }
-            }
+         
         }
         // Start is called before the first frame update
         void Start()

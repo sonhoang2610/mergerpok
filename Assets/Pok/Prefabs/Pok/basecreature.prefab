@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3710668515320115792}
   - component: {fileID: 5685972451389789504}
   - component: {fileID: -421763703047115689}
-  - component: {fileID: 5643334946339429191}
   - component: {fileID: -2604988914614117146}
   - component: {fileID: -8704153578829812100}
   m_Layer: 18
@@ -88,7 +87,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: 155840f6f4f451d45b78938b66d35f41, type: 3}
+  mSprite: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
@@ -133,19 +132,6 @@ MonoBehaviour:
   momentumAmount: 35
   scale: {x: 1, y: 1, z: 0}
   scrollWheelFactor: 0
---- !u!65 &5643334946339429191
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1568816779786725330}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 200, y: 200, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-2604988914614117146
 MonoBehaviour:
   m_ObjectHideFlags: 0

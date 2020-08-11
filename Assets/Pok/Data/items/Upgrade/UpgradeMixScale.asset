@@ -27,13 +27,40 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 7
+      Data: 0|Pok.MixingScale, Assembly-CSharp
+    - Name: timeMixing
+      Entry: 7
+      Data: 1|Pok.UnitDefineLevelInt, Assembly-CSharp
+    - Name: startUnit
+      Entry: 3
+      Data: 5
+    - Name: algrothimTypeUpgrade
+      Entry: 3
+      Data: 0
+    - Name: stepUnit
+      Entry: 3
+      Data: -1
+    - Name: isSpecifiedUnit
+      Entry: 5
+      Data: false
+    - Name: unitDefines
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: blackBoard
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -49,11 +76,11 @@ MonoBehaviour:
       Data: 
   itemID: UpgradeMixScale
   displayNameItem:
-    normalString: UpgradeMixScale
+    normalString: Merger Scale
     isI2String: 0
     value: 
   descriptionItem:
-    normalString: UpgradeMixScale
+    normalString: Decrease time merger pok to claim crystal
     isI2String: 0
     value: 
   categoryItem: 1

@@ -13,6 +13,16 @@ namespace Pok
             checkStateCoroutine = StartCoroutine(checkState());
         }
 
+        public override void claimItem(BaseItemGame item,float bonus= 0)
+        {
+            var exist = GameManager.Instance.Database.getItem(item.ItemID);
+            if(exist != null)
+            {
+                exist.CurrentLevel++;
+            }
+            reload();
+        }
+
         protected override void OnEnable()
         {
        

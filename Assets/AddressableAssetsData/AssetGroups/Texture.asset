@@ -35,6 +35,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 021f4d46f4868bd41bf26703da023835
+    m_Address: Assets/Pok/Textures/icons/item_vip.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 0304ec9e203981e47b025eda9e022f3b
     m_Address: map18
     m_ReadOnly: 0
@@ -59,6 +65,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 0ab057867df1f884ca8180d0ae797f0f
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok71.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 0afb872469fba904d87520301c8dff8b
     m_Address: 4
     m_ReadOnly: 0
@@ -67,6 +79,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 0e02cb2944597f649a976bdef71488c9
     m_Address: 15
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 121488236c6cd8d4cb0ba9e2df244425
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok69.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -299,6 +317,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 454a9b0fb0cc04849a6d77cd4804cc81
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok31.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 4bc5e97ae3c6c8d43919fb5b8d14bcf4
     m_Address: 32
     m_ReadOnly: 0
@@ -365,6 +389,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 566b51f47bc73e840b6ca0b185ecb6c4
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok43.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 568c554ba37417542aee52bb38ea2dfa
     m_Address: Assets/Pok/Textures/upgrade/item_eggtime.png
     m_ReadOnly: 0
@@ -401,6 +431,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 5da23e23ff2e6304eb614f404671a096
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok68.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 5e16d95b1b17dbf49a5ff160896d4ff8
     m_Address: planet4dark
     m_ReadOnly: 0
@@ -415,6 +451,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 61bc952c33169d547b6c1b1d5d139d9e
     m_Address: 55
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 62de05b91915e6346930432e63631877
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok49.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -503,6 +545,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 77b77ee499e60d94caf898713358d166
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok61.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 7aaf978cb3ebfda4395f4ac35e718a70
     m_Address: 69
     m_ReadOnly: 0
@@ -535,6 +583,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 8cf547c3ca7f1814381a7e81f4b23aac
     m_Address: 30
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 8dd23827319983549add36bc3c5dfcc8
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok37.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -815,6 +869,18 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: d81960082beff1c4889a45ec068f55b6
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok67.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: dad6cb1c1dcf1d043aca59c5ba6627c0
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok55.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: db56b6afb598b6a4c9c630ca6b20e1be
     m_Address: 11
     m_ReadOnly: 0
@@ -859,6 +925,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: e4bcd0108df817c4fb7aa34feae02b3b
     m_Address: 26
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: e584778713f87ec49b977c143d23069e
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok70.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -937,6 +1009,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: fa3fc28c5407e9a409cb136ad6322ea5
     m_Address: 40
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fb738e3389bff164caac43bd75134eed
+    m_Address: Assets/Pok/Prefabs/uiconfig/Pok672.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

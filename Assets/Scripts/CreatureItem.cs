@@ -16,6 +16,15 @@ namespace Pok
         public Dictionary<string, string> goldAFKReward = new Dictionary<string, string>() {
             {"Zone1","0" },   {"Zone2","0" },   {"Zone3","0" },   {"Zone4","0" },   {"Zone5","0" },   {"Zone6","0" }
         };
+
+        public string getGoldAFK(string zone)
+        {
+            if (!goldAFKReward.ContainsKey(zone))
+            {
+                return "0";
+            }
+            return goldAFKReward[zone];
+        }
        public void onInit()
         {
             foreach (var creature in creatureChilds)

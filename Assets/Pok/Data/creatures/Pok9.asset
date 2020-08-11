@@ -49,7 +49,7 @@ MonoBehaviour:
       Data: Zone1
     - Name: $v
       Entry: 1
-      Data: 1000
+      Data: 380
     - Name: 
       Entry: 8
       Data: 
@@ -61,7 +61,7 @@ MonoBehaviour:
       Data: Zone2
     - Name: $v
       Entry: 1
-      Data: 0
+      Data: '87.400.000.000 '
     - Name: 
       Entry: 8
       Data: 

@@ -47,13 +47,13 @@ MonoBehaviour:
       Data: 1|Pok.UnitDefineLevelFloat, Assembly-CSharp
     - Name: startUnit
       Entry: 4
-      Data: 2
+      Data: 10
     - Name: algrothimTypeUpgrade
       Entry: 3
       Data: 0
     - Name: stepUnit
       Entry: 4
-      Data: -2
+      Data: -1
     - Name: isSpecifiedUnit
       Entry: 5
       Data: false
@@ -62,6 +62,9 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 8
+      Data: 
+    - Name: machine
+      Entry: 6
       Data: 
     - Name: goldAFKReward
       Entry: 7
@@ -155,7 +158,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  itemID: Egg1
+  variantItem: 1
+  itemID: EggZone1
   displayNameItem:
     normalString: 
     isI2String: 0
@@ -189,6 +193,7 @@ MonoBehaviour:
   creatureChilds:
   - {fileID: 11400000, guid: 55fb581e79a7da145a5d4727275d0b20, type: 2}
   creatureExtra:
+  - {fileID: 11400000, guid: 55fb581e79a7da145a5d4727275d0b20, type: 2}
   - {fileID: 11400000, guid: 55fb581e79a7da145a5d4727275d0b20, type: 2}
   - {fileID: 11400000, guid: e0fd176caa8dd56459bb6d5fcaa5671e, type: 2}
   - {fileID: 11400000, guid: dbea47f712ee84b4489e37fdfbb4b466, type: 2}

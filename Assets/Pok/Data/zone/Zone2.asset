@@ -27,6 +27,10 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
   itemID: Zone2
   displayNameItem:
     normalString: Pantheon
@@ -73,3 +77,5 @@ MonoBehaviour:
     package: {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
   coinBank: {fileID: 11400000, guid: 52e3ead37e461d344ae654cc5f176460, type: 2}
   shopCreature: {fileID: 0}
+  moneyToUnlock: 826.9B
+  factorTap: 1

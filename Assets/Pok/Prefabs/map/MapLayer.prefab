@@ -140,7 +140,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3002
+  startingRenderQueue: 3001
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -209,6 +209,7 @@ MonoBehaviour:
   mainZone: {fileID: 7668617125249963579}
   attachMent: {fileID: 4492395202690379141}
   currentMap: {fileID: 11400000, guid: c34df40a6f439b348b92dddf36ac008e, type: 2}
+  coinJump: {fileID: 527534379699423093, guid: 13deb32437bf31d46a0b130cb19a2391, type: 3}
   creatureAlive: []
   creatureAnimAble: []
 --- !u!114 &8951894282174930685
@@ -374,7 +375,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: 155840f6f4f451d45b78938b66d35f41, type: 3}
+  mSprite: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0

@@ -47,7 +47,16 @@ namespace Pok
         public bool onInit()
         {
             item = GameDatabase.Instance.getItemInventory(itemID);
+      
             return item;
+        }
+
+        public void onEnable()
+        {
+            if (item != null && QuantityBig > 0)
+            {
+                item.machine?.onEnable(this);
+            }
         }
         public string getQuantity()
         {
@@ -74,19 +83,26 @@ namespace Pok
             changeQuantity = localChangeQuantity.toString();
             quantityNumber = value;
             quantity = quantityNumber.toString();
-            if (quantityNumber < 0)
+            if (quantityNumber <= 0)
+            {
                 quantityNumber = 0;
+                EmptySlot = true;
+                item.machine?.onRemoved(this);
+            }
             if (item.categoryItem == CategoryItem.COMMON)
             {
                 if (localChangeQuantity > 0 && EmptySlot)
                 {
                     EmptySlot = false;
+                    item.machine?.onAdded(this);
                     EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.NEWITEM, this));
                 }
                 else if (localChangeQuantity != 0)
                 {
+                    item.machine?.onDirtyChange(this);
                     EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.CHANGE_QUANTITY_ITEM, this));
                 }
+            
             }
             else
             {
@@ -165,7 +181,19 @@ namespace Pok
             }
             set
             {
+                bool dirty = false;
+                if(level != value)
+                {
+                    dirty = true;
+                }
                 level = value;
+                if (dirty)
+                {
+                    if(item.machine != null)
+                    {
+                        item.machine.onDirtyChange(this);
+                    }
+                }
             }
         }
         protected long BeforeQuantity { get => beforeQuantity; set => beforeQuantity = value; }
@@ -212,6 +240,8 @@ namespace Pok
             AssetDatabase.SaveAssets();
         }
 #endif
+
+        public bool variantItem = false;
         public string itemID;
         public I2String displayNameItem;
         public I2String descriptionItem;
@@ -220,7 +250,11 @@ namespace Pok
         public List<IconBehavior> icons = new List<IconBehavior>() { new IconBehavior()};
         public List<GameObjectBehavior> model = new List<GameObjectBehavior>() { new GameObjectBehavior() };
         public int score;
-
+        public System.Func<string> updateString { get; set; }
+        public string GetUpgradeString()
+        {
+            return updateString != null ? updateString() : "";
+        }
         public virtual string getContent()
         {
             return Desc;
@@ -302,6 +336,8 @@ namespace Pok
         {
             return icons.Find(x => x.State == pState);
         }
+
+        public IMachineItem machine;
     }
 
 }

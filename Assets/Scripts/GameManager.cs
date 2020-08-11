@@ -9,6 +9,7 @@ using Sirenix.OdinInspector;
 using System.Numerics;
 using EasyMobile;
 using System;
+using static EasyMobile.StoreReview;
 
 namespace Pok
 {
@@ -31,6 +32,10 @@ namespace Pok
             if (timing != null)
             {
                 timing.destinyIfHave += time;
+                if(time == -1)
+                {
+                    timing.destinyIfHave = -1;
+                }
             }
             else
             {
@@ -135,6 +140,7 @@ namespace Pok
         protected GameDatabaseInstanced _database;
         public UnityEngine.Vector2 resolution = new UnityEngine.Vector2(1080, 1920);
         public GameDatabaseInstanced _defaultDatabase;
+        public BaseItemGameInstanced[] itemADDIfNotExist;
         public GameDatabaseInstanced Database
         {
             get
@@ -197,6 +203,15 @@ namespace Pok
             }
 
             _database = LoadDatabaseGame();
+            for(int i =0; i < itemADDIfNotExist.Length; ++i)
+            {
+                var item = _database.inventory.Find(x => x.itemID == itemADDIfNotExist[i].itemID);
+                if (item == null)
+                {
+                    _database.inventory.Add(ES3.Deserialize<BaseItemGameInstanced>(ES3.Serialize<BaseItemGameInstanced>(itemADDIfNotExist[i])));
+                }
+            }
+       
             _database.InitDatabase();
             _zoneChoosed = ZoneChoosed;
             if (!InAppPurchasing.IsInitialized())
@@ -215,7 +230,23 @@ namespace Pok
                 inappPending.Remove(inapp);
             }
         }
-
+        public CreatureItem[] items;
+        [ContextMenu("hack")]
+        public void hack()
+        {
+            for(int i = 0; i <items.Length -2; ++i)
+            {
+                var list = new List<CreatureItem>();
+                items[i].getChild(list, 6);
+                foreach(var element in list)
+                {
+                    GameManager.Instance.Database.creatureInfos.Find(x => x.id == element.ItemID).isUnLock = true;
+                }
+            }
+            GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[items.Length-2].ItemID).isUnLock = true;
+            GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[items.Length - 1].ItemID).isUnLock = true;
+            // GameManager.Instance.Database.zoneInfos[0].leaderSelected.Add
+        }
         public string getTotalGoldGrowthCurrentZone()
         {
             var creatures = GameManager.Instance.Database.getAllCreatureInstanceInZone(GameManager.Instance.ZoneChoosed);
@@ -229,7 +260,7 @@ namespace Pok
                     creatures.RemoveAt(i);
                     continue;
                 }
-                total += System.Numerics.BigInteger.Parse(original.goldAFKReward[GameManager.Instance.ZoneChoosed]);
+                total += System.Numerics.BigInteger.Parse(original.getGoldAFK(GameManager.Instance.ZoneChoosed));
             }
             return total.toString();
         }
@@ -290,7 +321,10 @@ namespace Pok
         {
 
         }
-
+        public void showBoxRate(System.Action<UserAction> callback)
+        {
+            StoreReview.RequestRating(null, callback);
+        }
         public void OnEzEvent(TimeEvent eventType)
         {
             var eventString = eventType.timeInfo.id;
@@ -316,7 +350,7 @@ namespace Pok
                     if (HUDManager.InstanceRaw)
                         HUDManager.Instance.timeXInCome.text = string.Format("{0}H {1}M {2}S", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
                 }
-                else
+                else if(eventType.timeInfo.destinyIfHave != -1)
                 {
                     GameManager.Instance.Database.removeTime(eventType.timeInfo);
                 }
@@ -361,7 +395,7 @@ namespace Pok
         }
 
 
-        public ItemWithQuantity[] claimItem(BaseItemGame item, string quantity = "1")
+        public ItemWithQuantity[] claimItem(BaseItemGame item, string quantity = "1",float bonus = 0)
         {
             if (typeof(IUsageItem).IsAssignableFrom(item.GetType()))
             {
@@ -373,6 +407,7 @@ namespace Pok
                         for (int i = 0; i < items.Length; ++i)
                         {
                             var itemExist = GameManager.Instance.Database.getItem(items[i].item.ItemID);
+                            items[i].quantity = (BigInteger.Parse(items[i].quantity.clearDot()) * ((int)(1 + bonus) * 100) / 100).ToString();
                             itemExist.addQuantity(items[i].quantity);
                         }
                         return items;
@@ -406,7 +441,7 @@ namespace Pok
         {
             if (eventType.change < 0)
             {
-                Database.checkTimeItem($"Egg{eventType.zoneid.Remove(0, 4)}");
+                Database.checkTimeItem($"Egg{eventType.zoneid}");
             }
         }
         public IEnumerator delayAction(float sec ,System.Action action)

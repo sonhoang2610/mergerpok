@@ -6,6 +6,11 @@ namespace Pok
     public class LayerShopCrystal : BaseLayerShop<SimpleItemShop>
     {
         public EnvelopContent boxOut;
+        
+        public override float getBonusForItem(ShopItemInfo item)
+        {
+            return ES3.Load<float>("BonusCrystal", 0);
+        }
         protected override void OnEnable()
         {
             base.OnEnable();

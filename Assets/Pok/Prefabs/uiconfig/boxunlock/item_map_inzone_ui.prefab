@@ -178,7 +178,7 @@ MonoBehaviour:
   _indexItem: 0
   icon: {fileID: 6228569622004299987}
   statusbar: {fileID: 4370710013292272491}
-  claim: {x: 193, y: 180}
+  claim: {x: 259, y: 280}
   colorBarPrevious: {fileID: 21300000, guid: ef29cc5f2f07c2643ad5a8cf5068ba3a, type: 3}
   colorBarCurrent: {fileID: 21300000, guid: de7fb370f99674f42b5e1f588e8ae515, type: 3}
   ColorBarlocked: {fileID: 21300000, guid: 0173a88ab9b15384dafebd3700975e07, type: 3}

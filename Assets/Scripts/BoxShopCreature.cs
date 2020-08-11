@@ -62,6 +62,38 @@ namespace Pok
         {
             buy(data, 1);
         }
+        public void buyWay3(object data)
+        {
+            if (GameManager.Instance.isRewardADSReady("BuyCreature"))
+            {
+                GameManager.Instance.WatchRewardADS("BuyCreature", (o) =>
+                {
+                    if (o)
+                    {
+                        claim(data);
+                    }
+                });
+            }
+        }
+        public void claim(object data)
+        {
+            var creature = ((CreatureItem)((ShopItemInfo)data).itemSell);
+            var zone = GameDatabase.Instance.ZoneCollection.Find(x => x.ItemID == GameManager.Instance.ZoneChoosed);
+            var pack = zone.getPackage();
+            var mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => creature.parentMap && x.id == creature.parentMap.ItemID);
+            var exists = GameManager.Instance.Database.getAllCreatureInstanceInAdress(GameManager.Instance.ZoneChoosed, mapParent.id);
+            var newCreature = new PackageCreatureInstanceSaved() { creature = creature.ItemID, id = pack.package.ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = mapParent };
+            if (exists.Count >= 16)
+            {
+                HUDManager.Instance.showBoxFullSlot();
+            }
+            var creatures = GameManager.Instance.Database.getAllInfoCreatureInAddress(GameManager.Instance.ZoneChoosed, mapParent.id);
+            System.Array.Find(creatures, x => x.id == creature.ItemID).boughtNumber++;
+            GameManager.Instance.GenerateID++;
+            GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
+            EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, zoneid = GameManager.Instance.ZoneChoosed, manualByHand = false });
+            reloadData();
+        }
         public void buy(object data,int index)
         {
             var shopitem = ((ShopItemInfo)data);
@@ -80,19 +112,7 @@ namespace Pok
                 var exist = GameManager.Instance.Database.getItem(exchanges[i].item.ItemID);
                 exist.addQuantity("-" + exchanges[i].quantity.clearDot());
             }
-            var creature = ((CreatureItem)((ShopItemInfo)data).itemSell);
-            var zone = GameDatabase.Instance.ZoneCollection.Find(x => x.ItemID == GameManager.Instance.ZoneChoosed);
-            var pack = zone.getPackage();
-            var mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => creature.parentMap && x.id == creature.parentMap.ItemID);
-            var exists = GameManager.Instance.Database.getAllCreatureInstanceInAdress(GameManager.Instance.ZoneChoosed, mapParent.id);
-            var newCreature = new PackageCreatureInstanceSaved() { creature = creature.ItemID, id = pack.package.ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = mapParent };
-            if(exists.Count>= 16)
-            {
-                HUDManager.Instance.showBoxFullSlot();
-            }
-            GameManager.Instance.GenerateID++;
-            GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
-            EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, zoneid = GameManager.Instance.ZoneChoosed, manualByHand = false });
+            claim(data);
         }
     }
 }

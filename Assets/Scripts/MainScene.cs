@@ -15,6 +15,7 @@ namespace Pok {
         [System.NonSerialized]
         public List<MapInstanceSaved> MapObjects = new List<MapInstanceSaved>();
         public GameObject boxTreasure;
+        public GameObject blockTouch;
         private int currentPageMapLayer = 0;
         protected int currentIndexPool = 0,cacheSizeDrag = 0;
 
@@ -28,7 +29,11 @@ namespace Pok {
             }else if(isMinized && !TimeCounter.InstanceRaw.IsDestroyed() && TimeCounter.Instance.minimizeTime > GameDatabase.Instance.timeAFKShowBoxTreasure)
             {
                 isMinized = false;
-                boxTreasure.gameObject.SetActive(true);
+                if (CurrentPageMapLayer == 0)
+                {
+                    boxTreasure.transform.parent.parent = mapPool[CurrentIndexPool].transform;
+                    boxTreasure.gameObject.SetActive(true);
+                }
             }
         }
         public void showBoxMagicCaseContain()
@@ -50,7 +55,8 @@ namespace Pok {
 
         private void Start()
         {
-            MapObjects = GameManager.Instance.Database.getAllMapInZone(GameManager.Instance.ZoneChoosed);
+            MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);
+            MapObjects.Sort((a, b) => { return GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == a.id).CompareTo(GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == b.id)); });
             updateMapLayer(true);
         }
         public void chooseZone(object pChoose)
@@ -74,6 +80,10 @@ namespace Pok {
         }
         public void updateMapLayer(bool imediately = false)
         {
+            if (boxTreasure.activeSelf)
+            {
+                boxTreasure.gameObject.SetActive(false);
+            }
             if (imediately)
             {
                 mapPool[AnotherIndexPool].hide(imediately);
@@ -123,12 +133,17 @@ namespace Pok {
         {
             if (EndDrag && allowDrag)
             {
-                var distance = Mathf.Abs(mapPool[AnotherIndexPool].transform.localPosition.x - cachePosDrag.x);
+                blockTouch.gameObject.SetActive(true);
+               var distance = Mathf.Abs(mapPool[AnotherIndexPool].transform.localPosition.x - cachePosDrag.x);
                 float pAlphaDestiny = 0;
                 var current = mapPool[CurrentIndexPool];
                 var another = mapPool[AnotherIndexPool];
                 if (distance > threshHoldDragLayerPage)
                 {
+                    if (boxTreasure.activeSelf)
+                    {
+                        boxTreasure.gameObject.SetActive(false);
+                    }
                     mapPool[AnotherIndexPool].transform.DOLocalMoveX(0, 0.25f);
                     CurrentPageMapLayer -= cacheSideDrag;
                     CurrentIndexPool = Mathf.Abs(CurrentIndexPool - 1);
@@ -142,7 +157,8 @@ namespace Pok {
                 var pTween = DOTween.Sequence();
                 pTween.Append( DOTween.To(() => another.Alpha, x => another.Alpha = x, pAlphaDestiny, 0.25f));
                 pTween.AppendCallback(delegate () {
-                    if(pAlphaDestiny == 0)
+                    blockTouch.gameObject.SetActive(false);
+                    if (pAlphaDestiny == 0)
                     {
                         another.hide(true);
                     }
@@ -156,8 +172,8 @@ namespace Pok {
             }
             if (index == 0)
             {
-          
-               var side = Mathf.Sign(delta.x);
+               
+                var side = Mathf.Sign(delta.x);
                 cacheSideDrag = (int)side;
                 int anotherPage = CurrentPageMapLayer - (int)side;
                 allowDrag = anotherPage >= 0 && anotherPage < MapObjects.Count;
@@ -173,7 +189,16 @@ namespace Pok {
             }
             else if(allowDrag)
             {
-                mapPool[AnotherIndexPool].transform.localPosition = (Vector3)cachePosDrag + new Vector3(delta.x, 0, 0);
+                Vector3 pos = (Vector3)cachePosDrag + new Vector3(delta.x, 0, 0); 
+                if(cacheSideDrag < 0)
+                {
+                    pos.x = pos.x < 0 ? 0 : pos.x;
+                }
+                if (cacheSideDrag > 0)
+                {
+                    pos.x = pos.x > 0 ? 0 : pos.x;
+                }
+                mapPool[AnotherIndexPool].transform.localPosition = pos;
             }
             if (allowDrag)
             {
@@ -229,6 +254,7 @@ namespace Pok {
 
         public void OnEzEvent(AddCreatureEvent eventType)
         {
+            MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);
             if (GameManager.readyForThisState("Main"))
             {
                 var quantitySecIncome = BigInt.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (int)GameManager.Instance.getFactorIncome().x;

@@ -23,14 +23,14 @@ namespace Pok
                 icon.MakePixelPerfectClaimIn(new Vector2Int(icon.width, icon.height));
             });
             namelbl.text = pInfo.itemSell.displayNameItem.Value;
-            infoGold.text = $"gold { ((CreatureItem)pInfo.itemSell).goldAFKReward[GameManager.Instance.ZoneChoosed].ToKMBTA()}/sec";
+            infoGold.text = $"gold { ((CreatureItem)pInfo.itemSell).getGoldAFK(GameManager.Instance.ZoneChoosed).ToKMBTA()}/sec";
             numberBought.text = $"Bought: {GameManager.Instance.getNumberBoughtItem(pInfo.itemSell.ItemID)}";
             pInfo.itemSell.getSpriteForState((o) =>
             {
                 icon.sprite2D = o;
                 icon.MakePixelPerfectClaimIn(new Vector2Int(icon.width, icon.height));
             });
-            var payments = pInfo.getCurrentPrice(1);
+            var payments = pInfo.getCurrentPrice();
             for(int i = 0; i < payments.Length; ++i)
             {
                 price[i].text = payments[i].exchangeItems[0].quantity.ToKMBTA();

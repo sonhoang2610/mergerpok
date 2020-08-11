@@ -72,6 +72,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 1
   itemID: CoinBankZone1
   displayNameItem:
     normalString: CoinBankZone1

@@ -22,7 +22,62 @@ namespace Pok
         public string itemName;
 
         public UI2DSprite icon;
-        public UILabel nameItem,des;
+        public UILabel nameItem,des,bonuslabel;
+
+        public void buySelfWayOne()
+        {
+            var payments = _info.getCurrentPrice();
+            for (int i = 0; i < payments[0].exchangeItems.Length; ++i)
+            {
+                if (payments[0].exchangeItems[i].IAP)
+                {
+                    GameManager.Instance.RequestInappForItem(_info.itemSell.ItemID.ToLower(), (o) => {
+                        if (o)
+                        {
+                            var itemclaimeds = GameManager.Instance.claimItem(_info.itemSell);
+                            List<ItemRewardInfo> itemRewards = new List<ItemRewardInfo>();
+                            for (int g = 0; g < itemclaimeds.Length; ++g)
+                            {
+                                itemRewards.Add(new ItemRewardInfo() { itemReward = itemclaimeds[g] });
+                            }
+                            HUDManager.Instance.boxReward.show(itemRewards.ToArray(), "BUY SUCCESS");
+                        }
+                    });
+                    return;
+                }else if (payments[0].exchangeItems[i].WATCH_ADS)
+                {
+                    GameManager.Instance.WatchRewardADS(_info.itemSell.ItemID.ToLower(), (o) => {
+                        if (o)
+                        {
+                            var itemclaimeds = GameManager.Instance.claimItem(_info.itemSell);
+                            List<ItemRewardInfo> itemRewards = new List<ItemRewardInfo>();
+                            for (int g = 0; g < itemclaimeds.Length; ++g)
+                            {
+                                itemRewards.Add(new ItemRewardInfo() { itemReward = itemclaimeds[g] });
+                            }
+                            HUDManager.Instance.boxReward.show(itemRewards.ToArray(), "BUY SUCCESS");
+                        }
+                    });
+                    return;
+                }
+                else
+                {
+                    var exist = GameManager.Instance.Database.getItem(payments[0].exchangeItems[i].item.ItemID);
+                    if (exist.QuantityBig < BigInteger.Parse(payments[0].exchangeItems[i].quantity.clearDot()))
+                    {
+                        HUDManager.Instance.showBoxNotEnough(exist.item);
+                        return;
+                    }
+                    else
+                    {
+                        exist.addQuantity((-BigInteger.Parse(payments[0].exchangeItems[i].quantity.clearDot())).ToString());
+                    }
+                }
+
+
+            }
+            GameManager.Instance.claimItem(_info.itemSell);
+        }
 
         private void OnEnable()
         {
@@ -52,6 +107,11 @@ namespace Pok
         public override void setInfo(ShopItemInfo pInfo)
         {
             base.setInfo(pInfo);
+            if (bonuslabel)
+            {
+                bonuslabel.gameObject.SetActive(pInfo.bonusForItem(pInfo) > 0);
+                bonuslabel.text = "+"+ (int)(pInfo.bonusForItem(pInfo) * 100) + "%" + " Bonus";
+            }
             pInfo.itemSell.getSpriteForState((o) =>
             {
                 icon.sprite2D = o;
@@ -81,6 +141,15 @@ namespace Pok
         public bool _isInitDone = false;
 
         protected Coroutine checkStateCoroutine;
+
+        public virtual float getDiscountForItem(ShopItemInfo item,int paymentWay,int exchangeIndex)
+        {
+            return 0;
+        }
+      public virtual float getBonusForItem(ShopItemInfo item)
+        {
+            return 1;
+        }
         protected virtual void OnEnable()
         {
             checkStateCoroutine = StartCoroutine(checkState());
@@ -105,10 +174,19 @@ namespace Pok
 
         public virtual void reload()
         {
-           var shop =  GameDatabase.Instance.ShopCollection.Find(x => x.nameShop == nameShop);
+           var shop =  GameDatabase.Instance.ShopCollection.Find(x => x.nameShop == nameShop+GameManager.Instance.ZoneChoosed);
+            if(shop == null)
+            {
+                shop = GameDatabase.Instance.ShopCollection.Find(x => x.nameShop == nameShop );
+            }
             if (shop)
             {
                 var items = System.Array.FindAll(shop.items, x => x.isVisibleItem);
+                for(int i = 0; i < items.Length; ++i)
+                {
+                    items[i].bonusForItem = getBonusForItem;
+                    items[i].discountEvent = getDiscountForItem;
+                }
                 executeInfos(items);
             }
         }
@@ -118,7 +196,7 @@ namespace Pok
             return _isInitDone;
         }
 
-        public void buyWayOne(object data)
+        public virtual void buyWayOne(object data)
         {
             ShopItemInfo item = (ShopItemInfo)data;
             var payments = item.getCurrentPrice();
@@ -129,7 +207,7 @@ namespace Pok
                     GameManager.Instance.RequestInappForItem(item.itemSell.ItemID.ToLower(),(o)=> {
                         if (o)
                         {
-                            var itemclaimeds = GameManager.Instance.claimItem(item.itemSell);
+                            var itemclaimeds = GameManager.Instance.claimItem(item.itemSell,"1",item.bonusForItem(item));
                             List<ItemRewardInfo> itemRewards = new List<ItemRewardInfo>();
                             for(int g = 0; g < itemclaimeds.Length; ++g)
                             {
@@ -150,13 +228,19 @@ namespace Pok
                     }
                     else
                     {
-                        exist.addQuantity((-BigInteger.Parse(payments[0].exchangeItems[i].quantity.clearDot())).ToString());
+                        int discount =(int)( (1-getDiscountForItem(item, 0, i))*100);
+                        exist.addQuantity((-BigInteger.Parse(payments[0].exchangeItems[i].quantity.clearDot())* discount/100).ToString());
                     }
                 }
              
              
             }
-            GameManager.Instance.claimItem(item.itemSell);
+            claimItem(item.itemSell, getBonusForItem(item));
+        }
+
+        public virtual void claimItem(BaseItemGame item,float bonus = 0)
+        {
+            GameManager.Instance.claimItem(item,"1",bonus);
         }
 
          public string shopID()
