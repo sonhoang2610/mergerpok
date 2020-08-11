@@ -23,12 +23,37 @@ namespace Pok
         public UIElement boxMagicCase;
         public BoxReward boxReward;
         public BoxBank boxBank;
+        public BoxBonusEvolutionPok boxEvoPok;
         public GameObject btnVip;
         
         
+        public void showBoxEvo(CreatureItem from,CreatureItem to,CreatureInstanceSaved id)
+        {
+            var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("EvolutionPok"));
+            if (time != null)
+            {
+                return;
+            }
+            TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]EvolutionPok", autoRemoveIfToDestiny = true, destinyIfHave = GameManager.Instance.TimeDelayBonusEvolution });
+            boxEvoPok.showBoxEvo(from, to,id);
+        }
         public void showBoxRewardADS()
         {
-
+            if (GameManager.Instance.isRewardADSReady("BoxRewardADS"))
+            {
+                GameManager.Instance.WatchRewardADS("BoxRewardADS", (o) =>
+                {
+                    if (o)
+                    {
+                        boxRewardADS.GetComponent<UIElement>().show();
+                    }
+                });
+            }
+            else
+            {
+                GameManager.Instance.LoadRewardADS("BoxRewardADS");
+            }
+           
         }
         public void showBoxFullSlot()
         {

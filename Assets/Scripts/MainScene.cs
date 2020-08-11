@@ -86,12 +86,14 @@ namespace Pok {
             }
             if (imediately)
             {
+                GameManager.Instance.tryShowBoxRewardAds();
                 mapPool[AnotherIndexPool].hide(imediately);
                 mapPool[CurrentIndexPool].show(imediately,0);
                 mapPool[CurrentIndexPool].setInfo(MapObjects[CurrentPageMapLayer]);
             }
             else
             {
+                GameManager.Instance.tryShowBoxRewardAds();
                 mapPool[AnotherIndexPool].hide(imediately);
                 mapPool[CurrentIndexPool].show(imediately, cacheSizeDrag);
                 mapPool[CurrentIndexPool].setInfoCacheInfo(MapObjects[CurrentPageMapLayer]);
@@ -140,6 +142,7 @@ namespace Pok {
                 var another = mapPool[AnotherIndexPool];
                 if (distance > threshHoldDragLayerPage)
                 {
+                    GameManager.Instance.tryShowBoxRewardAds();
                     if (boxTreasure.activeSelf)
                     {
                         boxTreasure.gameObject.SetActive(false);
@@ -157,6 +160,7 @@ namespace Pok {
                 var pTween = DOTween.Sequence();
                 pTween.Append( DOTween.To(() => another.Alpha, x => another.Alpha = x, pAlphaDestiny, 0.25f));
                 pTween.AppendCallback(delegate () {
+                 
                     blockTouch.gameObject.SetActive(false);
                     if (pAlphaDestiny == 0)
                     {

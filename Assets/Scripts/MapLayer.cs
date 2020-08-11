@@ -136,6 +136,7 @@ namespace Pok
                             float distance = Vector2.Distance(creature1.transform.localPosition, creature2.transform.localPosition);
                             if (distance < 400)
                             {
+                       
                                 var posDes = Vector2.Lerp(creature1.transform.localPosition, creature2.transform.localPosition, 0.5f);
                                 var object1 = creature1;
                                 var object2 = creature2;
@@ -176,6 +177,12 @@ namespace Pok
                                             manualByHand = true,
                                             onCreated = (o) => { o.transform.localPosition = object1.transform.localPosition; }
                                         });
+                                        var creaturesUnlock = GameManager.Instance.Database.getAllCreatureInfoInZone(GameManager.Instance.ZoneChoosed);
+                                        var indexNow = System.Array.FindIndex(creaturesUnlock, x => x.ItemID == creatureData.creatureChilds[0].ItemID);
+                                        if (indexNow >= 0 && creaturesUnlock.Length - indexNow >= 5 && creaturesUnlock.Length - indexNow < 7)
+                                        {
+                                            HUDManager.Instance.showBoxEvo(creaturesUnlock[indexNow], creaturesUnlock[indexNow + 2], newCreature);
+                                        }
                                     };
                                     if (zone.curentUnlock == creatureData.ItemID || string.IsNullOrEmpty(zone.curentUnlock))
                                     {

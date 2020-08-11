@@ -321,6 +321,34 @@ namespace Pok
         {
 
         }
+
+        public int TimeDelayBonusEvolution
+        {
+            get
+            {
+                return UnityEngine.Random.Range(300, 1500);
+            }
+        }
+        public int TimeDelayBoxRewardADS { 
+            get
+            {
+                return UnityEngine.Random.Range(5, 10);
+            }
+        }
+
+        public void tryShowBoxRewardAds()
+        {
+            if (TimeCounter.InstanceRaw.IsDestroyed()) return;
+            if (TimeCounter.CounterValue < 30) return;
+            var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("RewardADS"));
+            if (time != null)
+            {
+                return;
+            }
+            TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]RewardADS", autoRemoveIfToDestiny = true, destinyIfHave = GameManager.Instance.TimeDelayBoxRewardADS });
+
+            HUDManager.Instance.showBoxRewardADS();
+        }
         public void showBoxRate(System.Action<UserAction> callback)
         {
             StoreReview.RequestRating(null, callback);
@@ -391,6 +419,11 @@ namespace Pok
                 {
                     GameManager.Instance.Database.removeTime(eventType.timeInfo);
                 }
+               
+            }
+            if (eventType.timeInfo.counterTime >= eventType.timeInfo.destinyIfHave && eventType.timeInfo.autoRemoveIfToDestiny)
+            {
+                GameManager.Instance.Database.removeTime(eventType.timeInfo);
             }
         }
 

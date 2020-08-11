@@ -18,7 +18,7 @@ namespace Pok
         public double counterTime;
         public double changeTime;
         public bool pause = false;
-
+        public bool autoRemoveIfToDestiny = false;
         public void pauseTime(bool pBool)
         {
             pause = pBool;
