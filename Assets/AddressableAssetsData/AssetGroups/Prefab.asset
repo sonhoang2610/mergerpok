@@ -29,12 +29,28 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 0ab057867df1f884ca8180d0ae797f0f
+    m_Address: Pok71
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: 0ab057867df1f884ca8180d0ae797f0f,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: 0ab057867df1f884ca8180d0ae797f0f,
+      type: 3}
   - m_GUID: 11affa78462a8f04ab940d567786ea97
     m_Address: Assets/Pok/Prefabs/uiconfig/Pok13.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 121488236c6cd8d4cb0ba9e2df244425
+    m_Address: Pok69
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: 121488236c6cd8d4cb0ba9e2df244425,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: 121488236c6cd8d4cb0ba9e2df244425,
+      type: 3}
   - m_GUID: 1e273d20edc1a874881979682bf5fb6c
     m_Address: Prefab/ContainerDatabase
     m_ReadOnly: 0
@@ -48,18 +64,66 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 454a9b0fb0cc04849a6d77cd4804cc81
+    m_Address: Pok31
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: 454a9b0fb0cc04849a6d77cd4804cc81,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: 454a9b0fb0cc04849a6d77cd4804cc81,
+      type: 3}
   - m_GUID: 482e82467bd7f0a4982ea220079daa12
     m_Address: Assets/Pok/Prefabs/uiconfig/Pok6.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 566b51f47bc73e840b6ca0b185ecb6c4
+    m_Address: Pok43
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: 566b51f47bc73e840b6ca0b185ecb6c4,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: 566b51f47bc73e840b6ca0b185ecb6c4,
+      type: 3}
+  - m_GUID: 5da23e23ff2e6304eb614f404671a096
+    m_Address: Pok68
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: 5da23e23ff2e6304eb614f404671a096,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: 5da23e23ff2e6304eb614f404671a096,
+      type: 3}
+  - m_GUID: 62de05b91915e6346930432e63631877
+    m_Address: Pok49
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: 62de05b91915e6346930432e63631877,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: 62de05b91915e6346930432e63631877,
+      type: 3}
   - m_GUID: 6a676f3c720cf144f90ebff6272e9042
     m_Address: base
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 77b77ee499e60d94caf898713358d166
+    m_Address: Pok61
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: 77b77ee499e60d94caf898713358d166,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: 77b77ee499e60d94caf898713358d166,
+      type: 3}
+  - m_GUID: 8dd23827319983549add36bc3c5dfcc8
+    m_Address: Pok37
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: 8dd23827319983549add36bc3c5dfcc8,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: 8dd23827319983549add36bc3c5dfcc8,
+      type: 3}
   - m_GUID: 97d31f86530427d42a2a4986c4bc225f
     m_Address: Assets/Pok/Prefabs/Pok/box.prefab
     m_ReadOnly: 0
@@ -72,6 +136,30 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: d81960082beff1c4889a45ec068f55b6
+    m_Address: Pok67
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: d81960082beff1c4889a45ec068f55b6,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: d81960082beff1c4889a45ec068f55b6,
+      type: 3}
+  - m_GUID: dad6cb1c1dcf1d043aca59c5ba6627c0
+    m_Address: Pok55
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: dad6cb1c1dcf1d043aca59c5ba6627c0,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: dad6cb1c1dcf1d043aca59c5ba6627c0,
+      type: 3}
+  - m_GUID: e584778713f87ec49b977c143d23069e
+    m_Address: Pok70
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: e584778713f87ec49b977c143d23069e,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: e584778713f87ec49b977c143d23069e,
+      type: 3}
   - m_GUID: e606665f6cacbaa4f8793a8faf7ec3a1
     m_Address: Assets/Pok/Prefabs/uiconfig/base_model_era.prefab
     m_ReadOnly: 0
@@ -84,6 +172,14 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: fb738e3389bff164caac43bd75134eed
+    m_Address: Pok672
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 2628814054888241344, guid: fb738e3389bff164caac43bd75134eed,
+      type: 3}
+    m_TargetAsset: {fileID: 2628814054888241344, guid: fb738e3389bff164caac43bd75134eed,
+      type: 3}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 97dc02305a3266740a1d0632b6f35a45, type: 2}
   m_SchemaSet:

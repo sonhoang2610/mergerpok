@@ -386,7 +386,7 @@ namespace Pok
             if (HUDManager.InstanceRaw)
                 HUDManager.Instance.factorGoldToBuy.text = (getFactorIncome().x < 2) ? "x2" : "x4";
             if (HUDManager.InstanceRaw)
-                HUDManager.Instance.factorGoldToBuy.transform.parent.parent.gameObject.SetActive(getFactorIncome().x < 4);
+                HUDManager.Instance.factorGoldToBuyActive("LimitFactor", getFactorIncome().x < 4);
             if (eventType.timeInfo.id.Contains("DiscountCreature"))
             {
                 var factor = GameManager.Instance.getPercentDiscount();
@@ -486,7 +486,7 @@ namespace Pok
         {
             LogEvent("WATCH_ADS:" + id);
 #if UNITY_EDITOR
-            result.Invoke(true);
+            result?.Invoke(true);
 
 #endif
         }
@@ -495,7 +495,7 @@ namespace Pok
             LogEvent("WATCH_ADS:" + id);
 #if UNITY_EDITOR
             StartCoroutine(delayAction(1, () => {
-                result.Invoke(UnityEngine.Random.Range(0,2) == 0);
+                result?.Invoke(UnityEngine.Random.Range(0,2) == 0);
             }));
 #endif
         }
@@ -564,7 +564,7 @@ namespace Pok
             if (HUDManager.InstanceRaw)
             {
                 HUDManager.Instance.factorGoldToBuy.text = (getFactorIncome().x < 2) ? "x2" : "x4";
-                HUDManager.Instance.factorGoldToBuy.transform.parent.parent.gameObject.SetActive(getFactorIncome().x < 4);
+                HUDManager.Instance.factorGoldToBuyActive("LimitFactor", getFactorIncome().x < 4);
             }
         }
     }

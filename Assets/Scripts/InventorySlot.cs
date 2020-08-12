@@ -73,7 +73,10 @@ namespace Pok
         }
         protected virtual void OnEnable()
         {
-
+            if (timerLabel)
+            {
+                timerLabel.text = "FULL";
+            }
             enableCorountine = StartCoroutine(onEnable());
 
 
@@ -132,7 +135,6 @@ namespace Pok
         {
 
         }
-
         public void OnEzEvent(GameDatabaseInventoryEvent eventType)
         {
             if ((eventType.item.item.ItemID == ItemID && independence) || (!independence && _info != null && _info.item.ItemID == eventType.item.item.ItemID))
@@ -163,7 +165,7 @@ namespace Pok
             var item = GameDatabase.Instance.getItemInventory(ItemID);
             string extra = (item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE) ? (GameManager.Instance.ZoneChoosed + "/") : "";
 
-            if ("[Restore]" + extra + ItemID == eventType.timeInfo.id)
+            if ("[Restore]" + extra + ItemID  == eventType.timeInfo.id)
             {
                 updateTime(eventType);
             }
@@ -174,7 +176,7 @@ namespace Pok
             var item = GameDatabase.Instance.getItemInventory(ItemID);
             string extra = (item.categoryItem == CategoryItem.CREATURE || item.categoryItem == CategoryItem.PACKAGE_CREATURE) ? (GameManager.Instance.ZoneChoosed + "/") : "";
 
-            if ("[Restore]" + extra + ItemID == eventType.timeInfo.id)
+            if ("[Restore]" + extra + ItemID  == eventType.timeInfo.id)
             {
                 if (process)
                 {

@@ -27,6 +27,10 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
   itemID: Map1_1
   displayNameItem:
     normalString: 
@@ -44,10 +48,10 @@ MonoBehaviour:
       m_AssetGUID: ef9e5ddf638b40f4c9a96a5a0e70af4a
       m_SubObjectName: 
     size: {x: 0, y: 0}
-  - State: BG
+  - State: BGPok1
     Icon:
-      m_AssetGUID: 242e1c4d64d6a2f47a212d87c13d3fa1
-      m_SubObjectName: map1
+      m_AssetGUID: 2edd77bc75f7175468c0443112cdf4b3
+      m_SubObjectName: 1
     size: {x: 0, y: 0}
   model:
   - State: Default
@@ -71,4 +75,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 072589e0c104e594d98a122e0b4df7de, type: 2}
   - {fileID: 11400000, guid: 33d30c9a70f30ad4a811c8a014a71b1b, type: 2}
   - {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
+  - {fileID: 11400000, guid: 1295818098b6a1147a281ad8de371231, type: 2}
+  - {fileID: 11400000, guid: 17d8b93c85b55664595dc188ffdceff8, type: 2}
+  - {fileID: 11400000, guid: 0b2f930bfb640cc4c94390150bc2cbea, type: 2}
+  - {fileID: 11400000, guid: c1d21150e3f646748aeed59a961884a3, type: 2}
+  - {fileID: 11400000, guid: e5175e26d988bdb4e97d1576e37a5725, type: 2}
   limitSlot: 16

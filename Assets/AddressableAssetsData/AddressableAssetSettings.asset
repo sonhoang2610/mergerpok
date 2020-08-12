@@ -69,6 +69,7 @@ MonoBehaviour:
     m_LabelNames:
     - default
     - Database
+    - Texture
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 84c2b17eaab6d1e42a72458829ad2167, type: 2}

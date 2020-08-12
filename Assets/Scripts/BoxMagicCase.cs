@@ -159,7 +159,7 @@ namespace Pok
             seq.AppendCallback(delegate
             {
                 onComplete();
-                DestroyImmediate(newObject);
+                Destroy(newObject);
             });
         }
         public void addCreatureObject(CreatureInstanceSaved pInfo)

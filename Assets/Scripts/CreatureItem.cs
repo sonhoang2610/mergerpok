@@ -23,7 +23,7 @@ namespace Pok
             {
                 return "0";
             }
-            return goldAFKReward[zone];
+            return goldAFKReward[zone].clearDot();
         }
        public void onInit()
         {

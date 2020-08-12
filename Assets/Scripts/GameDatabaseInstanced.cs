@@ -425,6 +425,15 @@ namespace Pok
                     if (zoneInfos[i].isUnLock)
                     {
                         var itemExist = getCreatureItem(item.ItemID, zoneInfos[i].id);
+                        if (item.variantItem && !item.ItemID.Contains(GameManager.Instance.ZoneChoosed))
+                        {
+                            var time = timeRestore.Find(x => x.id.Contains(item.ItemID) && x.id.Contains("Restore"));
+                            if (time != null)
+                            {
+                                time.pauseTime(true);
+                            }
+                            return;
+                        }
                         executeTime(itemExist, zoneInfos[i].id);
                     }
                 }

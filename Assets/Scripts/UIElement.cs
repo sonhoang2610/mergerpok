@@ -43,15 +43,20 @@ public class UIElement : MonoBehaviour {
         }
         relative++;
     }
-    public void setActive(bool active)
+    public void setActive(bool active,bool isRelative = false)
     {
         if (active)
         {
             showActive(true);
+            relative += isRelative ? 1 :0;
         }
         else
         {
-            closeActive(true);
+            relative -= isRelative ? 1 : 0;
+            if (relative <= 0)
+            {
+                closeActive(true);
+            }
         }
     }
     public void hideRelative()
@@ -82,7 +87,8 @@ public class UIElement : MonoBehaviour {
     {
         if (imediately)
         {
-            gameObject.SetActive(true);
+            if(!gameObject.activeSelf)
+                gameObject.SetActive(true);
             var rect = GetComponent<UIRect>();
             rect.alpha = 1;
             return;

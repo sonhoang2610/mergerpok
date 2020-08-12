@@ -220,6 +220,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 415053256b282ca4ba8e6956a6518902, type: 2}
   - {fileID: 11400000, guid: e5e2851f4fc70a940b442c51456e7392, type: 2}
   - {fileID: 11400000, guid: d35b85ec1f0f93f4f9f39972fd7202d2, type: 2}
+  - {fileID: 11400000, guid: 1295818098b6a1147a281ad8de371231, type: 2}
+  - {fileID: 11400000, guid: 17d8b93c85b55664595dc188ffdceff8, type: 2}
+  - {fileID: 11400000, guid: 0b2f930bfb640cc4c94390150bc2cbea, type: 2}
+  - {fileID: 11400000, guid: c1d21150e3f646748aeed59a961884a3, type: 2}
+  - {fileID: 11400000, guid: e5175e26d988bdb4e97d1576e37a5725, type: 2}
   treeCreature:
   - creatureLeader: {fileID: 11400000, guid: 55fb581e79a7da145a5d4727275d0b20, type: 2}
     map: {fileID: 11400000, guid: e7d3663ef6bd67f4cba67072bfe04275, type: 2}
@@ -346,6 +351,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bc96de69392f4494f936df3b1b2576ab, type: 2}
   - {fileID: 11400000, guid: 4295b1a3ef58f91498f13b01c7fa7272, type: 2}
   - {fileID: 11400000, guid: 371030608ae0b3841b4be0ea5258ddb9, type: 2}
+  - {fileID: 11400000, guid: e76fcd17c23ba2d49b3c8b657faffc62, type: 2}
+  - {fileID: 11400000, guid: fd2915ddf5f562b409f2fc2e498b75b5, type: 2}
+  - {fileID: 11400000, guid: 9e89f6d8d4dd76341a09f4fe0dc556b6, type: 2}
+  - {fileID: 11400000, guid: 5eac4620a0ccced459f1bd4827750bac, type: 2}
+  - {fileID: 11400000, guid: 2900cdc8fbe5ad94da6dd325ee4de5d4, type: 2}
   wheelMainConfig:
   - itemType: 0
     percentRoll:

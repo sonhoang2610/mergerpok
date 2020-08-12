@@ -86,12 +86,18 @@ namespace Pok
            return  Addressables.LoadAssetsAsync<ScriptableObject>("Database", result);
         }
 
-
+        public AsyncOperationHandle<IList<UnityEngine.Object>> PreloadTexture(System.Action<UnityEngine.Object> result)
+        {
+            return Addressables.LoadAssetsAsync<UnityEngine.Object>("Texture", result);
+        }
         protected Coroutine corountineFirstPool = null;
 
         public void complete()
         {
-
+           // GameManager.addDirtyState("Main");
+            var async = PreloadTexture((a)=> {
+                //GameManager.removeDirtyState("Main");
+            });
             fadeLayout.alpha = 1;
             Sequence pSeq = DOTween.Sequence();
             pSeq.AppendInterval(0.25f);

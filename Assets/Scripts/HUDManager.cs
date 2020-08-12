@@ -25,6 +25,33 @@ namespace Pok
         public BoxBank boxBank;
         public BoxBonusEvolutionPok boxEvoPok;
         public GameObject btnVip;
+
+        protected Dictionary<GameObject,List<string>> markActiveObject = new Dictionary<GameObject, List<string>>();
+        public void factorGoldToBuyActive(string id, bool active)
+        {
+            ActiveObject(factorGoldToBuy.transform.parent.parent.gameObject, id, active);
+        }
+
+        public void ActiveObject(GameObject pObject,string id,bool active)
+        {
+            if (!markActiveObject.ContainsKey(pObject))
+            {
+                markActiveObject.Add(pObject, new List<string>());
+            }
+            if (active)
+            {
+                markActiveObject[pObject].Remove(id);
+                pObject.gameObject.SetActive(markActiveObject[pObject].Count == 0);
+            }
+            else
+            {
+                if (!markActiveObject[pObject].Contains(id))
+                {
+                    markActiveObject[pObject].Add(id);
+                }
+                pObject.gameObject.SetActive(false);
+            }
+        }
         
         
         public void showBoxEvo(CreatureItem from,CreatureItem to,CreatureInstanceSaved id)

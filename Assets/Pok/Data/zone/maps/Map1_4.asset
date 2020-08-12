@@ -27,6 +27,10 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
   itemID: Map1_4
   displayNameItem:
     normalString: 
@@ -44,10 +48,10 @@ MonoBehaviour:
       m_AssetGUID: 155840f6f4f451d45b78938b66d35f41
       m_SubObjectName: 
     size: {x: 0, y: 0}
-  - State: BG
+  - State: BGPok31
     Icon:
-      m_AssetGUID: 723bf4a0444256344a2750f9358ae175
-      m_SubObjectName: 5
+      m_AssetGUID: 635a13f1fa5b7614a9d67c99c7ca3df7
+      m_SubObjectName: 4
     size: {x: 0, y: 0}
   - State: IconPok31
     Icon:
@@ -78,6 +82,31 @@ MonoBehaviour:
     Icon:
       m_AssetGUID: 57ddf0018b7d0b249a492014b9e5a6f4
       m_SubObjectName: 11
+    size: {x: 0, y: 0}
+  - State: BGPok37
+    Icon:
+      m_AssetGUID: 723bf4a0444256344a2750f9358ae175
+      m_SubObjectName: 5
+    size: {x: 0, y: 0}
+  - State: BGPok43
+    Icon:
+      m_AssetGUID: e2d6bd58f54ed724c8918e1f48146559
+      m_SubObjectName: 6
+    size: {x: 0, y: 0}
+  - State: BGPok49
+    Icon:
+      m_AssetGUID: 4f24d42489760bc4bb91fb88ed537e92
+      m_SubObjectName: 7
+    size: {x: 0, y: 0}
+  - State: BGPok55
+    Icon:
+      m_AssetGUID: 2c8131e6a82529c46a977930391369fa
+      m_SubObjectName: 8
+    size: {x: 0, y: 0}
+  - State: BGPok61
+    Icon:
+      m_AssetGUID: 300db6ed3ba46ca42979f3685b3c5ac4
+      m_SubObjectName: 9
     size: {x: 0, y: 0}
   model:
   - State: Default

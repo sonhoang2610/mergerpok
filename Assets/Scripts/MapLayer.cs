@@ -278,11 +278,13 @@ namespace Pok
         {
             base.setInfo(pInfo);
             currentMap.Value = pInfo.id;
+            var creatures = GameManager.Instance.Database.getAllInfoCreatureInAddress(pInfo.zoneParent.id, pInfo.id);
+         
             var mapObjec = GameDatabase.Instance.MapCollection.Find(x => x.ItemID == pInfo.id);
             mapObjec.getSpriteForState(delegate (Sprite pSprite)
             {
                 bg.sprite2D = pSprite;
-            }, "BG");
+            }, "BG" + creatures[0].id);
             for (int i = 0; i < creatureAlive.Count; ++i)
             {
                 creatureAlive[i].gameObject.SetActive(false);

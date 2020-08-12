@@ -81,6 +81,7 @@ namespace Pok {
                 CurrentIndexPool = 0;
                 MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);
                 updateMapLayer(true);
+                GameManager.Instance.Database.checkTimeForAll();
             };
             if (!zoneInfo1.isUnLock)
             {

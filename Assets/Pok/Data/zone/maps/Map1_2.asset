@@ -27,6 +27,10 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
   itemID: Map1_2
   displayNameItem:
     normalString: 
@@ -44,7 +48,7 @@ MonoBehaviour:
       m_AssetGUID: f89b92d69d2cd54498d1bbe31580a7b5
       m_SubObjectName: 
     size: {x: 0, y: 0}
-  - State: BG
+  - State: BGPok7
     Icon:
       m_AssetGUID: 7408d0bd9aaa6eb4580744ea1fcf5d04
       m_SubObjectName: 2

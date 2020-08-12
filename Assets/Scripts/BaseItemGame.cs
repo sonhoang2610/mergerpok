@@ -74,9 +74,9 @@ namespace Pok
             var localChangeQuantity = System.Numerics.BigInteger.Parse(changeQuantity);
             if ((item.attribute & AttributeItem.Limit) == AttributeItem.Limit)
             {
-                if (value > item.limitInInventory.getUnit(CurrentLevel))
+                if (value > item.limitInInventory.getCurrentUnit())
                 {
-                    value = item.limitInInventory.getUnit(CurrentLevel);
+                    value = item.limitInInventory.getCurrentUnit();
                 }
             }
             localChangeQuantity = value - quantityNumber;

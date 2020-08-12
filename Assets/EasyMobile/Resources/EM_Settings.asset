@@ -17,9 +17,9 @@ MonoBehaviour:
     mAdCheckingInterval: 10
     mAdLoadingInterval: 20
     mIosDefaultAdNetworks:
-      bannerAdNetwork: 0
-      interstitialAdNetwork: 0
-      rewardedAdNetwork: 0
+      bannerAdNetwork: 7
+      interstitialAdNetwork: 7
+      rewardedAdNetwork: 7
     mAndroidDefaultAdNetworks:
       bannerAdNetwork: 0
       interstitialAdNetwork: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
         keys: []
         values: []
     mFBAudience:
-      mEnable: 1
+      mEnable: 0
       mBannerAdSize: 0
       mEnableTestMode: 0
       mTestDevices: []
@@ -133,7 +133,7 @@ MonoBehaviour:
       mCustomInterstitialPlacements: []
       mCustomRewardedPlacements: []
     mIronSource:
-      mEnable: 0
+      mEnable: 1
       mAppId:
         mIosId: 
         mAndroidId: 

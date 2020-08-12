@@ -201,7 +201,7 @@ namespace Pok
                 }
                 seq.AppendCallback(delegate
                 {
-                    Destroy(creatureObject);
+                    Destroy(creatureObject.gameObject);
                 });
             });
 
