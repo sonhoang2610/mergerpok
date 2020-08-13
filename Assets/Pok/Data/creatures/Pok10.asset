@@ -27,6 +27,9 @@ MonoBehaviour:
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
     - Name: goldAFKReward
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
@@ -73,7 +76,7 @@ MonoBehaviour:
       Data: Zone3
     - Name: $v
       Entry: 1
-      Data: 0
+      Data: 40.363ab
     - Name: 
       Entry: 8
       Data: 
@@ -85,7 +88,7 @@ MonoBehaviour:
       Data: Zone4
     - Name: $v
       Entry: 1
-      Data: 0
+      Data: 92.399ae
     - Name: 
       Entry: 8
       Data: 
@@ -97,7 +100,7 @@ MonoBehaviour:
       Data: Zone5
     - Name: $v
       Entry: 1
-      Data: 0
+      Data: 42.69ah
     - Name: 
       Entry: 8
       Data: 
@@ -109,7 +112,7 @@ MonoBehaviour:
       Data: Zone6
     - Name: $v
       Entry: 1
-      Data: 0
+      Data: 24.53ak
     - Name: 
       Entry: 8
       Data: 
@@ -119,6 +122,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  variantItem: 0
   itemID: Pok10
   displayNameItem:
     normalString: Pok10
