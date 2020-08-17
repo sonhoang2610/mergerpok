@@ -107,7 +107,7 @@ MonoBehaviour:
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
-            quantity: 50
+            quantity: 35
   - isVisibleItem: 1
     limitUpgrade: 6
     itemSell: {fileID: 11400000, guid: b8ec41d680dc51f448ec859b0e842084, type: 2}
@@ -264,32 +264,67 @@ MonoBehaviour:
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 150.000
+            quantity: 50.000
       - levelRequire: 3
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 750.000
+            quantity: 150.000
       - levelRequire: 4
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 2.500.000
+            quantity: 750.000
       - levelRequire: 5
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
-            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
-            quantity: 4
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 3.700.000
       - levelRequire: 6
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
+            quantity: 18.700.000
+      - levelRequire: 7
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
             quantity: 5
+      - levelRequire: 8
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 10
+      - levelRequire: 9
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 15
+      - levelRequire: 10
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 25
+      - levelRequire: 11
+        unit:
+        - groupID: 0
+          exchangeItems:
+          - typePayment: 0
+            item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
+            quantity: 35
