@@ -59,7 +59,15 @@ namespace Pok
 
         public void setSkinInfo(ItemMagicCaseInfo info)
         {
-            info.item.getSpriteForState((o) => { icon.sprite2D = o; icon.MakePixelPerfectClaimIn(sizeCache); });
+            var state = "Default";
+            if (info.item.ItemID.Contains("SuperInCome"))
+            {
+                if (GameManager.Instance.getFactorIncome().x >= 2)
+                {
+                    state = "X4";
+                }
+            }
+            info.item.getSpriteForState((o) => { icon.sprite2D = o; icon.MakePixelPerfectClaimIn(sizeCache); }, state);
             content.text = info.content;
         }
 

@@ -82,7 +82,7 @@ namespace EazyEngine.Audio
 #if UNITY_EDITOR
                 if (!Application.isPlaying)
                 {
-                    return dataBase == null ? dataBase = UnityEditor.AssetDatabase.LoadAssetAtPath<AudioDatabase>("Assets/Pok/Data/GameDatabase.asset") : dataBase;
+                    return dataBase == null ? dataBase = UnityEditor.AssetDatabase.LoadAssetAtPath<AudioDatabase>("Assets/Pok/Data/AudioDatabase.asset") : dataBase;
                 }
                 else
                 {

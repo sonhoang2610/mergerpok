@@ -23,13 +23,250 @@ MonoBehaviour:
     SerializationNodes: []
   findField: 
   seatchResult:
-    groupName: abc
-    volume: 1
-    clips: []
-  groups:
-  - groupName: abc
+    groupName: ButtonClick
     volume: 1
     clips:
-    - elements: []
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
       weight: 1
-  musics: []
+  groups:
+  - groupName: ButtonClick
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: ab975d048741aa7489542fe78eaf6d00
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: Mixing
+    volume: 0.462
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 58cb0dbdf7f172a45b7e45c4130ddf43
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 3fd25cfd8a968444f93e7279cc03a7e8
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: ShopBuy
+    volume: 0.486
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: a6ebfe37262fdf34499e2c52cc2bd3b8
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: dafe20f5d510fbd4b9728717db8213e8
+          m_SubObjectName: 
+        volume: 1
+        delay: 0.2
+        isLoop: 0
+      weight: 1
+  - groupName: CoinReward
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 3b19014e2c3fe1647b769f2eff9f7af3
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: CreatureReward
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 8289f6dc8fe79c649b7a1c5d47bb4008
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: EggBreak
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: e0d6e58231016884ca48737f6aeda3c4
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: NewEra
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: e5454dfa56138ba43bed8c57251442ff
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: NewCreature
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 4045d16ad9062dc46a06b117d8bebba0
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: CoinClick
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 8300000, guid: 97d60f2514ff22944b8f6d052ec00106, type: 3}
+        clipRef:
+          m_AssetGUID: 97d60f2514ff22944b8f6d052ec00106
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 3fd25cfd8a968444f93e7279cc03a7e8
+          m_SubObjectName: 
+        volume: 0.115
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: CoinClickPure
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 97d60f2514ff22944b8f6d052ec00106
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: NotEnough
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 2f0f915d19041184fb73571645616802
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: BoxRewardRun
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 3194858e18859f2428a05a8d9a1e84a8
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: RewardSpin
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: fa441deb809d22f479c637645418b6b8
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 3b19014e2c3fe1647b769f2eff9f7af3
+          m_SubObjectName: 
+        volume: 1
+        delay: 0.2
+        isLoop: 0
+      weight: 1
+  - groupName: Notification
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: a4f746e7ccdf81242bf34fec0bcc09b7
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  - groupName: Wheel
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 824f9119886355843847d20710f35dd1
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 0
+      weight: 1
+  musics:
+  - groupName: MusicBG
+    volume: 1
+    clips:
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 6002fc3880e674343974bcc799298051
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 1
+      weight: 1
+      playType: 0
+    - elements:
+      - clip: {fileID: 0}
+        clipRef:
+          m_AssetGUID: 4a138ede5f1c9024f95b27514ecf1e0b
+          m_SubObjectName: 
+        volume: 1
+        delay: 0
+        isLoop: 1
+      weight: 1
+      playType: 0

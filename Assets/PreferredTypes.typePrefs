@@ -25,6 +25,7 @@
     "UnityEngine.Light",
     "UnityEngine.Material",
     "UnityEngine.Mathf",
+    "UnityEngine.MeshCollider",
     "UnityEngine.MonoBehaviour",
     "UnityEngine.Object",
     "UnityEngine.Physics",
@@ -51,5 +52,5 @@
     "UnityEngine.SceneManagement.SceneManager",
     "UnityEngine.UI.Button",
     "UnityEngine.UI.Slider",
-    "UnityEngine.MeshCollider"
+    "Pok.AlgrothimPriceItem"
 ]

@@ -20,18 +20,19 @@ namespace Pok
             uRhere.gameObject.SetActive(pInfo.ItemID == GameManager.Instance.ZoneChoosed);
             var state = "Default";
             var zoneinfo = GameManager.Instance.Database.zoneInfos.Find(x => x.id == pInfo.ItemID);
-            price.text =$"{ pInfo.moneyToUnlock.ToKMBTA()} to unlock this planet" ;
+            price.text =$"{ pInfo.moneyToUnlock.ToKMBTA()}" ;
             factorTap.text = $"x{pInfo.factorTap} money for each tap";
             layerNotUnlocked.gameObject.SetActive(!zoneinfo.isUnLock);
             if (!zoneinfo.isUnLock)
             {
                 state = "DefaultDisable";
             }
+            icon.color = !zoneinfo.isUnLock ? Color.black : Color.white;
             pInfo.getSpriteForState((o) =>
             {
                 icon.sprite2D = o;
                 icon.MakePixelPerfectClaimIn(new Vector2Int(icon.width, icon.height));
-            }, state);
+            });
             nameZone.text = pInfo.displayNameItem.Value;
 
 

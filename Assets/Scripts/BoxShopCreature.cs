@@ -77,6 +77,8 @@ namespace Pok
         }
         public void claim(object data)
         {
+            SoundManager.Instance.PlaySound("ShopBuy");
+            SoundManager.Instance.vib();
             var creature = ((CreatureItem)((ShopItemInfo)data).itemSell);
             var zone = GameDatabase.Instance.ZoneCollection.Find(x => x.ItemID == GameManager.Instance.ZoneChoosed);
             var pack = zone.getPackage();
@@ -98,10 +100,12 @@ namespace Pok
         {
             var shopitem = ((ShopItemInfo)data);
             var exchanges = shopitem.getCurrentPrice()[index].exchangeItems;
+            var numberBought = GameManager.Instance.getNumberBoughtItem(shopitem.itemSell.ItemID);
+            var quantity = PokUltis.calculateCreaturePrice(index, numberBought, (CreatureItem)shopitem.itemSell);
             for (int i = 0; i < exchanges.Length; ++i)
             {
                 var exist = GameManager.Instance.Database.getItem(exchanges[i].item.ItemID);
-                if (exist.QuantityBig < BigInteger.Parse(exchanges[i].quantity.clearDot()))
+                if (exist.QuantityBig < BigInteger.Parse(quantity.clearDot()))
                 {
                     HUDManager.Instance.showBoxNotEnough(exist.item);
                     return;
@@ -110,7 +114,7 @@ namespace Pok
             for (int i = 0; i < exchanges.Length; ++i)
             {
                 var exist = GameManager.Instance.Database.getItem(exchanges[i].item.ItemID);
-                exist.addQuantity("-" + exchanges[i].quantity.clearDot());
+                exist.addQuantity("-" + quantity.clearDot());
             }
             claim(data);
         }

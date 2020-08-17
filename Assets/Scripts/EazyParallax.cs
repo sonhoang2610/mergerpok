@@ -122,6 +122,7 @@ public class EazyParallax : MonoBehaviour
     [ContextMenu("Start")]
     public void startRoll()
     {
+        SoundManager.Instance.PlaySound("Wheel");
         Rolling = true;
         isStop = false;
         currentTime = 0;
@@ -238,6 +239,7 @@ public class EazyParallax : MonoBehaviour
                 float percent = currentTimeStop / timeStop;
                 if (percent >= 1)
                 {
+                    SoundManager.Instance.PlaySound("RewardSpin");
                     percent = 1;
                     Rolling = false;
                     if (callBackStop != null)

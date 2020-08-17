@@ -229,122 +229,173 @@ MonoBehaviour:
   - creatureLeader: {fileID: 11400000, guid: 55fb581e79a7da145a5d4727275d0b20, type: 2}
     map: {fileID: 11400000, guid: e7d3663ef6bd67f4cba67072bfe04275, type: 2}
     className:
-      normalString: hehe
+      normalString: Normal
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 58ef38842fab8b84eb5b318fe107bcac, type: 2}
     map: {fileID: 11400000, guid: a947ec2bc06579e4b88ae4c3511026cb, type: 2}
     className:
-      normalString: haha
+      normalString: Normal
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 399295eb43313674a9cad54f5b151d8a, type: 2}
     map: {fileID: 11400000, guid: a2ef88b331c405f4f991af4f3a9456c6, type: 2}
     className:
-      normalString: 
+      normalString: Wilder
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: a085093480554eb43ac4eb33cb385c53, type: 2}
     map: {fileID: 11400000, guid: a2ef88b331c405f4f991af4f3a9456c6, type: 2}
     className:
-      normalString: 
+      normalString: Fire
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 3213e515e200bfd4d847af1663fa7db7, type: 2}
     map: {fileID: 11400000, guid: a2ef88b331c405f4f991af4f3a9456c6, type: 2}
     className:
-      normalString: 
+      normalString: Water
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 6890b998fb574e24c94d8b47e767c164, type: 2}
     map: {fileID: 11400000, guid: d3d4f1a8dd68093489efc11140b0ff32, type: 2}
     className:
-      normalString: 
+      normalString: Fairy 1st
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 9203d1bb84100d7439c4579af0f2f39e, type: 2}
     map: {fileID: 11400000, guid: d3d4f1a8dd68093489efc11140b0ff32, type: 2}
     className:
-      normalString: 
+      normalString: Child Earth
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 451450564db04244baa368fabc229958, type: 2}
     map: {fileID: 11400000, guid: d3d4f1a8dd68093489efc11140b0ff32, type: 2}
     className:
-      normalString: 
+      normalString: Robot
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: d7ff3dda42eab3944bb278af64ca3ddb, type: 2}
     map: {fileID: 11400000, guid: d3d4f1a8dd68093489efc11140b0ff32, type: 2}
     className:
-      normalString: 
+      normalString: Ligthtning
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: cf8a6035f1f0707488e4f39a6681f2e5, type: 2}
     map: {fileID: 11400000, guid: d3d4f1a8dd68093489efc11140b0ff32, type: 2}
     className:
-      normalString: 
+      normalString: Snow
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 936051386837c634d8cb86284db9a860, type: 2}
     map: {fileID: 11400000, guid: d3d4f1a8dd68093489efc11140b0ff32, type: 2}
     className:
-      normalString: 
+      normalString: Darknest
       isI2String: 0
       value: 
     amountCreature: 6
+    prefabMix:
+      m_AssetGUID: 
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 8c32199aec57cf74489161ea890e6f89, type: 2}
     map: {fileID: 11400000, guid: 48b486716b42cd1478b9abcd6087f908, type: 2}
     className:
-      normalString: 
+      normalString: Fairy Queen
       isI2String: 0
       value: 
     amountCreature: 1
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 119a199d98c302643a141e26e95c5a0f, type: 2}
     map: {fileID: 11400000, guid: 48b486716b42cd1478b9abcd6087f908, type: 2}
     className:
-      normalString: 
+      normalString: Earth Lord
       isI2String: 0
       value: 
     amountCreature: 1
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 2cf3c3dc03d4e4a4987e28447c700095, type: 2}
     map: {fileID: 11400000, guid: 48b486716b42cd1478b9abcd6087f908, type: 2}
     className:
-      normalString: 
+      normalString: Final Generation
       isI2String: 0
       value: 
     amountCreature: 1
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 415053256b282ca4ba8e6956a6518902, type: 2}
     map: {fileID: 11400000, guid: 48b486716b42cd1478b9abcd6087f908, type: 2}
     className:
-      normalString: 
+      normalString: Lightning Dragon
       isI2String: 0
       value: 
     amountCreature: 1
+    prefabMix:
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: e5e2851f4fc70a940b442c51456e7392, type: 2}
     map: {fileID: 11400000, guid: 48b486716b42cd1478b9abcd6087f908, type: 2}
     className:
-      normalString: 
+      normalString: Snow Queen
       isI2String: 0
       value: 
     amountCreature: 1
+    prefabMix:
+      m_AssetGUID: 
+      m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: d35b85ec1f0f93f4f9f39972fd7202d2, type: 2}
     map: {fileID: 11400000, guid: 48b486716b42cd1478b9abcd6087f908, type: 2}
     className:
-      normalString: 
+      normalString: Death Spirit
       isI2String: 0
       value: 
     amountCreature: 1
+    prefabMix:
+      m_AssetGUID: 
+      m_SubObjectName: 
   ShopCollection:
   - {fileID: 11400000, guid: 4848aabde1294a64c83a29c8311c0efc, type: 2}
   - {fileID: 11400000, guid: bcbe177e4a284fe43a4b5b1b29ed94db, type: 2}
@@ -435,7 +486,7 @@ MonoBehaviour:
     rate: 0.2
   - item: {fileID: 11400000, guid: 2e5816dcf486a7a4e9885c8a6ffaae8a, type: 2}
     rate: 0.2
-  timeAFKShowBoxTreasure: 10
+  timeAFKShowBoxTreasure: 7200
   missionContainer:
   - {fileID: 11400000, guid: 9cf91cf15f1907c4aad1fa8abc1e1afa, type: 2}
   - {fileID: 11400000, guid: 89dad6a3aeb79144d9d404095a0af96a, type: 2}

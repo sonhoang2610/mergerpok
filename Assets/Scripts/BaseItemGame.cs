@@ -63,7 +63,7 @@ namespace Pok
             return quantity.clearDot();
         }
 
-        public void setQuantity(string valueStr)
+        public void setQuantity(string valueStr, bool pingNow = true)
         {
             var quantityNumber= System.Numerics.BigInteger.Parse(quantity);
             var value = System.Numerics.BigInteger.Parse(valueStr);
@@ -95,12 +95,31 @@ namespace Pok
                 {
                     EmptySlot = false;
                     item.machine?.onAdded(this);
-                    EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.NEWITEM, this));
+                    if (pingNow)
+                    {
+                        EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.NEWITEM, this));
+                    }
+                    else
+                    {
+                        GameManager.Instance.StartCoroutine(GameManager.Instance.actionOnEndFrame(() => {
+                            EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.NEWITEM, this));
+                        }));
+                    }
                 }
                 else if (localChangeQuantity != 0)
                 {
                     item.machine?.onDirtyChange(this);
-                    EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.CHANGE_QUANTITY_ITEM, this));
+                    if (pingNow)
+                    {
+                        EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.CHANGE_QUANTITY_ITEM, this));
+                    }
+                    else
+                    {
+                        GameManager.Instance.StartCoroutine(GameManager.Instance.actionOnEndFrame(() => {
+                            EzEventManager.TriggerEvent(new GameDatabaseInventoryEvent(BehaviorDatabase.CHANGE_QUANTITY_ITEM, this));
+                        }));
+                    }
+                
                 }
             
             }
@@ -120,9 +139,10 @@ namespace Pok
             }
         }
 
-        public void addQuantity(string add)
+        public void addQuantity(string add,bool pingNow = true)
         {
-            setQuantity((BigInteger.Parse(quantity) + BigInteger.Parse(add)).toString());
+            setQuantity((BigInteger.Parse(quantity) + BigInteger.Parse(add)).toString(),pingNow);
+            ES3.dirty = true; 
         }
 
         public long QuantityLong
@@ -173,25 +193,46 @@ namespace Pok
         //}
         [SerializeField]
         protected int level = 0;
+ 
         public int CurrentLevel
         {
             get
             {
-                return level;
+                return item.variantLevel ? ES3.Load<int>($"Level_{item.ItemID}_{GameManager.Instance.ZoneChoosed}", item.defaultLevel) : level;
             }
             set
             {
-                bool dirty = false;
-                if(level != value)
+                if (!item.variantLevel)
                 {
-                    dirty = true;
-                }
-                level = value;
-                if (dirty)
-                {
-                    if(item.machine != null)
+                    bool dirty = false;
+                    if (level != value)
                     {
-                        item.machine.onDirtyChange(this);
+                        dirty = true;
+                    }
+                    level = value;
+                    if (dirty)
+                    {
+                        if (item.machine != null)
+                        {
+                            item.machine.onDirtyChange(this);
+                        }
+                    }
+                }
+                else
+                {
+                    var levelVariant = ES3.Load<int>($"Level_{item.ItemID}_{GameManager.Instance.ZoneChoosed}", item.defaultLevel);
+                    bool dirty = false;
+                    if (levelVariant != value)
+                    {
+                        dirty = true;
+                    }
+                    ES3.Save<int>($"Level_{item.ItemID}_{GameManager.Instance.ZoneChoosed}", value);
+                    if (dirty)
+                    {
+                        if (item.machine != null)
+                        {
+                            item.machine.onDirtyChange(this);
+                        }
                     }
                 }
             }
@@ -242,6 +283,8 @@ namespace Pok
 #endif
 
         public bool variantItem = false;
+        public bool variantLevel = false;
+        public int defaultLevel = 0;
         public string itemID;
         public I2String displayNameItem;
         public I2String descriptionItem;
@@ -250,6 +293,7 @@ namespace Pok
         public List<IconBehavior> icons = new List<IconBehavior>() { new IconBehavior()};
         public List<GameObjectBehavior> model = new List<GameObjectBehavior>() { new GameObjectBehavior() };
         public int score;
+        public Dictionary<string, object> blackBoardVariable = new Dictionary<string, object>();
         public System.Func<string> updateString { get; set; }
         public string GetUpgradeString()
         {

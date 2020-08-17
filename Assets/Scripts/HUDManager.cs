@@ -4,6 +4,7 @@ using UnityEngine;
 using EazyEngine.Tools;
 using EasyMobile;
 using UnityEngine.Purchasing;
+using ScriptableObjectArchitecture;
 
 namespace Pok
 {
@@ -25,6 +26,17 @@ namespace Pok
         public BoxBank boxBank;
         public BoxBonusEvolutionPok boxEvoPok;
         public GameObject btnVip;
+        public GameObject hand;
+
+        public UI2DSprite processTimeMixing;
+        public UnitDefineLevelIntVariable timeMixLimit;
+
+        public void updateTimeMixing()
+        {
+            processTimeMixing.fillAmount = (float)GameManager.Instance.MixingTime / (float)timeMixLimit.Value.getCurrentUnit();
+        }
+
+        
 
         protected Dictionary<GameObject,List<string>> markActiveObject = new Dictionary<GameObject, List<string>>();
         public void factorGoldToBuyActive(string id, bool active)
@@ -81,6 +93,11 @@ namespace Pok
                 GameManager.Instance.LoadRewardADS("BoxRewardADS");
             }
            
+        }
+
+        public void SaveGame()
+        {
+            GameManager.Instance.SaveGame();
         }
         public void showBoxFullSlot()
         {
@@ -175,6 +192,7 @@ namespace Pok
         {
             InAppPurchasing.PurchaseCompleted += PurchaseCompleted;
             StartCoroutine(checkState());
+      
         }
 
         public IEnumerator checkState()
@@ -183,6 +201,7 @@ namespace Pok
             {
                 yield return new WaitForEndOfFrame();
             }
+            updateTimeMixing();
             while (!InAppPurchasing.IsInitialized())
             {
                 yield return new WaitForEndOfFrame();

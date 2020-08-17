@@ -11,6 +11,11 @@ namespace Pok
         {
             return ES3.Load<float>("BonusCrystal", 0);
         }
+
+        public override void buyWayOne(object data)
+        {
+            base.buyWayOne(data);
+        }
         protected override void OnEnable()
         {
             base.OnEnable();

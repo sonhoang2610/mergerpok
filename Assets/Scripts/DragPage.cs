@@ -16,7 +16,6 @@ namespace Pok
             {
                 var delta = (UICamera.currentTouch.pos - cachePos);
                 if (delta != Vector2.zero) {
-                    Debug.Log("delta" + delta);
                     MainScene.Instance.DragMapLayer(delta, indexTouch);
                     indexTouch++;
                 }

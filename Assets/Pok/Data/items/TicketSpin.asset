@@ -26,7 +26,7 @@ MonoBehaviour:
       Data: 0|Pok.UnitDefineLevelInt, Assembly-CSharp
     - Name: startUnit
       Entry: 3
-      Data: 20
+      Data: 12
     - Name: algrothimTypeUpgrade
       Entry: 3
       Data: 0
@@ -63,6 +63,10 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
   itemID: TicketSpin
   displayNameItem:
     normalString: TicketSpin

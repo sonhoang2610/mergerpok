@@ -59,7 +59,8 @@ namespace EazyEngine.Audio
             }
 
             AudioGroupSelector value = this.ValueEntry.SmartValue;
-           /// GUIHelper.PushLabelWidth(20);
+            bool oldValue = value.isMusic;
+            value.isMusic = EditorGUI.Toggle(rect.AlignLeft(rect.width * 0.25f).AddX(rect.width * 0.5f + 20), value.isMusic);
             var pStringArray = !value.isMusic ? AudioDatabase.Instance.ArrayGroupNameSound : AudioDatabase.Instance.ArrayGroupNameMusics;
             int pIndex = pStringArray.findIndex(value);
             if (pIndex == -1)
@@ -69,8 +70,8 @@ namespace EazyEngine.Audio
             var oldIndex = pIndex;
             pIndex = EditorGUI.Popup(rect.AlignLeft(rect.width * 0.5f), pIndex, pStringArray);
             value.groupName = pStringArray[pIndex];
-            bool oldValue = value.isMusic;
-            value.isMusic = EditorGUI.Toggle(rect.AlignLeft(rect.width * 0.25f).AddX(rect.width*0.5f +20), value.isMusic);
+  
+   
             if(value.isMusic != oldValue || oldIndex != pIndex)
             {
 

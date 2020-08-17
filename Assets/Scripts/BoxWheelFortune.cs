@@ -17,17 +17,17 @@ namespace Pok
         DIAMOND,
         SPIN
     }
-    
+
     [System.Serializable]
     public class WheelConfig
     {
         public TypeItem itemType;
-        public float[] percentRoll = new float[] { 0.4f,0.4f,0.2f};
+        public float[] percentRoll = new float[] { 0.4f, 0.4f, 0.2f };
         public AssetReferenceSprite icon;
         public float change = 1;
         public AssetReferenceSprite getICon()
         {
-            var creatureActive = GameManager.Instance.Database.getAllCreatureInfoInZone(GameManager.Instance.ZoneChoosed,true);
+            var creatureActive = GameManager.Instance.Database.getAllCreatureInfoInZone(GameManager.Instance.ZoneChoosed, true);
             int indexDown2 = (creatureActive.Length - 3).Clamp(creatureActive.Length, 0);
             int indexDown5 = (creatureActive.Length - 6).Clamp(creatureActive.Length, 0);
 
@@ -41,17 +41,17 @@ namespace Pok
             }
             return icon;
         }
-   
+
         public ItemWithQuantity getItem(int result)
         {
-            var creatureActive = GameManager.Instance.Database.getAllCreatureInfoInZone(GameManager.Instance.ZoneChoosed,true);
+            var creatureActive = GameManager.Instance.Database.getAllCreatureInfoInZone(GameManager.Instance.ZoneChoosed, true);
             int indexDown2 = (creatureActive.Length - 3).Clamp(creatureActive.Length, 0);
             int indexDown5 = (creatureActive.Length - 6).Clamp(creatureActive.Length, 0);
 
             switch (itemType)
             {
                 case TypeItem.BIG_GOLD:
-                    var bigGold = BigInteger.Parse( GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (result == 1 ? 100 : (result == 3 ? 2000 : 200));
+                    var bigGold = BigInteger.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (result == 1 ? 100 : (result == 3 ? 2000 : 200));
                     return new ItemWithQuantity() { item = GameDatabase.Instance.getItemInventory("Coin"), quantity = bigGold.ToString() };
                 case TypeItem.CREATUREDOWN2:
                     return new ItemWithQuantity() { item = creatureActive[indexDown2], quantity = result == 3 ? "1" : "0" };
@@ -59,7 +59,7 @@ namespace Pok
                     return new ItemWithQuantity() { item = creatureActive[indexDown5], quantity = result == 3 ? "1" : "0" };
                 case TypeItem.GOLD:
                     int[] factor = new int[] { 20, 200, 400 };
-                    var small = BigInteger.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * factor[result-1];
+                    var small = BigInteger.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * factor[result - 1];
                     return new ItemWithQuantity() { item = GameDatabase.Instance.getItemInventory("Coin"), quantity = small.ToString() };
                 case TypeItem.DIAMOND:
                     return new ItemWithQuantity() { item = GameDatabase.Instance.getItemInventory("Crystal"), quantity = result == 3 ? "5" : "0" };
@@ -69,7 +69,7 @@ namespace Pok
             return new ItemWithQuantity();
         }
     }
-    public class BoxWheelFortune : Singleton<BoxWheelFortune>,EzEventListener<GameDatabaseInventoryEvent>
+    public class BoxWheelFortune : Singleton<BoxWheelFortune>, EzEventListener<GameDatabaseInventoryEvent>
     {
         public EazyParallax[] rolls;
         public UIElement container;
@@ -81,7 +81,7 @@ namespace Pok
         public UILabel labelRewardQuantiy, labelRewardType;
         public void OnEzEvent(GameDatabaseInventoryEvent eventType)
         {
-            if(eventType.item.item.ItemID == "TicketSpin")
+            if (eventType.item.item.ItemID == "TicketSpin")
             {
                 updateLayer();
             }
@@ -157,14 +157,14 @@ namespace Pok
         public void onStop()
         {
             rollCount--;
-            if(rollCount == 0)
+            if (rollCount == 0)
             {
                 List<Vector2Int> ressultMerger = new List<Vector2Int>();
-                for(int i = 0; i < resultItem.Count; ++i)
+                for (int i = 0; i < resultItem.Count; ++i)
                 {
-                    if(!ressultMerger.Exists(x=>x.x == resultItem[i]))
+                    if (!ressultMerger.Exists(x => x.x == resultItem[i]))
                     {
-                        ressultMerger.Add(new Vector2Int(resultItem[i],0));
+                        ressultMerger.Add(new Vector2Int(resultItem[i], 0));
                     }
                     var index = ressultMerger.FindIndex(x => x.x == resultItem[i]);
                     var vec = ressultMerger[index];
@@ -172,10 +172,10 @@ namespace Pok
                     ressultMerger[index] = vec;
                 }
                 List<ItemWithQuantity> items = new List<ItemWithQuantity>();
-                for(int i = 0; i < ressultMerger.Count; ++i)
+                for (int i = 0; i < ressultMerger.Count; ++i)
                 {
-                  var item = GameDatabase.Instance.wheelMainConfig[ressultMerger[i].x].getItem(ressultMerger[i].y);
-                    if(!items.Exists(x=>x.item == item.item))
+                    var item = GameDatabase.Instance.wheelMainConfig[ressultMerger[i].x].getItem(ressultMerger[i].y);
+                    if (!items.Exists(x => x.item == item.item))
                     {
                         items.Add(item);
                     }
@@ -183,13 +183,13 @@ namespace Pok
                     {
                         var index = items.FindIndex(x => x.item == item.item);
                         var itemInfo = items[index];
-                        itemInfo.quantity = (BigInteger.Parse(itemInfo.quantity ) + BigInteger.Parse( item.quantity)).ToString();
+                        itemInfo.quantity = (BigInteger.Parse(itemInfo.quantity) + BigInteger.Parse(item.quantity)).ToString();
                         items[index] = itemInfo;
                     }
                 }
                 items.Sort((a, b) => BigInteger.Parse(b.quantity).CompareTo(BigInteger.Parse(a.quantity)));
                 var itemFinal = items[0];
-                if(itemFinal.item.ItemID == "Coin")
+                if (itemFinal.item.ItemID == "Coin")
                 {
                     var index = Random.Range(0, 2);
                     coinEffect[index].gameObject.SetActive(true);
@@ -199,9 +199,10 @@ namespace Pok
                 labelRewardType.gameObject.SetActive(itemFinal.item.ItemID == "TicketSpin" || itemFinal.item.categoryItem == CategoryItem.CREATURE);
                 if (itemFinal.item.ItemID == "Coin" || itemFinal.item.ItemID == "Crystal")
                 {
-                
+
                     labelRewardQuantiy.text = itemFinal.quantity.ToKMBTA();
-                    itemFinal.item.getSpriteForState((o) => {
+                    itemFinal.item.getSpriteForState((o) =>
+                    {
                         rewardIcon.sprite2D = o;
                     });
                 }
@@ -210,11 +211,11 @@ namespace Pok
                     labelRewardType.text = itemFinal.item.categoryItem == CategoryItem.CREATURE ? "Pok" : "Spin";
                 }
                 var exist = GameManager.Instance.Database.getItem(itemFinal.item.ItemID);
-                if(exist != null)
+                if (exist != null)
                 {
                     exist.addQuantity(itemFinal.quantity.clearDot());
                 }
-                else if(BigInteger.Parse( itemFinal.quantity) > 0)
+                else if (BigInteger.Parse(itemFinal.quantity) > 0)
                 {
                     var creature = ((CreatureItem)itemFinal.item);
                     var zone = GameDatabase.Instance.ZoneCollection.Find(x => x.ItemID == GameManager.Instance.ZoneChoosed);
@@ -230,13 +231,15 @@ namespace Pok
                         zoneid = GameManager.Instance.ZoneChoosed,
                         manualByHand = false,
                     });
-                    addCreatureObject(new CreatureInstanceSaved() { id = creature .ItemID,instanceID ="1", mapParent = mapParent });
+                    addCreatureObject(new CreatureInstanceSaved() { id = creature.ItemID, instanceID = "1", mapParent = mapParent });
                 }
                 blockTouch.SetActive(false);
             }
+
+            GameManager.Instance.SaveGame();
         }
 
-        public IEnumerator delayAction(float delay,System.Action action)
+        public IEnumerator delayAction(float delay, System.Action action)
         {
             yield return new WaitForSeconds(delay);
             action?.Invoke();
@@ -249,15 +252,15 @@ namespace Pok
             float random = Random.Range(0.0f, 1.0f);
             float currentPercent = 1;
             WheelConfig result = null;
-            for(int i = 0; i < wheels.Count; ++i)
+            for (int i = 0; i < wheels.Count; ++i)
             {
                 currentPercent -= wheels[i].change;
-                if(random > currentPercent)
+                if (random > currentPercent)
                 {
                     result = wheels[i];
                     break;
                 }
-                if(i == wheels.Count - 1)
+                if (i == wheels.Count - 1)
                 {
                     result = wheels[i];
                 }
@@ -268,17 +271,17 @@ namespace Pok
             for (int i = 0; i < result.percentRoll.Length; ++i)
             {
                 currentPercent -= result.percentRoll[i];
-                if(randomInsinde > currentPercent)
+                if (randomInsinde > currentPercent)
                 {
                     resultCount = i + 1;
                     break;
                 }
-                if(i == result.percentRoll.Length - 1)
+                if (i == result.percentRoll.Length - 1)
                 {
                     resultCount = i + 1;
                 }
             }
-           resultItem = new List<int>();
+            resultItem = new List<int>();
             for (int i = 0; i < resultCount; ++i)
             {
                 resultItem.Add(GameDatabase.Instance.wheelMainConfig.IndexOf(result));
@@ -293,7 +296,7 @@ namespace Pok
                 resultItem.Add(randomAnother);
             }
             resultItem.Shuffle();
-            for(int i =0; i < rolls.Length; ++i)
+            for (int i = 0; i < rolls.Length; ++i)
             {
                 rolls[i].isForever = false;
                 rolls[i].Elements[3].GetComponent<ItemWheel>().fixSkin(GameDatabase.Instance.wheelMainConfig[resultItem[i]]);
@@ -321,7 +324,7 @@ namespace Pok
         }
         public void startRollTicket()
         {
-           var ticket = GameManager.Instance.Database.getItem("TicketSpin");
+            var ticket = GameManager.Instance.Database.getItem("TicketSpin");
             if (ticket.QuantityBig > 0)
             {
                 ticket.addQuantity("-1");
@@ -342,12 +345,12 @@ namespace Pok
                 HUDManager.Instance.showBoxNotEnough(ticket.item);
             }
         }
-        
+
 
         public void watch()
         {
             GameManager.Instance.WatchRewardADS(GameConfig.Advertise.CLAIM_TICKET);
-            var exist= GameManager.Instance.Database.getItem("TicketSpin");
+            var exist = GameManager.Instance.Database.getItem("TicketSpin");
             exist.addQuantity("3");
         }
         // Start is called before the first frame update

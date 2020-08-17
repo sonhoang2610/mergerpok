@@ -66,6 +66,7 @@ namespace Pok
             {
                 items[i].choose(i == random);
             }
+            SoundManager.Instance.PlaySound("BoxRewardRun");
             CurrentTime += time;
             if (!end)
             {
@@ -79,6 +80,7 @@ namespace Pok
 
         public void onStop()
         {
+            SoundManager.Instance.PlaySound("RewardSpin");
             var item = items[resultIndex]._info;
             claimItem(new ItemWithQuantity() { item = item.item, quantity = item.quantity });
             StartCoroutine(delayAction(2, delegate
@@ -138,12 +140,20 @@ namespace Pok
                 }
             }
             GameObject newObject = new GameObject();
+            var state = "Default";
+            if (item.item.ItemID.Contains("SuperInCome"))
+            {
+                if (GameManager.Instance.getFactorIncome().x >= 2)
+                {
+                    state = "X4";
+                }
+            }
             var sprite = newObject.AddComponent<UI2DSprite>();
             item.item.getSpriteForState((o) =>
             {
                 sprite.sprite2D = o;
                 sprite.MakePixelPerfectClaimIn(new Vector2Int(200, 200));
-            });
+            }, state);
 
             newObject.transform.parent = blockTouch.transform.parent;
             newObject.transform.localScale = new Vector3(1, 1, 1);

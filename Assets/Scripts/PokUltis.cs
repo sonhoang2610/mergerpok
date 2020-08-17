@@ -2,9 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EazyEngine.Tools;
+using ScriptableObjectArchitecture;
+using DG.Tweening;
 
 namespace Pok
 {
+    public static class PokUltis
+    {
+        public static string calculateCreaturePrice(int indexWay,int numberBought,CreatureItem creauture)
+        {
+            if (indexWay == 0)
+            {
+                System.Numerics.BigInteger startMoney = 560;
+              
+                if (GameManager.Instance.ZoneChoosed != "Zone1")
+                {
+                    startMoney = creauture.goldAFKReward[GameManager.Instance.ZoneChoosed].toBigInt();
+                    System.Numerics.BigInteger newMoney = startMoney;
+                    if (numberBought > 0)
+                    {
+                        newMoney += ( Mathf.Clamp(numberBought,0,2)) * 20 * startMoney / 100;
+                    }
+                    if (numberBought > 2)
+                    {
+                        newMoney += (numberBought - 2) * 20 * startMoney / 100;
+                    }
+                    return newMoney.ToString();
+                }
+                else
+                {
+                    startMoney = (startMoney * (long)System.Math.Pow(3, creauture.RankChild));
+                    startMoney += (int)Mathf.Clamp(numberBought, 0, 5) * startMoney;
+                    if(numberBought > 5)
+                    {
+                        startMoney += (numberBought - 5) *20* startMoney/100;
+                    }
+                    return startMoney.toString();
+                }
+            }
+            else
+            {
+                int startMoney = 1 + 3 * (int.Parse(GameManager.Instance.ZoneChoosed.Substring(GameManager.Instance.ZoneChoosed.Length - 1, 1)) - 1);
+                startMoney += (creauture.RankChild / 2);
+                startMoney += numberBought / 10;
+                return startMoney.ToString();
+            }
+        }
+    }
     public interface IMachineItem
     {
         void onEnable(BaseItemGameInstanced itemSlot);
@@ -189,27 +233,31 @@ namespace Pok
     }
     public class MixingScale : IMachineItem, EzEventListener<AddCreatureEvent>
     {
-        public UnitDefineLevelInt timeMixing;
+        public UnitDefineLevelIntVariable timeMixing;
         public int MixingTime
         {
             get
             {
-                return ES3.Load<int>("MixingTime", 0);
+                var setting = new ES3Settings();
+                setting.location = ES3.Location.Cache;
+                return ES3.Load<int>("MixingTime", 0, setting);
             }
 
             set
             {
-                ES3.Save<int>("MixingTime", value);
+                var setting = new ES3Settings();
+                setting.location = ES3.Location.Cache;
+                ES3.Save<int>("MixingTime", value, setting);
             }
         }
 
         public void execute(BaseItemGameInstanced itemSlot)
         {
-            timeMixing.setLevel(() =>
+            timeMixing.Value.setLevel(() =>
             {
                 return GameManager.Instance.getLevelItem(itemSlot.itemID);
             });
-            itemSlot.item.updateString = () => { return timeMixing.getUnit(itemSlot.CurrentLevel) + " => " + timeMixing.getUnit(itemSlot.CurrentLevel + 1); };
+            itemSlot.item.updateString = () => { return timeMixing.Value.getUnit(itemSlot.CurrentLevel) + " => " + timeMixing.Value.getUnit(itemSlot.CurrentLevel + 1); };
         }
         public void onAdded(BaseItemGameInstanced itemSlot)
         {
@@ -231,12 +279,40 @@ namespace Pok
         {
             if (!eventType.manualByHand || eventType.change <= 0) return;
             MixingTime++;
-            if (MixingTime >= timeMixing.getCurrentUnit())
+            if (MixingTime >= timeMixing.Value.getCurrentUnit())
             {
                 MixingTime = 0;
                 var crystal = GameManager.Instance.Database.getItem("Crystal");
                 crystal.addQuantity("1");
+                var iconPos = HUDManager.Instance.processTimeMixing.transform.parent.GetChild(1).position;
+                var Home = System.Array.Find(GameObject.FindObjectsOfType<InventorySlot>(), x => x._info.itemID == "Crystal");
+                if (Home)
+                {
+                    GameObject pObject = new GameObject();
+                    var sprite = pObject.AddComponent<UI2DSprite>();
+                    sprite.width = 100;
+                    sprite.height = 100;
+                    var item = GameManager.Instance.Database.getItem("Crystal");
+                    item.item.getSpriteForState((o) =>
+                    {
+                        sprite.sprite2D = o;
+                    });
+                    pObject.transform.parent = Home.transform;
+                    pObject.SetLayerRecursively(HUDManager.Instance.gameObject.layer);
+                    pObject.transform.localScale = new Vector3(1, 1, 1);
+                    pObject.transform.position = iconPos;
+                    NGUITools.BringForward(pObject);
+                    Sequence seq = DOTween.Sequence();
+                    seq.Append(pObject.transform.DOScale(1.5f, 0.75f));
+                    seq.Append( pObject.transform.DOMove(Home.transform.position, 0.5f));
+                    seq.Join( pObject.transform.DOScale(0, 0.6f).OnComplete(() =>
+                    {
+                        GameObject.Destroy(pObject);
+                    }));
+                }
             }
+            HUDManager.Instance.updateTimeMixing();
+     
         }
 
         public void onRemoved(BaseItemGameInstanced itemSlot)
@@ -280,14 +356,22 @@ namespace Pok
         }
         public void Excute(Dictionary<string, object> blackBoard)
         {
-            var factor = (float)blackBoard["SuperInCome"];
+            var factor = 2;
+            if (GameManager.Instance.getFactorIncome().x >= 2)
+            {
+                factor = 4;
+            }
             double time = blackBoard["time"].GetType() == typeof(double) ? (double)blackBoard["time"] : Random.Range(((Vector2Int)blackBoard["time"]).x, ((Vector2Int)blackBoard["time"]).y);
             GameManager.Instance.addFactorSuperIncome(factor, time);
         }
 
         public string getContent(Dictionary<string, object> blackBoard)
         {
-            var factor = (float)blackBoard["SuperInCome"];
+            var factor = 2;
+            if(GameManager.Instance.getFactorIncome().x >= 2)
+            {
+                factor = 4;
+            }
             return "x" + factor + " Gold";
         }
     }

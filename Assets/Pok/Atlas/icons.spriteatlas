@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: icons
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: aaed03a5d76fcb34388491533e8ca47d, type: 3}
+    totalSpriteSurfaceArea: 1413350
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9f50fd10d81d5e146b6ec686d9dc0a16, type: 3}
+  - {fileID: 21300000, guid: 57ddf0018b7d0b249a492014b9e5a6f4, type: 3}
+  - {fileID: 21300000, guid: f71041012d8db80498a18745d523e15d, type: 3}
+  - {fileID: 21300000, guid: aba551a361f97c64caad54415fa7f3d4, type: 3}
+  - {fileID: 21300000, guid: ca37e3d3cb9702846823ca571b05c081, type: 3}
+  - {fileID: 21300000, guid: ab5a50f331d498048aac43da31bc75ed, type: 3}
+  - {fileID: 21300000, guid: 8641dc855fe5da64590a6b286647577b, type: 3}
+  - {fileID: 21300000, guid: bc5a89a5cbeb2734b9aa33d7480c118c, type: 3}
+  - {fileID: 21300000, guid: 021f4d46f4868bd41bf26703da023835, type: 3}
+  - {fileID: 21300000, guid: a37e1f860a9728f488524bf24f2e996a, type: 3}
+  - {fileID: 21300000, guid: f89b92d69d2cd54498d1bbe31580a7b5, type: 3}
+  - {fileID: 21300000, guid: b73115d67342c0946b8b742066fe58db, type: 3}
+  - {fileID: 21300000, guid: 6a4a3fe620e933142b6ec0f7e536ddb1, type: 3}
+  - {fileID: 21300000, guid: 395e963787a7a2e46a8a427fc54784b4, type: 3}
+  - {fileID: 21300000, guid: 22928b375a343424298fbf8debb16222, type: 3}
+  - {fileID: 21300000, guid: a52a6f97860b0e74fb1c88dab85976f0, type: 3}
+  - {fileID: 21300000, guid: f2980f4895c7d3e4f904381c7a073b8c, type: 3}
+  - {fileID: 21300000, guid: e13323d8599dbb64bbbfe91e18708c6f, type: 3}
+  - {fileID: 21300000, guid: 0e02cb2944597f649a976bdef71488c9, type: 3}
+  - {fileID: 21300000, guid: 68e165793dcd0074bbc158b9986c085a, type: 3}
+  - {fileID: 21300000, guid: 12502fe9cd0be9a4d8bdcf79646e790e, type: 3}
+  - {fileID: 21300000, guid: b54e4ff94ece21649b25b52f7269bb5e, type: 3}
+  - {fileID: 21300000, guid: 0050bb8bad8d7af45b549d36663f527f, type: 3}
+  - {fileID: 21300000, guid: 3039f11c63a451643ba4d28c254d3cf2, type: 3}
+  - {fileID: 21300000, guid: 9daec04ca1271ac468cd4916c83fbe99, type: 3}
+  - {fileID: 21300000, guid: 550d17acec091274db6ae374e2256ccd, type: 3}
+  - {fileID: 21300000, guid: 50b1910da57b5ca4aaa26f553db269d3, type: 3}
+  - {fileID: 21300000, guid: 538f270d3fd3e3f469b94958d56fd47b, type: 3}
+  - {fileID: 21300000, guid: 4417eb6d42c06064ba628aa7ed6a31d7, type: 3}
+  - {fileID: 21300000, guid: 6ae0be3e585b5cb4f81642c83fbddd61, type: 3}
+  - {fileID: 21300000, guid: c2c40b7e3905b014bb5e1e11283dab47, type: 3}
+  - {fileID: 21300000, guid: 6484a3ce4dfcf41488768c397c40bca0, type: 3}
+  - {fileID: 21300000, guid: 85cf0bde7d847944a8c39ddf50271797, type: 3}
+  - {fileID: 21300000, guid: ef9e5ddf638b40f4c9a96a5a0e70af4a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 3
+  - 11
+  - Pack_Gems_Case
+  - 4
+  - 7
+  - vip_remove_ads
+  - 9
+  - 6
+  - item_vip
+  - SlotIconSpin
+  - 2
+  - Pack_Gold_Safe
+  - item_block
+  - Ico_Diamond_d1
+  - 16
+  - 5
+  - 10
+  - item_sale25
+  - 15
+  - 8
+  - 17
+  - Pack_Gems_Sack
+  - item_goldx2
+  - 14
+  - Ico_Gold
+  - item_monsterbomb
+  - Pack_Gold_Sack
+  - Pack_Gems_Box
+  - 13
+  - item_goldx4
+  - Pack_Gold_Mountain
+  - Pack_Gems_Handful
+  - 12
+  - 1
+  m_Tag: icons
+  m_IsVariant: 0

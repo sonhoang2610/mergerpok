@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: wheel
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: dd48927260178e8449d2f90c15bc574b, type: 3}
+    - {fileID: 2800000, guid: eac1907ebdd46724483b82442afa6cf5, type: 3}
+    - {fileID: 2800000, guid: d5852b9e963bfd945bed748abf218ab9, type: 3}
+    - {fileID: 2800000, guid: f33443f559317244aa2c046cf1ab7ff8, type: 3}
+    - {fileID: 2800000, guid: 59681b12144a1594ca2307b7efb7f5e9, type: 3}
+    - {fileID: 2800000, guid: 207162d6d1eb61a4cbb78fec15c30038, type: 3}
+    - {fileID: 2800000, guid: d494497f65dd7dd44baa73a3518df2c0, type: 3}
+    - {fileID: 2800000, guid: b641290f8efa7a9419da94748daf245d, type: 3}
+    - {fileID: 2800000, guid: 97ad1c122b5ee2f4d8949c393f72a491, type: 3}
+    totalSpriteSurfaceArea: 1634321
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 59681b12144a1594ca2307b7efb7f5e9, type: 3}
+  - {fileID: 21300000, guid: 97ad1c122b5ee2f4d8949c393f72a491, type: 3}
+  - {fileID: 21300000, guid: dd48927260178e8449d2f90c15bc574b, type: 3}
+  - {fileID: 21300000, guid: f33443f559317244aa2c046cf1ab7ff8, type: 3}
+  - {fileID: 21300000, guid: 207162d6d1eb61a4cbb78fec15c30038, type: 3}
+  - {fileID: 21300000, guid: eac1907ebdd46724483b82442afa6cf5, type: 3}
+  - {fileID: 21300000, guid: d5852b9e963bfd945bed748abf218ab9, type: 3}
+  - {fileID: 21300000, guid: b641290f8efa7a9419da94748daf245d, type: 3}
+  - {fileID: 21300000, guid: d494497f65dd7dd44baa73a3518df2c0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - btn_yellow
+  - pregress_bar_spin2
+  - bnt_close3
+  - btn_green 1
+  - dialog_spin
+  - box_info_spin
+  - btn_collection 1
+  - pregress_bar_spin1
+  - item_watchads 1
+  m_Tag: wheel
+  m_IsVariant: 0

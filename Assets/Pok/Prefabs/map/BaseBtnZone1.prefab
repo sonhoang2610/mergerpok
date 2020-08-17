@@ -62,6 +62,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1428136786278324832, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 432
+      objectReference: {fileID: 0}
+    - target: {fileID: 1428136786278324832, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -185
+      objectReference: {fileID: 0}
     - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
       propertyPath: hover.r
@@ -106,6 +116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: disabledColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3612169807954817088, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 2.387097
       objectReference: {fileID: 0}
     - target: {fileID: 4342224689213691645, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
@@ -161,6 +176,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BaseBtnZone1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7599088000594954501, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 1.6222222
+      objectReference: {fileID: 0}
+    - target: {fileID: 7767047750147896367, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: startingRenderQueue
+      value: 3002
       objectReference: {fileID: 0}
     - target: {fileID: 8757200931702313609, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}

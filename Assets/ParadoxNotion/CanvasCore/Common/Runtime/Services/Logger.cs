@@ -110,11 +110,11 @@ namespace ParadoxNotion.Services
 
         //forward the log to unity console
         private static void ForwardToUnity(LogType type, object message, string tag, object context) {
-            if ( message is System.Exception ) {
-                UnityEngine.Debug.unityLogger.LogException((System.Exception)message);
-            } else {
-                UnityEngine.Debug.unityLogger.Log(type, tag, message, context as UnityEngine.Object);
-            }
+            //if ( message is System.Exception ) {
+            //    UnityEngine.Debug.unityLogger.LogException((System.Exception)message);
+            //} else {
+            //    UnityEngine.Debug.unityLogger.Log(type, tag, message, context as UnityEngine.Object);
+            //}
         }
     }
 }

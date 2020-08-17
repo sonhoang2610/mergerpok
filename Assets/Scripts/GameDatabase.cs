@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Pok
 {
@@ -13,6 +14,7 @@ namespace Pok
         public MapObject map;
         public I2String className;
         public int amountCreature;
+        public AssetReference prefabMix;
     }
 
     [CreateAssetMenu(fileName = "GameDatabase", menuName = "Pok/GameDatabase", order = 0)]
@@ -63,6 +65,20 @@ namespace Pok
             foreach (var shop in ShopCollection)
             {
                 shop.onInit();
+            }
+            CreatureCollection.Find(x => x.ItemID == "Pok1").initRank(0);
+            for(int i = 0; i < CreatureCollection.Count; ++i)
+            {
+                GameManager.addDirtyState("Main");
+                CreatureCollection[i].getModelForState((o) =>
+                {
+                    GameManager.removeDirtyState("Main");
+                });
+                GameManager.addDirtyState("Main");
+                CreatureCollection[i].getSpriteForState((o) =>
+                {
+                    GameManager.removeDirtyState("Main");
+                });
             }
             isInit = true;
         }

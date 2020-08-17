@@ -146,9 +146,9 @@ namespace Pok
         {
             return 0;
         }
-      public virtual float getBonusForItem(ShopItemInfo item)
+        public virtual float getBonusForItem(ShopItemInfo item)
         {
-            return 1;
+            return 0;
         }
         protected virtual void OnEnable()
         {
@@ -160,6 +160,13 @@ namespace Pok
             {
                 StopCoroutine(checkStateCoroutine);
             }
+            if (ES3.dirty)
+            {
+                if (!GameManager.InstanceRaw.IsDestroyed() && GameManager.readyForThisState("Main"))
+                {
+                    GameManager.Instance.SaveGame();
+                }
+            }
         }
 
         protected IEnumerator checkState()
@@ -167,7 +174,6 @@ namespace Pok
             while (!GameManager.readyForThisState("Main"))
             {
                 yield return new WaitForEndOfFrame();
-
             }
             reload();
         }
@@ -238,8 +244,11 @@ namespace Pok
             claimItem(item.itemSell, getBonusForItem(item));
         }
 
+
         public virtual void claimItem(BaseItemGame item,float bonus = 0)
         {
+            SoundManager.Instance.vib();
+            SoundManager.Instance.PlaySound("ShopBuy");
             GameManager.Instance.claimItem(item,"1",bonus);
         }
 

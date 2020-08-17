@@ -21,28 +21,13 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: limitInInventory
-      Entry: 6
-      Data: 
-    - Name: timeToRestore
-      Entry: 6
-      Data: 
-    - Name: machine
+    - Name: blackBoardVariable
       Entry: 7
-      Data: 0|Pok.UpgradeItemLevelEgg, Assembly-CSharp
-    - Name: egg
-      Entry: 1
-      Data: Egg
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: blackBoard
-      Entry: 7
-      Data: 1|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 2|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -56,6 +41,44 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: limitInInventory
+      Entry: 6
+      Data: 
+    - Name: timeToRestore
+      Entry: 6
+      Data: 
+    - Name: machine
+      Entry: 7
+      Data: 2|Pok.UpgradeItemLevelEgg, Assembly-CSharp
+    - Name: egg
+      Entry: 1
+      Data: Egg
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: blackBoard
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  variantItem: 0
+  variantLevel: 1
+  defaultLevel: 1
   itemID: UpgradeEgg
   displayNameItem:
     normalString: Pok In Egg

@@ -11,49 +11,74 @@ PrefabInstance:
         type: 3}
       propertyPath: mSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8cf547c3ca7f1814381a7e81f4b23aac,
+      objectReference: {fileID: 21300000, guid: c78029b7dae8333449457a0ff019fdff,
         type: 3}
     - target: {fileID: 549952054096915196, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: mWidth
-      value: 280
+      value: 476
       objectReference: {fileID: 0}
     - target: {fileID: 549952054096915196, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: mHeight
-      value: 410
+      value: 544
       objectReference: {fileID: 0}
     - target: {fileID: 549952054096915196, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: aspectRatio
-      value: 0.68292683
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006452483570929963, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 390
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599896400521088142, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -270
       objectReference: {fileID: 0}
     - target: {fileID: 1879472223067678924, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: mSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 25e1855b0b7f45e45b1e2c5451c1ffcb,
+      objectReference: {fileID: 21300000, guid: 9c7eff9a65d3faa41b6c8184f0f35173,
         type: 3}
+    - target: {fileID: 1879472223067678924, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: mWidth
+      value: 304
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879472223067678924, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: mHeight
+      value: 378
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879472223067678924, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 0.8042328
+      objectReference: {fileID: 0}
     - target: {fileID: 2804499987280769519, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: mSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 063cc5b0088d4c44d92a2f002e62cc53,
+      objectReference: {fileID: 21300000, guid: a775980759fb204499898d87dfe15462,
         type: 3}
     - target: {fileID: 2804499987280769519, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: mWidth
-      value: 234
+      value: 528
       objectReference: {fileID: 0}
     - target: {fileID: 2804499987280769519, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: mHeight
-      value: 368
+      value: 544
       objectReference: {fileID: 0}
     - target: {fileID: 2804499987280769519, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: aspectRatio
-      value: 0.63586956
+      value: 0.9705882
       objectReference: {fileID: 0}
     - target: {fileID: 5682637041466185228, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
@@ -113,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 5682637041466185229, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: startingRenderQueue
-      value: 3001
+      value: 3006
       objectReference: {fileID: 0}
     - target: {fileID: 5682637041466185231, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
@@ -124,7 +149,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mSprite
       value: 
-      objectReference: {fileID: 21300000, guid: f17dedf48219e4a40a541ebb4cb3a7f9,
+      objectReference: {fileID: 21300000, guid: 300db6ed3ba46ca42979f3685b3c5ac4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e606665f6cacbaa4f8793a8faf7ec3a1, type: 3}

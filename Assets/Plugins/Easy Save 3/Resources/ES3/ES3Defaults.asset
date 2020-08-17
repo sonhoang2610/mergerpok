@@ -31,13 +31,18 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - ParadoxNotion
+    - StompyRobot.SRDebugger
     - ScriptableObject-Architecture
     - Assembly-CSharp-firstpass
+    - StompyRobot.SRF
     - Sirenix.OdinInspector.CompatibilityLayer
+    - StompyRobot.SRDebugger.Editor
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - ScriptableObject-Architecture.Editor
+    - AssetUsageFinder
     - PsdPlugin
-    showAdvancedSettings: 0
+    - StompyRobot.SRF.Editor
+    showAdvancedSettings: 1
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
   logDebugInfo: 0

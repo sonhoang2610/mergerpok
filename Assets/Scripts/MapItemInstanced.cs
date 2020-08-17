@@ -52,12 +52,12 @@ namespace Pok
                 creatureObject.transform.localPosition = Vector3.zero;
                 creatureObject.setInfo(pInfo);
                 var seq = DOTween.Sequence();
-                seq.Append( creatureObject.transform.DOScale(3, 0.5f).SetEase(Ease.OutQuart));
+                seq.Append( creatureObject.transform.DOScale(2, 0.5f).SetEase(Ease.OutQuart));
                 seq.Append(creatureObject.transform.DOScale(0.2f, 0.5f));
                 seq.Join( creatureObject.transform.DOMove(transform.position, 0.5f));
                 seq.AppendCallback(delegate
                 {
-                    Destroy(creatureObject);
+                    Destroy(creatureObject.gameObject);
                 });
             });
 

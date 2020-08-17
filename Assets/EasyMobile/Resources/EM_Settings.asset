@@ -21,9 +21,9 @@ MonoBehaviour:
       interstitialAdNetwork: 7
       rewardedAdNetwork: 7
     mAndroidDefaultAdNetworks:
-      bannerAdNetwork: 0
-      interstitialAdNetwork: 0
-      rewardedAdNetwork: 0
+      bannerAdNetwork: 7
+      interstitialAdNetwork: 7
+      rewardedAdNetwork: 7
     mAdColony:
       mEnable: 0
       mAppId:
@@ -135,8 +135,8 @@ MonoBehaviour:
     mIronSource:
       mEnable: 1
       mAppId:
-        mIosId: 
-        mAndroidId: 
+        mIosId: d13ddd1d
+        mAndroidId: d13da395
       mUseAdvancedSetting: 0
       mSegments:
         age: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
     mAutoInit: 1
     mAutoInitDelay: 0
     mIosAuthOptions: 7
-    mPushNotificationService: 0
+    mPushNotificationService: 2
     mOneSignalAppId: 
     mFirebaseTopics: []
     mCategoryGroups: []
@@ -337,7 +337,7 @@ MonoBehaviour:
   mIsAdModuleEnable: 1
   mIsIAPModuleEnable: 1
   mIsGameServiceModuleEnable: 0
-  mIsNotificationModuleEnable: 0
+  mIsNotificationModuleEnable: 1
   mIsSharingModuleEnable: 0
-  mActiveModuleIndex: 0
+  mActiveModuleIndex: 5
   mIsSelectingModule: 0

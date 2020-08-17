@@ -10,6 +10,8 @@ using System.Numerics;
 using EasyMobile;
 using System;
 using static EasyMobile.StoreReview;
+using DG.Tweening;
+using System.Threading;
 
 namespace Pok
 {
@@ -22,9 +24,111 @@ namespace Pok
     {
 
         public static Dictionary<string, int> stateReady = new Dictionary<string, int>();
-
+        public Dictionary<string, Collider[]> behaviorsDisable = new Dictionary<string, Collider[]>();
         public TimeCounterInfoCollection timeCollection;
         public StringVariable currentMap;
+  
+        public void deActiveBehaviors(string id, Collider[] behaviors)
+        {
+            if (!behaviorsDisable.ContainsKey(id))
+            {
+                behaviorsDisable.Add(id, behaviors);
+                foreach (var behavior in behaviors)
+                {
+                    behavior.enabled = false;
+                }
+            }
+        }
+        int guideindex = -1;
+        public int GuideIndex
+        {
+            get
+            {
+                if(guideindex == -1)
+                {
+                    guideindex = ES3.Load("FirstGuide", 0);
+                }
+                return guideindex;
+            }
+
+            set
+            {
+                var Es3setting = new ES3Settings();
+                Es3setting.location = ES3.Location.Cache;
+                 ES3.Save("FirstGuide", value, Es3setting);
+                guideindex = value;
+            }
+        }
+        public IEnumerator checkGuide()
+        {
+            while (!GameManager.readyForThisState("Main"))
+            {
+                yield return new WaitForEndOfFrame();
+            }
+
+            if (GuideIndex == 0)
+            {
+                var colliders = FindObjectsOfType<Collider>();
+                GameManager.Instance.deActiveBehaviors("FirstGuide0", colliders);
+                var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("Egg") && x.id.Contains(GameManager.Instance.ZoneChoosed));
+                if (time != null)
+                    time.pauseTime(true);
+                GuideIndex = 1;
+            }
+            else if (GuideIndex == 1)
+            {
+                var colliders = FindObjectsOfType<Collider>();
+                var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("Egg") && x.id.Contains(GameManager.Instance.ZoneChoosed));
+                if (time != null)
+                {
+                    time.firstTimeAdd -= time.destinyIfHave;
+                    time.pauseTime(false);
+                }
+                GuideIndex = 2;
+            }
+            else if (GuideIndex == 2)
+            {
+                GuideIndex = 3;
+            }
+            else if(GuideIndex == 3)
+            {
+                HUDManager.Instance.hand.gameObject.SetActive(true);
+                HUDManager.Instance.hand.transform.localPosition = new UnityEngine.Vector3(-200, -200, 0);
+                HUDManager.Instance.hand.transform.DOLocalMove(new UnityEngine.Vector3(200, 200, 0), 1.5f).SetLoops(-1, LoopType.Restart);
+                GuideIndex = 4;
+            }
+            else if (GuideIndex == 5)
+            {
+                GameManager.Instance.ActiveBehaviors("FirstGuide0");
+                GuideIndex = 6;
+            }
+        }
+        public void ActiveBehaviors(string id)
+        {
+            if (!behaviorsDisable.ContainsKey(id)) return;
+                var behaviours = behaviorsDisable[id];
+            foreach(var behavior in behaviours)
+            {
+                behavior.enabled = true;
+            }
+        }
+        public int MixingTime
+        {
+            get
+            {
+                var setting = new ES3Settings();
+                setting.location = ES3.Location.Cache;
+                return ES3.Load<int>("MixingTime", 0, setting);
+            }
+
+            set
+            {
+                var setting = new ES3Settings();
+                setting.location = ES3.Location.Cache;
+                ES3.Save<int>("MixingTime", value, setting);
+            }
+        }
+
 
         public void addFactorSuperIncome(float factor, double time)
         {
@@ -128,7 +232,11 @@ namespace Pok
             {
                 stateReady.Add(state, 1);
             }
-            stateReady[state]++;
+            else
+            {
+                stateReady[state]++;
+            }
+         
         }
         public static void removeDirtyState(string state)
         {
@@ -173,7 +281,9 @@ namespace Pok
         {
             set
             {
-                ES3.Save("GenerateID", value);
+                ES3Settings setting = new ES3Settings();
+                setting.location = ES3.Location.Cache;
+                ES3.Save("GenerateID", value, setting);
                 generateID = value;
             }
             get
@@ -196,7 +306,17 @@ namespace Pok
 
         protected override void Awake()
         {
+            Debug.Log("Unity SH: awaked Game");
             base.Awake();
+#if !UNITY_EDITOR
+          //  Debug.unityLogger.logEnabled = false;
+#endif
+            ES3.CacheFile();
+            var guide = ES3.Load("FirstGuide", 0);
+            if (guide > 0  && guide < 5)
+            {
+                ES3.Save("FirstGuide",5);
+            }
             if (!GameDatabase.Instance.isInit)
             {
                 GameDatabase.Instance.onInit();
@@ -206,9 +326,13 @@ namespace Pok
             for(int i =0; i < itemADDIfNotExist.Length; ++i)
             {
                 var item = _database.inventory.Find(x => x.itemID == itemADDIfNotExist[i].itemID);
-                if (item == null)
+                if (item == null )
                 {
                     _database.inventory.Add(ES3.Deserialize<BaseItemGameInstanced>(ES3.Serialize<BaseItemGameInstanced>(itemADDIfNotExist[i])));
+                }else if(item.EmptySlot || item.QuantityBig <= 0)
+                {
+                    var info = ES3.Deserialize<BaseItemGameInstanced>(ES3.Serialize<BaseItemGameInstanced>(itemADDIfNotExist[i]));
+                    _database.inventory[_database.inventory.IndexOf(item)] = info;
                 }
             }
        
@@ -219,6 +343,10 @@ namespace Pok
                 InAppPurchasing.InitializePurchasing();
                 InAppPurchasing.PurchaseCompleted += PurchaseComplete;
             }
+        }
+        private void Start()
+        {
+            StartCoroutine(ScheduleSaveGame());
         }
         public List<InappPendingInfo> inappPending = new List<InappPendingInfo>();
         public void PurchaseComplete(IAPProduct product)
@@ -305,21 +433,60 @@ namespace Pok
             EzEventManager.AddListener<GameDatabaseInventoryEvent>(this);
             EzEventManager.AddListener<RemoveTimeEvent>(this);
         }
-
+        private void OnApplicationFocus(bool focus)
+        {
+            if (!focus)
+            {
+                SaveGame();
+            }
+        }
+        private void OnApplicationPause(bool pause)
+        {
+            if (pause)
+            {
+                SaveGame();
+            }
+        }
         private void OnDisable()
         {
             EzEventManager.RemoveListener<TimeEvent>(this);
             EzEventManager.RemoveListener<AddCreatureEvent>(this);
             EzEventManager.RemoveListener<GameDatabaseInventoryEvent>(this);
             EzEventManager.RemoveListener<RemoveTimeEvent>(this);
+            SaveGame();
         }
         private void OnDestroy()
         {
-            ES3.Save("Database", Database);
+            SaveGame();
         }
+        private void OnApplicationQuit()
+        {
+            SaveGame();
+        }
+        static bool blockingSave = false;
         public void SaveGame()
         {
-
+            if (blockingSave) return;
+            Thread thread = new Thread(delegate ()
+            {
+                blockingSave = true;
+                ES3.Save("Database", Database);
+                ES3.StoreCachedFile();
+                ES3.dirty = false;
+                blockingSave = false;
+            });
+            //Start the Thread and execute the code inside it
+            thread.Start();
+   
+        }
+        public IEnumerator ScheduleSaveGame()
+        {
+            yield return new WaitForSeconds(5);
+            if (ES3.dirty)
+            {
+                SaveGame();
+            }
+            StartCoroutine(ScheduleSaveGame());
         }
 
         public int TimeDelayBonusEvolution
@@ -332,7 +499,7 @@ namespace Pok
         public int TimeDelayBoxRewardADS { 
             get
             {
-                return UnityEngine.Random.Range(5, 10);
+                return UnityEngine.Random.Range(300, 1500);
             }
         }
 
@@ -476,6 +643,7 @@ namespace Pok
             {
                 Database.checkTimeItem($"Egg{eventType.zoneid}");
             }
+            ES3.dirty = true;
         }
         public IEnumerator delayAction(float sec ,System.Action action)
         {
@@ -515,6 +683,7 @@ namespace Pok
 
         }
 
+
         public void LogEvent(string eventString)
         {
 
@@ -539,9 +708,9 @@ namespace Pok
                 {
                     StartCoroutine(actionOnEndFrame(() =>
                     {
-                        exist.addQuantity((-quantity.toInt()).ToString());
+                        exist.addQuantity((-quantity.toInt()).ToString(),false);
                         var coin = GameManager.Instance.Database.getItem("Coin");
-                        coin.addQuantity(moneyAdd.toString());
+                        coin.addQuantity(moneyAdd.toString(),false);
                     }));
                    
                 }else if(eventType.item.changeQuantity.toDouble() > 0)
@@ -552,7 +721,7 @@ namespace Pok
                     }
                     StartCoroutine(actionOnEndFrame(() =>
                     {
-                        exist.addQuantity((-quantity.toInt()).ToString());
+                        exist.addQuantity((-quantity.toInt()).ToString(),false);
                     }));
 
                 }

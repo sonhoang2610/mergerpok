@@ -74,7 +74,7 @@ public class SoundManager : PersistentSingleton<SoundManager>
     }
     public virtual AudioSource PlayBackgroundMusic(AudioClip Music, bool singleton, float pFactorVolume,float pSmoothTime = 0)
     {
-        if (!sfxOn)
+        if (!MusicOn)
             return null;
         GameObject pExist = null;
         GameObject pExistActive = null;
@@ -480,6 +480,13 @@ public class SoundManager : PersistentSingleton<SoundManager>
         sfxOn = PlayerPrefs.GetInt("Sound", 1) == 1 ? true : false;
         musicOn = PlayerPrefs.GetInt("Music", 1) == 1 ? true : false;
         vibaration = PlayerPrefs.GetInt("Vibration", 1) == 1 ? true : false;
+    }
+    public void vib()
+    {
+        if (PlayerPrefs.GetInt("Vibration",1) == 1)
+        {
+            Handheld.Vibrate();
+        }
     }
     private void Start()
     {

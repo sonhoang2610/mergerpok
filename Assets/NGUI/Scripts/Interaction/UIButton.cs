@@ -244,6 +244,10 @@ public class UIButton : UIButtonColor
 	{
 		if (current == null && isEnabled && UICamera.currentTouchID != -2 && UICamera.currentTouchID != -3)
 		{
+            if (!SoundManager.InstanceRaw.IsDestroyed())
+            {
+                SoundManager.Instance.PlaySound("ButtonClick");
+            }
 			current = this;
 			EventDelegate.Execute(onClick);
 			current = null;

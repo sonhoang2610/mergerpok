@@ -38,9 +38,11 @@ namespace Pok
             }
         }
 #endif
+        
         AsyncOperation async;
         AsyncOperationHandle<IList<ScriptableObject>> asyncDatabase;
-        bool isStart = false,loadingDatabase = false;
+        AsyncOperationHandle<IList<UnityEngine.Object>> asyncResource;
+        bool isStart = false,loadingDatabase = false,loadResource = false;
         [System.NonSerialized]
         public string currentScene = "Home";
         [System.NonSerialized]
@@ -94,10 +96,7 @@ namespace Pok
 
         public void complete()
         {
-           // GameManager.addDirtyState("Main");
-            var async = PreloadTexture((a)=> {
-                //GameManager.removeDirtyState("Main");
-            });
+      
             fadeLayout.alpha = 1;
             Sequence pSeq = DOTween.Sequence();
             pSeq.AppendInterval(0.25f);
@@ -117,6 +116,7 @@ namespace Pok
             base.Awake();
             Application.targetFrameRate = 60;
             Application.backgroundLoadingPriority = ThreadPriority.Low;
+            Application.runInBackground = true;
 #if UNITY_EDITOR
             Debug.unityLogger.logEnabled = true;
 #else
@@ -128,17 +128,24 @@ namespace Pok
         protected Coroutine corountineNotice;
         protected string lastAssetLoaded;
 
-
-
+        public float PercentDatabase { get; set; }
+        public float PercentScene { get; set; }
+        public float PercentResource { get; set; }
+        Tween tweenProcess;
         private void Update()
         {
             if (isStart)
             {
+                if (loadResource)
+                {
+                    PercentResource = asyncResource.PercentComplete *0.4f;
+                }
                 if(loadingDatabase)
                 {
-                    DOTween.To(() => process.fillAmount, x => process.fillAmount = x, asyncDatabase.PercentComplete, 0.25f);
+                    PercentDatabase = asyncDatabase.PercentComplete * 0.2f;
                     if (asyncDatabase.IsDone)
                     {
+                        GameManager.addDirtyState("Main");
                         AddressableHolder.Instance.addLoadedItem<ScriptableObject>(asyncDatabase.Result);
                        var localAsync = Addressables.LoadAssetAsync<GameObject>("Prefab/ContainerDatabase");
                         loadingDatabase = false;
@@ -152,6 +159,7 @@ namespace Pok
                                 }
                                 
                             }
+                          
                             async = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(currentScene);
                         };
                      
@@ -161,26 +169,32 @@ namespace Pok
                 {
                     if (!async.isDone)
                     {
-                        if (process)
-                        {
-                            DOTween.To(() => process.fillAmount, x => process.fillAmount = x, async.progress, 0.25f);
-                        }
+                        PercentScene = async.progress * 0.4f;
                     }
                     else
                     {
-                      
-                        Sequence pSeq = DOTween.Sequence();
-
-                        pSeq.Append(DOTween.To(() => process.fillAmount, x => process.fillAmount = x, 1, 0.25f));
-                        pSeq.AppendCallback(delegate
+                        PercentScene = 0.4f;
+                        loadResource = true;
+                        GameManager.addDirtyState("Main");
+                        asyncResource = PreloadTexture((a) =>
                         {
-
-                            isStart = false;
-                            complete();
+                       
                         });
                         async = null;   
                     }
                 }
+                if(PercentDatabase + PercentResource + PercentResource >= 1)
+                {
+                    GameManager.removeDirtyState("Main");
+                    loadResource = false;
+                    isStart = false;
+                    complete();
+                }
+                if (tweenProcess != null)
+                {
+                    tweenProcess.Kill();
+                }
+                tweenProcess = DOTween.To(() => process.fillAmount, x => process.fillAmount = x, PercentDatabase  + PercentScene+ PercentResource, 0.25f);
             }
         }
     }

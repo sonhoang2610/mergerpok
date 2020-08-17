@@ -97,6 +97,7 @@ namespace Pok
         public List<CreatureInstanceSaved> creatures = new List<CreatureInstanceSaved>();
         public void onInit()
         {
+   
             for (int i = creatures.Count-1; i >= 0; --i)
             {
                 if(!GameDatabase.Instance.CreatureCollection.Exists(x=>x.ItemID == creatures[i].id))
@@ -156,7 +157,7 @@ namespace Pok
 
         public MapInstanceSaved addCreature(CreatureInstanceSaved creature, string address)
         {
-        
+            ES3.dirty = true;
             var zone = zones.Find(x => x.id == address);
             var map = creature.mapParent;
             if(map == null)

@@ -31,33 +31,23 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 148f98bb70cb4454c9e8c706f2e9a309, type: 3}
-    totalSpriteSurfaceArea: 3011584
+    totalSpriteSurfaceArea: 1117558
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 50175f703c3ba3945835a1ca8666ac31, type: 3}
+  - {fileID: 21300000, guid: f532ba700f719de489c3aaaf6ad54115, type: 3}
   - {fileID: 21300000, guid: 25f873e4f94e0ad4f87c8ee686718bd0, type: 3}
   - {fileID: 21300000, guid: 2a6cd755c646e5e4c9948967f8c1a75f, type: 3}
   - {fileID: 21300000, guid: ce776ba67bf7b6e4c867387f4d40f3bf, type: 3}
   - {fileID: 21300000, guid: 5e52e487728a2104ca26901543c61988, type: 3}
-  - {fileID: 21300000, guid: a13f3dc708b92b94cbf00f23294a63bf, type: 3}
-  - {fileID: 21300000, guid: 5e16d95b1b17dbf49a5ff160896d4ff8, type: 3}
-  - {fileID: 21300000, guid: d79df68cd85f7914c84f270f5adada2f, type: 3}
-  - {fileID: 21300000, guid: f5c69ead4bf5cd4489f1d43b8b38ce5e, type: 3}
-  - {fileID: 21300000, guid: b8203c4eed7e9a34fa9f8d8d18eb7a84, type: 3}
   - {fileID: 21300000, guid: 3cf5c09e1b284474babc5d8c034890d8, type: 3}
   - {fileID: 21300000, guid: 969448ee610f59e4c887888b25198ffc, type: 3}
   m_PackedSpriteNamesToIndex:
-  - planet5dark
+  - box_info_map
   - planet3
   - planet6
   - planet1
   - planet4
-  - planet6dark
-  - planet4dark
-  - planet3dark
-  - planet1dark
-  - planet2dark
   - planet5
   - planet2
   m_Tag: zones

@@ -15,52 +15,20 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 00686fe8ceb6fee4f9872a215bebad19, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: limitInInventory
-      Entry: 6
-      Data: 
-    - Name: timeToRestore
-      Entry: 6
-      Data: 
-    - Name: machine
+    - Name: blackBoardVariable
       Entry: 7
-      Data: 0|Pok.MixingScale, Assembly-CSharp
-    - Name: timeMixing
-      Entry: 7
-      Data: 1|Pok.UnitDefineLevelInt, Assembly-CSharp
-    - Name: startUnit
-      Entry: 3
-      Data: 5
-    - Name: algrothimTypeUpgrade
-      Entry: 3
-      Data: 0
-    - Name: stepUnit
-      Entry: 3
-      Data: -1
-    - Name: isSpecifiedUnit
-      Entry: 5
-      Data: false
-    - Name: unitDefines
-      Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: blackBoard
-      Entry: 7
-      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -74,6 +42,44 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: limitInInventory
+      Entry: 6
+      Data: 
+    - Name: timeToRestore
+      Entry: 6
+      Data: 
+    - Name: machine
+      Entry: 7
+      Data: 2|Pok.MixingScale, Assembly-CSharp
+    - Name: timeMixing
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: blackBoard
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 4|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  variantItem: 0
+  variantLevel: 1
+  defaultLevel: 1
   itemID: UpgradeMixScale
   displayNameItem:
     normalString: Merger Scale

@@ -7,6 +7,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 549952054096915196, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: mWidth
+      value: 340
+      objectReference: {fileID: 0}
+    - target: {fileID: 549952054096915196, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: mHeight
+      value: 238
+      objectReference: {fileID: 0}
+    - target: {fileID: 549952054096915196, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 1.4285715
+      objectReference: {fileID: 0}
+    - target: {fileID: 549952054096915196, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: keepAspectRatio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879472223067678924, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: mWidth
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879472223067678924, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: mHeight
+      value: 230
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879472223067678924, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 0.79130435
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879472223067678924, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: keepAspectRatio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804499987280769519, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: mWidth
+      value: 248
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804499987280769519, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: mHeight
+      value: 370
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804499987280769519, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 0.6711111
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804499987280769519, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: keepAspectRatio
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5682637041466185228, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,10 +122,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5682637041466185229, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: startingRenderQueue
+      value: 3006
+      objectReference: {fileID: 0}
     - target: {fileID: 5682637041466185231, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
         type: 3}
       propertyPath: m_Name
       value: Pok6
       objectReference: {fileID: 0}
+    - target: {fileID: 6924517434334875915, guid: e606665f6cacbaa4f8793a8faf7ec3a1,
+        type: 3}
+      propertyPath: mSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7408d0bd9aaa6eb4580744ea1fcf5d04,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e606665f6cacbaa4f8793a8faf7ec3a1, type: 3}

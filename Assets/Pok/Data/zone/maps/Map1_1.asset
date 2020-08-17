@@ -21,6 +21,26 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: blackBoardVariable
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: limitInInventory
       Entry: 6
       Data: 
@@ -31,6 +51,8 @@ MonoBehaviour:
       Entry: 6
       Data: 
   variantItem: 0
+  variantLevel: 0
+  defaultLevel: 0
   itemID: Map1_1
   displayNameItem:
     normalString: 
@@ -46,7 +68,7 @@ MonoBehaviour:
   - State: Default
     Icon:
       m_AssetGUID: ef9e5ddf638b40f4c9a96a5a0e70af4a
-      m_SubObjectName: 
+      m_SubObjectName: 1
     size: {x: 0, y: 0}
   - State: BGPok1
     Icon:

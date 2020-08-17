@@ -11,6 +11,7 @@ namespace Pok
         [ValueDropdown("ValuesFunction")]
         public string leaderID;
         public ItemCreatureCollection[] items;
+        public UILabel nameEra;
 
         private IList<ValueDropdownItem<string>> ValuesFunction()
         {
@@ -33,6 +34,10 @@ namespace Pok
             {
                 var treeElement = GameDatabase.Instance.treeCreature.Find(x => x.creatureLeader.ItemID == group.leaderID);
                 var ListCreature = new List<CreatureItem>();
+                if (group.nameEra)
+                {
+                    group.nameEra.text = treeElement.className.Value;
+                }
                 treeElement.creatureLeader.getChild(ListCreature, group.items.Length);
                 for (int i = 0; i < ListCreature.Count; ++i)
                 {

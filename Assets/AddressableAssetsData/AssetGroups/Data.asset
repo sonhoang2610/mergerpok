@@ -21,8 +21,8 @@ MonoBehaviour:
     m_Address: Assets/Pok/Data/creatures/Pok56.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 01048c9497107104e88224fe12e519d9, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 01048c9497107104e88224fe12e519d9, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 05e322a2c945f2347b7e9b3ee06be10e
     m_Address: Assets/Pok/Data/items/PackageCrystal2.asset
     m_ReadOnly: 0
@@ -39,8 +39,8 @@ MonoBehaviour:
     m_Address: Pok5
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 072589e0c104e594d98a122e0b4df7de, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 072589e0c104e594d98a122e0b4df7de, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 08afcca0bc4676b4fb47563b0205430e
     m_Address: Assets/Pok/Data/creatures/Pok39.asset
     m_ReadOnly: 0
@@ -95,6 +95,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 2d4c470d1514cab4f83d1210843ac52d
+    m_Address: Pok10
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 31f3f2b2a1310744781db01ec8e68783
     m_Address: Assets/Pok/Data/creatures/Pok50.asset
     m_ReadOnly: 0
@@ -111,8 +117,8 @@ MonoBehaviour:
     m_Address: Pok6
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 33d30c9a70f30ad4a811c8a014a71b1b, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 33d30c9a70f30ad4a811c8a014a71b1b, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 3612670b0c136f34f87ddf30e2004992
     m_Address: Assets/Pok/Data/creatures/Pok52.asset
     m_ReadOnly: 0
@@ -131,12 +137,19 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 3abaa59c00be3dd4c853265ef78443f5
+    m_Address: AudioDatabase
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Database
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 3c006d2e09082eb4d8a52f35405cf1f8
     m_Address: Pok11
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 3c006d2e09082eb4d8a52f35405cf1f8, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 3c006d2e09082eb4d8a52f35405cf1f8, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 415053256b282ca4ba8e6956a6518902
     m_Address: Assets/Pok/Data/creatures/Pok70.asset
     m_ReadOnly: 0
@@ -159,8 +172,8 @@ MonoBehaviour:
     m_Address: Pok9
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 541aa9f5753fcf9478afe70e8d83a501, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 541aa9f5753fcf9478afe70e8d83a501, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 55fe18c057e497045943256963fb9feb
     m_Address: Assets/Pok/Data/creatures/Pok58.asset
     m_ReadOnly: 0
@@ -195,8 +208,8 @@ MonoBehaviour:
     m_Address: Pok4
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 6a88a608debc49c4eaac2114c81d1d00, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 6a88a608debc49c4eaac2114c81d1d00, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 6d60c64e642ac924da9d4201a476e72d
     m_Address: Assets/Pok/Data/creatures/Pok42.asset
     m_ReadOnly: 0
@@ -424,8 +437,8 @@ MonoBehaviour:
     m_Address: Pok3
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: dbea47f712ee84b4489e37fdfbb4b466, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: dbea47f712ee84b4489e37fdfbb4b466, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: dbf590a43d6b46c4c9adb07b8338159e
     m_Address: Assets/Pok/Data/creatures/Pok30.asset
     m_ReadOnly: 0
@@ -478,8 +491,8 @@ MonoBehaviour:
     m_Address: Assets/Pok/Data/creatures/Pok32.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: fe32bb7b221cc5a43954e8dadeee68ff, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: fe32bb7b221cc5a43954e8dadeee68ff, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 97dc02305a3266740a1d0632b6f35a45, type: 2}
   m_SchemaSet:

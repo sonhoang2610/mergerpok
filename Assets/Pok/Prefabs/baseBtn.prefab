@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 8080365350924950317}
   - component: {fileID: 8080365350924950316}
   - component: {fileID: 8080365350924950315}
+  - component: {fileID: 956712500310964418}
   m_Layer: 9
   m_Name: baseBtn
   m_TagString: Untagged
@@ -322,3 +323,39 @@ MonoBehaviour:
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
   onClick: []
+--- !u!114 &956712500310964418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080365350924950313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2901b3e917cc905459cb9a0c15fc4340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fadeAnimation: 0
+  _moveAnimation: 
+  onEnableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onInitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnableLateUpdateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onCompleteTweenShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartClose:
+    m_PersistentCalls:
+      m_Calls: []
+  relative: 0

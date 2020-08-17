@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicOn: 1
-  MusicVolume: 0.3
+  MusicVolume: 0.218
   sfxOn: 1
   SfxVolume: 1
   _backgroundMusic: {fileID: 0}
@@ -242,7 +242,7 @@ MonoBehaviour:
     address: 
     level: 0
   - itemID: Coin
-    quantity: 200000000000000000000
+    quantity: 2000000000000000
     EmptySlot: 1
     boughtNumber: 0
     address: 

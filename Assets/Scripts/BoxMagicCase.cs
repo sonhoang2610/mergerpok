@@ -137,11 +137,19 @@ namespace Pok
             }
             GameObject newObject = new GameObject();
            var sprite = newObject.AddComponent<UI2DSprite>();
+            var state = "Default";
+            if (item.item.ItemID.Contains("SuperInCome"))
+            {
+                if (GameManager.Instance.getFactorIncome().x >= 2)
+                {
+                    state = "X4";
+                }
+            }
             item.item.getSpriteForState((o) =>
             {
                 sprite.sprite2D = o;
                 sprite.MakePixelPerfectClaimIn(new Vector2Int(200, 200));
-            });
+            }, state);
        
             newObject.transform.parent = blockTouch.transform.parent;
             newObject.transform.localScale = new Vector3(1, 1, 1);

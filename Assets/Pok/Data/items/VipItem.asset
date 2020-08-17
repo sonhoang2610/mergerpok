@@ -21,9 +21,29 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: blackBoardVariable
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: limitInInventory
       Entry: 7
-      Data: 0|Pok.UnitDefineLevelInt, Assembly-CSharp
+      Data: 2|Pok.UnitDefineLevelInt, Assembly-CSharp
     - Name: startUnit
       Entry: 3
       Data: 1
@@ -47,7 +67,7 @@ MonoBehaviour:
       Data: 
     - Name: machine
       Entry: 7
-      Data: 1|Pok.VipModule, Assembly-CSharp
+      Data: 3|Pok.VipModule, Assembly-CSharp
     - Name: quantityCrystal
       Entry: 3
       Data: 30
@@ -60,6 +80,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  variantItem: 0
   itemID: VipItem
   displayNameItem:
     normalString: VipItem

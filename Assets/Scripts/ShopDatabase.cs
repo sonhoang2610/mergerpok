@@ -363,8 +363,8 @@ namespace Pok
         public IncreaseBaseOn typeIncrease;
         public UnitDefineLevelPaymentWay paymentWays;
 
-        public Func<ShopItemInfo, int, int, float> discountEvent;
-        public Func<ShopItemInfo,float> bonusForItem;
+        public Func<ShopItemInfo, int, int, float> discountEvent = (a,b,c)=> { return 0; };
+        public Func<ShopItemInfo, float> bonusForItem = (a) => { return 0; };
         public void onInit()
         {
             if(typeIncrease == IncreaseBaseOn.LevelItem)

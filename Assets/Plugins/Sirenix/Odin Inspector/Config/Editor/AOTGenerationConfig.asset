@@ -16,5 +16,39 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 0
-  supportSerializedTypes: []
+  lastScan: 637331911780759045
+  supportSerializedTypes:
+  - TypeName: Pok.AlgrothimPriceItem, Assembly-CSharp
+    IsCustom: 1
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.String, mscorlib]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Pok.IMachineItem, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Object, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.String, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Pok.UnitDefineLevelFloat, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Pok.UnitDefineLevelInt, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1

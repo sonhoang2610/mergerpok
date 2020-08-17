@@ -47,10 +47,10 @@ namespace Pok
         protected CreatureItem cacheItem;
         protected Tween tweenMove;
         public System.Action<CreatureInstanceSaved,CreatureItem,Creature, bool> _onPress;
-      
+        public GameObject handGuide;
 
-        
-        public void OnPress(bool press)
+
+          public void OnPress(bool press)
         {
             blockMove = press;
             if (tweenMove != null)
@@ -58,6 +58,11 @@ namespace Pok
                 tweenMove.Kill();
             }
             _onPress?.Invoke(_info,cacheItem,this, press);
+        }
+
+        public void executePress()
+        {
+            OnPress(false);
         }
 
     
@@ -126,6 +131,7 @@ namespace Pok
             yield return new WaitForSeconds(5);
             timer = StartCoroutine(nhatien());
             map?.addMoney(this);
+            SoundManager.Instance.PlaySound("CoinClick");
         }
         private void OnDisable()
         {
@@ -189,10 +195,29 @@ namespace Pok
             var seq = DOTween.Sequence();
             skin.transform.localScale = new Vector3(scale.x*0.7f, scale.y , scale.z);
             seq.Append(skin.transform.DOLocalMove(oldPos, 0.8f).SetEase(Ease.InQuad));
-            seq.AppendCallback(delegate { GetComponent<Collider>().enabled = true; });
+            seq.AppendCallback(delegate { GetComponent<Collider>().enabled = true;
+
+                if (GameManager.Instance.GuideIndex == 1)
+                {
+                    if (handGuide)
+                    {
+                        handGuide.gameObject.SetActive(true);
+                    }
+                }
+                else if (GameManager.Instance.GuideIndex == 2)
+                {
+                    if (handGuide)
+                    {
+                        handGuide.gameObject.SetActive(true);
+                    }
+                }
+          
+            });
             seq.Append(skin.transform.DOScale(new Vector3(scale.x, scale.y * 0.7f, scale.z), 0.25f).SetEase(Ease.OutQuad));
             seq.Append(skin.transform.DOScale(scale , 1).SetEase(Ease.OutElastic));
-            seq.AppendCallback(delegate { effecting = false; onComplete?.Invoke();  });
+            seq.AppendCallback(delegate { effecting = false; onComplete?.Invoke();
+              
+            });
         }
 
         public void move(Vector3 destiny)

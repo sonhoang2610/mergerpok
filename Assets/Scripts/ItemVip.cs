@@ -10,6 +10,10 @@ namespace Pok {
         public AssetReference assetVip;
         public UnityEvent onExistVip;
         public UnityEvent onNoVip;
+        private void OnEnable()
+        {
+            StartCoroutine(onEnable());
+        }
 
         private IEnumerator onEnable()
         {

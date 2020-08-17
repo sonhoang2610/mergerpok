@@ -24,8 +24,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2527719929813355625}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.8, y: 350, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 350, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,14 +62,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.75294125, g: 0.7725491, b: 0.7568628, a: 1}
   mPivot: 4
-  mWidth: 42
-  mHeight: 12
+  mWidth: 30
+  mHeight: 60
   mDepth: 3
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.5
+  aspectRatio: 0.5
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -83,9 +83,9 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: b46d59f1a440cf846ac7ceaf398e722f, type: 3}
+  mSprite: {fileID: 21300000, guid: 9b6290ea5005035488da9331753758eb, type: 3}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
-  mBorder: {x: 8, y: 5, z: 8, w: 5}
+  mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
   mPixelSize: 1
   nextSprite: {fileID: 0}

@@ -66,9 +66,8 @@ SpriteAtlas:
     - {fileID: 2800000, guid: c1f3ae3e634bc3e4a8e31dd843795b46, type: 3}
     - {fileID: 2800000, guid: 5747d4a4e0b19504aabfe8f5bf96df71, type: 3}
     - {fileID: 2800000, guid: d49e1499896606e439fe0a9419eb58be, type: 3}
-    - {fileID: 2800000, guid: b912f0f227959284dae892d01258fb5a, type: 3}
     - {fileID: 2800000, guid: 5054841c31c69734d9c675fcc9664b51, type: 3}
-    totalSpriteSurfaceArea: 6317730
+    totalSpriteSurfaceArea: 6297248
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -79,7 +78,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 9608f9e1a2521bf4aa3b21b91f627ce6, type: 3}
   - {fileID: 21300000, guid: f81a2342b4466c441b41b5329b42d989, type: 3}
   - {fileID: 21300000, guid: 2d8e2152d1d854b418fe8cc3bc55e269, type: 3}
-  - {fileID: 21300000, guid: b912f0f227959284dae892d01258fb5a, type: 3}
   - {fileID: 21300000, guid: d67f8643a5e9f34489901af98ccd1b0d, type: 3}
   - {fileID: 21300000, guid: 8cf547c3ca7f1814381a7e81f4b23aac, type: 3}
   - {fileID: 21300000, guid: b282842433d46ff4aab842b2432e3220, type: 3}
@@ -118,7 +116,6 @@ SpriteAtlas:
   - 12
   - 21
   - 15
-  - bubble
   - 19
   - 30
   - 13

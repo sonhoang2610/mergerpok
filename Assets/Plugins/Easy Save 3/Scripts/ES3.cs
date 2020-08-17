@@ -57,14 +57,15 @@ public static class ES3
             writer.Save();
         }
     }*/
-
+    public static bool dirty = false;
     /// <summary>Saves the value to the default file with the given key.</summary>
     /// <param name="T">The type of the data that we want to save.</param>
     /// <param name="key">The key we want to use to identify our value in the file.</param>
     /// <param name="value">The value we want to save.</param>
     public static void Save<T>(string key, T value)
     {
-        Save<T>(key, value, new ES3Settings());
+        dirty = true;
+        Save<T>(key, value, new ES3Settings() { location = Location.Cache});
     }
 
     /// <summary>Saves the value to a file with the given key.</summary>
@@ -378,7 +379,7 @@ public static class ES3
     /// <param name="defaultValue">The value we want to return if the file or key does not exist.</param>
     public static T Load<T>(string key, T defaultValue)
     {
-        return Load<T>(key, defaultValue, new ES3Settings());
+        return Load<T>(key, defaultValue, new ES3Settings() { location =Location.Cache});
     }
 
     /// <summary>Loads the value from a file with the given key.</summary>

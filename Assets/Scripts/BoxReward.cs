@@ -11,6 +11,7 @@ namespace Pok
         public UILabel titlelbl;
         public void show(ItemRewardInfo[] infos,string title = "Reward")
         {
+            SoundManager.Instance.vib();
             attachMent.GetComponent<UIGrid>().cellWidth = infos.Length <= 2 ? 300 : 200;
             container.show();
             executeInfos(infos);
