@@ -343,6 +343,25 @@ namespace Pok
                 InAppPurchasing.InitializePurchasing();
                 InAppPurchasing.PurchaseCompleted += PurchaseComplete;
             }
+            Advertising.RewardedAdCompleted += AdComplete;
+            Advertising.RewardedAdSkipped += AdSkipped;
+        }
+        
+        public void AdComplete(RewardedAdNetwork net,AdPlacement placement)
+        {
+            foreach(var result in resultWatch)
+            {
+                result(true);
+            }
+            resultWatch.Clear();
+        }
+        public void AdSkipped(RewardedAdNetwork net, AdPlacement placement)
+        {
+            foreach (var result in resultWatch)
+            {
+                result(false);
+            }
+            resultWatch.Clear();
         }
         private void Start()
         {
@@ -466,10 +485,11 @@ namespace Pok
         static bool blockingSave = false;
         public void SaveGame()
         {
+   
             if (blockingSave) return;
+            blockingSave = true;
             Thread thread = new Thread(delegate ()
             {
-                blockingSave = true;
                 ES3.Save("Database", Database);
                 ES3.StoreCachedFile();
                 ES3.dirty = false;
@@ -658,6 +678,7 @@ namespace Pok
 
 #endif
         }
+        protected List<System.Action<bool>> resultWatch = new List<Action<bool>>();
         public void LoadRewardADS(string id, System.Action<bool> result = null)
         {
             LogEvent("WATCH_ADS:" + id);
@@ -666,6 +687,8 @@ namespace Pok
                 result?.Invoke(UnityEngine.Random.Range(0,2) == 0);
             }));
 #endif
+            resultWatch.Add(result);
+            Advertising.ShowRewardedAd();
         }
         public bool isRewardADSReady(string id)
         {

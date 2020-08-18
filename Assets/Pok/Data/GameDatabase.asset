@@ -486,7 +486,7 @@ MonoBehaviour:
     rate: 0.2
   - item: {fileID: 11400000, guid: 2e5816dcf486a7a4e9885c8a6ffaae8a, type: 2}
     rate: 0.2
-  timeAFKShowBoxTreasure: 7200
+  timeAFKShowBoxTreasure: 300
   missionContainer:
   - {fileID: 11400000, guid: 9cf91cf15f1907c4aad1fa8abc1e1afa, type: 2}
   - {fileID: 11400000, guid: 89dad6a3aeb79144d9d404095a0af96a, type: 2}

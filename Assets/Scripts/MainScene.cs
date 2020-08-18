@@ -29,11 +29,25 @@ namespace Pok {
             }else if(isMinized && !TimeCounter.InstanceRaw.IsDestroyed() && TimeCounter.Instance.minimizeTime > GameDatabase.Instance.timeAFKShowBoxTreasure)
             {
                 isMinized = false;
-                if (CurrentPageMapLayer == 0)
-                {
-                    boxTreasure.transform.parent.parent = mapPool[CurrentIndexPool].transform;
-                    boxTreasure.gameObject.SetActive(true);
-                }
+                showBoxTreasure();
+            }
+        }
+
+        public void showBoxTreasure()
+        {
+            StartCoroutine(checkShowBoxTreasure());
+        }
+        public IEnumerator checkShowBoxTreasure()
+        {
+            yield return new WaitForSeconds(1);
+            while (CurrentPageMapLayer != 0)
+            {
+                yield return new WaitForSeconds(1);
+            }
+            if (CurrentPageMapLayer == 0)
+            {
+                boxTreasure.transform.parent.parent = mapPool[CurrentIndexPool].transform;
+                boxTreasure.gameObject.SetActive(true);
             }
         }
         public void showBoxMagicCaseContain()
@@ -57,6 +71,7 @@ namespace Pok {
         {
             MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);
             MapObjects.Sort((a, b) => { return GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == a.id).CompareTo(GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == b.id)); });
+
             updateMapLayer(true);
         }
         public bool chooseZone(object pChoose)

@@ -241,12 +241,6 @@ MonoBehaviour:
     boughtNumber: 0
     address: 
     level: 0
-  - itemID: Coin
-    quantity: 2000000000000000
-    EmptySlot: 1
-    boughtNumber: 0
-    address: 
-    level: 0
   generateID: -1
   items:
   - {fileID: 11400000, guid: 399295eb43313674a9cad54f5b151d8a, type: 2}

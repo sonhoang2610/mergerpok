@@ -15682,6 +15682,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factor1: {fileID: 151567316}
   factor2: {fileID: 20930797}
+  time1: {fileID: 0}
+  time2: {fileID: 0}
   btnGet: {fileID: 1054943713}
   factor: 1
 --- !u!1 &540251710
@@ -23547,7 +23549,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -298.65997
+      value: -298.66
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
@@ -30203,6 +30205,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factor1: {fileID: 0}
   factor2: {fileID: 0}
+  time1: {fileID: 0}
+  time2: {fileID: 0}
   btnGet: {fileID: 1940709263}
   factor: 1
 --- !u!114 &1062749192
@@ -34070,15 +34074,15 @@ MonoBehaviour:
   path:
     wpLengths:
     - 0
-    - 1.9661183
+    - 2.3065298
     type: 0
     subdivisionsXSegment: 10
     subdivisions: 20
     wps:
-    - {x: -0.8340774, y: -0.17261904, z: 0}
+    - {x: -1.1677084, y: -0.24166667, z: 0}
     - {x: 1.1071122, y: 0.13947827, z: 0}
     controlPoints: []
-    length: 1.9661183
+    length: 2.3065298
     isFinalized: 1
     timesTable:
     - 0
@@ -34093,7 +34097,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: -0.8340774, y: -0.17261904, z: 0}
+  lastSrcPosition: {x: -1.1677084, y: -0.24166667, z: 0}
   lastSrcRotation: {x: -0, y: -0, z: -0, w: 1}
   wpsDropdown: 0
   dropToFloorOffset: 0
@@ -40187,7 +40191,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -92
+      value: -92.00003
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
@@ -45764,21 +45768,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftAnchor:
-    target: {fileID: 0}
+    target: {fileID: 573806550}
     relative: 0
-    absolute: 0
+    absolute: -152
   rightAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 0
-  bottomAnchor:
-    target: {fileID: 0}
+    target: {fileID: 573806550}
     relative: 0
-    absolute: 0
+    absolute: -20
+  bottomAnchor:
+    target: {fileID: 573806550}
+    relative: 0
+    absolute: -12
   topAnchor:
-    target: {fileID: 0}
+    target: {fileID: 573806550}
     relative: 1
-    absolute: 0
+    absolute: 13
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
@@ -56491,7 +56495,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 114.660034
+      value: 114.65997
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}

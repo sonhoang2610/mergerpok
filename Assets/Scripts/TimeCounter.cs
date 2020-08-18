@@ -119,11 +119,15 @@ namespace Pok
                        var timeElement = timeCollection[i];
                        timeElement.counterTime += (firstTime - lasTimeAFK).TotalSeconds;
                    }
-        
+                   if((firstTime -lasTimeAFK).TotalSeconds > GameDatabase.Instance.timeAFKShowBoxTreasure)
+                   {
+                       MainScene.Instance.showBoxTreasure();
+                   }
                }
                GameManager.Instance.Database.checkTimeForAll();
                GameManager.removeDirtyState("Main");
            }));
+            StartCoroutine(UpdateLastTimeInGame());
         }
         public bool getCurrentTime(ref DateTime time)
         {
@@ -142,31 +146,21 @@ namespace Pok
                 minimize = false;
             }
         }
+        public IEnumerator UpdateLastTimeInGame()
+        {
+            yield return new WaitForSeconds(1);
+            System.DateTime time = DateTime.Now;
+            if (getCurrentTime(ref time))
+            {
+                ES3.Save<TimeModule>("LastTimeGame", new TimeModule() { time = time });
+            }
+            else
+            {
+                ES3.DeleteKey("LastTimeGame");
+            }
+            StartCoroutine(UpdateLastTimeInGame());
+        }
 
-        private void OnDestroy()
-        {
-            System.DateTime time = DateTime.Now;
-            if (getCurrentTime(ref time))
-            {
-                ES3.Save<TimeModule>("LastTimeGame", new TimeModule() { time = time });
-            }
-            else
-            {
-                ES3.DeleteKey("LastTimeGame");
-            }
-        }
-        private void OnApplicationQuit()
-        {
-            System.DateTime time = DateTime.Now;
-            if (getCurrentTime(ref time))
-            {
-                ES3.Save<TimeModule>("LastTimeGame", new TimeModule() { time = time });
-            }
-            else
-            {
-                ES3.DeleteKey("LastTimeGame");
-            }
-        }
         public void saveLastTime()
         {
 
