@@ -33,7 +33,8 @@ namespace Pok
             var payments = pInfo.getCurrentPrice();
             for(int i = 0; i < payments.Length; ++i)
             {
-                price[i].text = PokUltis.calculateCreaturePrice(i, GameManager.Instance.getNumberBoughtItem(pInfo.itemSell.ItemID), (CreatureItem)pInfo.itemSell).ToKMBTA();
+                var numberBought = GameManager.Instance.Database.creatureInfos.Find(x => x.id == pInfo.itemSell.ItemID).boughtNumberVariant[i];
+                price[i].text = PokUltis.calculateCreaturePrice(i, numberBought, (CreatureItem)pInfo.itemSell).ToKMBTA();
                 var itemChange = iconExchange[i];
                 payments[i].exchangeItems[0].item.getSpriteForState((o) => {
                     itemChange.sprite2D = o;

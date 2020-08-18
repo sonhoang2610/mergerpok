@@ -481,7 +481,7 @@ namespace Pok
         }
         public IEnumerator ScheduleSaveGame()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             if (ES3.dirty)
             {
                 SaveGame();

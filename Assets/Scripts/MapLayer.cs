@@ -280,10 +280,20 @@ namespace Pok
                                     var creatures = GameManager.Instance.Database.getAllInfoCreatureInAddress(GameManager.Instance.ZoneChoosed, _info.id);
                                     System.Action<string> addAnother = delegate (string idCreature)
                                     {
-                                        var newCreature = new CreatureInstanceSaved() { id = idCreature, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = nextMapInfo };
-                                        nextMapInfo.creatures.Add(newCreature);
-                                        GameManager.Instance.GenerateID++;
-                                        EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, manualByHand = true, zoneid = zone.id });
+                                        var newCreatureItem = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == idCreature);
+                                        if(newCreatureItem.creatureChilds.Length == 0 && nextMapInfo.creatures.Count > 0)
+                                        {
+                                            var newCreature = new CreatureInstanceSaved() { id = idCreature, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = nextMapInfo };
+                                            nextMapInfo.creatures[0].level++;
+                                            EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, manualByHand = true, zoneid = zone.id });
+                                        }
+                                        else
+                                        {
+                                            var newCreature = new CreatureInstanceSaved() { id = idCreature, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = nextMapInfo };
+                                            nextMapInfo.creatures.Add(newCreature);
+                                            GameManager.Instance.GenerateID++;
+                                            EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, manualByHand = true, zoneid = zone.id });
+                                        }
                                     };
                                     System.Action addNormal = delegate
                                     {

@@ -61,6 +61,7 @@ namespace Pok
 
         public void onInit()
         {
+            maps.Sort((a, b) => { return GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == a.id).CompareTo(GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == b.id)); });
             for (int i = 0; i < maps.Count; ++i)
             {
                 maps[i].zoneParent = this;
@@ -123,7 +124,7 @@ namespace Pok
     {
         public string instanceID;
         public string id;
-
+        public int level = 1;
         public CreatureInstanceSaved autoFindParent(CreatureItem item)
         {
             mapParent = GameManager.Instance.Database.worldData.zones.Find(x=>x.id == GameManager.Instance.ZoneChoosed).maps.Find(x=> item.parentMap && x.id == item.parentMap.ItemID);
@@ -152,9 +153,11 @@ namespace Pok
         public List<ZoneInstanceSaved> zones = new List<ZoneInstanceSaved>();
         public void onInit()
         {
+            zones.Sort((a, b) => { return GameDatabase.Instance.ZoneCollection.FindIndex(x => x.ItemID == a.id).CompareTo(GameDatabase.Instance.ZoneCollection.FindIndex(x => x.ItemID == b.id)); });
             for (int i = 0; i < zones.Count; ++i)
             {
                 zones[i].onInit();
+
             }
         }
 

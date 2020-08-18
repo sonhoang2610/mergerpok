@@ -41,6 +41,7 @@ namespace Pok
     public class Creature : BaseItem<CreatureInstanceSaved>
     {
         public UI2DSprite skin;
+        public UILabel numberFinal;
         protected Vector3 scale;
         protected bool effecting = false,blockMove;
         protected Coroutine timer;
@@ -72,6 +73,12 @@ namespace Pok
             base.setInfo(info);
             var pInfo = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == info.id);
             cacheItem = pInfo;
+            if (numberFinal)
+            {
+                numberFinal.gameObject.SetActive(info.level > 1);
+                numberFinal.text = info.level.ToString();
+            }
+       
             pInfo.getSpriteForState((s) =>
             {
                 skin.sprite2D = s;
