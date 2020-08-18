@@ -41,6 +41,9 @@ namespace Pok
         public bool isUnLock = false;
         public int level;
         public int boughtNumber = 0;
+        public int[] boughtNumberVariant =new int[] { 0, 0 };
+        public int BoughtNumber { get => boughtNumberVariant[0] + boughtNumberVariant[1];}
+        
     }
     [System.Serializable]
     public class ZoneInfoSaved

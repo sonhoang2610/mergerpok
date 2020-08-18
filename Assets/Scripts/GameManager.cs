@@ -422,7 +422,7 @@ namespace Pok
             }
             else if (originalItem.categoryItem == CategoryItem.CREATURE)
             {
-                return Database.creatureInfos.Find(x => x.id == item).boughtNumber;
+                return Database.creatureInfos.Find(x => x.id == item).BoughtNumber;
             }
             return 0;
         }
@@ -481,7 +481,7 @@ namespace Pok
         }
         public IEnumerator ScheduleSaveGame()
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(2);
             if (ES3.dirty)
             {
                 SaveGame();

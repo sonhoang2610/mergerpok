@@ -186,18 +186,21 @@ public class UIElement : MonoBehaviour {
         }
     }
 
-    private bool isFirst = false;
+    private int isFirst = 2;
 
     private void LateUpdate()
     {
-        if (!isFirst) return;
-        onEnableLateUpdateEvent.Invoke();
-        isFirst = false;
+        if (isFirst == 0) return;
+        isFirst--;
+        if (isFirst == 0)
+        {
+            onEnableLateUpdateEvent.Invoke();
+        }
     }
     private void OnEnable()
     {
   
-        isFirst = true;
+        isFirst = 2;
         onEnableEvent?.Invoke();
         onStartEvent?.Invoke();
     }

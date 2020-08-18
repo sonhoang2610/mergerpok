@@ -197,6 +197,11 @@ namespace Pok
                 labelRewardQuantiy.gameObject.SetActive(itemFinal.item.ItemID == "Coin" || itemFinal.item.ItemID == "Crystal");
                 rewardIcon.gameObject.SetActive(itemFinal.item.ItemID == "Coin" || itemFinal.item.ItemID == "Crystal");
                 labelRewardType.gameObject.SetActive(itemFinal.item.ItemID == "TicketSpin" || itemFinal.item.categoryItem == CategoryItem.CREATURE);
+                if(BigInteger.Parse(itemFinal.quantity) <= 0){
+                    labelRewardType.gameObject.SetActive(false);
+                    rewardIcon.gameObject.SetActive(false);
+                    labelRewardQuantiy.gameObject.SetActive(false);
+                }
                 if (itemFinal.item.ItemID == "Coin" || itemFinal.item.ItemID == "Crystal")
                 {
 

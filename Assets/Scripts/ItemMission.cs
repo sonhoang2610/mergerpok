@@ -127,6 +127,26 @@ namespace Pok
             GameManager.Instance.Database.timeRestore.RemoveAll(x => x.id == $"[Mission]{_info.ItemID}");
             EzEventManager.TriggerEvent(new MissionEvent() { type = TypeEvent.REMOVE });
             HUDManager.Instance.boxReward.show(cacheReward,"Mission Reward");
+            foreach(var reward in cacheReward)
+            {
+                if(reward.itemReward.item.categoryItem == CategoryItem.CREATURE)
+                {
+                    var creature = ((CreatureItem)reward.itemReward.item);
+                    var zone = GameDatabase.Instance.ZoneCollection.Find(x => x.ItemID == GameManager.Instance.ZoneChoosed);
+                    var pack = zone.getPackage();
+                    var mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => creature.parentMap && x.id == creature.parentMap.ItemID);
+                    var newCreature = new PackageCreatureInstanceSaved() { creature = creature.ItemID, id = pack.package.ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = mapParent };
+                    GameManager.Instance.GenerateID++;
+                    GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
+                    EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, zoneid = GameManager.Instance.ZoneChoosed, manualByHand = false });
+                }
+                else
+                {
+                    GameManager.Instance.claimItem(reward.itemReward.item, reward.itemReward.quantity);
+                }
+                
+            }
+          
 
         }
         private void OnEnable()

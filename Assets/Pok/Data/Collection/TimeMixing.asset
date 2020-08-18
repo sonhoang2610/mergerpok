@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TimeMixing
   m_EditorClassIdentifier: 
   _value:
-    startUnit: 5
+    startUnit: 60
     algrothimTypeUpgrade: 0
-    stepUnit: -1
+    stepUnit: -2
     isSpecifiedUnit: 0
     unitDefines: []
   _readOnly: 0

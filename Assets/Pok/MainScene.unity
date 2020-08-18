@@ -6988,6 +6988,9 @@ MonoBehaviour:
   - checkObject: {fileID: 8080365350570413641}
     typeCondition: 0
     goalPok: Pok9
+  - checkObject: {fileID: 865913009}
+    typeCondition: 0
+    goalPok: Pok8
 --- !u!114 &272733089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9254,6 +9257,7 @@ MonoBehaviour:
   icon: {fileID: 714407419}
   nameCreature: {fileID: 984548476}
   size: {x: 9999, y: 300}
+  attachMentDiamond: {fileID: 2041075904}
 --- !u!114 &348782884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23543,7 +23547,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -298.66
+      value: -298.65997
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
@@ -24107,7 +24111,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 66
+  mWidth: 64
   mHeight: 72
   mDepth: 45
   mMat: {fileID: 0}
@@ -40183,7 +40187,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -92.00003
+      value: -92
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
@@ -46432,7 +46436,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 288
+  mWidth: 286
   mHeight: 38
   mDepth: 41
   mMat: {fileID: 0}
@@ -49512,6 +49516,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1766680210}
   - component: {fileID: 1766680211}
+  - component: {fileID: 1766680213}
+  - component: {fileID: 1766680212}
   m_Layer: 8
   m_Name: Container
   m_TagString: Untagged
@@ -49575,6 +49581,65 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
+--- !u!114 &1766680212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766680209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59f5089a40a488418cc7207a9ff8064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1766680213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766680209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2901b3e917cc905459cb9a0c15fc4340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fadeAnimation: 0
+  _moveAnimation: 
+  onEnableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onInitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnableLateUpdateEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1766680212}
+        m_MethodName: BringForward
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1766680209}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCompleteTweenShow:
+    m_PersistentCalls:
+      m_Calls: []
+  onStartClose:
+    m_PersistentCalls:
+      m_Calls: []
+  relative: 0
 --- !u!1 &1771103319
 GameObject:
   m_ObjectHideFlags: 0
@@ -56426,7 +56491,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 114.65997
+      value: 114.660034
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}

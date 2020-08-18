@@ -21,7 +21,7 @@ namespace Pok
             var state = "Default";
             var zoneinfo = GameManager.Instance.Database.zoneInfos.Find(x => x.id == pInfo.ItemID);
             price.text =$"{ pInfo.moneyToUnlock.ToKMBTA()}" ;
-            factorTap.text = $"x{pInfo.factorTap} money for each tap";
+            factorTap.text = $"1 tap give x{pInfo.factorTap}";
             layerNotUnlocked.gameObject.SetActive(!zoneinfo.isUnLock);
             if (!zoneinfo.isUnLock)
             {

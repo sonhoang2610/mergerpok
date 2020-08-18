@@ -53,17 +53,20 @@ namespace Pok
                 items[i].showBtnAds(i == items.Count - 1);
             }
         }
-
+        int cacheWayBuy = 0;
         public void buyWay1(object data)
         {
             buy(data, 0);
+            cacheWayBuy = 0;
         }
         public void buyWay2(object data)
         {
             buy(data, 1);
+            cacheWayBuy = 1;
         }
         public void buyWay3(object data)
         {
+            cacheWayBuy = 2;
             if (GameManager.Instance.isRewardADSReady("BuyCreature"))
             {
                 GameManager.Instance.WatchRewardADS("BuyCreature", (o) =>
@@ -90,7 +93,10 @@ namespace Pok
                 HUDManager.Instance.showBoxFullSlot();
             }
             var creatures = GameManager.Instance.Database.getAllInfoCreatureInAddress(GameManager.Instance.ZoneChoosed, mapParent.id);
-            System.Array.Find(creatures, x => x.id == creature.ItemID).boughtNumber++;
+            if (cacheWayBuy < 2)
+            {
+                System.Array.Find(creatures, x => x.id == creature.ItemID).boughtNumberVariant[cacheWayBuy]++;
+            }
             GameManager.Instance.GenerateID++;
             GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
             EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, zoneid = GameManager.Instance.ZoneChoosed, manualByHand = false });
@@ -100,7 +106,7 @@ namespace Pok
         {
             var shopitem = ((ShopItemInfo)data);
             var exchanges = shopitem.getCurrentPrice()[index].exchangeItems;
-            var numberBought = GameManager.Instance.getNumberBoughtItem(shopitem.itemSell.ItemID);
+            var numberBought = index == 2 ? 0 : GameManager.Instance.Database.creatureInfos.Find(x => x.id == shopitem.itemSell.ItemID).boughtNumberVariant[index];
             var quantity = PokUltis.calculateCreaturePrice(index, numberBought, (CreatureItem)shopitem.itemSell);
             for (int i = 0; i < exchanges.Length; ++i)
             {

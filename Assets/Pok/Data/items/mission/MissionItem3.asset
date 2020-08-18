@@ -21,12 +21,38 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: blackBoardVariable
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: limitInInventory
       Entry: 6
       Data: 
     - Name: timeToRestore
       Entry: 6
       Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
+  variantLevel: 0
+  defaultLevel: 0
   itemID: MissionItem3
   displayNameItem:
     normalString: Rare Mission
@@ -58,7 +84,7 @@ MonoBehaviour:
     isSpecifiedUnit: 0
     unitDefines: []
   limitLevel: 1
-  timeMission: 21600
+  timeMission: 43200
   itemReward:
   - typePayment: 0
     item: {fileID: 11400000, guid: ec0a879b15c15084bab6d97d76882ec0, type: 2}

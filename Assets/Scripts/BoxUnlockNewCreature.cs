@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EazyEngine.Tools;
+using DG.Tweening;
 
 namespace Pok
 {
@@ -12,6 +13,7 @@ namespace Pok
         public UI2DSprite icon;
         public UILabel nameCreature;
         public Vector2Int size;
+        public GameObject attachMentDiamond;
         public void show(string creautre)
         {
             var mapID = MainScene.Instance.MapObjects[MainScene.Instance.CurrentPageMapLayer].id;
@@ -31,6 +33,40 @@ namespace Pok
             }
             boxCreatureInMap.executeInfos(infos.ToArray());
             container.show();
+            StartCoroutine( delayDiamond());
+        }
+
+        public IEnumerator delayDiamond()
+        {
+            yield return new WaitForSeconds(0.25f);
+            var crystal = GameManager.Instance.Database.getItem("Crystal");
+            crystal.addQuantity("1");
+            var iconPos = attachMentDiamond.transform.position;
+            var Home = System.Array.Find(GameObject.FindObjectsOfType<InventorySlot>(), x => x._info.itemID == "Crystal");
+            if (Home)
+            {
+                GameObject pObject = new GameObject();
+                var sprite = pObject.AddComponent<UI2DSprite>();
+                sprite.width = 100;
+                sprite.height = 100;
+                var item = GameManager.Instance.Database.getItem("Crystal");
+                item.item.getSpriteForState((o) =>
+                {
+                    sprite.sprite2D = o;
+                });
+                pObject.transform.parent = Home.transform;
+                pObject.SetLayerRecursively(HUDManager.Instance.gameObject.layer);
+                pObject.transform.localScale = new Vector3(1, 1, 1);
+                pObject.transform.position = iconPos;
+                NGUITools.BringForward(pObject);
+                Sequence seq = DOTween.Sequence();
+                seq.Append(pObject.transform.DOScale(1.5f, 0.75f));
+                seq.Append(pObject.transform.DOMove(Home.transform.position, 0.5f));
+                seq.Join(pObject.transform.DOScale(0, 0.6f).OnComplete(() =>
+                {
+                    GameObject.Destroy(pObject);
+                }));
+            }
         }
         // Start is called before the first frame update
         void Start()

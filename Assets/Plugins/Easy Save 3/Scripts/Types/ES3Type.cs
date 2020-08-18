@@ -144,7 +144,6 @@ namespace ES3Types
 				else
 				{
 					var type = ES3TypeMgr.GetOrCreateES3Type(property.type);
-
 					if(ES3Reflection.IsAssignableFrom(typeof(ES3DictionaryType), type.GetType()))
 						property.reflectedMember.SetValue(obj, ((ES3DictionaryType)type).Read(reader));
 					else if(ES3Reflection.IsAssignableFrom(typeof(ES3CollectionType), type.GetType()))

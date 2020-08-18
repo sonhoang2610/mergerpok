@@ -24,7 +24,7 @@ namespace Pok
         public IEnumerator init()
         {
             yield return new WaitForEndOfFrame();
-           var processing = TimeCounter.Instance.timeCollection.Value.Exists(x => x.id.Contains("[Mission]"));
+            var processing = TimeCounter.Instance.timeCollection.Value.Exists(x => x.id.Contains("[Mission]"));
             layerStart.setActive(!processing);
             layerProcessing.setActive(processing);
             layerContainer.setActive(false);

@@ -277,6 +277,10 @@ namespace Pok
 
         public void OnEzEvent(AddCreatureEvent eventType)
         {
+            if (!GameManager.Instance.Database.creatureInfos[7].isUnLock)
+            {
+                return;
+            }
             if (!eventType.manualByHand || eventType.change <= 0) return;
             MixingTime++;
             if (MixingTime >= timeMixing.Value.getCurrentUnit())
@@ -361,8 +365,10 @@ namespace Pok
             {
                 factor = 4;
             }
+
+            int factorTime = factor == 2 ? 60 : 1;
             double time = blackBoard["time"].GetType() == typeof(double) ? (double)blackBoard["time"] : Random.Range(((Vector2Int)blackBoard["time"]).x, ((Vector2Int)blackBoard["time"]).y);
-            GameManager.Instance.addFactorSuperIncome(factor, time);
+            GameManager.Instance.addFactorSuperIncome(factor, time/60);
         }
 
         public string getContent(Dictionary<string, object> blackBoard)

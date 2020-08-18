@@ -135,12 +135,12 @@ namespace Pok
             }
             return pCoin;
         }
-        public void addMoney(Creature pok)
+        public void addMoney(Creature pok,int factor)
         {
             pok.effect();
             var creature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == pok._info.id);
             var goldAdd = creature.getGoldAFK(GameManager.Instance.ZoneChoosed);
-            goldAdd = (System.Numerics.BigInteger.Parse(goldAdd.clearDot()) * (Random.Range(0, 10) > 8 ? 3 : (Random.Range(0, 10) > 7 ? 2 : 1))).ToString();
+            goldAdd = (factor * System.Numerics.BigInteger.Parse(goldAdd.clearDot()) * (Random.Range(0, 10) > 8 ? 3 : (Random.Range(0, 10) > 7 ? 2 : 1))).ToString();
             var coin = GameManager.Instance.Database.getItem("Coin");
             coin.addQuantity(goldAdd.clearDot());
             var stringMoney = goldAdd.clearDot().ToKMBTA();
@@ -200,7 +200,7 @@ namespace Pok
             if (!press && !dirty && effecting <= 0)
             {
                 OnPressUp(creature);
-                addMoney(creature);
+                addMoney(creature,1);
                 SoundManager.Instance.PlaySound("CoinClickPure");
             }
         }

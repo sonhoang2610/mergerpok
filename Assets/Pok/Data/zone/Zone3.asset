@@ -21,6 +21,26 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: blackBoardVariable
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: limitInInventory
       Entry: 6
       Data: 
@@ -31,6 +51,8 @@ MonoBehaviour:
       Entry: 6
       Data: 
   variantItem: 0
+  variantLevel: 0
+  defaultLevel: 0
   itemID: Zone3
   displayNameItem:
     normalString: Cassiopia
@@ -78,4 +100,4 @@ MonoBehaviour:
   coinBank: {fileID: 11400000, guid: 71ae073a75f82874b9fbcd728f31b318, type: 2}
   shopCreature: {fileID: 11400000, guid: 4848aabde1294a64c83a29c8311c0efc, type: 2}
   moneyToUnlock: 190.2ab
-  factorTap: 1
+  factorTap: 5

@@ -21,6 +21,26 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: blackBoardVariable
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: limitInInventory
       Entry: 6
       Data: 
@@ -32,11 +52,11 @@ MonoBehaviour:
       Data: 
     - Name: blackBoard
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -52,10 +72,10 @@ MonoBehaviour:
       Data: SuperInCome
     - Name: $v
       Entry: 7
-      Data: 2|System.Single, mscorlib
+      Data: 4|System.Single, mscorlib
     - Name: 
       Entry: 4
-      Data: 4
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -70,13 +90,13 @@ MonoBehaviour:
       Data: time
     - Name: $v
       Entry: 7
-      Data: 3|UnityEngine.Vector2Int, UnityEngine.CoreModule
+      Data: 5|UnityEngine.Vector2Int, UnityEngine.CoreModule
     - Name: 
       Entry: 3
-      Data: 180
+      Data: 7200
     - Name: 
       Entry: 3
-      Data: 600
+      Data: 7200
     - Name: 
       Entry: 8
       Data: 
@@ -90,6 +110,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
   variantItem: 0
+  variantLevel: 0
+  defaultLevel: 0
   itemID: SuperInCome
   displayNameItem:
     normalString: SuperInCome
