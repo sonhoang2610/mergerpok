@@ -492,8 +492,12 @@ namespace Pok
             {
                 ES3.Save("Database", Database);
                 ES3.StoreCachedFile();
-                ES3.dirty = false;
-                blockingSave = false;
+                UnityToolbag.Dispatcher.InvokeAsync(() =>
+                {
+                    ES3.dirty = false;
+                    blockingSave = false;
+                });
+            
             });
             //Start the Thread and execute the code inside it
             thread.Start();
