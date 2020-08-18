@@ -343,12 +343,17 @@ namespace Pok
                 InAppPurchasing.InitializePurchasing();
                 InAppPurchasing.PurchaseCompleted += PurchaseComplete;
             }
+            if (!RuntimeManager.IsInitialized())
+            {
+                RuntimeManager.Init();
+            }
             Advertising.RewardedAdCompleted += AdComplete;
             Advertising.RewardedAdSkipped += AdSkipped;
         }
         
         public void AdComplete(RewardedAdNetwork net,AdPlacement placement)
         {
+            Debug.Log("ADS Complete");
             foreach(var result in resultWatch)
             {
                 result(true);
@@ -357,6 +362,7 @@ namespace Pok
         }
         public void AdSkipped(RewardedAdNetwork net, AdPlacement placement)
         {
+            Debug.Log("ADS Failed");
             foreach (var result in resultWatch)
             {
                 result(false);
@@ -482,33 +488,70 @@ namespace Pok
         {
             SaveGame();
         }
-        static bool blockingSave = false;
+        public static bool blockingSave = false;
+        public Coroutine coroutineBlock;
+        public IEnumerator resetBlock()
+        {
+            yield return new WaitForSeconds(3);
+            blockingSave = false;
+        }
         public void SaveGame()
         {
-   
-            if (blockingSave) return;
+            if (blockingSave)
+            {
+                if (coroutineBlock == null)
+                {
+                    coroutineBlock = StartCoroutine(resetBlock());
+                }
+                return;
+            }
             blockingSave = true;
             Thread thread = new Thread(delegate ()
             {
                 ES3.Save("Database", Database);
-                ES3.StoreCachedFile();
-                UnityToolbag.Dispatcher.InvokeAsync(() =>
+                try
                 {
-                    ES3.dirty = false;
-                    blockingSave = false;
-                });
+                    ES3.StoreCachedFile();
+                }
+                catch
+                {
+         
+                }
+                finally
+                {
+                    UnityToolbag.Dispatcher.InvokeAsync(() =>
+                    {
+                        if (coroutineBlock != null)
+                        {
+                            StopCoroutine(coroutineBlock);
+                            coroutineBlock = null;
+                        }
+                        ES3.dirty = false;
+                        blockingSave = false;
+                    });
+                }
             
             });
             //Start the Thread and execute the code inside it
             thread.Start();
    
         }
+        int blockDirty = 0;
         public IEnumerator ScheduleSaveGame()
         {
             yield return new WaitForSeconds(1);
             if (ES3.dirty)
             {
                 SaveGame();
+            }
+            else
+            {
+                blockDirty++;
+                if(blockDirty >= 5)
+                {
+                    blockDirty = 0;
+                    ES3.dirty = true;
+                }
             }
             StartCoroutine(ScheduleSaveGame());
         }
@@ -618,7 +661,7 @@ namespace Pok
             }
         }
 
-
+ 
         public ItemWithQuantity[] claimItem(BaseItemGame item, string quantity = "1",float bonus = 0)
         {
             if (typeof(IUsageItem).IsAssignableFrom(item.GetType()))
@@ -680,6 +723,9 @@ namespace Pok
 #if UNITY_EDITOR
             result?.Invoke(true);
 
+#else
+            resultWatch.Add(result);
+            Advertising.ShowRewardedAd();
 #endif
         }
         protected List<System.Action<bool>> resultWatch = new List<Action<bool>>();
@@ -690,9 +736,9 @@ namespace Pok
             StartCoroutine(delayAction(1, () => {
                 result?.Invoke(UnityEngine.Random.Range(0,2) == 0);
             }));
+#else
+            Advertising.LoadRewardedAd();
 #endif
-            resultWatch.Add(result);
-            Advertising.ShowRewardedAd();
         }
         public bool isRewardADSReady(string id)
         {

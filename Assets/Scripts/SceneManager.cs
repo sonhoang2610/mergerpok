@@ -117,11 +117,6 @@ namespace Pok
             Application.targetFrameRate = 60;
             Application.backgroundLoadingPriority = ThreadPriority.Low;
             Application.runInBackground = true;
-#if UNITY_EDITOR
-            Debug.unityLogger.logEnabled = true;
-#else
-            Debug.unityLogger.logEnabled = false;
-#endif
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
         }
 

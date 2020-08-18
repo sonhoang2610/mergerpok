@@ -1138,7 +1138,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 78
+  mWidth: 76
   mHeight: 72
   mDepth: 29
   mMat: {fileID: 0}
@@ -15682,8 +15682,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   factor1: {fileID: 151567316}
   factor2: {fileID: 20930797}
-  time1: {fileID: 0}
-  time2: {fileID: 0}
+  time1: {fileID: 603168733}
+  time2: {fileID: 1789795546}
   btnGet: {fileID: 1054943713}
   factor: 1
 --- !u!1 &540251710
@@ -23549,7 +23549,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -298.66
+      value: -298.65997
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
@@ -40191,7 +40191,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -92.00003
+      value: -92
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
@@ -56495,7 +56495,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 114.65997
+      value: 114.660034
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}

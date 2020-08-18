@@ -58,6 +58,7 @@ namespace Pok {
 
         public IEnumerator onEnableLateUpdate()
         {
+            yield return new WaitForEndOfFrame();
             if (!GameManager.readyForThisState("Main"))
             {
                 yield return new WaitForEndOfFrame();
@@ -65,14 +66,22 @@ namespace Pok {
             var quantitySecIncome = BigInt.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (int)GameManager.Instance.getFactorIncome().x;
             HUDManager.Instance.quanityHour.text = quantitySecIncome.ToString().ToKMBTA();
         }
-        
-
-        private void Start()
+        private IEnumerator StartQueue()
         {
+            yield return new WaitForEndOfFrame();
+            if (!GameManager.readyForThisState("Main"))
+            {
+                yield return new WaitForEndOfFrame();
+            }
             MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);
             MapObjects.Sort((a, b) => { return GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == a.id).CompareTo(GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == b.id)); });
 
             updateMapLayer(true);
+        }
+
+        private void Start()
+        {
+            StartCoroutine(StartQueue());
         }
         public bool chooseZone(object pChoose)
         {
