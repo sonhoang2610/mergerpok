@@ -112,18 +112,25 @@ public class ES3File
 
         using (var baseWriter = ES3Writer.Create(settings, true, !syncWithFile, false))
 		{
-			foreach (var kvp in cache) 
-			{
-				// If we change the name of a type, the type may be null.
-				// In this case, use System.Object as the type.
-				Type type;
-				if (kvp.Value.type == null)
-					type = typeof(System.Object);
-				else
-					type = kvp.Value.type.type;
-				baseWriter.Write (kvp.Key, type, kvp.Value.bytes);
-			}
-			baseWriter.Save(!syncWithFile);
+            try
+            {
+                foreach (var kvp in cache)
+                {
+                    // If we change the name of a type, the type may be null.
+                    // In this case, use System.Object as the type.
+                    Type type;
+                    if (kvp.Value.type == null)
+                        type = typeof(System.Object);
+                    else
+                        type = kvp.Value.type.type;
+                    baseWriter.Write(kvp.Key, type, kvp.Value.bytes);
+                }
+                baseWriter.Save(!syncWithFile);
+            }
+            catch
+            {
+                baseWriter.Dispose();
+            }
 		}
 	}
 	
