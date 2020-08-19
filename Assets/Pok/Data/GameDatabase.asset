@@ -304,7 +304,7 @@ MonoBehaviour:
       value: 
     amountCreature: 6
     prefabMix:
-      m_AssetGUID: 
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
       m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: d7ff3dda42eab3944bb278af64ca3ddb, type: 2}
     map: {fileID: 11400000, guid: d3d4f1a8dd68093489efc11140b0ff32, type: 2}
@@ -334,7 +334,7 @@ MonoBehaviour:
       value: 
     amountCreature: 6
     prefabMix:
-      m_AssetGUID: 
+      m_AssetGUID: 94bae1e1264071842922de8733b098d6
       m_SubObjectName: 
   - creatureLeader: {fileID: 11400000, guid: 8c32199aec57cf74489161ea890e6f89, type: 2}
     map: {fileID: 11400000, guid: 48b486716b42cd1478b9abcd6087f908, type: 2}
