@@ -22,7 +22,8 @@ namespace Pok
                 NGUITools.BringForward(items[i].gameObject);
             }
             tabs.reloadTabs();
-            tabs.changeTab(0);
+            var indexTab = tabs.GroupTab.FindIndex(x => x.GetComponent<MapItemInstanced>()._info.id == eventType.mapID);
+            tabs.changeTab(indexTab);
         }
 
         protected override void OnEnable()

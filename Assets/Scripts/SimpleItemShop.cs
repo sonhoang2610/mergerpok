@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using EasyMobile;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +32,12 @@ namespace Pok
                     }
                     else if(paymens[i].exchangeItems[0].IAP)
                     {
+                       var localize = InAppPurchasing.GetProductLocalizedData(InAppPurchasing.GetIAPProductById(_info.itemSell.ItemID.ToLower()).Name);
                         exchange.price.text = paymens[i].exchangeItems[0].quantity + "$";
+                        if(localize != null)
+                        {
+                            exchange.price.text = localize.localizedPriceString;
+                        }
                         exchange.icon.sprite2D = null;
                     }
                     else if (paymens[i].exchangeItems[0].WATCH_ADS)

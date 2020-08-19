@@ -12,6 +12,8 @@ using System;
 using static EasyMobile.StoreReview;
 using DG.Tweening;
 using System.Threading;
+using System.Threading.Tasks;
+using Firebase.Extensions;
 
 namespace Pok
 {
@@ -27,7 +29,7 @@ namespace Pok
         public Dictionary<string, Collider[]> behaviorsDisable = new Dictionary<string, Collider[]>();
         public TimeCounterInfoCollection timeCollection;
         public StringVariable currentMap;
-  
+
         public void deActiveBehaviors(string id, Collider[] behaviors)
         {
             if (!behaviorsDisable.ContainsKey(id))
@@ -44,7 +46,7 @@ namespace Pok
         {
             get
             {
-                if(guideindex == -1)
+                if (guideindex == -1)
                 {
                     guideindex = ES3.Load("FirstGuide", 0);
                 }
@@ -55,7 +57,7 @@ namespace Pok
             {
                 var Es3setting = new ES3Settings();
                 Es3setting.location = ES3.Location.Cache;
-                 ES3.Save("FirstGuide", value, Es3setting);
+                ES3.Save("FirstGuide", value, Es3setting);
                 guideindex = value;
             }
         }
@@ -90,7 +92,7 @@ namespace Pok
             {
                 GuideIndex = 3;
             }
-            else if(GuideIndex == 3)
+            else if (GuideIndex == 3)
             {
                 HUDManager.Instance.hand.gameObject.SetActive(true);
                 HUDManager.Instance.hand.transform.localPosition = new UnityEngine.Vector3(-200, -200, 0);
@@ -106,8 +108,8 @@ namespace Pok
         public void ActiveBehaviors(string id)
         {
             if (!behaviorsDisable.ContainsKey(id)) return;
-                var behaviours = behaviorsDisable[id];
-            foreach(var behavior in behaviours)
+            var behaviours = behaviorsDisable[id];
+            foreach (var behavior in behaviours)
             {
                 behavior.enabled = true;
             }
@@ -136,7 +138,7 @@ namespace Pok
             if (timing != null)
             {
                 timing.destinyIfHave += time;
-                if(time == -1)
+                if (time == -1)
                 {
                     timing.destinyIfHave = -1;
                 }
@@ -236,7 +238,7 @@ namespace Pok
             {
                 stateReady[state]++;
             }
-         
+
         }
         public static void removeDirtyState(string state)
         {
@@ -313,9 +315,9 @@ namespace Pok
 #endif
             ES3.CacheFile();
             var guide = ES3.Load("FirstGuide", 0);
-            if (guide > 0  && guide < 5)
+            if (guide > 0 && guide < 5)
             {
-                ES3.Save("FirstGuide",5);
+                ES3.Save("FirstGuide", 5);
             }
             if (!GameDatabase.Instance.isInit)
             {
@@ -323,19 +325,20 @@ namespace Pok
             }
 
             _database = LoadDatabaseGame();
-            for(int i =0; i < itemADDIfNotExist.Length; ++i)
+            for (int i = 0; i < itemADDIfNotExist.Length; ++i)
             {
                 var item = _database.inventory.Find(x => x.itemID == itemADDIfNotExist[i].itemID);
-                if (item == null )
+                if (item == null)
                 {
                     _database.inventory.Add(ES3.Deserialize<BaseItemGameInstanced>(ES3.Serialize<BaseItemGameInstanced>(itemADDIfNotExist[i])));
-                }else if(item.EmptySlot || item.QuantityBig <= 0)
+                }
+                else if (item.EmptySlot || item.QuantityBig <= 0)
                 {
                     var info = ES3.Deserialize<BaseItemGameInstanced>(ES3.Serialize<BaseItemGameInstanced>(itemADDIfNotExist[i]));
                     _database.inventory[_database.inventory.IndexOf(item)] = info;
                 }
             }
-       
+
             _database.InitDatabase();
             _zoneChoosed = ZoneChoosed;
             if (!InAppPurchasing.IsInitialized())
@@ -349,12 +352,25 @@ namespace Pok
             }
             Advertising.RewardedAdCompleted += AdComplete;
             Advertising.RewardedAdSkipped += AdSkipped;
+            StartCoroutine(checkFetchData());
         }
-        
-        public void AdComplete(RewardedAdNetwork net,AdPlacement placement)
+        public IEnumerator checkFetchData()
+        {
+            while (!GameManager.readyForThisState("Main"))
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            while (SceneManager.Instance.app == null)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            FetchDataAsync();
+        }
+
+        public void AdComplete(RewardedAdNetwork net, AdPlacement placement)
         {
             Debug.Log("ADS Complete");
-            foreach(var result in resultWatch)
+            foreach (var result in resultWatch)
             {
                 result(true);
             }
@@ -387,16 +403,16 @@ namespace Pok
         [ContextMenu("hack")]
         public void hack()
         {
-            for(int i = 0; i <items.Length -2; ++i)
+            for (int i = 0; i < items.Length - 2; ++i)
             {
                 var list = new List<CreatureItem>();
                 items[i].getChild(list, 6);
-                foreach(var element in list)
+                foreach (var element in list)
                 {
                     GameManager.Instance.Database.creatureInfos.Find(x => x.id == element.ItemID).isUnLock = true;
                 }
             }
-            GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[items.Length-2].ItemID).isUnLock = true;
+            GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[items.Length - 2].ItemID).isUnLock = true;
             GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[items.Length - 1].ItemID).isUnLock = true;
             // GameManager.Instance.Database.zoneInfos[0].leaderSelected.Add
         }
@@ -499,7 +515,7 @@ namespace Pok
         {
             if (blockingSave)
             {
-                if (coroutineBlock == null)
+                if (coroutineBlock == null && !GameManager.InstanceRaw.IsDestroyed() && GameManager.InstanceRaw.gameObject.activeSelf)
                 {
                     coroutineBlock = StartCoroutine(resetBlock());
                 }
@@ -515,7 +531,7 @@ namespace Pok
                 }
                 catch
                 {
-         
+
                 }
                 finally
                 {
@@ -530,11 +546,11 @@ namespace Pok
                         blockingSave = false;
                     });
                 }
-            
+
             });
             //Start the Thread and execute the code inside it
             thread.Start();
-   
+
         }
         int blockDirty = 0;
         public IEnumerator ScheduleSaveGame()
@@ -547,7 +563,7 @@ namespace Pok
             else
             {
                 blockDirty++;
-                if(blockDirty >= 5)
+                if (blockDirty >= 5)
                 {
                     blockDirty = 0;
                     ES3.dirty = true;
@@ -555,18 +571,89 @@ namespace Pok
             }
             StartCoroutine(ScheduleSaveGame());
         }
+        int indexShowADS = 0;
+        bool readyShowADS = false;
+        string[] arrayTimeShowADS;
 
+        public IEnumerator showADS(float sec = 0)
+        {
+            yield return new WaitForSeconds(sec == 0 ? int.Parse(arrayTimeShowADS[indexShowADS]) : sec);
+
+            if (Advertising.IsInterstitialAdReady())
+            {
+                indexShowADS++;
+                if (indexShowADS >= arrayTimeShowADS.Length)
+                {
+                    indexShowADS = arrayTimeShowADS.Length - 1;
+                }
+                Advertising.ShowInterstitialAd();
+                StartCoroutine(showADS());
+            }
+            else
+            {
+                Advertising.LoadInterstitialAd();
+                StartCoroutine(showADS(5));
+            }
+
+        }
+        int indexFecth = 0;
+        public void FetchComplete(Task task)
+        {
+            var arrayTime = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_bonus_evo").StringValue.Split(',');
+            randomTimeBosnusEvolution = new Vector2Int(int.Parse(arrayTime[0]), int.Parse(arrayTime[1]));
+            arrayTime = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_reward_ads").StringValue.Split(',');
+            randomTimeRewardAds = new Vector2Int(int.Parse(arrayTime[0]), int.Parse(arrayTime[1]));
+            arrayTimeShowADS = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_delay_ads").StringValue.Split(',');
+            StartCoroutine(showADS(0));
+            var info = Firebase.RemoteConfig.FirebaseRemoteConfig.Info;
+            switch (info.LastFetchStatus)
+            {
+                case Firebase.RemoteConfig.LastFetchStatus.Success:
+                    Firebase.RemoteConfig.FirebaseRemoteConfig.ActivateFetched();
+                    Debug.Log(String.Format("Remote data loaded and ready (last fetch time {0}).",
+                                           info.FetchTime));
+                    break;
+                case Firebase.RemoteConfig.LastFetchStatus.Failure:
+                    switch (info.LastFetchFailureReason)
+                    {
+                        case Firebase.RemoteConfig.FetchFailureReason.Error:
+                            Debug.Log("Fetch failed for unknown reason");
+                            break;
+                        case Firebase.RemoteConfig.FetchFailureReason.Throttled:
+                            Debug.Log("Fetch throttled until " + info.ThrottledEndTime);
+                            break;
+                    }
+                    break;
+                case Firebase.RemoteConfig.LastFetchStatus.Pending:
+                    Debug.Log("Latest Fetch call still pending.");
+                    break;
+            }
+            indexFecth++;
+            if (indexFecth == 1)
+            {
+                FetchDataAsync();
+            }
+        }
+
+        public Task FetchDataAsync()
+        {
+            System.Threading.Tasks.Task fetchTask = Firebase.RemoteConfig.FirebaseRemoteConfig.FetchAsync(
+                TimeSpan.Zero);
+            return fetchTask.ContinueWithOnMainThread(FetchComplete);
+        }
+        Vector2Int randomTimeBosnusEvolution = new Vector2Int(300, 1500), randomTimeRewardAds = new Vector2Int(300, 1500);
         public int TimeDelayBonusEvolution
         {
             get
             {
-                return UnityEngine.Random.Range(300, 1500);
+                return UnityEngine.Random.Range(randomTimeBosnusEvolution.x, randomTimeBosnusEvolution.y);
             }
         }
-        public int TimeDelayBoxRewardADS { 
+        public int TimeDelayBoxRewardADS
+        {
             get
             {
-                return UnityEngine.Random.Range(300, 1500);
+                return UnityEngine.Random.Range(randomTimeRewardAds.x, randomTimeRewardAds.y);
             }
         }
 
@@ -579,7 +666,8 @@ namespace Pok
             {
                 return;
             }
-            TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]RewardADS", autoRemoveIfToDestiny = true, destinyIfHave = GameManager.Instance.TimeDelayBoxRewardADS });
+            var ready = GameManager.Instance.isRewardADSReady("BoxRewardADS");
+            TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]RewardADS", autoRemoveIfToDestiny = true, destinyIfHave = ready ? GameManager.Instance.TimeDelayBoxRewardADS : 5 });
 
             HUDManager.Instance.showBoxRewardADS();
         }
@@ -604,7 +692,7 @@ namespace Pok
             {
                 var factor = GameManager.Instance.getFactorIncome();
                 if (HUDManager.InstanceRaw)
-                HUDManager.Instance.timeXInCome.transform.parent.gameObject.SetActive(factor.y > 0);
+                    HUDManager.Instance.timeXInCome.transform.parent.gameObject.SetActive(factor.y > 0);
                 if (factor.y > 0)
                 {
 
@@ -612,7 +700,7 @@ namespace Pok
                     if (HUDManager.InstanceRaw)
                         HUDManager.Instance.timeXInCome.text = string.Format("{0}H {1}M {2}S", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
                 }
-                else if(eventType.timeInfo.destinyIfHave != -1)
+                else if (eventType.timeInfo.destinyIfHave != -1)
                 {
                     GameManager.Instance.Database.removeTime(eventType.timeInfo);
                 }
@@ -653,7 +741,7 @@ namespace Pok
                 {
                     GameManager.Instance.Database.removeTime(eventType.timeInfo);
                 }
-               
+
             }
             if (eventType.timeInfo.counterTime >= eventType.timeInfo.destinyIfHave && eventType.timeInfo.autoRemoveIfToDestiny)
             {
@@ -661,8 +749,8 @@ namespace Pok
             }
         }
 
- 
-        public ItemWithQuantity[] claimItem(BaseItemGame item, string quantity = "1",float bonus = 0)
+
+        public ItemWithQuantity[] claimItem(BaseItemGame item, string quantity = "1", float bonus = 0)
         {
             if (typeof(IUsageItem).IsAssignableFrom(item.GetType()))
             {
@@ -690,7 +778,7 @@ namespace Pok
                 var itemExist = GameManager.Instance.Database.getItem(item.ItemID);
                 itemExist.addQuantity(quantity);
             }
-            return new ItemWithQuantity[] { new ItemWithQuantity() {item = item,quantity = quantity } };
+            return new ItemWithQuantity[] { new ItemWithQuantity() { item = item, quantity = quantity } };
         }
         public void RequestInappForItem(string id, System.Action<bool> result)
         {
@@ -712,7 +800,7 @@ namespace Pok
             }
             ES3.dirty = true;
         }
-        public IEnumerator delayAction(float sec ,System.Action action)
+        public IEnumerator delayAction(float sec, System.Action action)
         {
             yield return new WaitForSeconds(sec);
             action?.Invoke();
@@ -733,8 +821,9 @@ namespace Pok
         {
             LogEvent("WATCH_ADS:" + id);
 #if UNITY_EDITOR
-            StartCoroutine(delayAction(1, () => {
-                result?.Invoke(UnityEngine.Random.Range(0,2) == 0);
+            StartCoroutine(delayAction(1, () =>
+            {
+                result?.Invoke(UnityEngine.Random.Range(0, 2) == 0);
             }));
 #else
             Advertising.LoadRewardedAd();
@@ -781,12 +870,13 @@ namespace Pok
                 {
                     StartCoroutine(actionOnEndFrame(() =>
                     {
-                        exist.addQuantity((-quantity.toInt()).ToString(),false);
+                        exist.addQuantity((-quantity.toInt()).ToString(), false);
                         var coin = GameManager.Instance.Database.getItem("Coin");
-                        coin.addQuantity(moneyAdd.toString(),false);
+                        coin.addQuantity(moneyAdd.toString(), false);
                     }));
-                   
-                }else if(eventType.item.changeQuantity.toDouble() > 0)
+
+                }
+                else if (eventType.item.changeQuantity.toDouble() > 0)
                 {
                     if (HUDManager.InstanceRaw)
                     {
@@ -794,7 +884,7 @@ namespace Pok
                     }
                     StartCoroutine(actionOnEndFrame(() =>
                     {
-                        exist.addQuantity((-quantity.toInt()).ToString(),false);
+                        exist.addQuantity((-quantity.toInt()).ToString(), false);
                     }));
 
                 }

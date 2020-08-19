@@ -200,7 +200,7 @@ namespace Pok
             if (!press && !dirty && effecting <= 0)
             {
                 OnPressUp(creature);
-                addMoney(creature,1);
+                addMoney(creature,1*(int)GameManager.Instance.getFactorIncome().x);
                 SoundManager.Instance.PlaySound("CoinClickPure");
             }
         }

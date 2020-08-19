@@ -216,17 +216,20 @@ namespace Pok
         {
             boxVip.item.loadAssetWrapped<BaseItemGame>((o) =>
             {
-                var product = InAppPurchasing.GetIAPProductById(o.ItemID);
+                var product = InAppPurchasing.GetIAPProductById(o.ItemID.ToLower());
                 SubscriptionInfo infoPro = InAppPurchasing.GetSubscriptionInfo(product.Name);
-                if ((infoPro.isSubscribed() == Result.True || infoPro.isFreeTrial() == Result.True) && infoPro.isExpired() == Result.False)
+                if (infoPro != null)
                 {
-                    btnVip.GetComponent<UIButton>().isEnabled = true;
-                }
-                else
-                {
-                    btnVip.GetComponent<UIButton>().isEnabled = false;
-                    var exist = GameManager.Instance.Database.getItem(o.ItemID);
-                    exist.setQuantity("0");
+                    if ((infoPro.isSubscribed() == Result.True || infoPro.isFreeTrial() == Result.True) && infoPro.isExpired() == Result.False)
+                    {
+                        btnVip.GetComponent<UIButton>().isEnabled = true;
+                    }
+                    else
+                    {
+                        btnVip.GetComponent<UIButton>().isEnabled = false;
+                        var exist = GameManager.Instance.Database.getItem(o.ItemID);
+                        exist.setQuantity("0");
+                    }
                 }
             });
         }

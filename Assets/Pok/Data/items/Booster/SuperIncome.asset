@@ -21,16 +21,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: limitInInventory
-      Entry: 6
-      Data: 
-    - Name: timeToRestore
-      Entry: 6
-      Data: 
-    - Name: machine
-      Entry: 6
-      Data: 
-    - Name: blackBoard
+    - Name: blackBoardVariable
       Entry: 7
       Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
         mscorlib]], mscorlib
@@ -43,7 +34,36 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: limitInInventory
+      Entry: 6
+      Data: 
+    - Name: timeToRestore
+      Entry: 6
+      Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+    - Name: blackBoard
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
@@ -52,7 +72,7 @@ MonoBehaviour:
       Data: SuperInCome
     - Name: $v
       Entry: 7
-      Data: 2|System.Single, mscorlib
+      Data: 4|System.Single, mscorlib
     - Name: 
       Entry: 4
       Data: 2
@@ -70,12 +90,24 @@ MonoBehaviour:
       Data: time
     - Name: $v
       Entry: 7
-      Data: 3|System.Double, mscorlib
+      Data: 5|System.Double, mscorlib
     - Name: 
       Entry: 4
       Data: 7200
     - Name: 
       Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: fixed
+    - Name: $v
+      Entry: 6
       Data: 
     - Name: 
       Entry: 8
@@ -87,6 +119,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
   variantItem: 0
+  variantLevel: 0
+  defaultLevel: 0
   itemID: SuperIncome
   displayNameItem:
     normalString: SuperIncome

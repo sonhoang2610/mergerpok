@@ -24,6 +24,7 @@ MonoBehaviour:
   nameShop: ShopBooster
   items:
   - isVisibleItem: 0
+    limitUpgrade: -1
     itemSell: {fileID: 11400000, guid: abc89684b2d3d534fae0c9d97391e2cd, type: 2}
     typeIncrease: 0
     paymentWays:
@@ -38,6 +39,7 @@ MonoBehaviour:
       isSpecifiedUnit: 0
       unitDefines: []
   - isVisibleItem: 1
+    limitUpgrade: -1
     itemSell: {fileID: 11400000, guid: cda74abee3b80f74b83883ebe569ce9e, type: 2}
     typeIncrease: 0
     paymentWays:
@@ -46,12 +48,13 @@ MonoBehaviour:
         exchangeItems:
         - typePayment: 0
           item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
-          quantity: 50
+          quantity: 15
       algrothimTypeUpgrade: 0
       stepUnit: []
       isSpecifiedUnit: 0
       unitDefines: []
   - isVisibleItem: 1
+    limitUpgrade: -1
     itemSell: {fileID: 11400000, guid: 10b2fa8c3f7266e4583a34b603438a2e, type: 2}
     typeIncrease: 0
     paymentWays:
@@ -60,12 +63,13 @@ MonoBehaviour:
         exchangeItems:
         - typePayment: 0
           item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
-          quantity: 100
+          quantity: 15
       algrothimTypeUpgrade: 0
       stepUnit: []
       isSpecifiedUnit: 0
       unitDefines: []
   - isVisibleItem: 1
+    limitUpgrade: -1
     itemSell: {fileID: 11400000, guid: 635fa7e18cdc5d542a287764abd41de0, type: 2}
     typeIncrease: 0
     paymentWays:
@@ -74,7 +78,7 @@ MonoBehaviour:
         exchangeItems:
         - typePayment: 0
           item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
-          quantity: 100
+          quantity: 15
       algrothimTypeUpgrade: 0
       stepUnit: []
       isSpecifiedUnit: 0

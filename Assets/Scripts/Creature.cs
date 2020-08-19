@@ -137,7 +137,7 @@ namespace Pok
         {
             yield return new WaitForSeconds(5);
             timer = StartCoroutine(nhatien());
-            map?.addMoney(this,GameDatabase.Instance.ZoneCollection.Find(x=>x.ItemID == GameManager.Instance.ZoneChoosed).factorTap);
+            map?.addMoney(this,GameDatabase.Instance.ZoneCollection.Find(x=>x.ItemID == GameManager.Instance.ZoneChoosed).factorTap * (int)GameManager.Instance.getFactorIncome().x);
             SoundManager.Instance.PlaySound("CoinClick");
         }
         private void OnDisable()

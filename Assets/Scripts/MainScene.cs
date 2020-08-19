@@ -59,7 +59,7 @@ namespace Pok {
         public IEnumerator onEnableLateUpdate()
         {
             yield return new WaitForEndOfFrame();
-            if (!GameManager.readyForThisState("Main"))
+             while (!GameManager.readyForThisState("Main"))
             {
                 yield return new WaitForEndOfFrame();
             }
@@ -69,7 +69,7 @@ namespace Pok {
         private IEnumerator StartQueue()
         {
             yield return new WaitForEndOfFrame();
-            if (!GameManager.readyForThisState("Main"))
+            while (!GameManager.readyForThisState("Main"))
             {
                 yield return new WaitForEndOfFrame();
             }

@@ -981,7 +981,7 @@ static public class NGUITools
                     UIPanel panelFuture = null;
                     if (!w.panel)
                     {
-                        panelFuture = w.GetComponentInParent<UIPanel>();
+                        panelFuture = w.gameObject.GetComponentInParents<UIPanel>();
                     }
 
                     if (w.panel != panel && (!panelFuture || panelFuture != panel)) continue;
@@ -1419,7 +1419,7 @@ static public class NGUITools
 
 #if UNITY_5_5_OR_NEWER
 		UnityEngine.Profiling.Profiler.BeginSample("Editor-only GC allocation (GetComponent)");
-		var comp = go.GetComponentInParent<T>();
+		var comp = go.GetComponentInParents<T>();
 		UnityEngine.Profiling.Profiler.EndSample();
 #else
 		Profiler.BeginSample("Editor-only GC allocation (GetComponent)");

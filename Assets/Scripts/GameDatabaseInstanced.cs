@@ -476,10 +476,14 @@ namespace Pok
                                 continueRestore = false;
                             }
                         }
-
+                        float factor = 1;
+                        if (item.ItemID.Contains("Egg"))
+                        {
+                            factor = 1- GameManager.Instance.getPercentReduceTimeEgg().x;
+                        }
                         if (!existTime && continueRestore)
                         {
-                                var timer = new TimeCounterInfo() { firstTimeAdd = TimeCounter.CounterValue, counterTime = 0, id = "[Restore]" + adress + (string.IsNullOrEmpty(adress) ? "" : "/") + item.ItemID, destinyIfHave = (double)itemExist.item.timeToRestore.getCurrentUnit() };
+                                var timer = new TimeCounterInfo() { firstTimeAdd = TimeCounter.CounterValue, counterTime = 0, id = "[Restore]" + adress + (string.IsNullOrEmpty(adress) ? "" : "/") + item.ItemID, destinyIfHave = (double)itemExist.item.timeToRestore.getCurrentUnit()* factor };
                                 addTime(timer);
                         }
                         else if(existTime)
@@ -488,12 +492,13 @@ namespace Pok
                             time.pauseTime(false);
                             if (time != null)
                             {
-                                time.destinyIfHave = (double)itemExist.item.timeToRestore.getCurrentUnit();
+                            
+                                time.destinyIfHave = (double)itemExist.item.timeToRestore.getCurrentUnit()* factor;
                             }
                             bool _removeTime = false;
                             if (continueRestore)
                             {
-                                System.Numerics.BigInteger quantity = System.Numerics.BigInteger.Parse(((long) time.CounterTime).ToString()) / System.Numerics.BigInteger.Parse(((long)item.timeToRestore.getCurrentUnit()).ToString());
+                                System.Numerics.BigInteger quantity = System.Numerics.BigInteger.Parse(((long) time.CounterTime).ToString()) / System.Numerics.BigInteger.Parse(((long)item.timeToRestore.getCurrentUnit() *((int)( 100*factor)) / 100).ToString());
                                 if (quantity > 0)
                                 {
                                     time.firstTimeAdd = TimeCounter.CounterValue;

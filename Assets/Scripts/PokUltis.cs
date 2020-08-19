@@ -27,6 +27,8 @@ namespace Pok
                     {
                         newMoney += (numberBought - 2) * 20 * startMoney / 100;
                     }
+                    newMoney *= (int)((1 -GameManager.Instance.getPercentDiscount().x) * 100);
+                    newMoney /= 100;
                     return newMoney.ToString();
                 }
                 else
@@ -37,6 +39,8 @@ namespace Pok
                     {
                         startMoney += (numberBought - 5) *20* startMoney/100;
                     }
+                    startMoney *= (int)((1 - GameManager.Instance.getPercentDiscount().x) * 100);
+                    startMoney /= 100;
                     return startMoney.toString();
                 }
             }
@@ -361,24 +365,27 @@ namespace Pok
         public void Excute(Dictionary<string, object> blackBoard)
         {
             var factor = 2;
-            if (GameManager.Instance.getFactorIncome().x >= 2)
+            if (GameManager.Instance.getFactorIncome().x >= 2 && !blackBoard.ContainsKey("fixed"))
             {
                 factor = 4;
             }
 
-            int factorTime = factor == 2 ? 60 : 1;
+            int factorTime = factor == 2 ? 1 : 60;
             double time = blackBoard["time"].GetType() == typeof(double) ? (double)blackBoard["time"] : Random.Range(((Vector2Int)blackBoard["time"]).x, ((Vector2Int)blackBoard["time"]).y);
-            GameManager.Instance.addFactorSuperIncome(factor, time/60);
+            GameManager.Instance.addFactorSuperIncome(factor, time/ factorTime);
         }
 
         public string getContent(Dictionary<string, object> blackBoard)
         {
             var factor = 2;
-            if(GameManager.Instance.getFactorIncome().x >= 2)
+            if (GameManager.Instance.getFactorIncome().x >= 2 && !blackBoard.ContainsKey("fixed"))
             {
                 factor = 4;
             }
-            return "x" + factor + " Gold";
+            int factorTime = factor == 2 ? 1 : 60;
+            double time = blackBoard["time"].GetType() == typeof(double) ? (double)blackBoard["time"] : Random.Range(((Vector2Int)blackBoard["time"]).x, ((Vector2Int)blackBoard["time"]).y);
+            time /= factorTime;
+            return System.TimeSpan.FromSeconds(time).Hours == 0 ? (System.TimeSpan.FromSeconds(time).Minutes + "M") : (System.TimeSpan.FromSeconds(time).Hours + "H");
         }
     }
     public class DiscountCreature : IBoosterExecute

@@ -7,6 +7,9 @@ using UnityEngine.Events;
 using DG.Tweening;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using Firebase.Analytics;
+using System.Threading.Tasks;
+using Firebase.Extensions;
 
 namespace Pok
 {
@@ -109,16 +112,45 @@ namespace Pok
             yield return new WaitForSeconds(pDelay);
             pAction();
         }
-
+         public Firebase.FirebaseApp app = null;
         protected override void Awake()
         {
 
             base.Awake();
+            Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
+                var dependencyStatus = task.Result;
+                if (dependencyStatus == Firebase.DependencyStatus.Available)
+                {
+                    FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
+                    // Create and hold a reference to your FirebaseApp,
+                    // where app is a Firebase.FirebaseApp property of your application class.
+                    app = Firebase.FirebaseApp.DefaultInstance;
+                    System.Collections.Generic.Dictionary<string, object> defaults =
+  new System.Collections.Generic.Dictionary<string, object>();
+                    // These are the values that are used if we haven't fetched data from the
+                    // server
+                    // yet, or if we ask for values that the server doesn't have:
+                    defaults.Add("time_bonus_evo", "300,1500");
+                    defaults.Add("time_reward_ads", "300,1500");
+                    defaults.Add("time_ads", "200,230,240");
+                    Firebase.RemoteConfig.FirebaseRemoteConfig.SetDefaults(defaults);
+                    // Set a flag here to indicate whether Firebase is ready to use by your app.
+                }
+                else
+                {
+                    UnityEngine.Debug.LogError(System.String.Format(
+                      "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+                    // Firebase Unity SDK is not safe to use here.
+                }
+            });
             Application.targetFrameRate = 60;
             Application.backgroundLoadingPriority = ThreadPriority.Low;
             Application.runInBackground = true;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
+           
         }
+
+   
 
         protected Coroutine corountineNotice;
         protected string lastAssetLoaded;

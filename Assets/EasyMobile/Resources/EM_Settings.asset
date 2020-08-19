@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mAdvertisingSettings:
     mAutoLoadAdsMode: 1
-    mAdCheckingInterval: 10
-    mAdLoadingInterval: 20
+    mAdCheckingInterval: 5
+    mAdLoadingInterval: 5
     mIosDefaultAdNetworks:
       bannerAdNetwork: 7
       interstitialAdNetwork: 7
@@ -242,7 +242,42 @@ MonoBehaviour:
     mEnableAmazonSandboxTesting: 0
     mValidateAppleReceipt: 0
     mValidateGooglePlayReceipt: 0
-    mProducts: []
+    mProducts:
+    - _name: BlockAds
+      _type: 0
+      _id: blockads
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
+    - _name: packagecrystal1
+      _type: 0
+      _id: packagecrystal1
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
+    - _name: packagecrystal2
+      _type: 0
+      _id: packagecrystal2
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
+    - _name: packagecrystal3
+      _type: 0
+      _id: packagecrystal3
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
+    - _name: VipItem
+      _type: 0
+      _id: vipitem
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
   mNotificationSettings:
     mAutoInit: 1
     mAutoInitDelay: 0
@@ -339,5 +374,5 @@ MonoBehaviour:
   mIsGameServiceModuleEnable: 0
   mIsNotificationModuleEnable: 1
   mIsSharingModuleEnable: 0
-  mActiveModuleIndex: 5
-  mIsSelectingModule: 1
+  mActiveModuleIndex: 0
+  mIsSelectingModule: 0

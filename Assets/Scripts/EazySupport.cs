@@ -765,6 +765,23 @@ public static class ArrayExtension
 }
 public static class GameObjectExtensions
 {
+    public static T GetComponentInParents<T>(this GameObject pObject) where T : UnityEngine.Component
+    {
+        var currentObject = pObject;
+        while (currentObject.transform.parent != null)
+        {
+           var value = pObject.GetComponent<T>();
+            if (value)
+            {
+                return value;
+            }
+            else
+            {
+                currentObject = currentObject.transform.parent.gameObject;
+            }
+        }
+        return null;
+    }
     public static bool IsDestroyed<T>(this T mono) where T : UnityEngine.Object
     {
         // UnityEngine overloads the == opeator for the GameObject type
