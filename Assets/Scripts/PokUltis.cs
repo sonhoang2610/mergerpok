@@ -77,7 +77,9 @@ namespace Pok
         public void onAdded(BaseItemGameInstanced itemSlot)
         {
             ES3.Save("BlockADS", ES3.Load<float>("BlockADS", 0) + 1);
-            ES3.Save("BonusCrystal", ES3.Load<float>("BonusCrystal", 0) +  discountCrystal);
+            var oldBonus =  ES3.Load("BonusCrystalVip", 0);
+            ES3.Save("BonusCrystalVip", discountCrystal);
+            ES3.Save("BonusCrystal", ES3.Load<float>("BonusCrystal", 0) - oldBonus +  discountCrystal);
             GameManager.Instance.StartCoroutine(execute(itemSlot));
             EzEventManager.AddListener(this);
         }
@@ -113,7 +115,13 @@ namespace Pok
         public void onRemoved(BaseItemGameInstanced itemSlot)
         {
             ES3.Save("BlockADS", ES3.Load<float>("BlockADS", 0) - 1);
-            ES3.Save("BonusCrystal", ES3.Load<float>("BonusCrystal", 0) - discountCrystal);
+            var oldBonus = ES3.Load("BonusCrystalVip", 0.0f);
+            if(oldBonus == 0)
+            {
+                oldBonus = discountCrystal;
+            }
+            ES3.Save("BonusCrystalVip", 0);
+            ES3.Save("BonusCrystal", ES3.Load<float>("BonusCrystal", 0) - oldBonus);
             var timeX2 = GameManager.Instance.Database.timeRestore.Find(x => x.id == $"[SuperInCome]2" && x.destinyIfHave == -1);
             GameManager.Instance.Database.removeTime(timeX2);
             var time= TimeCounter.Instance.timeCollection.Value.Find(x => x.id == "vip");
@@ -281,7 +289,11 @@ namespace Pok
 
         public void OnEzEvent(AddCreatureEvent eventType)
         {
-            if (!GameManager.Instance.Database.creatureInfos[7].isUnLock)
+     
+            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+            if (string.IsNullOrEmpty(zone.curentUnlock)) return;
+            string index = zone.curentUnlock.Replace("Pok", "");
+            if (int.Parse( index) < 8)
             {
                 return;
             }

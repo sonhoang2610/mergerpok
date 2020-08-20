@@ -8,6 +8,7 @@ namespace Pok
     {
         public CreatureInfoSaved mainInfo;
         public bool current;
+        public bool isUnlock = false;
     }
     public class ItemUnlockSmall : BaseItem<CreatureInfoSatus>
     {
@@ -18,13 +19,13 @@ namespace Pok
         public override void setInfo(CreatureInfoSatus pInfo)
         {
             base.setInfo(pInfo);
-            statusbar.sprite2D = pInfo.current ? colorBarCurrent : (pInfo.mainInfo.isUnLock ? colorBarPrevious : ColorBarlocked);
+            statusbar.sprite2D = pInfo.current ? colorBarCurrent : (pInfo.isUnlock ? colorBarPrevious : ColorBarlocked);
             var originalItem = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == pInfo.mainInfo.id);
             originalItem.getSpriteForState((o) => {
                 icon.sprite2D = o;
                 icon.MakePixelPerfectClaimIn(claim);
             });
-            if (!pInfo.mainInfo.isUnLock)
+            if (!pInfo.isUnlock)
             {
                 icon.color = Color.black;
             }

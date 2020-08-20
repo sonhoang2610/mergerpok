@@ -187,7 +187,7 @@ namespace Pok
             }
             if (shop)
             {
-                var items = System.Array.FindAll(shop.items, x => x.isVisibleItem);
+                var items = System.Array.FindAll(shop.items, x => x.IsVisibleItem);
                 for(int i = 0; i < items.Length; ++i)
                 {
                     items[i].bonusForItem = getBonusForItem;

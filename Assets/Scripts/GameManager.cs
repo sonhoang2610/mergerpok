@@ -403,17 +403,18 @@ namespace Pok
         [ContextMenu("hack")]
         public void hack()
         {
-            for (int i = 0; i < items.Length - 2; ++i)
-            {
-                var list = new List<CreatureItem>();
-                items[i].getChild(list, 6);
-                foreach (var element in list)
-                {
-                    GameManager.Instance.Database.creatureInfos.Find(x => x.id == element.ItemID).isUnLock = true;
-                }
-            }
-            GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[items.Length - 2].ItemID).isUnLock = true;
-            GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[items.Length - 1].ItemID).isUnLock = true;
+            GameManager.Instance.Database.getItem("Coin").addQuantity(("2aa").clearDot());
+            //for (int i = 0; i < items.Length - 2; ++i)
+            //{
+            //    var list = new List<CreatureItem>();
+            //    items[i].getChild(list, 6);
+            //    foreach (var element in list)
+            //    {
+            //        GameManager.Instance.Database.creatureInfos.Find(x => x.id == element.ItemID).isUnLock = true;
+            //    }
+            //}
+            //GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[items.Length - 2].ItemID).isUnLock = true;
+            //GameManager.Instance.Database.creatureInfos.Find(x => x.id == items[items.Length - 1].ItemID).isUnLock = true;
             // GameManager.Instance.Database.zoneInfos[0].leaderSelected.Add
         }
         public string getTotalGoldGrowthCurrentZone()
@@ -522,34 +523,42 @@ namespace Pok
                 return;
             }
             blockingSave = true;
-            Thread thread = new Thread(delegate ()
+            ES3.Save("Database", Database);
+            ES3.StoreCachedFile();
+            if (coroutineBlock != null)
             {
-                ES3.Save("Database", Database);
-                try
-                {
-                    ES3.StoreCachedFile();
-                }
-                catch
-                {
+                StopCoroutine(coroutineBlock);
+                coroutineBlock = null;
+            }
+            ES3.dirty = false;
+            blockingSave = false;
+            //Thread thread = new Thread(delegate ()
+            //{
+            //    try
+            //    {
+            //        ES3.StoreCachedFile();
+            //    }
+            //    catch
+            //    {
 
-                }
-                finally
-                {
-                    UnityToolbag.Dispatcher.InvokeAsync(() =>
-                    {
-                        if (coroutineBlock != null)
-                        {
-                            StopCoroutine(coroutineBlock);
-                            coroutineBlock = null;
-                        }
-                        ES3.dirty = false;
-                        blockingSave = false;
-                    });
-                }
+            //    }
+            //    finally
+            //    {
+            //        UnityToolbag.Dispatcher.InvokeAsync(() =>
+            //        {
+            //            if (coroutineBlock != null)
+            //            {
+            //                StopCoroutine(coroutineBlock);
+            //                coroutineBlock = null;
+            //            }
+            //            ES3.dirty = false;
+            //            blockingSave = false;
+            //        });
+            //    }
 
-            });
-            //Start the Thread and execute the code inside it
-            thread.Start();
+            //});
+            ////Start the Thread and execute the code inside it
+            //thread.Start();
 
         }
         int blockDirty = 0;
@@ -762,7 +771,7 @@ namespace Pok
                         for (int i = 0; i < items.Length; ++i)
                         {
                             var itemExist = GameManager.Instance.Database.getItem(items[i].item.ItemID);
-                            items[i].quantity = (BigInteger.Parse(items[i].quantity.clearDot()) * ((int)(1 + bonus) * 100) / 100).ToString();
+                            items[i].quantity = ((BigInteger.Parse(items[i].quantity.clearDot()) * (int)((1 + bonus) * 100) ) / 100).ToString();
                             itemExist.addQuantity(items[i].quantity);
                         }
                         return items;
@@ -878,7 +887,7 @@ namespace Pok
                 }
                 else if (eventType.item.changeQuantity.toDouble() > 0)
                 {
-                    if (HUDManager.InstanceRaw)
+                    if (HUDManager.InstanceRaw && moneyAdd > 0)
                     {
                         HUDManager.Instance.boxBank.show(moneyAdd.toString());
                     }

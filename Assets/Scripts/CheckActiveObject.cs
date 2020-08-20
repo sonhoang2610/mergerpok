@@ -15,10 +15,40 @@ namespace Pok
         public GameObject checkObject;
         public ConditionType typeCondition;
         public string goalPok;
+        public bool forAllZone = false;
         public void checkCondition()
         {
-            var creature = GameManager.Instance.Database.creatureInfos.Find(x => x.id == goalPok);
-            HUDManager.Instance.ActiveObject(checkObject, typeCondition.ToString(), creature != null && creature.isUnLock);
+            if(GameManager.Instance.ZoneChoosed != "Zone1" && !forAllZone)
+            {
+                HUDManager.Instance.ActiveObject(checkObject, typeCondition.ToString(), true);
+                return;
+            }
+            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+            if (string.IsNullOrEmpty(zone.curentUnlock))
+            {
+                HUDManager.Instance.ActiveObject(checkObject, typeCondition.ToString(), false);
+            }
+            else
+            {
+                string index = zone.curentUnlock.Replace("Pok", "");
+                HUDManager.Instance.ActiveObject(checkObject, typeCondition.ToString(),int.Parse( index )>= int.Parse(goalPok.Replace("Pok","")));
+            }
+          
+        }
+        public bool checkBoolCondition()
+        {
+
+            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+            if (string.IsNullOrEmpty(zone.curentUnlock))
+            {
+                return false;
+            }
+            else
+            {
+                string index = zone.curentUnlock.Replace("Pok", "");
+                return int.Parse(index) >= int.Parse(goalPok.Replace("Pok", ""));
+            }
+
         }
     }
     public class CheckActiveObject : MonoBehaviour,EzEventListener<AddCreatureEvent>

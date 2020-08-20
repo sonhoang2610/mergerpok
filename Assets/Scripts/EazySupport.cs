@@ -770,13 +770,17 @@ public static class GameObjectExtensions
         var currentObject = pObject;
         while (currentObject.transform.parent != null)
         {
-           var value = pObject.GetComponent<T>();
+           var value = currentObject.transform.parent.GetComponent<T>();
             if (value)
             {
                 return value;
             }
             else
             {
+                if(currentObject.transform.parent == null)
+                {
+                    break;
+                }
                 currentObject = currentObject.transform.parent.gameObject;
             }
         }

@@ -241,7 +241,7 @@ namespace Pok
                 blockTouch.SetActive(false);
             }
 
-            GameManager.Instance.SaveGame();
+            ES3.dirty = true;
         }
 
         public IEnumerator delayAction(float delay, System.Action action)

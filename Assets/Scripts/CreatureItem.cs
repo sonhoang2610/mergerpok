@@ -36,7 +36,12 @@ namespace Pok
                 creature.parentCreature = this;
             }
         }
-
+        public void getParents(List<CreatureItem> parentList)
+        {
+            if (parentCreature == null) return;
+            parentList.Add(parentCreature);
+            parentCreature.getParents(parentList);
+        }
         public void getChild(List<CreatureItem> childList,int size)
         {
             if (childList.Count >= size) return;

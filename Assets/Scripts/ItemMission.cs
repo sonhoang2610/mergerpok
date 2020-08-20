@@ -152,6 +152,7 @@ namespace Pok
         private void OnEnable()
         {
             StartCoroutine(setup());
+           
         }
         public IEnumerator setup()
         {
@@ -161,6 +162,11 @@ namespace Pok
                 EzEventManager.AddListener<TimeEvent>(this);
                 EzEventManager.AddListener<MissionEvent>(this);
                 checkMission();
+            }
+           var exist = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("[Mission]"));
+            if(exist == null && notifiDone && notifiDone.gameObject.activeSelf)
+            {
+                notifiDone.gameObject.SetActive(false);
             }
         }
         public void checkMission()
@@ -188,7 +194,7 @@ namespace Pok
                  {
                      if (o)
                      {
-                         ES3.Save("WatchADSMission", true);
+                     //    ES3.Save("WatchADSMission", true);
                          timing.firstTimeAdd -= 30 * 60;
                      }
                  });
@@ -197,6 +203,7 @@ namespace Pok
 
         public void OnEzEvent(TimeEvent eventType)
         {
+            if (!eventType.timeInfo.id.Contains("[Mission]")) return;
             string id = eventType.timeInfo.id.Remove(0, ("[Mission]").Length);
             if (_info != null && id == _info.ItemID)
             {

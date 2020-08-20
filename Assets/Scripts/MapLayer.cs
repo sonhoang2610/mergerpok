@@ -189,10 +189,11 @@ namespace Pok
                     var creatureID = ((PackageCreatureInstanceSaved)infoCreature).creature;
                     var newCreature = new CreatureInstanceSaved() { id = creatureID, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = _info };
                     GameManager.Instance.GenerateID++;
-                    _info.creatures.Add(newCreature);
+                    GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
                     Vector3 pos = creature.transform.localPosition;
                     addCreatureObject(newCreature, true, (o) => { o.transform.localPosition = pos; });
                     DestroyCreature(infoCreature);
+                    GameManager.Instance.Database.calculateCurrentUnlock( GameManager.Instance.ZoneChoosed);
                     ES3.dirty = true;
                     dirty = true;
                 }
@@ -210,7 +211,7 @@ namespace Pok
             List<Creature> listToCompare = new List<Creature>(creatureAnimAble);
             List<Creature> destroyList = new List<Creature>();
             List<System.Action> queueAction = new List<System.Action>();
-            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+            ZoneInfoSaved zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
        
             var nextMap = GameDatabase.Instance.MapCollection.FindIndex(x => x.ItemID == _info.id) + 1;
             var nextMapID = nextMap < GameDatabase.Instance.MapCollection.Count ? GameDatabase.Instance.MapCollection[nextMap].ItemID : "";
@@ -267,6 +268,7 @@ namespace Pok
                                 object1.transform.DOLocalMove(posDes, 0.25f);
                                 object2.transform.DOLocalMove(posDes, 0.25f).OnComplete(delegate
                                 {
+                                    effecting--;
                                     spawnMixingEffect(posDes);
                                     System.Action DestroyAction = delegate
                                     {
@@ -290,7 +292,8 @@ namespace Pok
                                         else
                                         {
                                             var newCreature = new CreatureInstanceSaved() { id = idCreature, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = nextMapInfo };
-                                            nextMapInfo.creatures.Add(newCreature);
+                                            //nextMapInfo.creatures.Add(newCreature);
+                                            GameManager.Instance.Database.worldData.addCreature(newCreature,GameManager.Instance.ZoneChoosed);
                                             GameManager.Instance.GenerateID++;
                                             EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, manualByHand = true, zoneid = zone.id });
                                         }
@@ -299,7 +302,7 @@ namespace Pok
                                     {
                                         var newCreature = new CreatureInstanceSaved() { id = creatureData.creatureChilds[0].ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = _info };
                                         GameManager.Instance.GenerateID++;
-                                        _info.creatures.Add(newCreature);
+                                        GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
                                         EzEventManager.TriggerEvent(new AddCreatureEvent()
                                         {
                                             change = 1,
@@ -314,6 +317,7 @@ namespace Pok
                                         {
                                             HUDManager.Instance.showBoxEvo(creaturesUnlock[indexNow], creaturesUnlock[indexNow + 2], newCreature);
                                         }
+                                        GameManager.Instance.Database.calculateCurrentUnlock(zone.id);
                                     };
                                     if (zone.curentUnlock == creatureData.ItemID || string.IsNullOrEmpty(zone.curentUnlock))
                                     {
@@ -346,10 +350,18 @@ namespace Pok
                                         }
                                         else
                                         {
+                                            bool nonExist = false;
+                                            if (!zone.creatureAdded.Contains(creatureData.ItemID))
+                                            {
+                                                nonExist = true;
+                                            }
                                             addNormal.Invoke();
                                             DestroyAction();
                                             GameManager.Instance.Database.calculateCurrentUnlock(zone.id);
-                                            BoxUnlockNewCreature.Instance.show(zone.curentUnlock);
+                                            if (!nonExist)
+                                            {
+                                                BoxUnlockNewCreature.Instance.show(zone.curentUnlock);
+                                            }
                                         }
                                     }
                                     else
@@ -365,7 +377,7 @@ namespace Pok
                                             DestroyAction();
                                         }
                                     }
-                                    effecting--;
+                               
                                 });
                                 destroyList.Add(object1);
                                 destroyList.Add(object2);

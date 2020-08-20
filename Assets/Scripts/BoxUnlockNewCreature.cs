@@ -29,7 +29,7 @@ namespace Pok
             List<CreatureInfoSatus> infos = new List<CreatureInfoSatus>();
             foreach(var creature in creatures)
             {
-                infos.Add(new CreatureInfoSatus() { mainInfo = creature, current = zoneInfo.curentUnlock == creature.id });
+                infos.Add(new CreatureInfoSatus() { mainInfo = creature, current = zoneInfo.curentUnlock == creature.id,isUnlock = creature.isUnLock });
             }
             boxCreatureInMap.executeInfos(infos.ToArray());
             container.show();

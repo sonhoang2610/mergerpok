@@ -51,6 +51,7 @@ namespace Pok
         public string id;
         public bool isUnLock;
         public Dictionary<string, string> leaderSelected = new Dictionary<string, string>();
+        public List<string> creatureAdded = new List<string>();
         public string curentUnlock;
     }
     [System.Serializable]
@@ -165,6 +166,7 @@ namespace Pok
         {
             ES3.dirty = true;
             var zone = zones.Find(x => x.id == address);
+            var zoneInfo = GameManager.Instance.Database.zoneInfos.Find(x => x.id == address);
             var map = creature.mapParent;
             if(map == null)
             {
@@ -176,6 +178,18 @@ namespace Pok
             if (map == null) return null;
             if (zone != null)
             {
+                var listParent = new List<CreatureItem>();
+                 var creatureItem =  GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == creature.id);
+                listParent.Add(creatureItem);
+                creatureItem.getParents(listParent);
+                foreach(var parent in listParent)
+                {
+                    if (!zoneInfo.creatureAdded.Contains(parent.ItemID))
+                    {
+                        zoneInfo.creatureAdded.Add(parent.ItemID);
+                    }
+                }
+             
                 creature.mapParent = map;
                 map.creatures.Add(creature);
                 return map;
@@ -199,6 +213,70 @@ namespace Pok
         public List<ZoneInfoSaved> zoneInfos = new List<ZoneInfoSaved>();
         public List<CreatureInfoSaved> creatureInfos = new List<CreatureInfoSaved>();
 
+
+        public void resolveConflictData()
+        {
+            List<CreatureItem> allcreatures = new List<CreatureItem>();
+            for (int i = 0; i < worldData.zones.Count; ++i)
+            {
+                var zone = worldData.zones[i];
+                var zoneInfo = GameManager.Instance.Database.zoneInfos.Find(x => x.id == zone.id);
+          
+                int rank = 0;
+                for (int g= 0; g< zoneInfo.leaderSelected.Count; ++g)
+                {
+                    List<CreatureItem> creatures = new List<CreatureItem>();
+                    GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == zoneInfo.leaderSelected.ElementAt(g).Value).getChild(creatures,6);
+                    if(g < zoneInfo.leaderSelected.Count - 1)
+                    {
+                        for (int j = 0; j < creatures.Count; ++j)
+                        {
+                            allcreatures.Add(creatures[j]);
+                                if (!zoneInfo.creatureAdded.Contains(creatures[j].ItemID))
+                                {
+                                    zoneInfo.creatureAdded.Add(creatures[j].ItemID);
+                                }
+                        }
+                       
+                        rank = creatures[creatures.Count - 1].RankChild;
+                    }
+                    else
+                    {
+                        var startRank = rank;
+                        for (int j = 0; j < creatures.Count; ++j)
+                        {
+                            if (zone.GetCreatureInZone(creatures[j].ItemID) > 0)
+                            {
+                                if(creatures[j].RankChild > rank)
+                                {
+                                    rank = creatures[j].RankChild;
+                                }
+                          
+                            }
+                        }
+                        for(int j = 0; j < rank-startRank; ++j)
+                        {
+                            allcreatures.Add(creatures[j]);
+                            if (!zoneInfo.creatureAdded.Contains(creatures[j].ItemID))
+                            {
+                                zoneInfo.creatureAdded.Add(creatures[j].ItemID);
+                            }
+                        }
+                    }
+                 
+                }
+                foreach(var creature in allcreatures)
+                {
+                   var creatureInfo = GameManager.Instance.Database.creatureInfos.Find(x => x.id == creature.ItemID);
+                    if (!creatureInfo.isUnLock)
+                    {
+                        Debug.Log("find Some thing conflict" + creatureInfo.id);
+                        creatureInfo.isUnLock = true;
+                    }
+                }
+            }
+            
+        }
 
         public void InitDatabase()
         {
@@ -280,8 +358,8 @@ namespace Pok
 
 
             }
-            
-            for(int i = 0; i < zoneInfos.Count; ++i)
+            resolveConflictData();
+            for (int i = 0; i < zoneInfos.Count; ++i)
             {
                 calculateCurrentUnlock(zoneInfos[i].id);
             }
@@ -346,7 +424,7 @@ namespace Pok
                 foreach(var element in subList)
                 {
                     var creatureInfo = creatureInfos.Find(x => x.id == element.ItemID);
-                    if (!creatureInfo.isUnLock)
+                    if (!creatureInfo.isUnLock || !zone.creatureAdded.Contains(creatureInfo.id))
                     {
                         endFind = true;
                         break;

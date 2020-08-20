@@ -50,7 +50,7 @@ namespace Pok
             }
             nameEra.text = currentMap.className.Value;
             boxMap.executeInfos(maps.ToArray());
-            currentMap.map.getModelForState((o) => { attachMent.AddChild(o); },"[Preview]"+currentMap.creatureLeader.ItemID);
+            currentMap.map.getModelForState((o) => { attachMent.transform.DestroyChildren();  attachMent.AddChild(o); },"[Preview]"+currentMap.creatureLeader.ItemID);
             container.show();
         }
         // Start is called before the first frame update

@@ -93,7 +93,7 @@ namespace Pok
                 if (s)
                 {
                     poly.sharedMesh = SpriteToMesh.meshFromSprite(s);
-                    if (_info.id.Contains("Egg") && bornAnim)
+                    if ( bornAnim)
                     {
                         poly.enabled = false;
                     }
@@ -104,6 +104,7 @@ namespace Pok
         protected MapLayer map;
         private void OnEnable()
         {
+            bornAnim = false;
             if (tweenMove != null)
             {
                 tweenMove.Kill();
@@ -173,13 +174,10 @@ namespace Pok
         public void born()
         {
             bornAnim = true;
-            if (_info.id.Contains("Egg"))
+            skin.transform.localPosition = new Vector3(0, 1920, 0);
+            if (gameObject.GetComponent<Collider>() != null)
             {
-                skin.transform.localPosition = new Vector3(0, 1920, 0);
-                if (gameObject.GetComponent<Collider>() != null)
-                {
-                    gameObject.GetComponent<Collider>().enabled = false;
-                }
+                gameObject.GetComponent<Collider>().enabled = false;
             }
             GetComponent<FSMOwner>().SendEvent("Born");
         }
@@ -192,7 +190,10 @@ namespace Pok
         public void bornScale()
         {
             skin.transform.localScale = Vector3.zero;
-            skin.transform.DOScale(scale, 1).SetEase(Ease.OutElastic);
+            skin.transform.DOScale(scale, 1).SetEase(Ease.OutElastic).OnComplete(()=> {
+                GetComponent<Collider>().enabled = true;
+                bornAnim = false;
+            });
         }
         public void bornDrop(System.Action onComplete = null)
         {
@@ -203,7 +204,7 @@ namespace Pok
             skin.transform.localScale = new Vector3(scale.x*0.7f, scale.y , scale.z);
             seq.Append(skin.transform.DOLocalMove(oldPos, 0.8f).SetEase(Ease.InQuad));
             seq.AppendCallback(delegate { GetComponent<Collider>().enabled = true;
-
+                bornAnim = false;
                 if (GameManager.Instance.GuideIndex == 1)
                 {
                     if (handGuide)

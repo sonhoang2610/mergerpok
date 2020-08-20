@@ -357,7 +357,17 @@ namespace Pok
                 return itemSell.ItemID;
             }
         }
+
+        public bool IsVisibleItem { get  {
+                if(!string.IsNullOrEmpty(conditionShow.goalPok))
+                {
+                   return conditionShow.checkBoolCondition();
+                }
+                return isVisibleItem;
+            }  set => isVisibleItem = value; }
+
         public bool isVisibleItem = true;
+        public ObjectToCheckInfo conditionShow;
         public int limitUpgrade = -1;
         public BaseItemGame itemSell;
         public IncreaseBaseOn typeIncrease;

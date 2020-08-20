@@ -24,6 +24,11 @@ MonoBehaviour:
   nameShop: ShopUpgradeZone3
   items:
   - isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: Pok1
+      forAllZone: 0
     limitUpgrade: 10
     itemSell: {fileID: 11400000, guid: f641bf8e705bcf147906e88d8910a9f8, type: 2}
     typeIncrease: 0
@@ -109,6 +114,11 @@ MonoBehaviour:
             item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
             quantity: 35
   - isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: Pok9
+      forAllZone: 0
     limitUpgrade: 6
     itemSell: {fileID: 11400000, guid: b8ec41d680dc51f448ec859b0e842084, type: 2}
     typeIncrease: 0
@@ -166,6 +176,11 @@ MonoBehaviour:
             item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
             quantity: 20
   - isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: 
+      forAllZone: 0
     limitUpgrade: 8
     itemSell: {fileID: 11400000, guid: f0f8cc07db10aeb41b7cde8b946d7836, type: 2}
     typeIncrease: 0
@@ -237,6 +252,11 @@ MonoBehaviour:
             item: {fileID: 11400000, guid: 647126d72ec4b6a4d863389f43595873, type: 2}
             quantity: 20
   - isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: Pok8
+      forAllZone: 0
     limitUpgrade: 11
     itemSell: {fileID: 11400000, guid: 91f61c547c51bac4ca1bc255fde75742, type: 2}
     typeIncrease: 0

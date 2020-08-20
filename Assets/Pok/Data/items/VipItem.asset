@@ -73,7 +73,7 @@ MonoBehaviour:
       Data: 30
     - Name: discountCrystal
       Entry: 4
-      Data: 1
+      Data: 0.2
     - Name: timeClaimCrystal
       Entry: 3
       Data: 86400
@@ -81,6 +81,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
   variantItem: 0
+  variantLevel: 0
+  defaultLevel: 0
   itemID: VipItem
   displayNameItem:
     normalString: VipItem
