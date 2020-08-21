@@ -117,7 +117,7 @@ namespace Pok
                    for (int i = 0; i < timeCollection.Count; ++i)
                    {
                        var timeElement = timeCollection[i];
-                       timeElement.counterTime += (firstTime - lasTimeAFK).TotalSeconds;
+                       timeElement.firstTimeAdd -= (firstTime - lasTimeAFK).TotalSeconds;
                    }
                    if((firstTime -lasTimeAFK).TotalSeconds > GameDatabase.Instance.timeAFKShowBoxTreasure)
                    {

@@ -52,6 +52,20 @@ namespace Pok
             }
         }
 
+        public int countWayFromThisChild()
+        {
+            if(creatureChilds.Length == 0)
+            {
+                return 1;
+            }
+            int way = 0;
+            for (int i = 0; i < creatureChilds.Length; ++i)
+            {
+                way += creatureChilds[i].countWayFromThisChild();
+            }
+            return way;
+        }
+
         public void initRank(int startLevel)
         {
             RankChild = startLevel;

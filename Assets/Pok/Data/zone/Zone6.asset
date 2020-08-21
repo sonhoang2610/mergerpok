@@ -96,7 +96,7 @@ MonoBehaviour:
   limitLevel: 1
   packages:
   - id: Default
-    package: {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
+    package: {fileID: 11400000, guid: a64f830ec9ff16f479268a567d8651de, type: 2}
   coinBank: {fileID: 11400000, guid: 71bff0cb6d211a04cad3181092d71e22, type: 2}
   shopCreature: {fileID: 11400000, guid: 4848aabde1294a64c83a29c8311c0efc, type: 2}
   moneyToUnlock: 2.3ak

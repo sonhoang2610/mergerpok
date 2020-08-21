@@ -675,6 +675,12 @@ namespace Pok
             {
                 return;
             }
+            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+            string index = zone.curentUnlock.Replace("Pok", "");
+            if(int.Parse(index) < 8)
+            {
+                return;
+            }
             var ready = GameManager.Instance.isRewardADSReady("BoxRewardADS");
             TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]RewardADS", autoRemoveIfToDestiny = true, destinyIfHave = ready ? GameManager.Instance.TimeDelayBoxRewardADS : 5 });
 

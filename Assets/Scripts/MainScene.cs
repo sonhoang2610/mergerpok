@@ -40,11 +40,15 @@ namespace Pok {
         public IEnumerator checkShowBoxTreasure()
         {
             yield return new WaitForSeconds(1);
+
+       
             while (CurrentPageMapLayer != 0)
             {
                 yield return new WaitForSeconds(1);
             }
-            if (CurrentPageMapLayer == 0)
+            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+            string index = zone.curentUnlock.Replace("Pok", "");
+            if (CurrentPageMapLayer == 0 && int.Parse(index) > 7 && !string.IsNullOrEmpty(zone.curentUnlock))
             {
                 boxTreasure.transform.parent.parent = mapPool[CurrentIndexPool].transform;
                 boxTreasure.gameObject.SetActive(true);
@@ -178,12 +182,20 @@ namespace Pok {
         }
 
         public int CurrentPageMapLayer { get => currentPageMapLayer; set => currentPageMapLayer = value; }
+        protected bool MovingMap { get => movingMap; set { movingMap = value;
+                 foreach(var tab in ChooseMapLayer.Instance.tabs.GroupTab)
+                {
+                    tab.GetComponent<UIButton>().isEnabled = !value;
+                }
+            } }
 
         protected Vector2 cachePosDrag;
         protected bool allowDrag = false;
         protected int cacheSideDrag = 0;
+        private bool movingMap = false;
         public void DragMapLayer(Vector2 delta,int index,bool EndDrag = false)
         {
+            if (MovingMap) return;
             if (EndDrag && allowDrag)
             {
                 blockTouch.gameObject.SetActive(true);
@@ -208,10 +220,11 @@ namespace Pok {
                 {
                     mapPool[AnotherIndexPool].transform.DOLocalMoveX(cachePosDrag.x, 0.25f);
                 }
+                MovingMap = true;
                 var pTween = DOTween.Sequence();
                 pTween.Append( DOTween.To(() => another.Alpha, x => another.Alpha = x, pAlphaDestiny, 0.25f));
                 pTween.AppendCallback(delegate () {
-                 
+                    MovingMap = false;
                     blockTouch.gameObject.SetActive(false);
                     if (pAlphaDestiny == 0)
                     {

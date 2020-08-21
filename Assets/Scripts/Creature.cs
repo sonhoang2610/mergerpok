@@ -174,7 +174,10 @@ namespace Pok
         public void born()
         {
             bornAnim = true;
-            skin.transform.localPosition = new Vector3(0, 1920, 0);
+            if (_info != null && _info.id.Contains("Egg"))
+            {
+                skin.transform.localPosition = new Vector3(0, 1920, 0);
+            }
             if (gameObject.GetComponent<Collider>() != null)
             {
                 gameObject.GetComponent<Collider>().enabled = false;

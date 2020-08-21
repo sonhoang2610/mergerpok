@@ -22,17 +22,15 @@ namespace Pok
             {
                 tabs.GroupTab.Add(items[i].GetComponent<EazyTabNGUI>());
                 var listChild = new List<CreatureItem>();
-                items[i]._info.getChild(listChild, 72);
+                var countWay = items[i]._info.countWayFromThisChild();
                 bool enableTab = false;
-                foreach(var child in listChild)
+                var selectedleader = GameManager.Instance.Database.zoneInfos.FindAll(x => x.leaderSelected.ContainsValue(items[i]._info.ItemID));
+                if(selectedleader.Count < countWay)
                 {
-                   var infoCreature = GameManager.Instance.Database.creatureInfos.Find(x => x.id == child.ItemID);
-                    if (!infoCreature.isUnLock)
-                    {
-                        enableTab = true;
-                        break;
-                    }
+                    enableTab = true;
                 }
+         
+            
                 items[i].GetComponent<Collider>().enabled = enableTab;
                 items[i].setEnable(enableTab);
                 if (enableTab && selectab == -1)

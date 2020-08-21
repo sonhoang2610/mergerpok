@@ -48,9 +48,11 @@ namespace Pok
                 shopElements.Add(System.Array.Find(currentShop.items, x => x.itemSell == creatureActive[i]));
             }
             executeInfos(shopElements.ToArray());
-           for(int i  = 0; i < items.Count; ++i)
+          var itemActive =  items.FindAll(x => x.gameObject.activeSelf);
+           itemActive.Sort((a, b) => { return System.Array.IndexOf(datas, a).CompareTo(System.Array.IndexOf(datas, b)); });
+           for (int i  = 0; i < itemActive.Count; ++i)
             {
-                items[i].showBtnAds(i == items.Count - 1);
+                itemActive[i].showBtnAds(i == itemActive.Count - 1);
             }
         }
         int cacheWayBuy = 0;
