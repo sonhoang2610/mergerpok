@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Audios
+  m_EditorClassIdentifier: 
+  m_GroupName: Audios
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5d2f12f60d795cc41ad9f8857bbfef6c
+  m_SerializeEntries:
+  - m_GUID: 2f0f915d19041184fb73571645616802
+    m_Address: Assets/Pok/sfx/Boing sound 1.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 2f0f915d19041184fb73571645616802, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 2f0f915d19041184fb73571645616802, type: 3}
+  - m_GUID: 3194858e18859f2428a05a8d9a1e84a8
+    m_Address: Assets/Pok/sfx/Click back sounds 5.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 3194858e18859f2428a05a8d9a1e84a8, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 3194858e18859f2428a05a8d9a1e84a8, type: 3}
+  - m_GUID: 3b19014e2c3fe1647b769f2eff9f7af3
+    m_Address: Assets/Pok/sfx/CoinReward.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 3b19014e2c3fe1647b769f2eff9f7af3, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 3b19014e2c3fe1647b769f2eff9f7af3, type: 3}
+  - m_GUID: 3fd25cfd8a968444f93e7279cc03a7e8
+    m_Address: Assets/Pok/sfx/collect_item_03.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 3fd25cfd8a968444f93e7279cc03a7e8, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 3fd25cfd8a968444f93e7279cc03a7e8, type: 3}
+  - m_GUID: 4045d16ad9062dc46a06b117d8bebba0
+    m_Address: Assets/Pok/sfx/newcreature.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 4045d16ad9062dc46a06b117d8bebba0, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 4045d16ad9062dc46a06b117d8bebba0, type: 3}
+  - m_GUID: 4a138ede5f1c9024f95b27514ecf1e0b
+    m_Address: Assets/Pok/sfx/music/Casual Theme #3 (Looped).wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 4a138ede5f1c9024f95b27514ecf1e0b, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 4a138ede5f1c9024f95b27514ecf1e0b, type: 3}
+  - m_GUID: 58cb0dbdf7f172a45b7e45c4130ddf43
+    m_Address: Assets/Pok/sfx/collect_item_04.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 58cb0dbdf7f172a45b7e45c4130ddf43, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 58cb0dbdf7f172a45b7e45c4130ddf43, type: 3}
+  - m_GUID: 6002fc3880e674343974bcc799298051
+    m_Address: Assets/Pok/sfx/music/Casual Theme #1 (Looped).wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 6002fc3880e674343974bcc799298051, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 6002fc3880e674343974bcc799298051, type: 3}
+  - m_GUID: 824f9119886355843847d20710f35dd1
+    m_Address: Assets/Pok/sfx/Prize wheel spin 5.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 824f9119886355843847d20710f35dd1, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 824f9119886355843847d20710f35dd1, type: 3}
+  - m_GUID: 8289f6dc8fe79c649b7a1c5d47bb4008
+    m_Address: Assets/Pok/sfx/CreatureReward.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 8289f6dc8fe79c649b7a1c5d47bb4008, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 8289f6dc8fe79c649b7a1c5d47bb4008, type: 3}
+  - m_GUID: 97d60f2514ff22944b8f6d052ec00106
+    m_Address: Assets/Pok/sfx/coin_click.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: 97d60f2514ff22944b8f6d052ec00106, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: 97d60f2514ff22944b8f6d052ec00106, type: 3}
+  - m_GUID: a4f746e7ccdf81242bf34fec0bcc09b7
+    m_Address: Assets/Pok/sfx/Notification sound 8.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: a4f746e7ccdf81242bf34fec0bcc09b7, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: a4f746e7ccdf81242bf34fec0bcc09b7, type: 3}
+  - m_GUID: a6ebfe37262fdf34499e2c52cc2bd3b8
+    m_Address: Assets/Pok/sfx/Item purchase 5.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: a6ebfe37262fdf34499e2c52cc2bd3b8, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: a6ebfe37262fdf34499e2c52cc2bd3b8, type: 3}
+  - m_GUID: ab975d048741aa7489542fe78eaf6d00
+    m_Address: Assets/Pok/sfx/btn_clik.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: ab975d048741aa7489542fe78eaf6d00, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: ab975d048741aa7489542fe78eaf6d00, type: 3}
+  - m_GUID: dafe20f5d510fbd4b9728717db8213e8
+    m_Address: Assets/Pok/sfx/upgrade.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: dafe20f5d510fbd4b9728717db8213e8, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: dafe20f5d510fbd4b9728717db8213e8, type: 3}
+  - m_GUID: e0d6e58231016884ca48737f6aeda3c4
+    m_Address: Assets/Pok/sfx/EggBreak.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: e0d6e58231016884ca48737f6aeda3c4, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: e0d6e58231016884ca48737f6aeda3c4, type: 3}
+  - m_GUID: e5454dfa56138ba43bed8c57251442ff
+    m_Address: Assets/Pok/sfx/new_era.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: e5454dfa56138ba43bed8c57251442ff, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: e5454dfa56138ba43bed8c57251442ff, type: 3}
+  - m_GUID: fa441deb809d22f479c637645418b6b8
+    m_Address: Assets/Pok/sfx/Cash register 3.wav
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Audio
+    m_MainAsset: {fileID: 8300000, guid: fa441deb809d22f479c637645418b6b8, type: 3}
+    m_TargetAsset: {fileID: 8300000, guid: fa441deb809d22f479c637645418b6b8, type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 97dc02305a3266740a1d0632b6f35a45, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7af79032e8a46ed4d847ed293d14fb34, type: 2}
+    - {fileID: 11400000, guid: 1530bf442c4dfda4fb754f60f7fec8f4, type: 2}

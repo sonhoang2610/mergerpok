@@ -46,6 +46,7 @@ namespace Pok
         AsyncOperation async;
         AsyncOperationHandle<IList<ScriptableObject>> asyncDatabase;
         AsyncOperationHandle<IList<UnityEngine.Object>> asyncResource;
+        AsyncOperationHandle<IList<UnityEngine.AudioClip>> asyncAudio;
         bool isStart = false,loadingDatabase = false,loadResource = false;
         [System.NonSerialized]
         public string currentScene = "Home";
@@ -95,6 +96,10 @@ namespace Pok
         public AsyncOperationHandle<IList<UnityEngine.Object>> PreloadTexture(System.Action<UnityEngine.Object> result)
         {
             return Addressables.LoadAssetsAsync<UnityEngine.Object>("Texture", result);
+        }
+        public AsyncOperationHandle<IList<UnityEngine.AudioClip>> PreloadAudio(System.Action<UnityEngine.AudioClip> result)
+        {
+            return Addressables.LoadAssetsAsync<UnityEngine.AudioClip>("Audio", result);
         }
         protected Coroutine corountineFirstPool = null;
 
@@ -170,7 +175,7 @@ namespace Pok
             {
                 if (loadResource)
                 {
-                    PercentResource = asyncResource.PercentComplete *0.4f;
+                    PercentResource = (asyncResource.PercentComplete + asyncAudio.PercentComplete) * 0.4f;
                 }
                 if(loadingDatabase)
                 {
@@ -211,6 +216,13 @@ namespace Pok
                         asyncResource = PreloadTexture((a) =>
                         {
                        
+                        });
+                        asyncAudio = PreloadAudio((a) =>
+                        {
+                            if(a.loadState != AudioDataLoadState.Loaded && a.loadState != AudioDataLoadState.Loading)
+                            {
+                                a.LoadAudioData();
+                            }
                         });
                         async = null;   
                     }

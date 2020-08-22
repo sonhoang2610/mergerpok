@@ -614,7 +614,8 @@ public static class objExtend
         {
             charShortcut = true;
             charEnd -=2;
-            str = str.Replace("a", "000000000000");
+            str = str.Remove(str.Length - 2, 1);
+            str = str.Insert(str.Length - 2, "000000000000");
             string[] alphab = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o" };
             var index = System.Array.FindIndex(alphab, x => x == str.Substring(str.Length - 1, 1));
             str = str.Substring(0, str.Length - 1);
@@ -765,9 +766,17 @@ public static class ArrayExtension
 }
 public static class GameObjectExtensions
 {
-    public static T GetComponentInParents<T>(this GameObject pObject) where T : UnityEngine.Component
+    public static T GetComponentInParents<T>(this GameObject pObject,bool includeSelf = true) where T : UnityEngine.Component
     {
         var currentObject = pObject;
+        if (includeSelf)
+        {
+            var value = currentObject.GetComponent<T>();
+            if (value)
+            {
+                return value;
+            }
+        }
         while (currentObject.transform.parent != null)
         {
            var value = currentObject.transform.parent.GetComponent<T>();

@@ -101,6 +101,7 @@ namespace Pok
         public List<ItemMissionObject> missionContainer = new List<ItemMissionObject>();
         [InfoBox("Thoi gian afk xuat hien box bank")]
         public double timeMinToShowBoxBank = 7200;
+        public ShopItemInfo packageMultiplyBonus1, packageMultiplyBonus2;
         public List<MapObject> getAllMapInZone(string zoneID)
         {
             return MapCollection;
