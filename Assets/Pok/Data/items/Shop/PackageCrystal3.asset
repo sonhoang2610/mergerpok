@@ -84,7 +84,7 @@ MonoBehaviour:
     isSpecifiedUnit: 0
     unitDefines: []
   limitLevel: 1
-  extraWhenClaimed: 0
+  extraWhenClaimed: 1
   item:
     items:
     - typePayment: 0
