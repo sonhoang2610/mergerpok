@@ -213,7 +213,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.33962262, g: 0.22306377, b: 0.0016019973, a: 1}
   mPivot: 4
-  mWidth: 228
+  mWidth: 226
   mHeight: 42
   mDepth: 50
   mMat: {fileID: 0}
@@ -504,14 +504,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 46
+  mWidth: 113
   mHeight: 28
   mDepth: 50
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.6428572
+  aspectRatio: 4.035714
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 97239e1bd8ed1694bac928f76283b58b, type: 3}
   mFont: {fileID: 0}
@@ -723,6 +723,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info:
     isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: 
+      forAllZone: 0
     limitUpgrade: -1
     itemSell: {fileID: 0}
     typeIncrease: 0

@@ -10,6 +10,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using Firebase.Analytics;
 using System.Threading.Tasks;
 using Firebase.Extensions;
+using Facebook.Unity;
 
 namespace Pok
 {
@@ -117,6 +118,10 @@ namespace Pok
         {
 
             base.Awake();
+            if (!FB.IsInitialized)
+            {
+                FB.Init();
+            }
             Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
                 var dependencyStatus = task.Result;
                 if (dependencyStatus == Firebase.DependencyStatus.Available)
@@ -132,7 +137,7 @@ namespace Pok
                     // yet, or if we ask for values that the server doesn't have:
                     defaults.Add("time_bonus_evo", "300,1500");
                     defaults.Add("time_reward_ads", "300,1500");
-                    defaults.Add("time_ads", "200,230,240");
+                    defaults.Add("time_delay_ads", "200,230,240");
                     Firebase.RemoteConfig.FirebaseRemoteConfig.SetDefaults(defaults);
                     // Set a flag here to indicate whether Firebase is ready to use by your app.
                 }

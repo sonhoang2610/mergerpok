@@ -798,7 +798,7 @@ namespace Pok
         public void RequestInappForItem(string id, System.Action<bool> result)
         {
 #if UNITY_EDITOR
-            result.Invoke(true);
+           // result.Invoke(true);
 #endif
             if (!inappPending.Exists(x => x.id == id))
             {

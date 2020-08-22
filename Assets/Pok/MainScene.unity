@@ -4435,6 +4435,11 @@ PrefabInstance:
       propertyPath: mWidth
       value: 226
       objectReference: {fileID: 0}
+    - target: {fileID: 1873389179620086098, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 5.3809524
+      objectReference: {fileID: 0}
     - target: {fileID: 2264945808668272716, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
       propertyPath: mDepth
@@ -4484,7 +4489,7 @@ PrefabInstance:
     - target: {fileID: 3306570343827148076, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
       propertyPath: aspectRatio
-      value: 2.967742
+      value: 2.935484
       objectReference: {fileID: 0}
     - target: {fileID: 3525149047703680774, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
@@ -12454,6 +12459,11 @@ PrefabInstance:
       propertyPath: mWidth
       value: 226
       objectReference: {fileID: 0}
+    - target: {fileID: 1873389179620086098, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 5.3809524
+      objectReference: {fileID: 0}
     - target: {fileID: 2264945808668272716, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
       propertyPath: mDepth
@@ -12503,7 +12513,7 @@ PrefabInstance:
     - target: {fileID: 3306570343827148076, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
       propertyPath: aspectRatio
-      value: 2.967742
+      value: 2.935484
       objectReference: {fileID: 0}
     - target: {fileID: 3525149047703680774, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
@@ -40670,7 +40680,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -92.00003
+      value: -92
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
@@ -46120,7 +46130,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3065
+  startingRenderQueue: 3100
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -53220,6 +53230,11 @@ PrefabInstance:
       propertyPath: mWidth
       value: 226
       objectReference: {fileID: 0}
+    - target: {fileID: 1873389179620086098, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 5.3809524
+      objectReference: {fileID: 0}
     - target: {fileID: 2264945808668272716, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
       propertyPath: mDepth
@@ -53279,7 +53294,7 @@ PrefabInstance:
     - target: {fileID: 3306570343827148076, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
       propertyPath: aspectRatio
-      value: 2.967742
+      value: 2.935484
       objectReference: {fileID: 0}
     - target: {fileID: 3525149047703680774, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
@@ -57175,7 +57190,7 @@ PrefabInstance:
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 114.65997
+      value: 114.660034
       objectReference: {fileID: 0}
     - target: {fileID: 8080365350924950314, guid: 92369f3e0d90d9b4b991400f15858d6a,
         type: 3}
@@ -63570,6 +63585,11 @@ PrefabInstance:
       propertyPath: mWidth
       value: 226
       objectReference: {fileID: 0}
+    - target: {fileID: 1873389179620086098, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
+        type: 3}
+      propertyPath: aspectRatio
+      value: 5.3809524
+      objectReference: {fileID: 0}
     - target: {fileID: 2264945808668272716, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
       propertyPath: mDepth
@@ -63613,7 +63633,7 @@ PrefabInstance:
     - target: {fileID: 3306570343827148076, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
       propertyPath: aspectRatio
-      value: 2.967742
+      value: 2.935484
       objectReference: {fileID: 0}
     - target: {fileID: 3525149047703680774, guid: 2b8ca76dc65a7c347a9eaac76f7db072,
         type: 3}
