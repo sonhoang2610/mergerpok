@@ -56,42 +56,42 @@ MonoBehaviour:
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 282.9a
+            quantity: 282.9aa
       - levelRequire: 3
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 4.7ab
+            quantity: 4.7ac
       - levelRequire: 4
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 47ab
+            quantity: 47ac
       - levelRequire: 5
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 470ab
+            quantity: 470ac
       - levelRequire: 6
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 940ab
+            quantity: 940ac
       - levelRequire: 7
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 4.7ac
+            quantity: 4.7ad
       - levelRequire: 8
         unit:
         - groupID: 0
@@ -208,35 +208,35 @@ MonoBehaviour:
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 282.9a
+            quantity: 282.9aa
       - levelRequire: 3
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 987.321a
+            quantity: 987.321aa
       - levelRequire: 4
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 9.873aa
+            quantity: 9.873ab
       - levelRequire: 5
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 98.73aa
+            quantity: 98.73ab
       - levelRequire: 6
         unit:
         - groupID: 0
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 987.3aa
+            quantity: 987.3ab
       - levelRequire: 7
         unit:
         - groupID: 0
