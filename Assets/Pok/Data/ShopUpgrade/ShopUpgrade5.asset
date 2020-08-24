@@ -146,7 +146,7 @@ MonoBehaviour:
           exchangeItems:
           - typePayment: 0
             item: {fileID: 11400000, guid: 8e7e0a6302b719843a5a9ebb9510a3cc, type: 2}
-            quantity: 678.9 ag
+            quantity: 678.9ag
       - levelRequire: 3
         unit:
         - groupID: 0
