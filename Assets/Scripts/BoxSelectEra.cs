@@ -71,7 +71,7 @@ namespace Pok
         public void ok()
         {
             int random = Random.Range(0, 2);
-            if(random != -1)
+            if(random != 0)
             {
                if(selectCreature.RankChild < 15)
                 {
