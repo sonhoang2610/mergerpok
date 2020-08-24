@@ -194,8 +194,10 @@ namespace Pok
                     addCreatureObject(newCreature, true, (o) => { o.transform.localPosition = pos; });
                     DestroyCreature(infoCreature);
                     GameManager.Instance.Database.calculateCurrentUnlock( GameManager.Instance.ZoneChoosed);
+                    HUDManager.Instance.checkEvolutionPack();
                     ES3.dirty = true;
                     dirty = true;
+                  
                 }
             }
             if (!press && !dirty && effecting <= 0)
@@ -297,6 +299,7 @@ namespace Pok
                                             GameManager.Instance.GenerateID++;
                                             EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, manualByHand = true, zoneid = zone.id });
                                         }
+                                        HUDManager.Instance.checkEvolutionPack();
                                     };
                                     System.Action addNormal = delegate
                                     {

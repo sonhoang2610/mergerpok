@@ -776,9 +776,10 @@ namespace Pok
                         var items = ((IExtractItem)item).ExtractHere();
                         for (int i = 0; i < items.Length; ++i)
                         {
-                            var itemExist = GameManager.Instance.Database.getItem(items[i].item.ItemID);
-                            items[i].quantity = ((BigInteger.Parse(items[i].quantity.clearDot()) * (int)((1 + bonus) * 100) ) / 100).ToString();
-                            itemExist.addQuantity(items[i].quantity);
+                          //  var itemExist = GameManager.Instance.Database.getItem(items[i].item.ItemID);
+                           // items[i].quantity = ((BigInteger.Parse(items[i].quantity.clearDot()) * (int)((1 + bonus) * 100) ) / 100).ToString();
+                          //  itemExist.addQuantity(items[i].quantity);
+                            claimItem(items[i].item, items[i].quantity, 0);
                         }
                         return items;
                     }
@@ -798,7 +799,7 @@ namespace Pok
         public void RequestInappForItem(string id, System.Action<bool> result)
         {
 #if UNITY_EDITOR
-           // result.Invoke(true);
+            // result.Invoke(true);
 #endif
             if (!inappPending.Exists(x => x.id == id))
             {

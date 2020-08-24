@@ -70,8 +70,33 @@ namespace Pok
 
         public void ok()
         {
+            int random = Random.Range(0, 2);
+            if(random != -1)
+            {
+               if(selectCreature.RankChild < 15)
+                {
+                    GameManager.Instance.StartCoroutine(delayShowBoxMultiplyBonus(0, selectCreature));
+                }
+                else
+                {
+                    GameManager.Instance.StartCoroutine(delayShowBoxMultiplyBonus(1, selectCreature));
+                }
+            }
             container.close();
             _onClose?.Invoke();
+        }
+        public IEnumerator delayShowBoxMultiplyBonus(int index,CreatureItem creature)
+        {
+            yield return new WaitForSeconds(2);
+            if(index == 0)
+            {
+                HUDManager.Instance.boxMultiplyBonus.showData(GameDatabase.Instance.packageMultiplyBonus1, creature);
+            }
+            else
+            {
+                HUDManager.Instance.boxMultiplyBonus.showData(GameDatabase.Instance.packageMultiplyBonus2, creature);
+            }
+
         }
     }
 }

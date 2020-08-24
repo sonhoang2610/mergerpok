@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538b0ffb941154f45852f790301c1799, type: 3}
+  m_Name: MultiplyBonus1
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: blackBoardVariable
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: limitInInventory
+      Entry: 6
+      Data: 
+    - Name: timeToRestore
+      Entry: 6
+      Data: 
+    - Name: machine
+      Entry: 6
+      Data: 
+  variantItem: 0
+  variantLevel: 0
+  defaultLevel: 0
+  itemID: multiply_bonus1
+  displayNameItem:
+    normalString: 
+    isI2String: 0
+    value: 
+  descriptionItem:
+    normalString: 
+    isI2String: 0
+    value: 
+  categoryItem: 1
+  attribute: 0
+  icons:
+  - State: Default
+    Icon:
+      m_AssetGUID: 
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  model:
+  - State: Default
+    Icon:
+      m_AssetGUID: d04ede39b6dea3f4a9395d57661f5765
+      m_SubObjectName: 
+    size: {x: 0, y: 0}
+  score: 0
+  quantityRestore:
+    startUnit: 1
+    algrothimTypeUpgrade: 0
+    stepUnit: 0
+    isSpecifiedUnit: 0
+    unitDefines: []
+  limitLevel: 1

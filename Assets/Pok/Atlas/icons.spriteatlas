@@ -43,7 +43,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: aaed03a5d76fcb34388491533e8ca47d, type: 3}
-    totalSpriteSurfaceArea: 1413350
+    totalSpriteSurfaceArea: 1455896
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -69,6 +69,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 68e165793dcd0074bbc158b9986c085a, type: 3}
   - {fileID: 21300000, guid: 12502fe9cd0be9a4d8bdcf79646e790e, type: 3}
   - {fileID: 21300000, guid: b54e4ff94ece21649b25b52f7269bb5e, type: 3}
+  - {fileID: 21300000, guid: ac8ad00bdd0f666438ffe4f4037afaa0, type: 3}
   - {fileID: 21300000, guid: 0050bb8bad8d7af45b549d36663f527f, type: 3}
   - {fileID: 21300000, guid: 3039f11c63a451643ba4d28c254d3cf2, type: 3}
   - {fileID: 21300000, guid: 9daec04ca1271ac468cd4916c83fbe99, type: 3}
@@ -76,6 +77,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 50b1910da57b5ca4aaa26f553db269d3, type: 3}
   - {fileID: 21300000, guid: 538f270d3fd3e3f469b94958d56fd47b, type: 3}
   - {fileID: 21300000, guid: 4417eb6d42c06064ba628aa7ed6a31d7, type: 3}
+  - {fileID: 21300000, guid: 4cb7de8d2dcbfa34b983799e7530fef2, type: 3}
   - {fileID: 21300000, guid: 6ae0be3e585b5cb4f81642c83fbddd61, type: 3}
   - {fileID: 21300000, guid: c2c40b7e3905b014bb5e1e11283dab47, type: 3}
   - {fileID: 21300000, guid: 6484a3ce4dfcf41488768c397c40bca0, type: 3}
@@ -104,6 +106,7 @@ SpriteAtlas:
   - 8
   - 17
   - Pack_Gems_Sack
+  - pack_x6
   - item_goldx2
   - 14
   - Ico_Gold
@@ -111,6 +114,7 @@ SpriteAtlas:
   - Pack_Gold_Sack
   - Pack_Gems_Box
   - 13
+  - starter_pack
   - item_goldx4
   - Pack_Gold_Mountain
   - Pack_Gems_Handful

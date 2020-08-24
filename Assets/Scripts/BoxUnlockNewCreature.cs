@@ -34,6 +34,20 @@ namespace Pok
             boxCreatureInMap.executeInfos(infos.ToArray());
             container.show();
             StartCoroutine( delayDiamond());
+            if(creautre == "Pok6")
+            {
+                if (ES3.Load<bool>("FirstUnlockPok6", true))
+                {
+                    ES3.Save<bool>("FirstUnlockPok6", false);
+                    container.onStartClose.AddListener(showStartedKit);
+                   
+                }
+            }
+        }
+        public void showStartedKit()
+        {
+            HUDManager.Instance.boxPackedInapp.showData(GameDatabase.Instance.startedKit);
+            container.onStartClose.RemoveListener(showStartedKit);
         }
 
         public IEnumerator delayDiamond()

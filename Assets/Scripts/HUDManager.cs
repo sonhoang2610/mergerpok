@@ -24,13 +24,110 @@ namespace Pok
         public UIElement boxMagicCase;
         public BoxReward boxReward;
         public BoxBank boxBank;
+   
         public BoxBonusEvolutionPok boxEvoPok;
+        public BoxMultiplyBonus boxMultiplyBonus;
+        public BoxPackageInApp boxPackedInapp;
         public GameObject btnVip;
         public GameObject hand;
+        public GameObject attachMentPackageMultiplyBonus;
+        public GameObject btnEvlotion;
+        public UIElement boxEvolution;
 
         public UI2DSprite processTimeMixing;
         public UnitDefineLevelIntVariable timeMixLimit;
 
+        public void showBoxEvolution()
+        {
+            boxEvolution.show();
+        }
+
+        public void checkEvolutionPack()
+        {
+            btnEvlotion.gameObject.SetActive(false);
+            if (GameManager.Instance.ZoneChoosed != "Zone1")
+            {
+               var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+                if(!string.IsNullOrEmpty(zone.curentUnlock) && int.Parse( zone.curentUnlock.Remove(0,3)) < 6 && !ES3.Load<bool>("Evolution" + GameManager.Instance.ZoneChoosed,false))
+                {
+                    btnEvlotion.gameObject.SetActive(true);
+
+                }
+               
+            }
+        }
+
+        public void checkExistMultiplyBonus()
+        {
+           var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("[MultiplyBonus]"));
+            if(time != null)
+            {
+                var strs = time.id.Remove(0, ("[MultiplyBonus]").Length).Split('/');
+                var item = GameDatabase.Instance.getItemInventory(strs[0]);
+                var creature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == strs[1]);
+                if (item!= null)
+                {
+                    item.getModelForState((o) => {
+
+                       var timeObject=  attachMentPackageMultiplyBonus.AddChild(o);
+                        timeObject.GetComponent<TimeListener>().listenID = "[MultiplyBonus]" +item.ItemID + "/" + creature.ItemID;
+                        timeObject.transform.SetSiblingIndex(0);
+                        timeObject.GetComponent<TimeListener>().onTimeOut.AddListener(() =>
+                        {
+                            timeObject.gameObject.SetActive(false);
+                            Destroy(timeObject);
+                            attachMentPackageMultiplyBonus.GetComponent<UIGrid>().Reposition();
+                        });
+                        timeObject.GetComponent<UIButton>().onClick.Add(new EventDelegate(() =>
+                        {
+                            ShopItemInfo itemPackage = GameDatabase.Instance.packageMultiplyBonus1;
+                            if (GameDatabase.Instance.packageMultiplyBonus2.itemSell == item)
+                            {
+                                itemPackage = GameDatabase.Instance.packageMultiplyBonus2;
+                            }
+        
+                            boxMultiplyBonus.showData(itemPackage, creature);
+                        }));
+                        attachMentPackageMultiplyBonus.GetComponent<UIGrid>().Reposition();
+                    });
+                }
+            }
+        }
+        public void checkExistPackage()
+        {
+            var times = TimeCounter.Instance.timeCollection.Value.FindAll(x => x.id.Contains("[Package]"));
+            foreach (var time in times)
+            {
+                if (time != null)
+                {
+                    var strs = time.id.Remove(0, ("[Package]").Length).Split('/');
+                    var item = GameDatabase.Instance.getItemInventory(strs[0]);
+                    if (item != null)
+                    {
+                        item.getModelForState((o) =>
+                        {
+
+                            var timeObject = attachMentPackageMultiplyBonus.AddChild(o);
+                            timeObject.GetComponent<TimeListener>().listenID = "[Package]" + item.ItemID;
+                            timeObject.transform.SetSiblingIndex(0);
+                            timeObject.GetComponent<TimeListener>().onTimeOut.AddListener(() =>
+                            {
+                                timeObject.gameObject.SetActive(false);
+                                Destroy(timeObject);
+                                attachMentPackageMultiplyBonus.GetComponent<UIGrid>().Reposition();
+                            });
+                            timeObject.GetComponent<UIButton>().onClick.Add(new EventDelegate(() =>
+                            {
+                                ShopItemInfo itemPackage = GameDatabase.Instance.startedKit;
+
+                                boxPackedInapp.showData(itemPackage);
+                            }));
+                            attachMentPackageMultiplyBonus.GetComponent<UIGrid>().Reposition();
+                        });
+                    }
+                }
+            }
+        }
         public void updateTimeMixing()
         {
             processTimeMixing.fillAmount = (float)GameManager.Instance.MixingTime / (float)timeMixLimit.Value.getCurrentUnit();
@@ -206,6 +303,9 @@ namespace Pok
             {
                 yield return new WaitForEndOfFrame();
             }
+            checkEvolutionPack();
+            checkExistMultiplyBonus();
+            checkExistPackage();
             checkVip();
         }
         private void OnDisable()

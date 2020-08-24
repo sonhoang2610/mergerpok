@@ -544,8 +544,8 @@ MonoBehaviour:
     m_Address: Assets/Pok/Textures/creatures/30.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 8cf547c3ca7f1814381a7e81f4b23aac, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 8cf547c3ca7f1814381a7e81f4b23aac, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 8e6c1fae7d8dbcc48b85a34278183712
     m_Address: Assets/Pok/Textures/creatures/68.png
     m_ReadOnly: 0
@@ -728,8 +728,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Texture
-    m_MainAsset: {fileID: 2800000, guid: bc5a89a5cbeb2734b9aa33d7480c118c, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: bc5a89a5cbeb2734b9aa33d7480c118c, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: c1f3ae3e634bc3e4a8e31dd843795b46
     m_Address: Assets/Pok/Textures/creatures/34.png
     m_ReadOnly: 0

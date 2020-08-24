@@ -145,6 +145,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0b2f930bfb640cc4c94390150bc2cbea, type: 2}
   - {fileID: 11400000, guid: c1d21150e3f646748aeed59a961884a3, type: 2}
   - {fileID: 11400000, guid: e5175e26d988bdb4e97d1576e37a5725, type: 2}
+  - {fileID: 11400000, guid: 9bdb07e1a6b1ced42b471e34dfb7c1c2, type: 2}
+  - {fileID: 11400000, guid: 0fc092fdaaf9e964abe382c212b3fec0, type: 2}
+  - {fileID: 11400000, guid: bd5be043f3eb7644aa3f451e1fba81bb, type: 2}
   CreatureCollection:
   - {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
   - {fileID: 11400000, guid: a64f830ec9ff16f479268a567d8651de, type: 2}
@@ -492,3 +495,51 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 89dad6a3aeb79144d9d404095a0af96a, type: 2}
   - {fileID: 11400000, guid: ec5a33406aa43b84d9f96650aa684b93, type: 2}
   timeMinToShowBoxBank: 300
+  packageMultiplyBonus1:
+    isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: 
+      forAllZone: 0
+    limitUpgrade: -1
+    itemSell: {fileID: 11400000, guid: 0fc092fdaaf9e964abe382c212b3fec0, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit: []
+      algrothimTypeUpgrade: 0
+      stepUnit: []
+      isSpecifiedUnit: 0
+      unitDefines: []
+  packageMultiplyBonus2:
+    isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: 
+      forAllZone: 0
+    limitUpgrade: -1
+    itemSell: {fileID: 11400000, guid: 9bdb07e1a6b1ced42b471e34dfb7c1c2, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit: []
+      algrothimTypeUpgrade: 0
+      stepUnit: []
+      isSpecifiedUnit: 0
+      unitDefines: []
+  startedKit:
+    isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: 
+      forAllZone: 0
+    limitUpgrade: -1
+    itemSell: {fileID: 11400000, guid: bd5be043f3eb7644aa3f451e1fba81bb, type: 2}
+    typeIncrease: 0
+    paymentWays:
+      startUnit: []
+      algrothimTypeUpgrade: 0
+      stepUnit: []
+      isSpecifiedUnit: 0
+      unitDefines: []

@@ -66,6 +66,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 4792bafe430c47f4883084ce942bf71b
+    m_Address: Assets/Pok/Prefabs/model_evo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 482e82467bd7f0a4982ea220079daa12
     m_Address: Assets/Pok/Prefabs/uiconfig/Pok6.prefab
     m_ReadOnly: 0
@@ -86,6 +92,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 62de05b91915e6346930432e63631877
     m_Address: Pok49
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 67578866abfcf3e4f9a4040c46a98d96
+    m_Address: Assets/Pok/Prefabs/model_started_pack.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -112,10 +124,8 @@ MonoBehaviour:
     m_Address: Assets/Pok/Prefabs/Pok/pok/RoundHitYellow.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 3971691638236568794, guid: 94bae1e1264071842922de8733b098d6,
-      type: 3}
-    m_TargetAsset: {fileID: 3971691638236568794, guid: 94bae1e1264071842922de8733b098d6,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 97d31f86530427d42a2a4986c4bc225f
     m_Address: Assets/Pok/Prefabs/Pok/box.prefab
     m_ReadOnly: 0
@@ -124,6 +134,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: a654d346815ab6a48b25e1557746caec
     m_Address: Assets/Pok/Prefabs/uiconfig/Pok25.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: d04ede39b6dea3f4a9395d57661f5765
+    m_Address: Assets/Pok/Prefabs/model_multiply_bonus.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
@@ -148,6 +164,12 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: e606665f6cacbaa4f8793a8faf7ec3a1
     m_Address: Assets/Pok/Prefabs/uiconfig/base_model_era.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: f07aa179b5dc2004d99cb7e13eb902c9
+    m_Address: Assets/Pok/Prefabs/model_started_kit_in_box.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}

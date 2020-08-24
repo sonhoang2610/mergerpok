@@ -571,7 +571,7 @@ public static class objExtend
     }
     public static string clearDot(this string v)
     {
-        var str = v;
+        string str = v;
         int charEnd = 0;
         bool charShortcut = false;
         if (str.Contains('.'))
@@ -615,7 +615,7 @@ public static class objExtend
             charShortcut = true;
             charEnd -=2;
             str = str.Remove(str.Length - 2, 1);
-            str = str.Insert(str.Length - 2, "000000000000");
+            str = str.Insert(str.Length - 1, "000000000000");
             string[] alphab = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o" };
             var index = System.Array.FindIndex(alphab, x => x == str.Substring(str.Length - 1, 1));
             str = str.Substring(0, str.Length - 1);

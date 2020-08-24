@@ -105,6 +105,7 @@ namespace Pok {
                     }
                 }
                 GameManager.Instance.ZoneChoosed = pZone.ItemID;
+                HUDManager.Instance.checkEvolutionPack();
                 CurrentPageMapLayer = 0;
                 CurrentIndexPool = 0;
                 MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);

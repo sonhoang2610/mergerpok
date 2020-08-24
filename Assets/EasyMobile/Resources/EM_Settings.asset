@@ -271,9 +271,37 @@ MonoBehaviour:
       _description: 
       _storeSpecificIds: []
       _isEditingAdvanced: 0
-    - _name: VipItem
-      _type: 0
+    - _name: Vip Member
+      _type: 2
       _id: vipitem
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
+    - _name: Multiply Bonus 1
+      _type: 0
+      _id: multiply_bonus1
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
+    - _name: Multiply Bonus 2
+      _type: 0
+      _id: multiply_bonus2
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
+    - _name: Started Kit
+      _type: 0
+      _id: startedkit
+      _price: 
+      _description: 
+      _storeSpecificIds: []
+      _isEditingAdvanced: 0
+    - _name: Evolution Pack
+      _type: 0
+      _id: evolution_pack
       _price: 
       _description: 
       _storeSpecificIds: []
@@ -374,5 +402,5 @@ MonoBehaviour:
   mIsGameServiceModuleEnable: 0
   mIsNotificationModuleEnable: 1
   mIsSharingModuleEnable: 0
-  mActiveModuleIndex: 0
+  mActiveModuleIndex: 3
   mIsSelectingModule: 0

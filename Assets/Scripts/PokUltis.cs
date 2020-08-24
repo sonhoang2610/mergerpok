@@ -128,6 +128,8 @@ namespace Pok
             GameManager.Instance.Database.removeTime(time);
         }
     }
+
+ 
     public class UpgradeItemLevelEgg : IMachineItem
     {
         public string egg = "Egg";
