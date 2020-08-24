@@ -106,24 +106,27 @@ namespace Pok
             GameManager.addDirtyState("Main");
             StartCoroutine(TimeExtension.GetNetTime((time, error) =>
            {
-                // string.IsNullOrEmpty(error)
-                getRealTime = true;
-               var pJson = JsonMapper.ToObject(time);
-               firstTime = TimeExtension.UnixTimeStampToDateTime(double.Parse(JsonMapper.ToObject(pJson["data"].ToJson())["timestamp"].ToJson())).ToLocalTime();
-               var lastime = ES3.Load<TimeModule>("LastTimeGame", defaultValue: null);
-               if (lastime != null)
+               if (string.IsNullOrEmpty(error))
                {
-                   lasTimeAFK = lastime.time;
-                   for (int i = 0; i < timeCollection.Count; ++i)
+                   getRealTime = true;
+                   var pJson = JsonMapper.ToObject(time);
+                   firstTime = TimeExtension.UnixTimeStampToDateTime(double.Parse(JsonMapper.ToObject(pJson["data"].ToJson())["timestamp"].ToJson())).ToLocalTime();
+                   var lastime = ES3.Load<TimeModule>("LastTimeGame", defaultValue: null);
+                   if (lastime != null)
                    {
-                       var timeElement = timeCollection[i];
-                       timeElement.firstTimeAdd -= (firstTime - lasTimeAFK).TotalSeconds;
-                   }
-                   if((firstTime -lasTimeAFK).TotalSeconds > GameDatabase.Instance.timeAFKShowBoxTreasure)
-                   {
-                       MainScene.Instance.showBoxTreasure();
+                       lasTimeAFK = lastime.time;
+                       for (int i = 0; i < timeCollection.Count; ++i)
+                       {
+                           var timeElement = timeCollection[i];
+                           timeElement.firstTimeAdd -= (firstTime - lasTimeAFK).TotalSeconds;
+                       }
+                       if ((firstTime - lasTimeAFK).TotalSeconds > GameDatabase.Instance.timeAFKShowBoxTreasure)
+                       {
+                           MainScene.Instance.showBoxTreasure();
+                       }
                    }
                }
+             
                GameManager.Instance.Database.checkTimeForAll();
                GameManager.removeDirtyState("Main");
            }));

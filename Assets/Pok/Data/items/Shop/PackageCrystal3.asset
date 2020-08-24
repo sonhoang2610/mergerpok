@@ -55,11 +55,11 @@ MonoBehaviour:
   defaultLevel: 0
   itemID: PackageCrystal3
   displayNameItem:
-    normalString: PackageCrystal3
+    normalString: Luxury Pack
     isI2String: 0
     value: 
   descriptionItem:
-    normalString: PackageCrystal3
+    normalString: Luxury Pack
     isI2String: 0
     value: 
   categoryItem: 1

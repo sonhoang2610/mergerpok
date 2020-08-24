@@ -55,11 +55,11 @@ MonoBehaviour:
   defaultLevel: 0
   itemID: PackageCrystal1
   displayNameItem:
-    normalString: PackageCrystal1
+    normalString: Begin pack
     isI2String: 0
     value: 
   descriptionItem:
-    normalString: PackageCrystal1
+    normalString: Begin pack
     isI2String: 0
     value: 
   categoryItem: 1

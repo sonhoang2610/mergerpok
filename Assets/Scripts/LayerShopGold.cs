@@ -41,6 +41,10 @@ namespace Pok
                                 itemRewards.Add(new ItemRewardInfo() { itemReward = itemclaimeds[g] });
                             }
                             HUDManager.Instance.boxReward.show(itemRewards.ToArray(), "BUY SUCCESS");
+                            if (_info != null && _info.itemSell && _info.itemSell.ItemID == "BlockADS")
+                            {
+                                    GetComponentInChildren<UIButton>().isEnabled = false;
+                            }
                         }
                     });
                     return;
@@ -99,6 +103,13 @@ namespace Pok
                 if (item != null)
                 {
                     setInfo(item);
+                }
+            }
+            if(_info != null && _info.itemSell  && _info.itemSell.ItemID == "BlockADS")
+            {
+                if (ES3.Load("BlockADS", 0)> 0)
+                {
+                    GetComponentInChildren<UIButton>().isEnabled = false;
                 }
             }
         }

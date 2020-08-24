@@ -354,7 +354,7 @@ namespace Pok
                 {
                     return "none";
                 }
-                return itemSell.ItemID;
+                return itemSell.displayNameItem.Value;
             }
         }
 

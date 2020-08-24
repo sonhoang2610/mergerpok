@@ -76,7 +76,7 @@ namespace Pok
         }
         public void onAdded(BaseItemGameInstanced itemSlot)
         {
-            ES3.Save("BlockADS", ES3.Load<float>("BlockADS", 0) + 1);
+            ES3.Save("BlockADS", ES3.Load("BlockADS", 0) + 1);
             var oldBonus =  ES3.Load("BonusCrystalVip", 0);
             ES3.Save("BonusCrystalVip", discountCrystal);
             ES3.Save("BonusCrystal", ES3.Load<float>("BonusCrystal", 0) - oldBonus +  discountCrystal);
@@ -114,7 +114,7 @@ namespace Pok
 
         public void onRemoved(BaseItemGameInstanced itemSlot)
         {
-            ES3.Save("BlockADS", ES3.Load<float>("BlockADS", 0) - 1);
+            ES3.Save("BlockADS", ES3.Load("BlockADS", 0) - 1);
             var oldBonus = ES3.Load("BonusCrystalVip", 0.0f);
             if(oldBonus == 0)
             {
@@ -356,7 +356,7 @@ namespace Pok
         }
         public void Excute(Dictionary<string, object> blackBoard)
         {
-            ES3.Save("BlockADS", 1);
+            ES3.Save("BlockADS", ES3.Load("BloackAds",0) + 1);
         }
 
         public string getContent(Dictionary<string, object> blackBoard)

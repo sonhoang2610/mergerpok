@@ -123,11 +123,11 @@ MonoBehaviour:
   defaultLevel: 0
   itemID: SuperIncome
   displayNameItem:
-    normalString: SuperIncome
+    normalString: Super income
     isI2String: 0
     value: 
   descriptionItem:
-    normalString: SuperIncome
+    normalString: Increase the income of gold x2 for 2 hours!
     isI2String: 0
     value: 
   categoryItem: 1

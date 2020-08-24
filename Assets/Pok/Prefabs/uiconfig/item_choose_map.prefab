@@ -268,7 +268,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: 0a25858492f1048499600091d5be04b0, type: 3}
+  mSprite: {fileID: 21300000, guid: 0173a88ab9b15384dafebd3700975e07, type: 3}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
   mFixedAspect: 0
@@ -309,8 +309,8 @@ MonoBehaviour:
   ignoreColor: 0
   colorNormal: {r: 1, g: 1, b: 1, a: 1}
   colorPressed: {r: 1, g: 1, b: 1, a: 1}
-  normalSprite2D: {fileID: 21300000, guid: 199f7b1db650a6b49806e302d4777b8d, type: 3}
-  pressedSprite2D: {fileID: 21300000, guid: 2b125b6a475c40349afbe1c655f95d10, type: 3}
+  normalSprite2D: {fileID: 21300000, guid: 0173a88ab9b15384dafebd3700975e07, type: 3}
+  pressedSprite2D: {fileID: 21300000, guid: de7fb370f99674f42b5e1f588e8ae515, type: 3}
   includeChild: 0
   normalSprite: 
   pressedSprite: 

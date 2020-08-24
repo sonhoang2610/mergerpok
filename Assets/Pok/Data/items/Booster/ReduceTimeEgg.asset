@@ -111,11 +111,11 @@ MonoBehaviour:
   defaultLevel: 0
   itemID: ReduceTimeEgg
   displayNameItem:
-    normalString: ReduceTimeEgg
+    normalString: Reduce Time Egg
     isI2String: 0
     value: 
   descriptionItem:
-    normalString: ReduceTimeEgg
+    normalString: Reduce half time to create new egg
     isI2String: 0
     value: 
   categoryItem: 1

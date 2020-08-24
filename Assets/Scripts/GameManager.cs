@@ -824,6 +824,10 @@ namespace Pok
         public void WatchRewardADS(string id, System.Action<bool> result = null)
         {
             LogEvent("WATCH_ADS:" + id);
+            if(ES3.Load("BlockADS", 0) > 0)
+            {
+                result?.Invoke(true);
+            }
 #if UNITY_EDITOR
             result?.Invoke(true);
 

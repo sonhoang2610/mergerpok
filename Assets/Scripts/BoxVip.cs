@@ -27,7 +27,7 @@ namespace Pok
             item.loadAssetWrapped<BaseItemGame>((o) => {
                 if (o != null)
                 {
-                    GameManager.Instance.RequestInappForItem(o.ItemID, (b) =>
+                    GameManager.Instance.RequestInappForItem(o.ItemID.ToLower(), (b) =>
                     {
                         if (b)
                         {
