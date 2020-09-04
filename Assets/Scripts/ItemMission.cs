@@ -125,6 +125,7 @@ namespace Pok
         {
             TimeCounter.Instance.timeCollection.Value.RemoveAll(x => x.id == $"[Mission]{_info.ItemID}");
             GameManager.Instance.Database.timeRestore.RemoveAll(x => x.id == $"[Mission]{_info.ItemID}");
+            ES3.markDirty(SaveDataConstraint.TIME_DATA);
             EzEventManager.TriggerEvent(new MissionEvent() { type = TypeEvent.REMOVE });
             HUDManager.Instance.boxReward.show(cacheReward,"Mission Reward");
             foreach(var reward in cacheReward)
@@ -132,13 +133,22 @@ namespace Pok
                 if(reward.itemReward.item.categoryItem == CategoryItem.CREATURE)
                 {
                     var creature = ((CreatureItem)reward.itemReward.item);
-                    var zone = GameDatabase.Instance.ZoneCollection.Find(x => x.ItemID == GameManager.Instance.ZoneChoosed);
-                    var pack = zone.getPackage();
-                    var mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => creature.parentMap && x.id == creature.parentMap.ItemID);
-                    var newCreature = new PackageCreatureInstanceSaved() { creature = creature.ItemID, id = pack.package.ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = mapParent };
-                    GameManager.Instance.GenerateID++;
-                    GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
-                    EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, zoneid = GameManager.Instance.ZoneChoosed, manualByHand = false });
+                    if (creature.creatureChilds.Length > 0)
+                    {
+                        var zone = GameDatabase.Instance.ZoneCollection.Find(x => x.ItemID == GameManager.Instance.ZoneChoosed);
+                        var pack = zone.getPackage();
+                        var mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => creature.parentMap && x.id == creature.parentMap.ItemID);
+                        var newCreature = new PackageCreatureInstanceSaved() { creature = creature.ItemID, id = pack.package.ItemID, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = mapParent };
+                        GameManager.Instance.GenerateID++;
+                        GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
+                        EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, zoneid = GameManager.Instance.ZoneChoosed, manualByHand = false });
+                    }
+                    else
+                    {
+                        var zone = GameDatabase.Instance.ZoneCollection.Find(x => x.ItemID == GameManager.Instance.ZoneChoosed);
+                        var mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => creature.parentMap && x.id == creature.parentMap.ItemID);
+                        mapParent.creatures[0].level++;
+                    }
                 }
                 else
                 {
@@ -218,6 +228,10 @@ namespace Pok
                     {
                         btnClaim.isEnabled = eventType.timeInfo.CounterTime >= eventType.timeInfo.destinyIfHave;
                         btnClaim.GetComponentInChildren<UILabel>().color = eventType.timeInfo.CounterTime >= eventType.timeInfo.destinyIfHave ? colorTextActive : colorTextDeactive;
+                    }
+                   if(btnWatchADS)
+                    {
+                        btnWatchADS.isEnabled = false;
                     }
                 }
                 //if (sec > 0)

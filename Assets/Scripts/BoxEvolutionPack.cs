@@ -26,7 +26,7 @@ namespace Pok
                 if (o)
                 {
                     ES3.Save<bool>("Evolution" + GameManager.Instance.ZoneChoosed, true);
-                    var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+                    var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.Id == GameManager.Instance.ZoneChoosed);
                     for(int i = 0; i < 12; i++)
                     {
                         if (!zone.creatureAdded.Contains("Pok" + (i + 1).ToString()))
@@ -45,7 +45,7 @@ namespace Pok
                         {
                             var newCreature = new CreatureInstanceSaved() { id = idCreature, instanceID = GameManager.Instance.GenerateID.ToString(), mapParent = nextMapInfo };
                             nextMapInfo.creatures[0].level++;
-                            EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, manualByHand = true, zoneid = zone.id });
+                            EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, manualByHand = true, zoneid = zone.Id });
                         }
                         else
                         {
@@ -53,19 +53,19 @@ namespace Pok
                             //nextMapInfo.creatures.Add(newCreature);
                             GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
                             GameManager.Instance.GenerateID++;
-                            EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, manualByHand = true, zoneid = zone.id });
+                            EzEventManager.TriggerEvent(new AddCreatureEvent() { change = 1, creature = newCreature, manualByHand = true, zoneid = zone.Id });
                         }
                         HUDManager.Instance.checkEvolutionPack();
                     };
                     BoxSelectEra.Instance._onClose = delegate
                     {
               
-                        zone.leaderSelected.Add(midMap.id, "Pok7");
+                        zone.addLeader(midMap.id, "Pok7");
                         midMap.isUnlocked = true;
                         BoxNewEra.Instance.show(BoxSelectEra.Instance.selectCreature.ItemID);
                         EzEventManager.TriggerEvent(new UnlockNewEra() { nameLeader = BoxSelectEra.Instance.selectCreature.ItemID, mapID = nextMapInfo.id });             
                         addAnother.Invoke(BoxSelectEra.Instance.selectCreature.ItemID);
-                        GameManager.Instance.Database.calculateCurrentUnlock(zone.id);
+                        GameManager.Instance.Database.calculateCurrentUnlock(zone.Id);
                
                     };
                     HUDManager.Instance.checkEvolutionPack();

@@ -18,7 +18,7 @@ namespace Pok
         {
             var mapID = MainScene.Instance.MapObjects[MainScene.Instance.CurrentPageMapLayer].id;
            var creatures = GameManager.Instance.Database.getAllInfoCreatureInAddress(GameManager.Instance.ZoneChoosed, mapID);
-           var zoneInfo =  GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+           var zoneInfo =  GameManager.Instance.Database.zoneInfos.Find(x => x.Id == GameManager.Instance.ZoneChoosed);
            var creatureOriginal = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == creautre);
             creatureOriginal.getSpriteForState((o) =>
             {
@@ -29,7 +29,7 @@ namespace Pok
             List<CreatureInfoSatus> infos = new List<CreatureInfoSatus>();
             foreach(var creature in creatures)
             {
-                infos.Add(new CreatureInfoSatus() { mainInfo = creature, current = zoneInfo.curentUnlock == creature.id,isUnlock = creature.isUnLock });
+                infos.Add(new CreatureInfoSatus() { mainInfo = creature, current = zoneInfo.CurentUnlock == creature.id,isUnlock = creature.IsUnLock });
             }
             boxCreatureInMap.executeInfos(infos.ToArray());
             container.show();

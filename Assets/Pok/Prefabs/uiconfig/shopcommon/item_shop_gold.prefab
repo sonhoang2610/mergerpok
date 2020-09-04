@@ -119,10 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweenTarget: {fileID: 0}
-  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
-  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
-  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  tweenTarget: {fileID: 237853106550592199}
+  hover: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  pressed: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  disabledColor: {r: 1, g: 1, b: 1, a: 1}
   duration: 0.2
   dragHighlight: 0
   hoverSprite: 
@@ -562,6 +562,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info:
     isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: 
+      forAllZone: 0
+    limitUpgrade: -1
     itemSell: {fileID: 0}
     typeIncrease: 0
     paymentWays:
@@ -578,6 +584,7 @@ MonoBehaviour:
   icon: {fileID: 2510971767775216167}
   nameItem: {fileID: 8300845410407949008}
   des: {fileID: 0}
+  bonuslabel: {fileID: 0}
   exchanges:
   - container: {fileID: 237853106550592199}
     icon: {fileID: 5565710149935983760}
@@ -739,7 +746,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.9176471, g: 0.43529415, b: 0.078431375, a: 1}
   mPivot: 4
-  mWidth: 214
+  mWidth: 212
   mHeight: 72
   mDepth: 41
   mMat: {fileID: 0}
@@ -981,7 +988,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6701236709011179950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 158, y: 4, z: 0}
+  m_LocalPosition: {x: 156, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3576908251937031516}

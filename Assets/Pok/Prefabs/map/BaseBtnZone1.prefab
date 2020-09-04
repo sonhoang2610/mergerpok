@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2501257703631158708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6198031264574658044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c041f61e4a9fbf4e830210f5d933ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 533101988474520265}
+  hover: {x: 1.1, y: 1.1, z: 1.1}
+  pressed: {x: 1.05, y: 1.05, z: 1.05}
+  duration: 0.2
 --- !u!1001 &1627144895552780391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75,32 +91,32 @@ PrefabInstance:
     - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
       propertyPath: hover.r
-      value: 1
+      value: 0.7607844
       objectReference: {fileID: 0}
     - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
       propertyPath: hover.g
-      value: 1
+      value: 0.7607844
       objectReference: {fileID: 0}
     - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
       propertyPath: hover.b
-      value: 1
+      value: 0.7607844
       objectReference: {fileID: 0}
     - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
       propertyPath: pressed.r
-      value: 1
+      value: 0.7607844
       objectReference: {fileID: 0}
     - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
       propertyPath: pressed.g
-      value: 1
+      value: 0.7607844
       objectReference: {fileID: 0}
     - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
       propertyPath: pressed.b
-      value: 1
+      value: 0.7607844
       objectReference: {fileID: 0}
     - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
@@ -116,6 +132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: disabledColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168394627525654668, guid: 1b0f26ab5998b9448bf9454003c9f828,
+        type: 3}
+      propertyPath: tweenTarget
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3612169807954817088, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
@@ -185,7 +206,7 @@ PrefabInstance:
     - target: {fileID: 7767047750147896367, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
       propertyPath: startingRenderQueue
-      value: 3002
+      value: 3032
       objectReference: {fileID: 0}
     - target: {fileID: 8757200931702313609, guid: 1b0f26ab5998b9448bf9454003c9f828,
         type: 3}
@@ -199,3 +220,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0f26ab5998b9448bf9454003c9f828, type: 3}
+--- !u!1 &6198031264574658044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4654209845082172827, guid: 1b0f26ab5998b9448bf9454003c9f828,
+    type: 3}
+  m_PrefabInstance: {fileID: 1627144895552780391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &533101988474520265 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1292870395184511662, guid: 1b0f26ab5998b9448bf9454003c9f828,
+    type: 3}
+  m_PrefabInstance: {fileID: 1627144895552780391}
+  m_PrefabAsset: {fileID: 0}

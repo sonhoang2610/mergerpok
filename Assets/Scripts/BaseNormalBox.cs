@@ -20,6 +20,11 @@ public class BaseNormalBox<T0, T1> : MonoBehaviour where T0 : BaseItem<T1> where
     public UIScrollView _scrollView;
     protected int oldIndex = 0;
 
+    public List<T0> getActiveItems()
+    {
+        return items.FindAll(x => x.gameObject.activeSelf);
+    }
+
     public GameObject AttachMent
     {
         get
@@ -83,7 +88,11 @@ public class BaseNormalBox<T0, T1> : MonoBehaviour where T0 : BaseItem<T1> where
                     pItem = Instantiate<T0>(prefabItem, AttachMent.transform);
                     items.Add(pItem);
                 }
-                var widget = attachMent.GetComponentInParent<UIWidget>();
+                items[i]._indexItem = oldIndex;
+                pItem.gameObject.SetActive(true);
+                var widgets = items[i].GetComponentsInChildren<UIWidget>();
+                items[i].setInfo(pInfos[i]);
+                var widget = attachMent.GetComponentInParents<UIWidget>();
                 if (!widget)
                 {
                     widget = attachMent.transform.parent.GetComponent<UIWidget>();
@@ -93,9 +102,7 @@ public class BaseNormalBox<T0, T1> : MonoBehaviour where T0 : BaseItem<T1> where
                     pItem.setDepth(widget.depth + 1);
                 }
                 // pItem.
-                items[i]._indexItem = oldIndex;
-                pItem.gameObject.SetActive(true);
-                items[i].setInfo(pInfos[i]);
+   
                 if (i >= pInfo1s.Length && createItemEmpty)
                 {
                     items[i].empty();

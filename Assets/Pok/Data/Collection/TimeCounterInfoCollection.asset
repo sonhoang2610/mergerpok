@@ -15,4 +15,92 @@ MonoBehaviour:
   _list:
   - id: '[Restore]Zone1/Egg1'
     destinyIfHave: 2
-    counterTime: -121.49860031074284
+    counterTime: 2937690.755501398
+    changeTime: 0.034900665283203125
+    pause: 0
+    autoRemoveIfToDestiny: 0
+    resetOnStart: 0
+  - id: '[Restore]CoinBankZone1'
+    destinyIfHave: 1
+    counterTime: 0
+    changeTime: 0.01129913330078125
+    pause: 1
+    autoRemoveIfToDestiny: 0
+    resetOnStart: 0
+  - id: '[Restore]CoinBankZone2'
+    destinyIfHave: 1
+    counterTime: 0.1686725616455078
+    changeTime: 0.023054122924804688
+    pause: 1
+    autoRemoveIfToDestiny: 0
+    resetOnStart: 0
+  - id: '[Restore]CoinBankZone3'
+    destinyIfHave: 1
+    counterTime: 0.8605518341064453
+    changeTime: 0.016565322875976562
+    pause: 1
+    autoRemoveIfToDestiny: 0
+    resetOnStart: 0
+  - id: '[Restore]CoinBankZone4'
+    destinyIfHave: 1
+    counterTime: 0.8503265380859375
+    changeTime: 0.01682281494140625
+    pause: 1
+    autoRemoveIfToDestiny: 0
+    resetOnStart: 0
+  - id: '[Restore]CoinBankZone5'
+    destinyIfHave: 1
+    counterTime: 0.03485870361328125
+    changeTime: -0.9665031433105469
+    pause: 0
+    autoRemoveIfToDestiny: 0
+    resetOnStart: 0
+  - id: '[MultiplyBonus]multiply_bonus1/Pok6/Zone1'
+    destinyIfHave: 10800
+    counterTime: 1011.955797935486
+    changeTime: 0.03466796875
+    pause: 0
+    autoRemoveIfToDestiny: 1
+    resetOnStart: 0
+  - id: '[MultiplyBonus]multiply_bonus1/Pok6/Zone2'
+    destinyIfHave: 10800
+    counterTime: 997.9015195617677
+    changeTime: 0.034664154052734375
+    pause: 0
+    autoRemoveIfToDestiny: 1
+    resetOnStart: 0
+  - id: '[MultiplyBonus]multiply_bonus1/Pok7/Zone3'
+    destinyIfHave: 10800
+    counterTime: 311.3661725769043
+    changeTime: 0.03466796875
+    pause: 0
+    autoRemoveIfToDestiny: 1
+    resetOnStart: 0
+  - id: '[Package]StartedKit/Zone3'
+    destinyIfHave: 86400
+    counterTime: 223.05859661865236
+    changeTime: 0.034702301025390625
+    pause: 0
+    autoRemoveIfToDestiny: 1
+    resetOnStart: 0
+  - id: '[Package]StartedKit/Zone1'
+    destinyIfHave: 86400
+    counterTime: 213.64923573303224
+    changeTime: 0.034740447998046875
+    pause: 0
+    autoRemoveIfToDestiny: 1
+    resetOnStart: 0
+  - id: '[Package]StartedKit/Zone2'
+    destinyIfHave: 86400
+    counterTime: 18.86205291748047
+    changeTime: 0.034748077392578125
+    pause: 0
+    autoRemoveIfToDestiny: 1
+    resetOnStart: 0
+  - id: '[Package]StartedKit/Zone5'
+    destinyIfHave: 86400
+    counterTime: 3.7087974548339844
+    changeTime: 0.0347900390625
+    pause: 0
+    autoRemoveIfToDestiny: 1
+    resetOnStart: 0

@@ -27,6 +27,7 @@ public class UIElement : MonoBehaviour {
 
 
     public UnityEvent onStartClose;
+    public System.Action conCustomStartClose;
     public int relative = 0;
 
     protected Vector3 cachePos;
@@ -172,6 +173,7 @@ public class UIElement : MonoBehaviour {
             tween.AppendCallback(delegate () { gameObject.SetActive(false); });
         }
         onStartClose?.Invoke();
+        conCustomStartClose?.Invoke();
     }
 
     public void change()

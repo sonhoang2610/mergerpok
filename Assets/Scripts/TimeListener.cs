@@ -38,6 +38,17 @@ namespace Pok
 
         private void OnEnable()
         {
+            var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id == listenID);
+            if(!string.IsNullOrEmpty(listenID) && (time == null || (listenID.Contains("Zone") && !listenID.Contains(GameManager.Instance.ZoneChoosed)) ))
+            {
+               var grid = transform.parent.GetComponent<UIGrid>();
+                gameObject.SetActive(false);
+                Destroy(gameObject);
+                if (grid)
+                {
+                    grid.Reposition();
+                }
+            }
             EzEventManager.AddListener<TimeEvent>(this);
             EzEventManager.AddListener<RemoveTimeEvent>(this);
         }

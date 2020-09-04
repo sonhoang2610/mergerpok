@@ -22,6 +22,7 @@ namespace Pok
         public override string getContent()
         {
             if (!boosterType.ContainsKey(boosterID)) return base.getContent();
+            Debug.Log(boosterType[boosterID].ToString() + "type");
             IBoosterExecute execute = (IBoosterExecute)Activator.CreateInstance(boosterType[boosterID]);
             return execute.getContent(blackBoard);
         }

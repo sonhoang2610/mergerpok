@@ -149,6 +149,7 @@ namespace EazyEngine.Tools
         /// 
         public static void TriggerEvent<EzEvent>(EzEvent newEvent) where EzEvent : struct
         {
+
             List<EzEventListenerBase> list;
             if (!_subscribersList.TryGetValue(typeof(EzEvent), out list))
 #if EVENTROUTER_REQUIRELISTENER

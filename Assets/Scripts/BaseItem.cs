@@ -22,7 +22,7 @@ public class BaseItem<T> : MonoBehaviour where T : new()
     {
         if (cacheDepth == depth) return;
         cacheDepth = depth;
-        var widgets = GetComponentsInChildren<UIWidget>();
+        var widgets = GetComponentsInChildren<UIWidget>(true);
         int minDepth = 99999;
         foreach (var widget in widgets)
         {
@@ -50,7 +50,7 @@ public class BaseItem<T> : MonoBehaviour where T : new()
         }
     }
 
-    public virtual void setInfo(T pInfo)
+    public virtual void setInfo(T pInfo)    
     {
         _info = pInfo;
     }

@@ -19,15 +19,15 @@ namespace Pok
       
             uRhere.gameObject.SetActive(pInfo.ItemID == GameManager.Instance.ZoneChoosed);
             var state = "Default";
-            var zoneinfo = GameManager.Instance.Database.zoneInfos.Find(x => x.id == pInfo.ItemID);
+            var zoneinfo = GameManager.Instance.Database.zoneInfos.Find(x => x.Id == pInfo.ItemID);
             price.text =$"{ pInfo.moneyToUnlock.ToKMBTA()}" ;
             factorTap.text = $"1 tap give x{pInfo.factorTap}";
-            layerNotUnlocked.gameObject.SetActive(!zoneinfo.isUnLock);
-            if (!zoneinfo.isUnLock)
+            layerNotUnlocked.gameObject.SetActive(!zoneinfo.IsUnLock);
+            if (!zoneinfo.IsUnLock)
             {
                 state = "DefaultDisable";
             }
-            icon.color = !zoneinfo.isUnLock ? Color.black : Color.white;
+            icon.color = !zoneinfo.IsUnLock ? Color.black : Color.white;
             pInfo.getSpriteForState((o) =>
             {
                 icon.sprite2D = o;

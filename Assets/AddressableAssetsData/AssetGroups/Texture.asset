@@ -496,6 +496,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 79d693c2e53a23840bc953a8c6c5a5ff
+    m_Address: Assets/Pok/Atlas/upgrade.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 7aaf978cb3ebfda4395f4ac35e718a70
     m_Address: Assets/Pok/Textures/creatures/69.png
     m_ReadOnly: 0

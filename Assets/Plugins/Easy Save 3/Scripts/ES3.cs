@@ -3,10 +3,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ES3Internal;
+using System.Linq;
 #if UNITY_2018_3_OR_NEWER
 using UnityEngine.Networking;
 #endif
-
+public static class SaveDataConstraint
+{
+    public const string TIME_DATA = "TimeData.es3";
+    public const string WORLD_DATA = "WordData.es";
+    public const string WORLD_INFO = "CreatureInfo.es";
+    public const string INVENTORY = "Inventory.es";
+    public const string ANOTHER = "PokMiscInfo.es";
+}
 public static class ES3
 {
 	public enum Location 		{ File, PlayerPrefs, InternalMS, Resources, Cache };
@@ -57,15 +65,50 @@ public static class ES3
             writer.Save();
         }
     }*/
-    public static bool dirty = false;
+    public static Dictionary<string,bool> dirty = new Dictionary<string, bool>() {
+        {SaveDataConstraint.TIME_DATA,false },
+        {SaveDataConstraint.ANOTHER,false },
+        {SaveDataConstraint.WORLD_DATA,false },
+        {SaveDataConstraint.WORLD_INFO,false },
+        {SaveDataConstraint.INVENTORY,false },
+    };
+
+    public static void markDirty(string id)
+    {
+        dirty[id] = true;
+    }
+    public static void clearDirty()
+    {
+        for (int i = 0; i < dirty.Count; ++i)
+        {
+            dirty[dirty.Keys.ElementAt(i)] = false;
+        }
+    }
+    public static bool isDirty()
+    {
+        for(int i = 0; i < dirty.Count; ++i)
+        {
+            if (dirty.Values.ElementAt(i))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     /// <summary>Saves the value to the default file with the given key.</summary>
     /// <param name="T">The type of the data that we want to save.</param>
     /// <param name="key">The key we want to use to identify our value in the file.</param>
     /// <param name="value">The value we want to save.</param>
     public static void Save<T>(string key, T value)
     {
-        dirty = true;
-        Save<T>(key, value, new ES3Settings() { location = Location.Cache});
+        var setting = new ES3Settings() { location = Location.Cache,path = SaveDataConstraint.ANOTHER };
+        ES3.markDirty(SaveDataConstraint.ANOTHER);
+        Save<T>(key, value, setting);
+    }
+    public static void SaveComponentDatabase<T>(string key,string path, T value)
+    {
+        var setting = new ES3Settings() { location = Location.Cache ,path = path };
+        Save<T>(key, value, setting);
     }
 
     /// <summary>Saves the value to a file with the given key.</summary>
@@ -108,7 +151,15 @@ public static class ES3
             writer.Save();
         }
     }
-
+    public static void Save(string key, object value,Type type, ES3Settings settings)
+    {
+        if (settings.location == Location.Cache)
+        {
+            ES3File.GetOrCreateCachedFile(settings).Save(key, value, type);
+            return;
+        }
+        
+    }
     /// <summary>Creates or overwrites a file with the specified raw bytes.</summary>
     /// <param name="bytes">The bytes we want to store.</param>
     public static void SaveRaw(byte[] bytes)
@@ -334,6 +385,7 @@ public static class ES3
     /// <param name="key">The key which identifies the value we want to load.</param>
     public static T Load<T>(string key)
     {
+    
         return Load<T>(key, new ES3Settings());
     }
 
@@ -379,7 +431,26 @@ public static class ES3
     /// <param name="defaultValue">The value we want to return if the file or key does not exist.</param>
     public static T Load<T>(string key, T defaultValue)
     {
-        return Load<T>(key, defaultValue, new ES3Settings() { location =Location.Cache});
+        var setting = new ES3Settings() { location = Location.Cache };
+        if (typeof(T).Name .Contains( "GameDatabaseInstanced"))
+        {
+
+        }
+        else
+        {
+            setting.path = "PokMiscInfo.es";
+            if (!FileExists(setting))
+            {
+                var settingTemplate = new ES3Settings() { location = Location.Cache };
+                var value = Load<T>(key, defaultValue, settingTemplate);
+                if (!value.Equals(defaultValue))
+                {
+                    Save<T>(key, value, setting);
+                    return value;
+                }
+            }
+        }
+        return Load<T>(key, defaultValue, setting);
     }
 
     /// <summary>Loads the value from a file with the given key.</summary>
@@ -734,6 +805,18 @@ public static class ES3
         {
             using (var baseWriter = ES3Writer.Create(stream, settings, false, false))
                 baseWriter.Write(value, ES3TypeMgr.GetOrCreateES3Type(typeof(T)), settings.referenceMode);
+
+            return stream.ToArray();
+        }
+    }
+    public static byte[] Serialize(object value,Type type, ES3Settings settings = null)
+    {
+        if (settings == null) settings = new ES3Settings();
+
+        using (var stream = new System.IO.MemoryStream())
+        {
+            using (var baseWriter = ES3Writer.Create(stream, settings, false, false))
+                baseWriter.Write(value, ES3TypeMgr.GetOrCreateES3Type(type), settings.referenceMode);
 
             return stream.ToArray();
         }

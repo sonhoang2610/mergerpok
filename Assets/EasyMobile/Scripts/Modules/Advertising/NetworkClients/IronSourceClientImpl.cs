@@ -311,9 +311,9 @@ namespace EasyMobile
             GameObject appStateHandler = new GameObject("IronSourceAppStateHandler");
             appStateHandler.hideFlags = HideFlags.HideAndDontSave;
             appStateHandler.AddComponent<Internal.IronSourceAppStateHandler>();
-
+            IronSource.Agent.validateIntegration();
             IronSource.Agent.init(mAdSettings.AppId.Id);
-
+        
             /// Add event callbacks.
             IronSourceEvents.onBannerAdClickedEvent += OnBannerAdClicked;
             IronSourceEvents.onBannerAdLeftApplicationEvent += OnBannerAdLeftApplication;
@@ -336,7 +336,6 @@ namespace EasyMobile
             IronSourceEvents.onRewardedVideoAdShowFailedEvent += OnRewardedVideoAdShowFailed;
             IronSourceEvents.onRewardedVideoAdStartedEvent += OnRewardedVideoAdStarted;
             IronSourceEvents.onRewardedVideoAvailabilityChangedEvent += OnRewardedVideoAvailabilityChanged;
-
             IronSourceEvents.onSegmentReceivedEvent += OnSegmentReceived;
 
             Debug.Log("ironSource client has been initialized.");

@@ -19,6 +19,7 @@ namespace Pok
         public double changeTime;
         public bool pause = false;
         public bool autoRemoveIfToDestiny = false;
+        public bool resetOnStart = false;
         public void pauseTime(bool pBool)
         {
             pause = pBool;
@@ -34,8 +35,8 @@ namespace Pok
                 counterTime = value;
                 //if (changeTime >= 1)
                 //{
-                    onUpdateTime?.Invoke(new TimeEvent() { timeInfo = this });
-                    EzEventManager.TriggerEvent(new TimeEvent() { timeInfo = this });
+                onUpdateTime?.Invoke(new TimeEvent() { timeInfo = this });
+                EzEventManager.TriggerEvent(new TimeEvent() { timeInfo = this });
                 //}
             }
         }
@@ -55,13 +56,12 @@ namespace Pok
     }
     public class TimeCounter : PersistentSingleton<TimeCounter>
     {
-        private static double counterValue;
         private DateTime firstTime;
         private bool getRealTime = false, minimize = false, addTimeAfk = false;
         private System.DateTime lasTimeAFK;
         public TimeCounterInfoCollection timeCollection;
-        public float minimizeTime { get; set; }
-        public static double CounterValue { get => counterValue; set => counterValue = value; }
+        public double minimizeTime { get; set; }
+        public static double CounterValue { get => Time.realtimeSinceStartup; }
 
         public void addTimer(TimeCounterInfo info)
         {
@@ -100,8 +100,7 @@ namespace Pok
         protected override void Awake()
         {
             base.Awake();
-            Application.runInBackground = true;
-            CounterValue = 0;
+            breakTime = 120;
             firstTime = System.DateTime.Now;
             GameManager.addDirtyState("Main");
             StartCoroutine(TimeExtension.GetNetTime((time, error) =>
@@ -122,31 +121,78 @@ namespace Pok
                        }
                        if ((firstTime - lasTimeAFK).TotalSeconds > GameDatabase.Instance.timeAFKShowBoxTreasure)
                        {
-                           MainScene.Instance.showBoxTreasure();
+                           StartCoroutine(timingShowBoxTreaure());
                        }
                    }
                }
+               for(int i = timeCollection.Value.Count -1; i >=0 ; --i)
+               {
+                   timeCollection.Value[i].firstTimeAdd -= timeCollection.Value[i].counterTime > 0? timeCollection.Value[i].counterTime  : 0;
+                   if (timeCollection.Value[i].resetOnStart)
+                   {
+                       GameManager.Instance.Database.removeTime(timeCollection.Value[i]);
+                   }
              
+               }
                GameManager.Instance.Database.checkTimeForAll();
                GameManager.removeDirtyState("Main");
            }));
             StartCoroutine(UpdateLastTimeInGame());
+        }
+
+        public IEnumerator timingShowBoxTreaure()
+        {
+            while (!GameManager.readyForThisState("Main"))
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            yield return new WaitForEndOfFrame();
+            MainScene.Instance.showBoxTreasure();
         }
         public bool getCurrentTime(ref DateTime time)
         {
             time = firstTime.AddSeconds(CounterValue);
             return getRealTime;
         }
+        [System.NonSerialized]
+        public float breakTime = 0;
         private void OnApplicationFocus(bool focus)
         {
             if (!focus)
             {
-                minimizeTime = 0;
+                minimizeTime = CounterValue;
                 minimize = true;
+                breakTime = 120;
             }
             else
             {
+                if (focus)
+                {
+                    if (GameManager.Instance.IsShowingADS)
+                    {
+                        GameManager.Instance.IsShowingADS = false;
+                    }
+                }
+                var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("[Block]SwitchAppADS"));
+                if (time == null && (CounterValue - GameManager.lastTimeShowAds) > 120)
+                {
+                    GameManager.Instance.IsShowingADS = true;
+                    GameManager.Instance.StartCoroutine(GameManager.Instance.delayAction(1, () =>
+                    {
+                        TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]SwitchAppADS", autoRemoveIfToDestiny = true, destinyIfHave = GameManager.Instance.TimeDelayADSSwitchApp, resetOnStart = true });
+                        if (EasyMobile.Advertising.IsInterstitialAdReady())
+                        {
+                            EasyMobile.Advertising.ShowInterstitialAd();
+                        }
+                        else
+                        {
+                            GameManager.Instance.IsShowingADS = false;
+                        }
+                    }));
+                
+                }
                 minimize = false;
+                breakTime = 120;
             }
         }
         public IEnumerator UpdateLastTimeInGame()
@@ -171,9 +217,12 @@ namespace Pok
         private void LateUpdate()
         {
             if (!GameManager.readyForThisState("Main")) return;
-            CounterValue += Time.deltaTime;
             if (!minimize)
             {
+                if (breakTime > 0)
+                {
+                    breakTime -= Time.deltaTime;
+                }
                 for (int i = 0; i < timeCollection.Count; ++i)
                 {
                     var time = timeCollection[i];
@@ -186,10 +235,6 @@ namespace Pok
                         time.firstTimeAdd = CounterValue - time.CounterTime;
                     }
                 }
-            }
-            else
-            {
-                minimizeTime += Time.deltaTime;
             }
         }
     }

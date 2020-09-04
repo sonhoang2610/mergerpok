@@ -161,11 +161,17 @@ public class ES3File
         unencryptedSettings.compressionType = ES3.CompressionType.None;
         cache[key] = new ES3Data(ES3TypeMgr.GetOrCreateES3Type(typeof(T)), ES3.Serialize(value, unencryptedSettings));
 	}
-
-	/// <summary>Merges the data specified by the bytes parameter into this ES3File.</summary>
-	/// <param name="bytes">The bytes we want to merge with this ES3File.</param>
-	/// <param name="settings">The settings we want to use to override the default settings.</param>
-	public void SaveRaw(byte[] bytes, ES3Settings settings=null)
+    public void Save(string key, object value,Type type)
+    {
+        var unencryptedSettings = (ES3Settings)settings.Clone();
+        unencryptedSettings.encryptionType = ES3.EncryptionType.None;
+        unencryptedSettings.compressionType = ES3.CompressionType.None;
+        cache[key] = new ES3Data(ES3TypeMgr.GetOrCreateES3Type(type), ES3.Serialize(value,type, unencryptedSettings));
+    }
+    /// <summary>Merges the data specified by the bytes parameter into this ES3File.</summary>
+    /// <param name="bytes">The bytes we want to merge with this ES3File.</param>
+    /// <param name="settings">The settings we want to use to override the default settings.</param>
+    public void SaveRaw(byte[] bytes, ES3Settings settings=null)
 	{
         if (settings == null)
             settings = new ES3Settings();
@@ -386,7 +392,10 @@ public class ES3File
 
         ES3File cachedFile;
         if (!cachedFiles.TryGetValue(settings.path, out cachedFile))
-            throw new FileNotFoundException("The file '"+ settings.path +"' could not be stored because it could not be found in the cache.");
+        {
+            return;
+        }
+           // throw new FileNotFoundException("The file '"+ settings.path +"' could not be stored because it could not be found in the cache.");
         cachedFile.Sync(settings);
     }
 

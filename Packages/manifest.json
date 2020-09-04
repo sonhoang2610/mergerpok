@@ -2,6 +2,7 @@
   "dependencies": {
     "com.google.firebase.analytics": "6.15.2",
     "com.google.firebase.app": "6.15.2",
+    "com.google.firebase.crashlytics": "6.15.2",
     "com.google.firebase.messaging": "6.15.2",
     "com.google.firebase.remote-config": "6.15.2",
     "com.unity.2d.animation": "3.2.2",

@@ -33,11 +33,12 @@ namespace Pok
 
         public void show(string leader)
         {
+            container.show();
             StartCoroutine(showRate());
-            var zoneInfo = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
+            var zoneInfo = GameManager.Instance.Database.zoneInfos.Find(x => x.Id == GameManager.Instance.ZoneChoosed);
             List<MapStatusInZoneInfo> maps = new List<MapStatusInZoneInfo>();
             var currentMap = GameDatabase.Instance.treeCreature.Find(x => x.creatureLeader.ItemID == leader);
-            zoneInfo.leaderSelected.Add(currentMap.map.ItemID, leader);
+            zoneInfo.addLeader(currentMap.map.ItemID, leader);
             for (int i = 0; i < GameDatabase.Instance.MapCollection.Count; ++i)
             {
                 maps.Add(new MapStatusInZoneInfo()
@@ -51,7 +52,7 @@ namespace Pok
             nameEra.text = currentMap.className.Value;
             boxMap.executeInfos(maps.ToArray());
             currentMap.map.getModelForState((o) => { attachMent.transform.DestroyChildren();  attachMent.AddChild(o); },"[Preview]"+currentMap.creatureLeader.ItemID);
-            container.show();
+       
         }
         // Start is called before the first frame update
         void Start()

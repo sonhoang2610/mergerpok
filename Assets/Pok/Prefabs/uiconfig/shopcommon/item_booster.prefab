@@ -477,6 +477,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info:
     isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: 
+      forAllZone: 0
+    limitUpgrade: -1
     itemSell: {fileID: 0}
     typeIncrease: 0
     paymentWays:
@@ -493,6 +499,7 @@ MonoBehaviour:
   icon: {fileID: 5750935698050809130}
   nameItem: {fileID: 5750935698045991682}
   des: {fileID: 5750935698584078869}
+  bonuslabel: {fileID: 0}
   exchanges:
   - container: {fileID: 5750935698658570511}
     icon: {fileID: 5750935697886970343}
@@ -810,10 +817,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweenTarget: {fileID: 0}
-  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
-  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
-  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  tweenTarget: {fileID: 5750935698658570511}
+  hover: {r: 0.7960785, g: 0.7960785, b: 0.7960785, a: 1}
+  pressed: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  disabledColor: {r: 1, g: 1, b: 1, a: 1}
   duration: 0.2
   dragHighlight: 0
   hoverSprite: 

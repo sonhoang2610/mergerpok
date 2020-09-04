@@ -47,8 +47,8 @@ namespace Pok
             btnEvlotion.gameObject.SetActive(false);
             if (GameManager.Instance.ZoneChoosed != "Zone1")
             {
-               var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
-                if(!string.IsNullOrEmpty(zone.curentUnlock) && int.Parse( zone.curentUnlock.Remove(0,3)) < 6 && !ES3.Load<bool>("Evolution" + GameManager.Instance.ZoneChoosed,false))
+               var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.Id == GameManager.Instance.ZoneChoosed);
+                if(!string.IsNullOrEmpty(zone.CurentUnlock) && int.Parse( zone.CurentUnlock.Remove(0,3)) < 6 && !ES3.Load<bool>("Evolution" + GameManager.Instance.ZoneChoosed,false))
                 {
                     btnEvlotion.gameObject.SetActive(true);
 
@@ -59,56 +59,74 @@ namespace Pok
 
         public void checkExistMultiplyBonus()
         {
-           var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("[MultiplyBonus]"));
-            if(time != null)
+           var times = TimeCounter.Instance.timeCollection.Value.FindAll(x => x.id.Contains("[MultiplyBonus]"));
+            foreach (var time in times)
             {
-                var strs = time.id.Remove(0, ("[MultiplyBonus]").Length).Split('/');
-                var item = GameDatabase.Instance.getItemInventory(strs[0]);
-                var creature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == strs[1]);
-                if (item!= null)
+                if (time != null)
                 {
-                    item.getModelForState((o) => {
-
-                       var timeObject=  attachMentPackageMultiplyBonus.AddChild(o);
-                        timeObject.GetComponent<TimeListener>().listenID = "[MultiplyBonus]" +item.ItemID + "/" + creature.ItemID;
-                        timeObject.transform.SetSiblingIndex(0);
-                        timeObject.GetComponent<TimeListener>().onTimeOut.AddListener(() =>
+                    var strs = time.id.Remove(0, ("[MultiplyBonus]").Length).Split('/');
+                    var item = GameDatabase.Instance.getItemInventory(strs[0]);
+                    var creature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == strs[1]);
+            
+                    if (item != null && strs.Length == 3 && GameManager.Instance.ZoneChoosed == strs[2])
+                    {
+                        var findObject = attachMentPackageMultiplyBonus.transform.Find("[MultiplyBonus]" + item.ItemID + "/" + creature.ItemID + "/" + GameManager.Instance.ZoneChoosed);
+                        if (findObject)
                         {
-                            timeObject.gameObject.SetActive(false);
-                            Destroy(timeObject);
+                            continue;
+                        }
+                        item.getModelForState((o) =>
+                        {
+
+                            var timeObject = attachMentPackageMultiplyBonus.AddChild(o);
+                            timeObject.GetComponent<TimeListener>().listenID = "[MultiplyBonus]" + item.ItemID + "/" + creature.ItemID + "/" + GameManager.Instance.ZoneChoosed;
+                            timeObject.transform.SetSiblingIndex(0);
+                            timeObject.GetComponent<TimeListener>().onTimeOut.AddListener(() =>
+                            {
+                                timeObject.gameObject.SetActive(false);
+                                Destroy(timeObject);
+                                attachMentPackageMultiplyBonus.GetComponent<UIGrid>().Reposition();
+                            });
+                            timeObject.GetComponent<UIButton>().onClick.Add(new EventDelegate(() =>
+                            {
+                                ShopItemInfo itemPackage = GameDatabase.Instance.packageMultiplyBonus1;
+                                if (GameDatabase.Instance.packageMultiplyBonus2.itemSell == item)
+                                {
+                                    itemPackage = GameDatabase.Instance.packageMultiplyBonus2;
+                                }
+
+                                boxMultiplyBonus.showData(itemPackage, creature);
+                            }));
                             attachMentPackageMultiplyBonus.GetComponent<UIGrid>().Reposition();
                         });
-                        timeObject.GetComponent<UIButton>().onClick.Add(new EventDelegate(() =>
-                        {
-                            ShopItemInfo itemPackage = GameDatabase.Instance.packageMultiplyBonus1;
-                            if (GameDatabase.Instance.packageMultiplyBonus2.itemSell == item)
-                            {
-                                itemPackage = GameDatabase.Instance.packageMultiplyBonus2;
-                            }
-        
-                            boxMultiplyBonus.showData(itemPackage, creature);
-                        }));
-                        attachMentPackageMultiplyBonus.GetComponent<UIGrid>().Reposition();
-                    });
+                    }
                 }
             }
         }
         public void checkExistPackage()
         {
-            var times = TimeCounter.Instance.timeCollection.Value.FindAll(x => x.id.Contains("[Package]"));
+        
+            var times = TimeCounter.Instance.timeCollection.Value.FindAll(x => x.id.Contains("[Package]") && x.id.Contains(GameManager.Instance.ZoneChoosed));
             foreach (var time in times)
             {
                 if (time != null)
                 {
                     var strs = time.id.Remove(0, ("[Package]").Length).Split('/');
                     var item = GameDatabase.Instance.getItemInventory(strs[0]);
+               
                     if (item != null)
                     {
+                        var findObject = attachMentPackageMultiplyBonus.transform.Find("[Package]" + item.ItemID + "/" + GameManager.Instance.ZoneChoosed);
+                        if (findObject)
+                        {
+                            continue;
+                        }
                         item.getModelForState((o) =>
                         {
 
                             var timeObject = attachMentPackageMultiplyBonus.AddChild(o);
-                            timeObject.GetComponent<TimeListener>().listenID = "[Package]" + item.ItemID;
+                            timeObject.name = "[Package]" + item.ItemID + "/" + GameManager.Instance.ZoneChoosed;
+                            timeObject.GetComponent<TimeListener>().listenID = "[Package]" + item.ItemID+"/"+ GameManager.Instance.ZoneChoosed;
                             timeObject.transform.SetSiblingIndex(0);
                             timeObject.GetComponent<TimeListener>().onTimeOut.AddListener(() =>
                             {
@@ -150,7 +168,11 @@ namespace Pok
             if (active)
             {
                 markActiveObject[pObject].Remove(id);
-                pObject.gameObject.SetActive(markActiveObject[pObject].Count == 0);
+                var activeBool = markActiveObject[pObject].Count == 0;
+                if (activeBool != pObject.gameObject.activeSelf)
+                {
+                    pObject.gameObject.SetActive(markActiveObject[pObject].Count == 0);
+                }
             }
             else
             {
@@ -158,11 +180,21 @@ namespace Pok
                 {
                     markActiveObject[pObject].Add(id);
                 }
-                pObject.gameObject.SetActive(false);
+                if (pObject.gameObject.activeSelf)
+                {
+                    pObject.gameObject.SetActive(false);
+                }
             }
         }
         
-        
+        public void hack1()
+        {
+            GameManager.Instance.hack();
+        }
+        public void hack2()
+        {
+            GameManager.Instance.hack1();
+        }
         public void showBoxEvo(CreatureItem from,CreatureItem to,CreatureInstanceSaved id)
         {
             var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("EvolutionPok"));
@@ -170,7 +202,7 @@ namespace Pok
             {
                 return;
             }
-            TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]EvolutionPok", autoRemoveIfToDestiny = true, destinyIfHave = GameManager.Instance.TimeDelayBonusEvolution });
+            TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]EvolutionPok", autoRemoveIfToDestiny = true, destinyIfHave = GameManager.Instance.TimeDelayBonusEvolution, resetOnStart = true });
             boxEvoPok.showBoxEvo(from, to,id);
         }
         public void showBoxRewardADS()

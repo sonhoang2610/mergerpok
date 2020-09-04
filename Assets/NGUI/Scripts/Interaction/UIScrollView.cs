@@ -658,12 +658,26 @@ public class UIScrollView : MonoBehaviour
 			SetDragAmount(pv.x, 1f - pv.y, true);
 		}
 	}
+    public void ResetPosition1()
+    {
+        if (NGUITools.GetActive(this))
+        {
+            // Invalidate the bounds
+            mCalculatedBounds = false;
+            Vector2 pv = NGUIMath.GetPivotOffset(contentPivot);
 
-	/// <summary>
-	/// Call this function after you adjust the scroll view's bounds if you want it to maintain the current scrolled position
-	/// </summary>
+            // First move the position back to where it would be if the scroll bars got reset to zero
+            SetDragAmount(pv.x, pv.y, false);
 
-	public void UpdatePosition ()
+            // Next move the clipping area back and update the scroll bars
+            SetDragAmount(pv.x, pv.y, true);
+        }
+    }
+    /// <summary>
+    /// Call this function after you adjust the scroll view's bounds if you want it to maintain the current scrolled position
+    /// </summary>
+
+    public void UpdatePosition ()
 	{
 		if (!mIgnoreCallbacks && (horizontalScrollBar != null || verticalScrollBar != null))
 		{

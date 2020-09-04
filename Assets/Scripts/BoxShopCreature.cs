@@ -12,9 +12,18 @@ namespace Pok
         public void show()
         {
             //  executeInfos(GameDatabase.Instance.ZoneCollection.ToArray());
-            reloadData();
-            _scrollView?.ResetPosition();
             container.show();
+            reloadData();
+            if(getActiveItems().Count > 5)
+            {
+                _scrollView?.ResetPosition1();
+            }
+            else
+            {
+                _scrollView?.ResetPosition();
+            }
+           
+            
         }
 
         public void reloadData()
@@ -35,7 +44,7 @@ namespace Pok
                 }
                 var element = tempList[i];
                 tempList.RemoveAt(i);
-                if (GameManager.Instance.Database.creatureInfos.Find(x => x.id == element.ItemID).isUnLock)
+                if (GameManager.Instance.Database.creatureInfos.Find(x => x.id == element.ItemID).IsUnLock)
                 {
                     removeIndex++;
                 }
@@ -49,25 +58,51 @@ namespace Pok
             }
             executeInfos(shopElements.ToArray());
           var itemActive =  items.FindAll(x => x.gameObject.activeSelf);
-           itemActive.Sort((a, b) => { return System.Array.IndexOf(datas, a).CompareTo(System.Array.IndexOf(datas, b)); });
+          // itemActive.Sort((a, b) => { return System.Array.IndexOf(datas, a._info).CompareTo(System.Array.IndexOf(datas, b._info)); });
            for (int i  = 0; i < itemActive.Count; ++i)
             {
-                itemActive[i].showBtnAds(i == itemActive.Count - 1);
+                itemActive[i].showBtnAds(i == itemActive.Count - 1 && GameManager.Instance.isRewardADSReady(""));
             }
         }
         int cacheWayBuy = 0;
         public void buyWay1(object data)
         {
-            buy(data, 0);
+            var creature = ((CreatureItem)((ShopItemInfo)data).itemSell);
+            var mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => creature.parentMap && x.id == creature.parentMap.ItemID);
+            var exists = GameManager.Instance.Database.getAllCreatureInstanceInAdress(GameManager.Instance.ZoneChoosed, mapParent.id);
+            if (exists.Count >= 16)
+            {
+                HUDManager.Instance.showBoxFullSlot();
+                return;
+            }
             cacheWayBuy = 0;
+            buy(data, 0);
+  
         }
         public void buyWay2(object data)
         {
-            buy(data, 1);
+            var creature = ((CreatureItem)((ShopItemInfo)data).itemSell);
+            var mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => creature.parentMap && x.id == creature.parentMap.ItemID);
+            var exists = GameManager.Instance.Database.getAllCreatureInstanceInAdress(GameManager.Instance.ZoneChoosed, mapParent.id);
+            if (exists.Count >= 16)
+            {
+                HUDManager.Instance.showBoxFullSlot();
+                return;
+            }
             cacheWayBuy = 1;
+            buy(data, 1);
+         
         }
         public void buyWay3(object data)
         {
+            var creature = ((CreatureItem)((ShopItemInfo)data).itemSell);
+            var mapParent = GameManager.Instance.Database.worldData.zones.Find(x => x.id == GameManager.Instance.ZoneChoosed).maps.Find(x => creature.parentMap && x.id == creature.parentMap.ItemID);
+            var exists = GameManager.Instance.Database.getAllCreatureInstanceInAdress(GameManager.Instance.ZoneChoosed, mapParent.id);
+            if (exists.Count >= 16)
+            {
+                HUDManager.Instance.showBoxFullSlot();
+                return;
+            }
             cacheWayBuy = 2;
             if (GameManager.Instance.isRewardADSReady("BuyCreature"))
             {
@@ -93,11 +128,13 @@ namespace Pok
             if (exists.Count >= 16)
             {
                 HUDManager.Instance.showBoxFullSlot();
+                return;
             }
             var creatures = GameManager.Instance.Database.getAllInfoCreatureInAddress(GameManager.Instance.ZoneChoosed, mapParent.id);
             if (cacheWayBuy < 2)
             {
-                System.Array.Find(creatures, x => x.id == creature.ItemID).boughtNumberVariant[cacheWayBuy]++;
+                System.Array.Find(creatures, x => x.id == creature.ItemID).BoughtNumberVariant[GameManager.Instance.ZoneChoosed][cacheWayBuy]++;
+                ES3.markDirty(SaveDataConstraint.WORLD_INFO);
             }
             GameManager.Instance.GenerateID++;
             GameManager.Instance.Database.worldData.addCreature(newCreature, GameManager.Instance.ZoneChoosed);
@@ -108,7 +145,7 @@ namespace Pok
         {
             var shopitem = ((ShopItemInfo)data);
             var exchanges = shopitem.getCurrentPrice()[index].exchangeItems;
-            var numberBought = index == 2 ? 0 : GameManager.Instance.Database.creatureInfos.Find(x => x.id == shopitem.itemSell.ItemID).boughtNumberVariant[index];
+            var numberBought = index == 2 ? 0 : GameManager.Instance.Database.creatureInfos.Find(x => x.id == shopitem.itemSell.ItemID).BoughtNumberVariant[GameManager.Instance.ZoneChoosed][index];
             var quantity = PokUltis.calculateCreaturePrice(index, numberBought, (CreatureItem)shopitem.itemSell);
             for (int i = 0; i < exchanges.Length; ++i)
             {

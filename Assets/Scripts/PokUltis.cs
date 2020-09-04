@@ -7,8 +7,23 @@ using DG.Tweening;
 
 namespace Pok
 {
+    //public static class PokConstraint
+    //{
+    //    public static string[] AnotherDataKey = new string[]
+    //    {
+    //        "WatchADSMission","BlockADS","FirstUnlockPok6",
+    //    };
+    //}
     public static class PokUltis
     {
+        public static void KillTween(string id)
+        {
+            if (DG.Tweening.DOTween.IsTweening(id))
+            {
+                DG.Tweening.DOTween.Kill(id,false);
+            }
+          
+        }
         public static string calculateCreaturePrice(int indexWay,int numberBought,CreatureItem creauture)
         {
             if (indexWay == 0)
@@ -142,7 +157,7 @@ namespace Pok
             }
             var exist = GameManager.Instance.Database.creatureInfos.Find(x => x.id == egg + GameManager.Instance.ZoneChoosed);
             if (exist != null)
-                exist.level = (itemSlot.CurrentLevel);
+                exist.Level = (itemSlot.CurrentLevel);
             var creautres = GameManager.Instance.Database.getCreatureExist(egg + GameManager.Instance.ZoneChoosed, GameManager.Instance.ZoneChoosed);
             var creatureOriginal = GameDatabase.Instance.getItemInventory(exist.id);
             var id = ((PackageCreatureObject)creatureOriginal).creatureExtra[itemSlot.CurrentLevel].ItemID;
@@ -252,16 +267,12 @@ namespace Pok
         {
             get
             {
-                var setting = new ES3Settings();
-                setting.location = ES3.Location.Cache;
-                return ES3.Load<int>("MixingTime", 0, setting);
+                return ES3.Load<int>("MixingTime", 0);
             }
 
             set
             {
-                var setting = new ES3Settings();
-                setting.location = ES3.Location.Cache;
-                ES3.Save<int>("MixingTime", value, setting);
+                ES3.Save<int>("MixingTime", value);
             }
         }
 
@@ -292,9 +303,9 @@ namespace Pok
         public void OnEzEvent(AddCreatureEvent eventType)
         {
      
-            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
-            if (string.IsNullOrEmpty(zone.curentUnlock)) return;
-            string index = zone.curentUnlock.Replace("Pok", "");
+            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.Id == GameManager.Instance.ZoneChoosed);
+            if (string.IsNullOrEmpty(zone.CurentUnlock)) return;
+            string index =string.IsNullOrEmpty(zone.CurentUnlock) ? "1" : zone.CurentUnlock.Replace("Pok", "");
             if (int.Parse( index) < 8)
             {
                 return;
@@ -347,16 +358,18 @@ namespace Pok
 #if UNITY_EDITOR
         [UnityEditor.Callbacks.DidReloadScripts]
 #endif
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
         static void AutoRegister()
         {
             if (!ItemBoosterObject.boosterType.ContainsKey("NoAds"))
             {
+                Debug.Log("register Type" + nameof(NoAds));
                 ItemBoosterObject.boosterType.Add("NoAds", typeof(NoAds));
             }
         }
         public void Excute(Dictionary<string, object> blackBoard)
         {
-            ES3.Save("BlockADS", ES3.Load("BloackAds",0) + 1);
+            ES3.Save("BlockADS", ES3.Load("BlockADS", 0) + 1);
         }
 
         public string getContent(Dictionary<string, object> blackBoard)
@@ -369,10 +382,12 @@ namespace Pok
 #if UNITY_EDITOR
         [UnityEditor.Callbacks.DidReloadScripts]
 #endif
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
         static void AutoRegister()
         {
             if (!ItemBoosterObject.boosterType.ContainsKey(nameof(SuperInCome)))
             {
+                Debug.Log("register Type" + nameof(SuperInCome));
                 ItemBoosterObject.boosterType.Add(nameof(SuperInCome), typeof(SuperInCome));
             }
         }
@@ -407,10 +422,12 @@ namespace Pok
 #if UNITY_EDITOR
         [UnityEditor.Callbacks.DidReloadScripts]
 #endif
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
         static void AutoRegister()
         {
             if (!ItemBoosterObject.boosterType.ContainsKey(nameof(DiscountCreature)))
             {
+                Debug.Log("register Type"+ nameof(DiscountCreature));
                 ItemBoosterObject.boosterType.Add(nameof(DiscountCreature), typeof(DiscountCreature));
             }
         }
@@ -431,10 +448,12 @@ namespace Pok
 #if UNITY_EDITOR
         [UnityEditor.Callbacks.DidReloadScripts]
 #endif
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
         static void AutoRegister()
         {
             if (!ItemBoosterObject.boosterType.ContainsKey(nameof(ReduceTimeEgg)))
             {
+                Debug.Log("register Type" + nameof(ReduceTimeEgg));
                 ItemBoosterObject.boosterType.Add(nameof(ReduceTimeEgg), typeof(ReduceTimeEgg));
             }
         }

@@ -123,6 +123,9 @@ namespace Pok
         {
 
             base.Awake();
+#if !UNITY_EDITOR
+          //  Debug.unityLogger.logEnabled = false;
+#endif
             if (!FB.IsInitialized)
             {
                 FB.Init();
@@ -143,6 +146,7 @@ namespace Pok
                     defaults.Add("time_bonus_evo", "300,1500");
                     defaults.Add("time_reward_ads", "300,1500");
                     defaults.Add("time_delay_ads", "200,230,240");
+                    defaults.Add("time_switch_app", "300,1500");
                     Firebase.RemoteConfig.FirebaseRemoteConfig.SetDefaults(defaults);
                     // Set a flag here to indicate whether Firebase is ready to use by your app.
                 }
@@ -154,8 +158,7 @@ namespace Pok
                 }
             });
             Application.targetFrameRate = 60;
-            Application.backgroundLoadingPriority = ThreadPriority.Low;
-            Application.runInBackground = true;
+            Application.backgroundLoadingPriority = ThreadPriority.Normal;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
            
         }
@@ -168,9 +171,27 @@ namespace Pok
         public float PercentDatabase { get; set; }
         public float PercentScene { get; set; }
         public float PercentResource { get; set; }
+
+        public List<AudioClip> loadingData = new List<AudioClip>();
         Tween tweenProcess;
+
+        public float processing
+        {
+            get
+            {
+                return PercentDatabase + PercentResource + PercentScene;
+            }
+        }
+
+        public int block { get; set; }
         private void Update()
         {
+            for(int i= loadingData.Count -1; i >=0; -- i) { 
+                if(loadingData[i].loadState == AudioDataLoadState.Loaded)
+                {
+                    loadingData.RemoveAt(i);
+                }
+            }
             if (isStart)
             {
                 if (loadResource)
@@ -222,12 +243,13 @@ namespace Pok
                             if(a.loadState != AudioDataLoadState.Loaded && a.loadState != AudioDataLoadState.Loading)
                             {
                                 a.LoadAudioData();
+                                loadingData.Add(a);
                             }
                         });
                         async = null;   
                     }
-                }
-                if(PercentDatabase + PercentResource + PercentResource >= 1)
+                }   
+                if(PercentDatabase + PercentResource + PercentScene >= 1 && loadingData.Count == 0 && block <= 0)
                 {
                     GameManager.removeDirtyState("Main");
                     loadResource = false;

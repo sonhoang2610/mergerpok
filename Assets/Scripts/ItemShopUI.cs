@@ -33,7 +33,7 @@ namespace Pok
             var payments = pInfo.getCurrentPrice();
             for(int i = 0; i < payments.Length; ++i)
             {
-                var numberBought = GameManager.Instance.Database.creatureInfos.Find(x => x.id == pInfo.itemSell.ItemID).boughtNumberVariant[i];
+                var numberBought = GameManager.Instance.Database.creatureInfos.Find(x => x.id == pInfo.itemSell.ItemID).BoughtNumberVariant[GameManager.Instance.ZoneChoosed][i];
                 price[i].text = PokUltis.calculateCreaturePrice(i, numberBought, (CreatureItem)pInfo.itemSell).ToKMBTA();
                 var itemChange = iconExchange[i];
                 payments[i].exchangeItems[0].item.getSpriteForState((o) => {
@@ -43,9 +43,40 @@ namespace Pok
 
             }
         }
+        protected Coroutine checkPanel;
         public void showBtnAds(bool pBool)
         {
             btnAds.gameObject.SetActive(pBool);
+            if (pBool)
+            {
+                if(checkPanel != null)
+                {
+                    StopCoroutine(checkPanel);
+                    checkPanel = null;
+                }
+                checkPanel = StartCoroutine(checkPanelInit(btnAds.gameObject));
+            }
+        }
+        public IEnumerator checkPanelInit(GameObject widget)
+        {
+            int index = 0;
+            bool loop = false;
+            do
+            {
+                loop = false;
+                var widgets = widget.GetComponentsInChildren<UIWidget>();
+                for (int i = 0; i < widgets.Length; ++i)
+                {
+                    if (!widgets[i].panel)
+                    {
+                        loop = true;
+                    }
+                }
+                yield return new WaitForEndOfFrame();
+                index++;
+            } while (loop && index< 100);
+            NGUITools.BringForward(widget);
+            checkPanel = null;
         }
     }
 }

@@ -92,8 +92,18 @@ public static class AddressableSupport
         else
         {
             var pAsync = loader.LoadAssetAsync<T>();
+            bool block = false;
+            if(Pok.SceneManager.InstanceRaw && Pok.SceneManager.Instance.processing <= 1 && Pok.SceneManager.Instance.block > 0)
+            {
+                Pok.SceneManager.Instance.block++;
+                block = true;
+            }
             pAsync.Completed += delegate (AsyncOperationHandle<T> reusltAsync)
             {
+                if (block)
+                {
+                    Pok.SceneManager.Instance.block--;
+                }
                 result.Invoke(reusltAsync.Result);
             };
         }
@@ -571,7 +581,7 @@ public static class objExtend
     }
     public static string clearDot(this string v)
     {
-        string str = v;
+        string str = v.clearWhiteSpace();
         int charEnd = 0;
         bool charShortcut = false;
         if (str.Contains('.'))

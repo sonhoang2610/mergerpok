@@ -982,9 +982,10 @@ static public class NGUITools
                     if (!w.panel)
                     {
                         panelFuture = w.gameObject.GetComponentInParents<UIPanel>();
+                        w.panel = panelFuture;
                     }
 
-                    if (w.panel != panel && (!panelFuture || panelFuture != panel)) continue;
+                    if (w.panel != panel) continue;
 #if UNITY_EDITOR
                     RegisterUndo(w, "Depth Change");
 #endif
@@ -1065,14 +1066,14 @@ static public class NGUITools
 
 	static public void NormalizeWidgetDepths (GameObject go)
 	{
-		NormalizeWidgetDepths(go.GetComponentsInChildren<UIWidget>(true));
+		NormalizeWidgetDepths(go.GetComponentsInChildren<UIWidget>(true),go);
 	}
 
 	/// <summary>
 	/// Normalize the depths of all the widgets in the scene, making them start from 0 and remain in order.
 	/// </summary>
 
-	static public void NormalizeWidgetDepths (UIWidget[] list)
+	static public void NormalizeWidgetDepths (UIWidget[] list,GameObject rootObject= null)
 	{
 		int size = list.Length;
 
@@ -1086,6 +1087,10 @@ static public class NGUITools
 			for (int i = 0; i < size; ++i)
 			{
 				UIWidget w = list[i];
+                if(w.panel && rootObject && rootObject != w.panel.gameObject)
+                {
+                    continue;
+                }
 
 				if (w.depth == current)
 				{

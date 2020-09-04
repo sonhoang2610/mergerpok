@@ -229,7 +229,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3023
+  startingRenderQueue: 3006
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3039
+  startingRenderQueue: 3006
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -383,8 +383,12 @@ MonoBehaviour:
   currentMap: {fileID: 11400000, guid: c34df40a6f439b348b92dddf36ac008e, type: 2}
   coinJump: {fileID: 527534379699423093, guid: 13deb32437bf31d46a0b130cb19a2391, type: 3}
   compareRenderQueue: {fileID: 5847415196249681933}
+  objectInMap: []
   creatureAlive: []
   creatureAnimAble: []
+  effectPreload:
+    m_AssetGUID: 94bae1e1264071842922de8733b098d6
+    m_SubObjectName: 
 --- !u!114 &8951894282174930685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +440,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3006
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0

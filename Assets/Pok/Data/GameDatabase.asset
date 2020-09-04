@@ -413,54 +413,54 @@ MonoBehaviour:
   wheelMainConfig:
   - itemType: 0
     percentRoll:
-    - 0.4
-    - 0.4
     - 0.2
+    - 0.4
+    - 0.4
     icon:
       m_AssetGUID: 
       m_SubObjectName: 
     change: 0.1
   - itemType: 1
     percentRoll:
-    - 0.4
-    - 0.4
     - 0.2
+    - 0.4
+    - 0.4
     icon:
       m_AssetGUID: 
       m_SubObjectName: 
     change: 0.1
   - itemType: 4
     percentRoll:
-    - 0.4
-    - 0.4
     - 0.2
+    - 0.4
+    - 0.4
     icon:
       m_AssetGUID: 6484a3ce4dfcf41488768c397c40bca0
       m_SubObjectName: Pack_Gems_Handful
     change: 0.15
   - itemType: 2
     percentRoll:
-    - 0.4
-    - 0.4
     - 0.2
+    - 0.4
+    - 0.4
     icon:
       m_AssetGUID: 50b1910da57b5ca4aaa26f553db269d3
       m_SubObjectName: Pack_Gold_Sack
     change: 0.35
   - itemType: 3
     percentRoll:
-    - 0.4
-    - 0.4
     - 0.2
+    - 0.4
+    - 0.4
     icon:
       m_AssetGUID: c2c40b7e3905b014bb5e1e11283dab47
       m_SubObjectName: Pack_Gold_Mountain
     change: 0.15
   - itemType: 5
     percentRoll:
-    - 0.4
-    - 0.4
     - 0.2
+    - 0.4
+    - 0.4
     icon:
       m_AssetGUID: a37e1f860a9728f488524bf24f2e996a
       m_SubObjectName: SlotIconSpin

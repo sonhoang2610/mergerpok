@@ -92,6 +92,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info:
     isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: 
+      forAllZone: 0
     limitUpgrade: -1
     itemSell: {fileID: 0}
     typeIncrease: 0
@@ -109,6 +114,7 @@ MonoBehaviour:
   icon: {fileID: 6790663160367154351}
   nameItem: {fileID: 4826658811039998161}
   des: {fileID: 4043574183678588329}
+  bonuslabel: {fileID: 0}
   exchanges:
   - container: {fileID: 3746841028916420278}
     icon: {fileID: 9170670228612966367}
@@ -180,7 +186,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 149
   mHeight: 162
-  mDepth: 3
+  mDepth: 10
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
@@ -323,10 +329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweenTarget: {fileID: 0}
-  hover: {r: 0.88235295, g: 0.78431374, b: 0.5882353, a: 1}
-  pressed: {r: 0.7176471, g: 0.6392157, b: 0.48235294, a: 1}
-  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  tweenTarget: {fileID: 3746841028916420278}
+  hover: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  pressed: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  disabledColor: {r: 1, g: 1, b: 1, a: 1}
   duration: 0.2
   dragHighlight: 0
   hoverSprite: 
@@ -492,14 +498,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.9058824, g: 0.4431373, b: 0.25490198, a: 1}
   mPivot: 3
-  mWidth: 166
+  mWidth: 168
   mHeight: 32
   mDepth: 3
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5.1875
+  aspectRatio: 5.25
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 97239e1bd8ed1694bac928f76283b58b, type: 3}
   mFont: {fileID: 0}

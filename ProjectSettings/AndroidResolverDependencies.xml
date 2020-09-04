@@ -22,9 +22,11 @@
     <package>com.google.firebase:firebase-common:19.3.0</package>
     <package>com.google.firebase:firebase-config:19.1.4</package>
     <package>com.google.firebase:firebase-config-unity:6.15.2</package>
+    <package>com.google.firebase:firebase-crashlytics:17.0.0</package>
+    <package>com.google.firebase:firebase-crashlytics-unity:6.15.2</package>
     <package>com.google.firebase:firebase-messaging:20.1.7</package>
     <package>com.google.firebase:firebase-messaging-unity:6.15.2</package>
-    <package>com.ironsource.sdk:mediationsdk:6.18.0</package>
+    <package>com.ironsource.sdk:mediationsdk:7.0.0</package>
     <package>com.parse.bolts:bolts-android:1.4.0</package>
     <package>com.sglib.easymobile:easy-mobile:1.+</package>
   </packages>
@@ -77,8 +79,8 @@
     <file>Assets/Plugins/Android/com.facebook.android.facebook-login-7.1.0.aar</file>
     <file>Assets/Plugins/Android/com.facebook.android.facebook-share-7.1.0.aar</file>
     <file>Assets/Plugins/Android/com.google.android.datatransport.transport-api-2.2.0.aar</file>
-    <file>Assets/Plugins/Android/com.google.android.datatransport.transport-backend-cct-2.2.0.aar</file>
-    <file>Assets/Plugins/Android/com.google.android.datatransport.transport-runtime-2.2.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.datatransport.transport-backend-cct-2.2.1.aar</file>
+    <file>Assets/Plugins/Android/com.google.android.datatransport.transport-runtime-2.2.1.aar</file>
     <file>Assets/Plugins/Android/com.google.android.gms.play-services-ads-identifier-17.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.android.gms.play-services-base-17.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.android.gms.play-services-basement-17.2.1.aar</file>
@@ -91,7 +93,7 @@
     <file>Assets/Plugins/Android/com.google.android.gms.play-services-stats-17.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.android.gms.play-services-tasks-17.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.auto.value.auto-value-annotations-1.6.5.jar</file>
-    <file>Assets/Plugins/Android/com.google.dagger.dagger-2.24.jar</file>
+    <file>Assets/Plugins/Android/com.google.dagger.dagger-2.27.jar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-abt-19.0.1.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-analytics-17.4.1.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-analytics-unity-6.15.2.aar</file>
@@ -100,8 +102,10 @@
     <file>Assets/Plugins/Android/com.google.firebase.firebase-components-16.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-config-19.1.4.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-config-unity-6.15.2.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-crashlytics-17.0.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-crashlytics-unity-6.15.2.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-datatransport-17.0.3.aar</file>
-    <file>Assets/Plugins/Android/com.google.firebase.firebase-encoders-json-16.0.0.aar</file>
+    <file>Assets/Plugins/Android/com.google.firebase.firebase-encoders-json-16.1.0.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-iid-20.1.7.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-iid-interop-17.0.0.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-installations-16.3.0.aar</file>
@@ -111,11 +115,13 @@
     <file>Assets/Plugins/Android/com.google.firebase.firebase-messaging-unity-6.15.2.aar</file>
     <file>Assets/Plugins/Android/com.google.protobuf.protobuf-lite-3.0.1.jar</file>
     <file>Assets/Plugins/Android/com.google.zxing.core-3.3.3.jar</file>
-    <file>Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-6.18.0.aar</file>
+    <file>Assets/Plugins/Android/com.ironsource.sdk.mediationsdk-7.0.0.aar</file>
     <file>Assets/Plugins/Android/com.parse.bolts.bolts-android-1.4.0.jar</file>
     <file>Assets/Plugins/Android/com.parse.bolts.bolts-applinks-1.4.0.jar</file>
     <file>Assets/Plugins/Android/com.parse.bolts.bolts-tasks-1.4.0.jar</file>
     <file>Assets/Plugins/Android/com.sglib.easymobile.easy-mobile-1.3.0.aar</file>
+    <file>Assets/Plugins/Android/com.squareup.okhttp3.okhttp-3.12.1.jar</file>
+    <file>Assets/Plugins/Android/com.squareup.okio.okio-1.15.0.jar</file>
     <file>Assets/Plugins/Android/javax.inject.javax.inject-1.jar</file>
   </files>
   <settings>

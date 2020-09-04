@@ -183,6 +183,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info:
     isVisibleItem: 1
+    conditionShow:
+      checkObject: {fileID: 0}
+      typeCondition: 0
+      goalPok: 
+      forAllZone: 0
     limitUpgrade: -1
     itemSell: {fileID: 0}
     typeIncrease: 0
@@ -464,7 +469,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5.64
+  aspectRatio: 5.68
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 97239e1bd8ed1694bac928f76283b58b, type: 3}
   mFont: {fileID: 0}
@@ -654,7 +659,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5.1875
+  aspectRatio: 5.25
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 97239e1bd8ed1694bac928f76283b58b, type: 3}
   mFont: {fileID: 0}
@@ -763,6 +768,56 @@ PrefabInstance:
         type: 3}
       propertyPath: onClick.Array.data[0].mMethodName
       value: onExecuteFirst
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: tweenTarget
+      value: 
+      objectReference: {fileID: 363709694267045801}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: pressed.r
+      value: 0.7960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: pressed.g
+      value: 0.7960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: pressed.b
+      value: 0.7960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: hover.r
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: hover.g
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: hover.b
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: disabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: disabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: disabledColor.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6209793874483099834, guid: 2e1c02aaa3300b844af0b9e38906313c,
         type: 3}
@@ -896,6 +951,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e1c02aaa3300b844af0b9e38906313c, type: 3}
+--- !u!1 &363709694267045801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1915764101076992467, guid: 2e1c02aaa3300b844af0b9e38906313c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2277133963997017722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4727101211858766248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6773423491433496530, guid: 2e1c02aaa3300b844af0b9e38906313c,
@@ -1008,6 +1069,56 @@ PrefabInstance:
         type: 3}
       propertyPath: onClick.Array.data[0].mMethodName
       value: onExecuteThird
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: tweenTarget
+      value: 
+      objectReference: {fileID: 3432211729682291527}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: hover.r
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: hover.g
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: hover.b
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: pressed.r
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: pressed.g
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: pressed.b
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: disabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: disabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: disabledColor.b
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6209793874483099834, guid: 2e1c02aaa3300b844af0b9e38906313c,
         type: 3}
@@ -1252,6 +1363,56 @@ PrefabInstance:
       propertyPath: onClick.Array.data[0].mMethodName
       value: onExecuteSecond
       objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: tweenTarget
+      value: 
+      objectReference: {fileID: 7724989132062236135}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: hover.r
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: hover.g
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: hover.b
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: pressed.r
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: pressed.g
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: pressed.b
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: disabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: disabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365787045369242402, guid: 2e1c02aaa3300b844af0b9e38906313c,
+        type: 3}
+      propertyPath: disabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6209793874483099834, guid: 2e1c02aaa3300b844af0b9e38906313c,
         type: 3}
       propertyPath: mWidth
@@ -1384,6 +1545,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e1c02aaa3300b844af0b9e38906313c, type: 3}
+--- !u!1 &7724989132062236135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1915764101076992467, guid: 2e1c02aaa3300b844af0b9e38906313c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8188254284269313076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3432461052445238246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6773423491433496530, guid: 2e1c02aaa3300b844af0b9e38906313c,

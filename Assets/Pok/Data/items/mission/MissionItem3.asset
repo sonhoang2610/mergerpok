@@ -93,5 +93,5 @@ MonoBehaviour:
     item: {fileID: 11400000, guid: 20f9d76b03eb0fd4893e14d7403419cd, type: 2}
     quantity: 1
   - typePayment: 0
-    item: {fileID: 11400000, guid: 20f9d76b03eb0fd4893e14d7403419cd, type: 2}
+    item: {fileID: 11400000, guid: 1e07bf251a5afa34fb83750257ab5597, type: 2}
     quantity: 1

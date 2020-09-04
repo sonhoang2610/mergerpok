@@ -23,30 +23,35 @@ namespace Pok
                 HUDManager.Instance.ActiveObject(checkObject, typeCondition.ToString(), true);
                 return;
             }
-            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
-            if (string.IsNullOrEmpty(zone.curentUnlock))
+            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.Id == GameManager.Instance.ZoneChoosed);
+            if (string.IsNullOrEmpty(zone.CurentUnlock))
             {
                 HUDManager.Instance.ActiveObject(checkObject, typeCondition.ToString(), false);
             }
             else
             {
-                string index = zone.curentUnlock.Replace("Pok", "");
-                HUDManager.Instance.ActiveObject(checkObject, typeCondition.ToString(),int.Parse( index )>= int.Parse(goalPok.Replace("Pok","")));
+                 string index = zone.CurentUnlock.Replace("Pok", "");
+                 HUDManager.Instance.ActiveObject(checkObject, typeCondition.ToString(), !string.IsNullOrEmpty(index) && int.Parse(index) >= int.Parse(goalPok.Replace("Pok", "")));
+                
             }
           
         }
         public bool checkBoolCondition()
         {
 
-            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.id == GameManager.Instance.ZoneChoosed);
-            if (string.IsNullOrEmpty(zone.curentUnlock))
+            var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.Id == GameManager.Instance.ZoneChoosed);
+            if (string.IsNullOrEmpty(zone.CurentUnlock))
             {
                 return false;
             }
             else
             {
-                string index = zone.curentUnlock.Replace("Pok", "");
-                return int.Parse(index) >= int.Parse(goalPok.Replace("Pok", ""));
+                if (!string.IsNullOrEmpty(zone.CurentUnlock))
+                {
+                    string index = zone.CurentUnlock.Replace("Pok", "");
+                    return int.Parse(index) >= int.Parse(goalPok.Replace("Pok", ""));
+                }
+                return false;
             }
 
         }

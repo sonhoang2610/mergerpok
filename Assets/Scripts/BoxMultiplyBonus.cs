@@ -30,7 +30,7 @@ namespace Pok
             {
                 loading.gameObject.SetActive(false);
             }
-           var timeExist = TimeCounter.Instance.timeCollection.Value.Find(x => x.id == $"[MultiplyBonus]{info.itemSell.ItemID}/{creature.ItemID}");
+           var timeExist = TimeCounter.Instance.timeCollection.Value.Find(x => x.id == $"[MultiplyBonus]{info.itemSell.ItemID}/{creature.ItemID}/{GameManager.Instance.ZoneChoosed}");
             if (timeExist == null)
             {
                 var random = UnityEngine.Random.Range(0,3);
@@ -38,8 +38,8 @@ namespace Pok
                 boxTime.gameObject.SetActive(!(random == 0));
                 if (random != 0)
                 {
-                    listentTime = $"[MultiplyBonus]{info.itemSell.ItemID}/{creature.ItemID}";
-                    TimeCounter.Instance.addTimer(new TimeCounterInfo() { autoRemoveIfToDestiny = true, id = $"[MultiplyBonus]{info.itemSell.ItemID}/{creature.ItemID}", destinyIfHave = 10800 });
+                    listentTime = $"[MultiplyBonus]{info.itemSell.ItemID}/{creature.ItemID}/{GameManager.Instance.ZoneChoosed}";
+                    TimeCounter.Instance.addTimer(new TimeCounterInfo() { autoRemoveIfToDestiny = true, id = $"[MultiplyBonus]{info.itemSell.ItemID}/{creature.ItemID}/{GameManager.Instance.ZoneChoosed}", destinyIfHave = 10800 });
                     HUDManager.Instance.checkExistMultiplyBonus();
                 }
             }
@@ -98,7 +98,7 @@ namespace Pok
                     var itemRewards = new List<ItemRewardInfo>();
                     itemRewards.Add(new ItemRewardInfo() { itemReward =new ItemWithQuantity() {item = _creature,quantity = "6" } });
                     HUDManager.Instance.boxReward.show(itemRewards.ToArray(), _info.itemSell.displayNameItem.Value);
-                    var timeExist = TimeCounter.Instance.timeCollection.Value.Find(x => x.id == $"[MultiplyBonus]{_info.itemSell.ItemID}/{_creature.ItemID}");
+                    var timeExist = TimeCounter.Instance.timeCollection.Value.Find(x => x.id == $"[MultiplyBonus]{_info.itemSell.ItemID}/{_creature.ItemID}/{GameManager.Instance.ZoneChoosed}");
                     if (timeExist != null)
                     {
                         GameManager.Instance.Database.removeTime(timeExist);

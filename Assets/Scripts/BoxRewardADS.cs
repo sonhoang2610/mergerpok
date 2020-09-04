@@ -186,7 +186,7 @@ namespace Pok
                 }
             }
             var infosaved = GameManager.Instance.Database.creatureInfos.Find(x => x.id == pInfo.id);
-            if (!infosaved.isUnLock) { infosaved.isUnLock = true; }
+            if (!infosaved.IsUnLock) { infosaved.IsUnLock = true; }
             var dataCreature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == pInfo.id);
 
             if (dataCreature == null)

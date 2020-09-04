@@ -142,7 +142,7 @@ namespace Pok
         public void addQuantity(string add,bool pingNow = true)
         {
             setQuantity((BigInteger.Parse(quantity) + BigInteger.Parse(add)).toString(),pingNow);
-            ES3.dirty = true; 
+            ES3.markDirty(SaveDataConstraint.INVENTORY);
         }
 
         public long QuantityLong

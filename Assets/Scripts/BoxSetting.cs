@@ -8,6 +8,7 @@ namespace Pok
     public class BoxSetting : MonoBehaviour
     {
         public UIToggle sound, music, vibra;
+        public UILabel labelVersion;
         bool isInit = false;
         private void OnEnable()
         {
@@ -21,8 +22,9 @@ namespace Pok
             {
                 StartCoroutine(setup());
             }
-         
-       
+            labelVersion.text = "Version: " + Application.version;
+
+
         }
         IEnumerator setup()
         {

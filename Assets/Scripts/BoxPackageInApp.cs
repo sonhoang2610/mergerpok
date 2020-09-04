@@ -24,12 +24,12 @@ namespace Pok
             {
                 loading.gameObject.SetActive(false);
             }
-            var timeExist = TimeCounter.Instance.timeCollection.Value.Find(x => x.id == $"[Package]{info.itemSell.ItemID}");
+            var timeExist = TimeCounter.Instance.timeCollection.Value.Find(x => x.id == $"[Package]{info.itemSell.ItemID}/{GameManager.Instance.ZoneChoosed}");
             if (timeExist == null)
             {
                 var random = UnityEngine.Random.Range(0, 2);
                 listentTime = $"[Package]{info.itemSell.ItemID}";
-                TimeCounter.Instance.addTimer(new TimeCounterInfo() { autoRemoveIfToDestiny = true, id = $"[Package]{info.itemSell.ItemID}", destinyIfHave = 86400 });
+                TimeCounter.Instance.addTimer(new TimeCounterInfo() { autoRemoveIfToDestiny = true, id = $"[Package]{info.itemSell.ItemID}/{GameManager.Instance.ZoneChoosed}", destinyIfHave = 86400 });
                 HUDManager.Instance.checkExistPackage();
             }
             else
@@ -71,7 +71,7 @@ namespace Pok
                     }
                     HUDManager.Instance.boxReward.show(itemRewards.ToArray(), _info.itemSell.displayNameItem.Value);
                     container.close();
-                    var timeExist = TimeCounter.Instance.timeCollection.Value.Find(x => x.id == $"[Package]{_info.itemSell.ItemID}");
+                    var timeExist = TimeCounter.Instance.timeCollection.Value.Find(x => x.id == $"[Package]{_info.itemSell.ItemID}/{GameManager.Instance.ZoneChoosed}");
                     if (timeExist != null)
                     {
                          GameManager.Instance.Database.removeTime(timeExist);

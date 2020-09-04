@@ -89,7 +89,11 @@ namespace Pok
                     //GetComponent<BoxCollider>().size = skin.localSize * skin.transform.localScale * transform.localScale;
                 }
                 
-                var poly  = gameObject.AddComponent<MeshCollider>();
+                var poly  = gameObject.GetComponent<MeshCollider>();
+                if (!poly)
+                {
+                    poly = gameObject.AddComponent<MeshCollider>();
+                }
                 if (s)
                 {
                     poly.sharedMesh = SpriteToMesh.meshFromSprite(s);
@@ -105,6 +109,10 @@ namespace Pok
         private void OnEnable()
         {
             bornAnim = false;
+            if (gameObject.GetComponent<Collider>() != null)
+            {
+                gameObject.GetComponent<Collider>().enabled = true;
+            }
             if (tweenMove != null)
             {
                 tweenMove.Kill();
@@ -159,7 +167,7 @@ namespace Pok
         public void effect()
         {
             effecting = true;
-            NGUITools.BringForward(gameObject);
+            map.BringForward(gameObject);
             skin.transform.localScale = scale * 0.8f;
             if(seqEffect != null)
             {
@@ -193,10 +201,20 @@ namespace Pok
         public void bornScale()
         {
             skin.transform.localScale = Vector3.zero;
-            skin.transform.DOScale(scale, 1).SetEase(Ease.OutElastic).OnComplete(()=> {
-                GetComponent<Collider>().enabled = true;
+            skin.transform.DOScale(scale, 1).SetEase(Ease.OutElastic);
+            StartCoroutine(delayAction( 0.5f, () =>
+            {
+                var collider = GetComponent<Collider>();
+                if(collider)
+                     collider.enabled = true;
                 bornAnim = false;
-            });
+            }));
+        }
+
+        public IEnumerator delayAction(float sec ,System.Action action)
+        {
+            yield return new WaitForSeconds(sec);
+            action?.Invoke();
         }
         public void bornDrop(System.Action onComplete = null)
         {
@@ -206,7 +224,9 @@ namespace Pok
             var seq = DOTween.Sequence();
             skin.transform.localScale = new Vector3(scale.x*0.7f, scale.y , scale.z);
             seq.Append(skin.transform.DOLocalMove(oldPos, 0.8f).SetEase(Ease.InQuad));
-            seq.AppendCallback(delegate { GetComponent<Collider>().enabled = true;
+            StartCoroutine(delayAction(0.8f, delegate
+            {
+                GetComponent<Collider>().enabled = true;
                 bornAnim = false;
                 if (GameManager.Instance.GuideIndex == 1)
                 {
@@ -222,20 +242,20 @@ namespace Pok
                         handGuide.gameObject.SetActive(true);
                     }
                 }
-          
-            });
+
+            }));
             seq.Append(skin.transform.DOScale(new Vector3(scale.x, scale.y * 0.7f, scale.z), 0.25f).SetEase(Ease.OutQuad));
             seq.Append(skin.transform.DOScale(scale , 1).SetEase(Ease.OutElastic));
-            seq.AppendCallback(delegate { effecting = false; onComplete?.Invoke();
-              
-            });
+            StartCoroutine(delayAction(2.05f, delegate {
+                effecting = false; onComplete?.Invoke();
+            }));
         }
 
         public void move(Vector3 destiny)
         {
             if (!blockMove)
             {
-                NGUITools.BringForward(gameObject);
+                map.BringForward(gameObject);
                 if(tweenMove != null)
                 {
                     tweenMove.Kill();

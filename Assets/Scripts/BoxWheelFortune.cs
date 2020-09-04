@@ -95,7 +95,7 @@ namespace Pok
         public void addCreatureObject(CreatureInstanceSaved pInfo)
         {
             var infosaved = GameManager.Instance.Database.creatureInfos.Find(x => x.id == pInfo.id);
-            if (!infosaved.isUnLock) { infosaved.isUnLock = true; }
+            if (!infosaved.IsUnLock) { infosaved.IsUnLock = true; }
             var dataCreature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == pInfo.id);
 
             if (dataCreature == null)
@@ -240,10 +240,8 @@ namespace Pok
                 }
                 blockTouch.SetActive(false);
             }
-
-            ES3.dirty = true;
+            
         }
-
         public IEnumerator delayAction(float delay, System.Action action)
         {
             yield return new WaitForSeconds(delay);
@@ -252,59 +250,72 @@ namespace Pok
         public IEnumerator result()
         {
             yield return new WaitForSeconds(1);
-            List<WheelConfig> wheels = new List<WheelConfig>(GameDatabase.Instance.wheelMainConfig.ToArray());
-            wheels.Shuffle();
-            float random = Random.Range(0.0f, 1.0f);
-            float currentPercent = 1;
-            WheelConfig result = null;
-            for (int i = 0; i < wheels.Count; ++i)
+            int colWin = 0;
+            do
             {
-                currentPercent -= wheels[i].change;
-                if (random > currentPercent)
+                List<WheelConfig> wheels = new List<WheelConfig>(GameDatabase.Instance.wheelMainConfig.ToArray());
+                wheels.Shuffle();
+                float random = Random.Range(0.0f, 1.0f);
+                float currentPercent = 1;
+                WheelConfig result = null;
+                for (int i = 0; i < wheels.Count; ++i)
                 {
-                    result = wheels[i];
-                    break;
+                    currentPercent -= wheels[i].change;
+                    if (random > currentPercent)
+                    {
+                        result = wheels[i];
+                        break;
+                    }
+                    if (i == wheels.Count - 1)
+                    {
+                        result = wheels[i];
+                    }
                 }
-                if (i == wheels.Count - 1)
+                float randomInsinde = Random.Range(0.0f, 1.0f);
+                currentPercent = 1;
+                int resultCount = 0;
+                for (int i = 0; i < result.percentRoll.Length; ++i)
                 {
-                    result = wheels[i];
+                    currentPercent -= result.percentRoll[i];
+                    if (randomInsinde > currentPercent)
+                    {
+                        resultCount = i + 1;
+                        break;
+                    }
+                    if (i == result.percentRoll.Length - 1)
+                    {
+                        resultCount = i + 1;
+                    }
                 }
-            }
-            float randomInsinde = Random.Range(0.0f, 1.0f);
-            currentPercent = 1;
-            int resultCount = 0;
-            for (int i = 0; i < result.percentRoll.Length; ++i)
-            {
-                currentPercent -= result.percentRoll[i];
-                if (randomInsinde > currentPercent)
+                colWin = resultCount ;
+                resultItem = new List<int>();
+                for (int i = 0; i < resultCount; ++i)
                 {
-                    resultCount = i + 1;
-                    break;
+                    resultItem.Add(GameDatabase.Instance.wheelMainConfig.IndexOf(result));
                 }
-                if (i == result.percentRoll.Length - 1)
+                for (int i = 0; i < 3 - resultCount; ++i)
                 {
-                    resultCount = i + 1;
+                    int randomAnother = -1;
+                    do
+                    {
+                        randomAnother = Random.Range(0, wheels.Count);
+                    } while (resultItem.Exists(x => x == randomAnother));
+                    resultItem.Add(randomAnother);
                 }
-            }
-            resultItem = new List<int>();
-            for (int i = 0; i < resultCount; ++i)
-            {
-                resultItem.Add(GameDatabase.Instance.wheelMainConfig.IndexOf(result));
-            }
-            for (int i = 0; i < 3 - resultCount; ++i)
-            {
-                int randomAnother = -1;
-                do
+                resultItem.Shuffle();
+                for (int i = 0; i < rolls.Length; ++i)
                 {
-                    randomAnother = Random.Range(0, wheels.Count);
-                } while (resultItem.Exists(x => x == randomAnother));
-                resultItem.Add(randomAnother);
-            }
-            resultItem.Shuffle();
-            for (int i = 0; i < rolls.Length; ++i)
+                    rolls[i].isForever = false;
+                    rolls[i].Elements[3].GetComponent<ItemWheel>().fixSkin(GameDatabase.Instance.wheelMainConfig[resultItem[i]]);
+                }
+            } while (colWin < 3 && ES3.Load<int>("TimeLoseWheel",0) > 2);
+            if(colWin < 3)
             {
-                rolls[i].isForever = false;
-                rolls[i].Elements[3].GetComponent<ItemWheel>().fixSkin(GameDatabase.Instance.wheelMainConfig[resultItem[i]]);
+                ES3.Save<int>("TimeLoseWheel", ES3.Load<int>("TimeLoseWheel", 0) + 1);
+            }
+            else
+            {
+                ES3.Save<int>("TimeLoseWheel", 0);
             }
         }
 
@@ -354,9 +365,14 @@ namespace Pok
 
         public void watch()
         {
-            GameManager.Instance.WatchRewardADS(GameConfig.Advertise.CLAIM_TICKET);
-            var exist = GameManager.Instance.Database.getItem("TicketSpin");
-            exist.addQuantity("3");
+            GameManager.Instance.WatchRewardADS(GameConfig.Advertise.CLAIM_TICKET,(o)=> {
+                if (o)
+                {
+                    var exist = GameManager.Instance.Database.getItem("TicketSpin");
+                    exist.addQuantity("3");
+                }
+            });
+        
         }
         // Start is called before the first frame update
         void Start()

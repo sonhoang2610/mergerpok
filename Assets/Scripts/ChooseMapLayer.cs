@@ -16,14 +16,27 @@ namespace Pok
             executeInfos(maps.ToArray());
             contentResize.Execute();
             tabs.GroupTab.Clear();
-            for (int i = 0; i < items.Count; ++i)
+            var itemActive = getActiveItems();
+            for (int i = 0; i < itemActive.Count; ++i)
             {
-                tabs.GroupTab.Add(items[i].GetComponent<EazyTabNGUI>());
-                NGUITools.BringForward(items[i].gameObject);
+                tabs.GroupTab.Add(itemActive[i].GetComponent<EazyTabNGUI>());
+                NGUITools.BringForward(itemActive[i].gameObject);
             }
             tabs.reloadTabs();
-            var indexTab = tabs.GroupTab.FindIndex(x => x.GetComponent<MapItemInstanced>()._info.id == eventType.mapID);
-            tabs.changeTab(indexTab);
+            StartCoroutine(checkChangeTab(() =>
+            {
+                var indexTab = tabs.GroupTab.FindIndex(x => x.GetComponent<MapItemInstanced>()._info.id == eventType.mapID);
+                tabs.changeTab(indexTab);
+            }));
+        }
+
+        public IEnumerator checkChangeTab(System.Action action)
+        {
+            while(!MainScene.InstanceRaw || MainScene.Instance.MovingMap)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            action?.Invoke();
         }
 
         protected override void OnEnable()
@@ -34,18 +47,23 @@ namespace Pok
             executeInfos(maps.ToArray());
             contentResize.Execute();
             tabs.GroupTab.Clear();
-            for (int i = 0; i < items.Count; ++i)
+            var itemActive = getActiveItems();
+            for (int i = 0; i < itemActive.Count; ++i)
             {
-                tabs.GroupTab.Add(items[i].GetComponent<EazyTabNGUI>());
-              //  var objecttab = items[i].gameObject;
-                //objecttab.GetComponent<UIWidget>().onFindPanel = delegate
-                //{
-                //    NGUITools.BringForward(objecttab);
-                //};
-                //NGUITools.BringForward(items[i].gameObject);
+                tabs.GroupTab.Add(itemActive[i].GetComponent<EazyTabNGUI>());
             }
             tabs.reloadTabs();
-           // tabs.changeTab(0);
+            var oldIndexTab = ES3.Load<int>($"ChooseMap{GameManager.Instance.ZoneChoosed}", 0);
+            if(oldIndexTab < tabs.GroupTab.Count)
+            {
+                tabs.changeTab(oldIndexTab);
+            }
+            else
+            {
+                ES3.Save<int>($"ChooseMap{GameManager.Instance.ZoneChoosed}", 0);
+                tabs.changeTab(0);
+            }
+          
         }
         protected override void OnDisable()
         {

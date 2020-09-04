@@ -171,13 +171,6 @@ namespace Pok
             {
                 StopCoroutine(checkStateCoroutine);
             }
-            if (ES3.dirty)
-            {
-                if (!GameManager.InstanceRaw.IsDestroyed() && GameManager.readyForThisState("Main"))
-                {
-                    GameManager.Instance.SaveGame();
-                }
-            }
         }
 
         protected IEnumerator checkState()
