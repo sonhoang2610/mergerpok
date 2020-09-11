@@ -51,7 +51,8 @@ public class UI2DSpriteEditor : UIBasicSpriteEditor
 		if (mSprite.material == null || serializedObject.isEditingMultipleObjects)
 		{
 			NGUIEditorTools.DrawProperty("Shader", serializedObject, "mShader");
-		}
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("mShaderRef"));
+        }
 
 		NGUIEditorTools.DrawProperty("Pixel Size", serializedObject, "mPixelSize");
 

@@ -293,7 +293,6 @@ public class UIDragObject : MonoBehaviour
 	{
 #if UNITY_EDITOR
 		if (!Application.isPlaying) return;
-        Debug.Log(UICamera.activeTouches+"tocuh");
         if (UICamera.CountInputSources() <= 0)
         {
             mPressed = false;

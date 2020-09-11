@@ -11,6 +11,7 @@ using Firebase.Analytics;
 using System.Threading.Tasks;
 using Firebase.Extensions;
 using Facebook.Unity;
+using UnityEngine.ResourceManagement.ResourceProviders;
 
 namespace Pok
 {
@@ -42,12 +43,12 @@ namespace Pok
             }
         }
 #endif
-        
-        AsyncOperation async;
+
+        AsyncOperationHandle<SceneInstance> async;
         AsyncOperationHandle<IList<ScriptableObject>> asyncDatabase;
-        AsyncOperationHandle<IList<UnityEngine.Object>> asyncResource;
         AsyncOperationHandle<IList<UnityEngine.AudioClip>> asyncAudio;
-        bool isStart = false,loadingDatabase = false,loadResource = false;
+        AsyncOperationHandle<IList<UnityEngine.Object>> asyncResource;
+        bool isStart = false,loadingDatabase = false,loadResource = false,_loadScene = false;
         [System.NonSerialized]
         public string currentScene = "Home";
         [System.NonSerialized]
@@ -76,11 +77,6 @@ namespace Pok
                        
                     });
                 }
-                else
-                {
-                    async = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(pScene);
-                }
-              
             });
 
             pSeq.Play();
@@ -93,9 +89,13 @@ namespace Pok
            return  Addressables.LoadAssetsAsync<ScriptableObject>("Database", result);
         }
 
-        public AsyncOperationHandle<IList<UnityEngine.Object>> PreloadTexture(System.Action<UnityEngine.Object> result)
+        public AsyncOperationHandle<SceneInstance> PreloadScene()
         {
-            return Addressables.LoadAssetsAsync<UnityEngine.Object>("Texture", result);
+            return Addressables.LoadSceneAsync("Scene");
+        }
+        public AsyncOperationHandle<IList<UnityEngine.Object>> PreloadAllResource(System.Action<UnityEngine.Object> result)
+        {
+            return Addressables.LoadAssetsAsync<UnityEngine.Object>("default", result);
         }
         public AsyncOperationHandle<IList<UnityEngine.AudioClip>> PreloadAudio(System.Action<UnityEngine.AudioClip> result)
         {
@@ -198,7 +198,13 @@ namespace Pok
             {
                 if (loadResource)
                 {
-                    PercentResource = (asyncResource.PercentComplete + asyncAudio.PercentComplete) * 0.4f;
+                    PercentResource = (asyncResource.PercentComplete*0.7f + asyncAudio.PercentComplete*0.3f) * 0.4f;
+                    if(PercentResource >= 0.4f)
+                    {
+                        _loadScene = true;
+                        async = PreloadScene();
+                        loadResource = false;
+                    }
                 }
                 if(loadingDatabase)
                 {
@@ -219,36 +225,38 @@ namespace Pok
                                 }
                                 
                             }
-                          
-                            async = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(currentScene);
+
+                            asyncResource = PreloadAllResource((au) =>
+                            {
+
+                            });
+                            loadResource = true;
+                            GameManager.addDirtyState("Main");
+                            asyncAudio = PreloadAudio((au) =>
+                            {
+                                if (au.loadState != AudioDataLoadState.Loaded && au.loadState != AudioDataLoadState.Loading)
+                                {
+                                    au.LoadAudioData();
+                                    loadingData.Add(au);
+                                }
+                            });
+                   
                         };
                      
                     }
                 }
-                if (async != null)
+                if (_loadScene)
                 {
-                    if (!async.isDone)
+                    if (!async.IsDone)
                     {
-                        PercentScene = async.progress * 0.4f;
+                        PercentScene = async.PercentComplete * 0.4f;
                     }
                     else
                     {
                         PercentScene = 0.4f;
-                        loadResource = true;
-                        GameManager.addDirtyState("Main");
-                        asyncResource = PreloadTexture((a) =>
-                        {
-                       
-                        });
-                        asyncAudio = PreloadAudio((a) =>
-                        {
-                            if(a.loadState != AudioDataLoadState.Loaded && a.loadState != AudioDataLoadState.Loading)
-                            {
-                                a.LoadAudioData();
-                                loadingData.Add(a);
-                            }
-                        });
-                        async = null;   
+                   
+                        _loadScene = false;
+                      //  SceneManager.Instance.
                     }
                 }   
                 if(PercentDatabase + PercentResource + PercentScene >= 1 && loadingData.Count == 0 && block <= 0)

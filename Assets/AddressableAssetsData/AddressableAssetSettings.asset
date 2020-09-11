@@ -25,9 +25,8 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: cc0831badf5ca544482e7acb29b2bb15, type: 2}
   - {fileID: 11400000, guid: 5b08b120fa10f514aa546f7ec10dab7f, type: 2}
-  - {fileID: 11400000, guid: d959d8389db59cf469d0c244982f9675, type: 2}
-  - {fileID: 11400000, guid: 8b0c5c8a224c5f64899c7f41a0e1f13f, type: 2}
   - {fileID: 11400000, guid: 0cd29a1e97fe16c478d3b478e21e67d9, type: 2}
+  - {fileID: 11400000, guid: d036a0b0a1f053f4cb3c4cb1b3c9c46e, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -72,6 +71,7 @@ MonoBehaviour:
     - Database
     - Texture
     - Audio
+    - Scene
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 84c2b17eaab6d1e42a72458829ad2167, type: 2}

@@ -5,6 +5,8 @@
 
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 /// <summary>
 /// 2D Sprite is capable of drawing sprites added in Unity 4.3. When importing your textures,
@@ -19,7 +21,8 @@ public class UI2DSprite : UIBasicSprite
 {
 	[HideInInspector][SerializeField] UnityEngine.Sprite mSprite;
 	[HideInInspector][SerializeField] Shader mShader;
-	[HideInInspector][SerializeField] Vector4 mBorder = Vector4.zero;
+    [HideInInspector] [SerializeField] AssetReference mShaderRef;
+    [HideInInspector][SerializeField] Vector4 mBorder = Vector4.zero;
 	[HideInInspector][SerializeField] bool mFixedAspect = false;
 	[HideInInspector][SerializeField] float mPixelSize = 1f;
 
@@ -75,16 +78,36 @@ public class UI2DSprite : UIBasicSprite
 		}
 	}
 
-	/// <summary>
-	/// Shader used by the texture when creating a dynamic material (when the texture was specified, but the material was not).
-	/// </summary>
-
-	public override Shader shader
+    /// <summary>
+    /// Shader used by the texture when creating a dynamic material (when the texture was specified, but the material was not).
+    /// </summary>
+    protected Shader shaderAdressable;
+    protected bool loading = false;
+    public override Shader shader
 	{
 		get
 		{
 			if (mMat != null) return mMat.shader;
-			if (mShader == null) mShader = Shader.Find("Unlit/Transparent Colored");
+            if (shaderAdressable) return shaderAdressable;
+            if (mShaderRef.RuntimeKeyIsValid() && !shaderAdressable )
+            {
+                if (!loading && Application.isPlaying)
+                {
+                    loading = true;
+                    mShaderRef.loadAssetWrapped<Shader>((s)=> {
+                        loading = false;
+                        shaderAdressable = s;
+                        shader = s;
+                    });
+                }
+                else if (!Application.isPlaying)
+                {
+#if UNITY_EDITOR
+                    shaderAdressable = (Shader) mShaderRef.editorAsset;
+#endif
+                }
+            }
+			if (mShader == null && !mShaderRef.RuntimeKeyIsValid()) mShader = Shader.Find("Unlit/Transparent Colored");
 			return mShader;
 		}
 		set

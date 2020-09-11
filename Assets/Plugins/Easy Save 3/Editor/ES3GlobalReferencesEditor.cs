@@ -79,11 +79,17 @@ namespace ES3Internal
 
                     EditorGUILayout.ObjectField(kvp.Key, typeof(UnityEngine.Object), true);
                     EditorGUILayout.LongField(kvp.Value);
-
+              
                     EditorGUILayout.EndHorizontal();
                 }
+           
 
                 EditorGUI.indentLevel--;
+            }
+            if (GUILayout.Button("Clear"))
+            {
+                globalRefs.refId.Clear();
+                EditorUtility.SetDirty(globalRefs);
             }
         }
     }

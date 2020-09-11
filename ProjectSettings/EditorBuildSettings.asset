@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SplashScene.unity
     guid: 460ac524749f17f48861594505fef4e7
-  - enabled: 1
-    path: Assets/Pok/MainScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: d6d348786a9fa604e8a64f046e622876,
       type: 2}

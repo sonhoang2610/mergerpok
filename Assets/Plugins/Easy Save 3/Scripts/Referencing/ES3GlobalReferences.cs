@@ -23,6 +23,7 @@ namespace ES3Internal
 
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public ES3RefIdDictionary refId = new ES3RefIdDictionary();
+    
 
         private static ES3GlobalReferences _globalReferences = null;
         public static ES3GlobalReferences Instance
