@@ -190,7 +190,7 @@ namespace Pok
         {
             bool dirty = false;
             if (MainScene.Instance.ChangingMap ) return;
-            GameManager.Instance.checkShowAds();
+      
             if (GameManager.Instance.GuideIndex == 4)
             {
                 HUDManager.Instance.hand.gameObject.SetActive(false);
@@ -222,6 +222,10 @@ namespace Pok
                 OnPressUp(creature);
                 addMoney(creature,1*(int)GameManager.Instance.getFactorIncome().x);
                 SoundManager.Instance.PlaySound("CoinClickPure");
+                if (Input.touchCount <= 1)
+                {
+                    GameManager.Instance.checkShowAds();
+                }
             }
         }
         int effecting = 0;
@@ -489,6 +493,7 @@ namespace Pok
             if (!creatureCache.Exists(x => x.id == pInfo.id))
             {
                 GameObject pObject = new GameObject();
+                pObject.SetLayerRecursively(gameObject.layer);
                 pObject.name = "[Pool]" + pInfo.id;
                 var widget = pObject.AddComponent<UIWidget>();
                 pObject.transform.parent = attachMent.transform;

@@ -128,6 +128,8 @@ namespace Pok
                     change = true;
                 }
                 GameManager.Instance.ZoneChoosed = pZone.ItemID;
+                var quantitySecIncome = BigInt.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (int)GameManager.Instance.getFactorIncome().x;
+                HUDManager.Instance.quanityHour.text = quantitySecIncome.ToString().ToKMBTA();
                 for (int i = 0; i < GameManager.Instance.Database.inventory.Count; ++i)
                 {
                     var item = GameManager.Instance.Database.inventory[i].item;

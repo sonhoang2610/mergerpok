@@ -291,7 +291,7 @@ MonoBehaviour:
       _price: 
       _description: 
       _storeSpecificIds: []
-      _isEditingAdvanced: 0
+      _isEditingAdvanced: 1
     - _name: Started Kit
       _type: 0
       _id: startedkit
@@ -403,4 +403,4 @@ MonoBehaviour:
   mIsNotificationModuleEnable: 1
   mIsSharingModuleEnable: 0
   mActiveModuleIndex: 3
-  mIsSelectingModule: 1
+  mIsSelectingModule: 0

@@ -23,6 +23,7 @@ public class BaseItem<T> : MonoBehaviour where T : new()
         if (cacheDepth == depth) return;
         cacheDepth = depth;
         var widgets = GetComponentsInChildren<UIWidget>(true);
+       
         int minDepth = 99999;
         foreach (var widget in widgets)
         {
@@ -31,7 +32,12 @@ public class BaseItem<T> : MonoBehaviour where T : new()
                 minDepth = widget.depth;
             }
         }
-       if(minDepth < depth)
+        //System.Array.Sort(widgets, (a, b) => a.transform.GetSiblingIndex().CompareTo(b.transform.GetSiblingIndex()));
+        //for(int i = 0; i < widgets.Length; ++i)
+        //{
+        //    widgets[i].depth = minDepth + i;
+        //}
+        if (minDepth < depth)
         {
             int delta = depth - minDepth;
             foreach (var widget in widgets)

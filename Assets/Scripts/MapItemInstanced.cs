@@ -10,6 +10,12 @@ namespace Pok
     {
         public UI2DSprite icon;
         public GameObject notifiFull;
+
+        protected UIWidget root;
+        private void Awake()
+        {
+            root = GetComponent<UIWidget>();
+        }
         public override void setInfo(MapInstanceSaved pInfo)
         {
             base.setInfo(pInfo);
@@ -24,6 +30,17 @@ namespace Pok
             }
             notifiFull.gameObject.SetActive(_info.creatures.Count >= 16);
             //nameMap.
+        }
+
+        private void Update()
+        {
+            if (root)
+            {
+                if (icon.depth <= root.depth)
+                {
+                    icon.depth = root.depth;
+                }
+            }
         }
         private void OnEnable()
         {

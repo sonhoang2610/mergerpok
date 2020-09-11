@@ -536,10 +536,6 @@ namespace Pok
         public void checkTimeItem(string itemID)
         {
             var item = GameDatabase.Instance.getItemInventory(itemID);
-            if (item == null)
-            {
-                Debug.Log(itemID + "null");
-            }
             if (item.categoryItem == CategoryItem.COMMON)
             {
                 var itemExist = getItem(item.ItemID);

@@ -1132,7 +1132,6 @@ namespace EasyMobile
                     }
                     else if (nextStep == PrePurchaseProcessResult.Suspend)
                     {
-                        Debug.Log("Purchase suspended.");
                         return PurchaseProcessingResult.Pending;
                     }
                     else

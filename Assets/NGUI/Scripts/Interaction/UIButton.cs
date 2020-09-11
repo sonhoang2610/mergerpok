@@ -211,6 +211,10 @@ public class UIButton : UIButtonColor
 #endif
 		if (isEnabled)
 		{
+            if(state != State.Normal)
+            {
+               // SetState(State.Normal, false);
+            }
 			if (mInitDone) OnHover(UICamera.hoveredObject == gameObject);
 		}
 		else SetState(State.Disabled, true);
@@ -235,12 +239,24 @@ public class UIButton : UIButtonColor
 		if (isEnabled && (dragHighlight || UICamera.currentTouch.pressed == gameObject))
 			base.OnDragOut();
 	}
+    private void Awake()
+    {
+        var scale = gameObject.GetComponent<UIButtonScale>();
+        if (!scale)
+        {
+            hover = mInitDone ? mDefaultColor : GetComponent<UIWidget>().color;
+             scale = gameObject.AddComponent<UIButtonScale>();
+            scale.duration = 0.1f;
+            scale.pressed = new Vector3(1.2f, 1.2f, 1.2f);
+            scale.hover = Vector3.one;
+        }
+    }
+    
+    /// <summary>
+    /// Call the listener function.
+    /// </summary>
 
-	/// <summary>
-	/// Call the listener function.
-	/// </summary>
-
-	protected virtual void OnClick ()
+    protected virtual void OnClick ()
 	{
 		if (current == null && isEnabled && UICamera.currentTouchID != -2 && UICamera.currentTouchID != -3)
 		{

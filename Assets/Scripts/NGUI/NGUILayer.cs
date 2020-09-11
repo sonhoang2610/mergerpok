@@ -8,5 +8,9 @@ public class NGUILayer : MonoBehaviour
     {
         NGUITools.BringForward(pObject);
     }
-
+    [ContextMenu("BringForward")]
+    public void BringForward()
+    {
+        NGUITools.BringForward(gameObject);
+    }
 }

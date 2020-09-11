@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -421763703047115689}
   - component: {fileID: -2604988914614117146}
   - component: {fileID: -8704153578829812100}
-  m_Layer: 18
+  m_Layer: 8
   m_Name: basecreature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2819626481271516696}
   - component: {fileID: 1664879766014430304}
-  m_Layer: 18
+  m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7034962752374635781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -129, z: 0}
+  m_LocalPosition: {x: 0, y: -135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8860739328229683062}
@@ -251,7 +251,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 0.45454547
+  aspectRatio: 0.4722222
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 97239e1bd8ed1694bac928f76283b58b, type: 3}
   mFont: {fileID: 0}

@@ -235,12 +235,6 @@ MonoBehaviour:
     boughtNumber: 0
     address: 
     level: 1
-  - itemID: TicketSpin
-    quantity: 12
-    EmptySlot: 1
-    boughtNumber: 0
-    address: 
-    level: 0
   generateID: -1
   items:
   - {fileID: 11400000, guid: 399295eb43313674a9cad54f5b151d8a, type: 2}
@@ -248,3 +242,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9203d1bb84100d7439c4579af0f2f39e, type: 2}
   - {fileID: 11400000, guid: 8c32199aec57cf74489161ea890e6f89, type: 2}
   - {fileID: 11400000, guid: 119a199d98c302643a141e26e95c5a0f, type: 2}
+  loadingADS: 0

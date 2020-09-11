@@ -964,7 +964,7 @@ public class UIDrawCall : MonoBehaviour
  #if SHOW_HIDDEN_OBJECTS
 		HideFlags.DontSave | HideFlags.NotEditable, typeof(UIDrawCall));
  #else
-		HideFlags.HideAndDontSave, typeof(UIDrawCall));
+		HideFlags.None, typeof(UIDrawCall));
  #endif
 		UIDrawCall newDC = go.GetComponent<UIDrawCall>();
 #else

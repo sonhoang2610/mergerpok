@@ -47,9 +47,18 @@ namespace Pok
         protected Coroutine timer;
         protected CreatureItem cacheItem;
         protected Tween tweenMove;
+        protected Collider _collider;
         public System.Action<CreatureInstanceSaved,CreatureItem,Creature, bool> _onPress;
         public GameObject handGuide;
 
+
+        public Collider PokCollider
+        {
+            get
+            {
+                return _collider ? _collider : _collider = GetComponent<Collider>();
+            }
+        }
 
           public void OnPress(bool press)
         {
@@ -106,8 +115,10 @@ namespace Pok
        
         }
         protected MapLayer map;
+        protected float time = 0;
         private void OnEnable()
         {
+            time = 0;
             bornAnim = false;
             if (gameObject.GetComponent<Collider>() != null)
             {
@@ -124,7 +135,16 @@ namespace Pok
             }
             if(map == null)
             {
-                map = GetComponentInParent<MapLayer>();
+                map = GetComponentInParent<MapLayer>(); 
+            }
+        }
+
+        private void LateUpdate()
+        {
+            time += Time.deltaTime;
+            if(time > 1 && (PokCollider && !PokCollider.enabled))
+            {
+                PokCollider.enabled = true;
             }
         }
         public void Start()
@@ -151,6 +171,7 @@ namespace Pok
         }
         private void OnDisable()
         {
+            bornAnim = false;
             if (tweenMove != null)
             {
                 tweenMove.Kill();

@@ -282,7 +282,7 @@ MonoBehaviour:
   - creatureLeader: {fileID: 11400000, guid: 6890b998fb574e24c94d8b47e767c164, type: 2}
     map: {fileID: 11400000, guid: d3d4f1a8dd68093489efc11140b0ff32, type: 2}
     className:
-      normalString: Fairy 1st
+      normalString: Fairy
       isI2String: 0
       value: 
     amountCreature: 6

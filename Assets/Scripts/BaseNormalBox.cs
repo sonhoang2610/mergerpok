@@ -90,9 +90,8 @@ public class BaseNormalBox<T0, T1> : MonoBehaviour where T0 : BaseItem<T1> where
                 }
                 items[i]._indexItem = oldIndex;
                 pItem.gameObject.SetActive(true);
-                var widgets = items[i].GetComponentsInChildren<UIWidget>();
                 items[i].setInfo(pInfos[i]);
-                var widget = attachMent.GetComponentInParents<UIWidget>();
+                var widget = attachMent.GetComponentInParents<UIWidget>(true);
                 if (!widget)
                 {
                     widget = attachMent.transform.parent.GetComponent<UIWidget>();

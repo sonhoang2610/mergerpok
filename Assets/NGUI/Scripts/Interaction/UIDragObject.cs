@@ -106,7 +106,7 @@ public class UIDragObject : MonoBehaviour
 		mTargetPos = (target != null) ? target.position : Vector3.zero;
 	}
 
-	void OnDisable () { mStarted = false; }
+	void OnDisable () { mStarted = false; mPressed = false;mTouchID = 0; }
 
 	/// <summary>
 	/// Find the panel responsible for this object.
@@ -190,7 +190,7 @@ public class UIDragObject : MonoBehaviour
 
 	void OnDrag (Vector2 delta)
 	{
-		if (mPressed && mTouchID == UICamera.currentTouchID && enabled && NGUITools.GetActive(gameObject) && target != null)
+		if (mPressed  &&mTouchID == UICamera.currentTouchID && enabled && NGUITools.GetActive(gameObject) && target != null)
 		{
 			UICamera.currentTouch.clickNotification = UICamera.ClickNotification.BasedOnDelta;
 
@@ -293,8 +293,24 @@ public class UIDragObject : MonoBehaviour
 	{
 #if UNITY_EDITOR
 		if (!Application.isPlaying) return;
+        Debug.Log(UICamera.activeTouches+"tocuh");
+        if (UICamera.CountInputSources() <= 0)
+        {
+            mPressed = false;
+            mTouchID = 0;
+            mStarted = false;
+        }
+
+#else
+          if (Input.touchCount <= 0)
+        {
+            mPressed = false;
+            mTouchID = 0;
+            mStarted = false;
+        }
 #endif
-		if (target == null) return;
+
+        if (target == null) return;
 		float delta = RealTime.deltaTime;
 
 		mMomentum -= mScroll;

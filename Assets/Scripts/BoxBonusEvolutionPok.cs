@@ -22,6 +22,9 @@ namespace Pok {
         }
         private void OnEnable()
         {
+            //var creature1 = GameDatabase.Instance.CreatureCollection[Random.Range(0, 72)];
+            //var creature2 = GameDatabase.Instance.CreatureCollection[Random.Range(0, 72)];
+            //showBoxEvo(creature1, creature2, null);
             btnGet.isEnabled = GameManager.Instance.isRewardADSReady("EvoPok");
             if (!btnGet.isEnabled)
             {

@@ -29,35 +29,70 @@ namespace Pok
             if (indexWay == 0)
             {
                 System.Numerics.BigInteger startMoney = 560;
-              
+                int startIncrease = 5;
+                int percentIncrease = 16;
+                float startFactor = 1;
                 if (GameManager.Instance.ZoneChoosed != "Zone1")
                 {
+                    
                     startMoney = creauture.goldAFKReward[GameManager.Instance.ZoneChoosed].toBigInt();
-                    System.Numerics.BigInteger newMoney = startMoney;
-                    if (numberBought > 0)
+               
+                    switch (GameManager.Instance.ZoneChoosed)
                     {
-                        newMoney += ( Mathf.Clamp(numberBought,0,2)) * 20 * startMoney / 100;
+                        case "Zone2":
+                            startIncrease = 3;
+                            percentIncrease = 40;
+                            startFactor = 4.6f;
+                            break;
+                        case "Zone3":
+                            startIncrease = 3;
+                            percentIncrease = 45;
+                            startFactor = 5.1f;
+                            break;
+                        case "Zone4":
+                            startIncrease = 3;
+                            percentIncrease = 45;
+                            startFactor = 5.6f;
+                            break;
+                        case "Zone5":
+                            startIncrease = 2;
+                            percentIncrease = 50;
+                            startFactor = 6.6f;
+                            break;
+                        case "Zone6":
+                            startIncrease =2;
+                            percentIncrease = 60;
+                            startFactor = 7.6f;
+                            break;
                     }
-                    if (numberBought > 2)
+                    if (creauture.RankChild > 0)
                     {
-                        newMoney += (numberBought - 2) * 20 * startMoney / 100;
+                        var startCreature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == "Pok1");
+                        startMoney = startCreature.goldAFKReward[GameManager.Instance.ZoneChoosed].toBigInt()*((int)(Mathf.Pow( startFactor,creauture.RankChild)*100))/100;
                     }
-                    newMoney *= (int)((1 -GameManager.Instance.getPercentDiscount().x) * 100);
-                    newMoney /= 100;
-                    return newMoney.ToString();
                 }
                 else
                 {
-                    startMoney = (startMoney * (long)System.Math.Pow(3, creauture.RankChild));
-                    startMoney += (int)Mathf.Clamp(numberBought, 0, 5) * startMoney;
-                    if(numberBought > 5)
-                    {
-                        startMoney += (numberBought - 5) *20* startMoney/100;
-                    }
-                    startMoney *= (int)((1 - GameManager.Instance.getPercentDiscount().x) * 100);
-                    startMoney /= 100;
-                    return startMoney.toString();
+                    startMoney = (startMoney * (long)System.Math.Pow(2.82f, creauture.RankChild));
                 }
+               
+                if (numberBought >= startIncrease)
+                {
+                    for (int i = 0; i < numberBought - startIncrease; ++i)
+                    {
+                        if (i == 0)
+                        {
+                            startMoney += 100 * startMoney / 100;
+                        }
+                        else
+                        {
+                            startMoney += percentIncrease * startMoney / 100;
+                        }
+                    }
+                }
+                startMoney *= (int)((1 - GameManager.Instance.getPercentDiscount().x) * 100);
+                startMoney /= 100;
+                return startMoney.toString();
             }
             else
             {

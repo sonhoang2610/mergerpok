@@ -203,9 +203,9 @@ namespace Pok
             foreach (var timing in timings)
             {
                 float factorTime = float.Parse(timing.id.Remove(0, ("[SuperInCome]").Length));
-                if (factorTime > factor.x)
+                double timeLefxt = (timing.destinyIfHave - timing.CounterTime).Clamp(timing.destinyIfHave, 0);
+                if (factorTime > factor.x && timeLefxt > 0)
                 {
-                    double timeLefxt = (timing.destinyIfHave - timing.CounterTime).Clamp(timing.destinyIfHave, 0);
                     factor = new UnityEngine.Vector2(factorTime, (float)timeLefxt);
                 }
             }
@@ -332,7 +332,7 @@ namespace Pok
             if (!InAppPurchasing.IsInitialized())
             {
                 InAppPurchasing.InitializePurchasing();
-                InAppPurchasing.PurchaseCompleted += PurchaseComplete;
+       
             }
             if (!RuntimeManager.IsInitialized())
             {
@@ -340,6 +340,8 @@ namespace Pok
                 Advertising.LoadRewardedAd();
                 Advertising.LoadInterstitialAd();
             }
+            InAppPurchasing.PurchaseCompleted += PurchaseComplete;
+            InAppPurchasing.PurchaseFailed += PurchaseFailed;
             Advertising.RewardedAdCompleted += AdComplete;
             Advertising.RewardedAdSkipped += AdSkipped;
             StartCoroutine(checkFetchData());
@@ -382,10 +384,19 @@ namespace Pok
         public List<InappPendingInfo> inappPending = new List<InappPendingInfo>();
         public void PurchaseComplete(IAPProduct product)
         {
-            var inapps = inappPending.FindAll(x => x.id == product.Id);
+            var inapps = inappPending.FindAll(x => x.id.ToLower() == product.Id.ToLower());
             foreach (var inapp in inapps)
             {
                 inapp.result?.Invoke(true);
+                inappPending.Remove(inapp);
+            }
+        }
+        public void PurchaseFailed(IAPProduct product)
+        {
+            var inapps = inappPending.FindAll(x => x.id.ToLower() == product.Id.ToLower());
+            foreach (var inapp in inapps)
+            {
+                inapp.result?.Invoke(false);
                 inappPending.Remove(inapp);
             }
         }
@@ -393,11 +404,11 @@ namespace Pok
         [ContextMenu("hack")]
         public void hack()
         {
-            var quantityAdd = System.Numerics.BigInteger.Parse( getTotalGoldGrowthCurrentZone().clearDot()) * 100;
-            if(quantityAdd < System.Numerics.BigInteger.Parse(("999ak").clearDot()))
-            {
-                quantityAdd = System.Numerics.BigInteger.Parse(("999ak").clearDot());
-            }
+            var quantityAdd = (int)getFactorIncome().x * System.Numerics.BigInteger.Parse( getTotalGoldGrowthCurrentZone().clearDot()) * 180;
+            //if(quantityAdd < System.Numerics.BigInteger.Parse(("999ak").clearDot()))
+            //{
+            //    quantityAdd = System.Numerics.BigInteger.Parse(("999ak").clearDot());
+            //}
             GameManager.Instance.Database.getItem("Coin").addQuantity(quantityAdd.ToString());
             //for (int i = 0; i < items.Length - 2; ++i)
             //{
@@ -414,7 +425,12 @@ namespace Pok
         }
         public void hack1()
         {
-            GameManager.Instance.Database.getItem("Crystal").addQuantity("1000");
+            var quantityAdd = (int)getFactorIncome().x * System.Numerics.BigInteger.Parse(getTotalGoldGrowthCurrentZone().clearDot()) * 7200;
+            //if(quantityAdd < System.Numerics.BigInteger.Parse(("999ak").clearDot()))
+            //{
+            //    quantityAdd = System.Numerics.BigInteger.Parse(("999ak").clearDot());
+            //}
+            GameManager.Instance.Database.getItem("Coin").addQuantity(quantityAdd.ToString());
             //for (int i = 0; i < items.Length - 2; ++i)
             //{
             //    var list = new List<CreatureItem>();
@@ -704,10 +720,14 @@ namespace Pok
 
         }
         int indexFecth = 0;
+
+
         public void FetchComplete(Task task)
         {
             var arrayTime = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_bonus_evo").StringValue.Split(',');
             randomTimeBosnusEvolution = new Vector2Int(int.Parse(arrayTime[0]), int.Parse(arrayTime[1]));
+            arrayTime = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_magic_case").StringValue.Split(',');
+            GameDatabase.Instance.timeAFKShowBoxTreasure = int.Parse(arrayTime[0]);
             arrayTime = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_reward_ads").StringValue.Split(',');
             randomTimeRewardAds = new Vector2Int(int.Parse(arrayTime[0]), int.Parse(arrayTime[1]));
             arrayTime = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_switch_app").StringValue.Split(',');
@@ -917,8 +937,9 @@ namespace Pok
             if (!inappPending.Exists(x => x.id == id))
             {
                 inappPending.Add(new InappPendingInfo() { id = id, result = result });
-                InAppPurchasing.PurchaseWithId(id);
             }
+            Debug.Log("request inapp" + id);
+            InAppPurchasing.PurchaseWithId(id);
 
         }
         public void OnEzEvent(AddCreatureEvent eventType)
@@ -1044,7 +1065,7 @@ namespace Pok
             {
                 var exist = GameManager.Instance.Database.getItem(eventType.item.item.ItemID);
                 var quantity = exist.quantity;
-                var moneyAdd = quantity.toInt() * getTotalGoldGrowthCurrentZone().toBigInt() * (int)getFactorIncome().x;
+                var moneyAdd = quantity.toInt() * getTotalGoldGrowthCurrentZone().toBigInt() * ((quantity.toInt() > 300 )? 1 : (int)getFactorIncome().x);
                 if (eventType.item.changeQuantity.toDouble() > 0 && eventType.item.changeQuantity.toDouble() < GameDatabase.Instance.timeMinToShowBoxBank)
                 {
                     StartCoroutine(actionOnEndFrame(() =>

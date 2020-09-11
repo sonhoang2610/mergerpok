@@ -133,12 +133,12 @@ public class UIWidget : UIRect
 	/// </summary>
 
 	[System.NonSerialized] public UIPanel panel;
+    [System.NonSerialized] public UIPanel panelFuture;
+    /// <summary>
+    /// Widget's generated geometry.
+    /// </summary>
 
-	/// <summary>
-	/// Widget's generated geometry.
-	/// </summary>
-
-	[System.NonSerialized] public UIGeometry geometry = new UIGeometry();
+    [System.NonSerialized] public UIGeometry geometry = new UIGeometry();
 
 	/// <summary>
 	/// If set to 'false', the widget's OnFill function will not be called, letting you define custom geometry at will.
@@ -414,10 +414,9 @@ public class UIWidget : UIRect
 		}
 	}
 
-	/// <summary>
-	/// Depth controls the rendering order -- lowest to highest.
-	/// </summary>
-
+    /// <summary>
+    /// Depth controls the rendering order -- lowest to highest.
+    /// </summary>
 	public int depth
 	{
 		get
@@ -438,7 +437,6 @@ public class UIWidget : UIRect
 			{
 				if (panel != null) panel.RemoveWidget(this);
 				mDepth = value;
-
 				if (panel != null)
 				{
 					panel.AddWidget(this);
@@ -839,12 +837,16 @@ public class UIWidget : UIRect
 		int val = UIPanel.CompareFunc(left.panel, right.panel);
 		return (val == 0) ? PanelCompareFunc(left, right) : val;
 	}
+    static public int FullCompareWrapFunc(UIWidget left, UIWidget right)
+    {
+        int val = UIPanel.CompareFunc(left.panelFuture, right.panelFuture);
+        return (val == 0) ? PanelCompareFunc(left, right) : val;
+    }
+    /// <summary>
+    /// Static widget comparison function used for inter-panel depth sorting.
+    /// </summary>
 
-	/// <summary>
-	/// Static widget comparison function used for inter-panel depth sorting.
-	/// </summary>
-
-	[System.Diagnostics.DebuggerHidden]
+    [System.Diagnostics.DebuggerHidden]
 	[System.Diagnostics.DebuggerStepThrough]
 	static public int PanelCompareFunc (UIWidget left, UIWidget right)
 	{

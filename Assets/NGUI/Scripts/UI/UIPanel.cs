@@ -1397,7 +1397,10 @@ public class UIPanel : UIRect
 		for (int i = 0; i < widgets.Count; ++i)
 		{
 			UIWidget w = widgets[i];
-
+            if (w.name.Contains("pok"))
+            {
+                Debug.Log("debug");
+            }
 			if (w.isVisible && w.hasVertices)
 			{
 				Material mt = w.material;

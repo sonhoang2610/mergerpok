@@ -10,9 +10,11 @@ namespace Pok
         public UILabel namePok;
 
         protected Vector2Int cacheSize;
+        protected UIWidget widgetParent;
         private void Awake()
         {
             cacheSize = new Vector2Int(icon.width, icon.height);
+            widgetParent = gameObject.GetComponent<UIWidget>();
         }
         public override void setInfo(CreatureItem pInfo)
         {
@@ -26,6 +28,20 @@ namespace Pok
                 }
             });
             namePok.text = pInfo.displayNameItem.Value;
+        }
+        private void Update()
+        {
+            if (widgetParent)
+            {
+                if(icon.depth <= widgetParent.depth)
+                {
+                    icon.depth = widgetParent.depth + 1;
+                }
+                if (namePok.depth <= widgetParent.depth)
+                {
+                    namePok.depth = widgetParent.depth + 1;
+                }
+            }
         }
     }
 }

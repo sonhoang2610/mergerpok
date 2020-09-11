@@ -982,10 +982,14 @@ static public class NGUITools
                     if (!w.panel)
                     {
                         panelFuture = w.gameObject.GetComponentInParents<UIPanel>();
-                        w.panel = panelFuture;
+                        w.panelFuture = panelFuture;
                     }
-
-                    if (w.panel != panel) continue;
+                    else
+                    {
+                        w.panelFuture = w.panel;
+                    }
+                  
+                    if ((w.panel && w.panel != panel) || !w.panelFuture || (w.panelFuture != panel)) continue;
 #if UNITY_EDITOR
                     RegisterUndo(w, "Depth Change");
 #endif
@@ -1028,6 +1032,21 @@ static public class NGUITools
             NormalizeWidgetDepths(go.GetComponentInParent<UIPanel>().gameObject);
           //  NormalizePanelDepths(go);
         }
+    }
+
+    public static GameObject FindRootParent(this GameObject _object)
+    {
+        var parent = _object.transform.parent;
+        while (parent)
+        {
+            var widget = parent.GetComponent<UIWidget>();
+            var panel = parent.GetComponent<UIPanel>();
+            if (widget || panel)
+            {
+                return parent.gameObject;
+            }
+        }
+        return null;
     }
 
     /// <summary>
@@ -1079,7 +1098,14 @@ static public class NGUITools
 
 		if (size > 0)
 		{
-			Array.Sort(list, UIWidget.FullCompareFunc);
+            for(int i = 0; i < list.Length; ++i)
+            {
+                if (!list[i].panelFuture)
+                {
+                    list[i].panelFuture = list[i].gameObject.GetComponentInParents<UIPanel>();
+                }
+            }
+			Array.Sort(list, UIWidget.FullCompareWrapFunc);
 
 			int start = 0;
 			int current = list[0].depth;
@@ -1087,7 +1113,7 @@ static public class NGUITools
 			for (int i = 0; i < size; ++i)
 			{
 				UIWidget w = list[i];
-                if(w.panel && rootObject && rootObject != w.panel.gameObject)
+                if(w.panelFuture && rootObject && rootObject != w.panelFuture.gameObject)
                 {
                     continue;
                 }

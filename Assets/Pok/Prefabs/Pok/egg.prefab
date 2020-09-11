@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3857438869248838363}
   - component: {fileID: 7800464031079130119}
   - component: {fileID: 1054098313341176028}
-  m_Layer: 18
+  m_Layer: 8
   m_Name: Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 2000443870020369157}
   - component: {fileID: 1834644297049028954}
   - component: {fileID: 894121882827550285}
-  m_Layer: 18
+  m_Layer: 8
   m_Name: 2D Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3347681295367461224}
   - component: {fileID: 3542361128757295694}
-  m_Layer: 18
+  m_Layer: 8
   m_Name: 2D Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,6 +490,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: egg
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819626481271516696, guid: 08afd025660ee014897d5af39d3a497c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819626481271516696, guid: 08afd025660ee014897d5af39d3a497c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -132
       objectReference: {fileID: 0}
     - target: {fileID: 3710668515320115792, guid: 08afd025660ee014897d5af39d3a497c,
         type: 3}
