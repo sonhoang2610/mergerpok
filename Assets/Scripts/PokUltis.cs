@@ -78,7 +78,7 @@ namespace Pok
                
                 if (numberBought >= startIncrease)
                 {
-                    for (int i = 0; i < numberBought - startIncrease; ++i)
+                    for (int i = 0; i < (numberBought+1) - startIncrease; ++i)
                     {
                         if (i == 0)
                         {

@@ -128,6 +128,12 @@ namespace Pok
             var timing = GameManager.Instance.Database.timeRestore.Find(x => x.id == $"[SuperInCome]{factor}");
             if (timing != null)
             {
+                if(timing.CounterTime > timing.destinyIfHave)
+                {
+                    GameManager.Instance.Database.removeTime(timing);
+                    addFactorSuperIncome(factor, time);
+                    return;
+                }
                 timing.destinyIfHave += time;
                 if (time == -1)
                 {
@@ -136,7 +142,7 @@ namespace Pok
             }
             else
             {
-                TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[SuperInCome]{factor}", destinyIfHave = time });
+                TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[SuperInCome]{factor}", destinyIfHave = time, autoRemoveIfToDestiny = true });
             }
         }
         public void DiscountCreature(float percent, double time)
@@ -144,11 +150,17 @@ namespace Pok
             var timing = GameManager.Instance.Database.timeRestore.Find(x => x.id == $"[DiscountCreature]{percent}");
             if (timing != null)
             {
+                if (timing.CounterTime > timing.destinyIfHave)
+                {
+                    GameManager.Instance.Database.removeTime(timing);
+                    DiscountCreature(percent, time);
+                    return;
+                }
                 timing.destinyIfHave += time;
             }
             else
             {
-                TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[DiscountCreature]{percent}", destinyIfHave = time });
+                TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[DiscountCreature]{percent}", destinyIfHave = time,autoRemoveIfToDestiny=true });
             }
         }
         public void ReduceTimeEgg(float percent, double time)
@@ -156,11 +168,18 @@ namespace Pok
             var timing = GameManager.Instance.Database.timeRestore.Find(x => x.id == $"[ReduceTimeEgg]{percent}");
             if (timing != null)
             {
+                if (timing.CounterTime > timing.destinyIfHave)
+                {
+                    GameManager.Instance.Database.removeTime(timing);
+                    ReduceTimeEgg(percent, time);
+                    return;
+                }
                 timing.destinyIfHave += time;
+
             }
             else
             {
-                TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[ReduceTimeEgg]{percent}", destinyIfHave = time });
+                TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[ReduceTimeEgg]{percent}", destinyIfHave = time, autoRemoveIfToDestiny = true });
             }
         }
         public UnityEngine.Vector2 getPercentReduceTimeEgg()
@@ -457,7 +476,7 @@ namespace Pok
                     creatures.RemoveAt(i);
                     continue;
                 }
-                total += System.Numerics.BigInteger.Parse(original.getGoldAFK(GameManager.Instance.ZoneChoosed));
+                total += System.Numerics.BigInteger.Parse(original.getGoldAFK(GameManager.Instance.ZoneChoosed)) * creatures[i].level;
             }
             return total.toString();
         }
