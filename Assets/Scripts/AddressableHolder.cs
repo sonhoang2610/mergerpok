@@ -22,8 +22,25 @@ using System.Linq;
          
          
         }
+    public void addLoadedItem<T>(IList<UnityEngine.Object> assets) 
+    {
+        for (int i = 0; i < assets.Count; ++i)
+        {
+            if(!typeof(T).IsAssignableFrom(assets[i].GetType()))
+            {
+                continue;
+            }
+            if (!assetLoaded.ContainsKey(assets[i].GetType()))
+            {
+                assetLoaded.Add(assets[i].GetType(), new List<UnityEngine.Object>() { assets[i] });
+            }
+            assetLoaded[assets[i].GetType()].Add(assets[i]);
+        }
 
-        public T FindAsset<T>() where T : UnityEngine.Object
+
+    }
+
+    public T FindAsset<T>() where T : UnityEngine.Object
         {
             if (assetLoaded.ContainsKey(typeof(T)))
             {

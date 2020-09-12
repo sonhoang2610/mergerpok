@@ -123,6 +123,7 @@ namespace Pok
             GameObject home = null;
             foreach (var slot in slots)
             {
+                Debug.Log(slot.name + "slot");
                 if (slot._info != null && slot._info.item.ItemID == item.item.ItemID)
                 {
                     home = slot.gameObject;

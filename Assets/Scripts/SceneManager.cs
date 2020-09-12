@@ -25,27 +25,14 @@ namespace Pok
     {
         public UIWidget fadeLayout;
         public UI2DSprite process;
-        public UILabel loadingcontent;
+       // public UILabel loadingcontent;
         public UnityEvent onStartLoad;
         public EventFloat onLoadingScene;
         public UnityEvent onComplete;
         public UnityEvent onCompleteLoadAssets;
-#if UNITY_EDITOR
-        public CreatureItem[] items;
-        [ContextMenu("abc")]
-        public void abc()
-        {
-            foreach(var item in items)
-            {
-                item.ItemID = item.name;
-                item.displayNameItem.normalString = item.name;
-                UnityEditor.EditorUtility.SetDirty(item);
-            }
-        }
-#endif
 
         AsyncOperationHandle<SceneInstance> async;
-        AsyncOperationHandle<IList<ScriptableObject>> asyncDatabase;
+        AsyncOperationHandle<IList<UnityEngine.Object>> asyncDatabase;
         AsyncOperationHandle<IList<UnityEngine.AudioClip>> asyncAudio;
         AsyncOperationHandle<IList<UnityEngine.Object>> asyncResource;
         bool isStart = false,loadingDatabase = false,loadResource = false,_loadScene = false;
@@ -73,6 +60,7 @@ namespace Pok
                 if(currentScene == "MainScene")
                 {
                     loadingDatabase = true;
+                    GameManager.addDirtyState("Main");
                     asyncDatabase = LoadDataBase((a)=> {
                        
                     });
@@ -84,9 +72,9 @@ namespace Pok
 
         }
 
-        public AsyncOperationHandle<IList<ScriptableObject>> LoadDataBase(System.Action<ScriptableObject> result)
+        public AsyncOperationHandle<IList<UnityEngine.Object>> LoadDataBase(System.Action<UnityEngine.Object> result)
         {
-           return  Addressables.LoadAssetsAsync<ScriptableObject>("Database", result);
+           return  Addressables.LoadAssetsAsync<UnityEngine.Object>("default", result);
         }
 
         public AsyncOperationHandle<SceneInstance> PreloadScene()
@@ -211,7 +199,6 @@ namespace Pok
                     PercentDatabase = asyncDatabase.PercentComplete * 0.2f;
                     if (asyncDatabase.IsDone)
                     {
-                        GameManager.addDirtyState("Main");
                         AddressableHolder.Instance.addLoadedItem<ScriptableObject>(asyncDatabase.Result);
                        var localAsync = Addressables.LoadAssetAsync<GameObject>("Prefab/ContainerDatabase");
                         loadingDatabase = false;
@@ -231,7 +218,6 @@ namespace Pok
 
                             });
                             loadResource = true;
-                            GameManager.addDirtyState("Main");
                             asyncAudio = PreloadAudio((au) =>
                             {
                                 if (au.loadState != AudioDataLoadState.Loaded && au.loadState != AudioDataLoadState.Loading)
@@ -261,7 +247,6 @@ namespace Pok
                 }   
                 if(PercentDatabase + PercentResource + PercentScene >= 1 && loadingData.Count == 0 && block <= 0)
                 {
-                    GameManager.removeDirtyState("Main");
                     loadResource = false;
                     isStart = false;
                     complete();

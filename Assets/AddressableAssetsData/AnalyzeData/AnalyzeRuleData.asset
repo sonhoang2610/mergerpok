@@ -14,14 +14,1860 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RuleToResults:
   - RuleName: Check Duplicate Bundle Dependencies
-    Results: []
+    Results:
+    - m_ResultName: No issues found
+      m_Severity: 0
   - RuleName: Check Resources to Addressable Duplicate Dependencies
-    Results: []
+    Results:
+    - m_ResultName: Check Resources to Addressable Duplicate Dependencies - No issues
+        found.
+      m_Severity: 0
   - RuleName: Check Scene to Addressable Duplicate Dependencies
-    Results: []
+    Results:
+    - m_ResultName: Check Scene to Addressable Duplicate Dependencies - No issues
+        found.
+      m_Severity: 0
   - RuleName: Check Sprite Atlas to Addressable Duplicate Dependencies
     Results:
     - m_ResultName: No issues found
       m_Severity: 0
   - RuleName: Build Bundle Layout
+    Results:
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/item_goldx2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/Collection/TimeMixing.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/6.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/45.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok56.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_lv_unchoose.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_info.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/item_vip.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/items/Shop/PackageCrystal2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/egg.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/27.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok35.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok5.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok39.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/basecreature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/Button_Round_Green.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/upgrade/item_creatureingegg.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok36.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok71.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/4.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/btn_off.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/15.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/packageInapp/MultiplyBonus1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/BG_Simple.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok68.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok13.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/items/VipItem.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok69.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/17.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/shop2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok63.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_name_green.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/square32x32.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/59.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/ui.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/17.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/Button_small_passive.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/39.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/47.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_new_era_choose.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/49.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/container.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/28.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/22.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok41.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/missions/item_mission1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/16.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/Creatures2.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/37.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/shop1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok21.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok29.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/25.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/zones/planet3.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/zones/planet6.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/Button_small_active.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/33.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/8.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok69.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok10.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/15.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/60.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/9.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/8.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/14.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/bg_heading_rounding_60px.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok50.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok25.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok6.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/box_booster.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/23.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok52.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok12.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/map_7.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_item_hud_add.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/Ico_Diamond_d1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok13.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok60.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/3.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/AudioDatabase.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_name_yellow.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/42.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/57.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/btn_vip.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok11.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/progress_bar2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/zones/planet5.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok2.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/map_1.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/20.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok70.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/Button_Close.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/13.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_choose.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok43.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/Creatures1.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok31.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/box_ads_green.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/model_evo.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok6.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_hand.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/btn_collection.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/map_8.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok59.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/32.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/48.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/7.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/Star5.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/36.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/Pack_Gold_Sack.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/Creatures3.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/Pack_Gems_Box.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_item_hud.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok9.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/item_monsterbomb.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok58.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/16.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/tiitle.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok43.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/upgrade/item_eggtime.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/35.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/11.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_here.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok44.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok7.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/shop.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/9.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok22.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok68.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/zones/planet4.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok62.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_time2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/55.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok49.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/4.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/box_ads_purple.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/58.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/decor.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/65.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/Pack_Gems_Handful.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/map_6.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/model_started_pack.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/item_arrow_shop.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/dialog.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/71.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok31.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/8.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_star_rate.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_time.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/box_itemvip.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/item_block.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok4.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/item_goldx4.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/62.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_creature_small.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_tape.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok42.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok28.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/10.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/Button_Round_Big.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/5.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/glow1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/dialog_magic_case.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/53.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok61.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/Map_Close.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/btn_tab_ingame.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/box_time_2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/upgrade.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_contain.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/69.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/map_2.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/63.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/wave3_ADD.mat
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/map_5.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_name_blue.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/Trail5.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/31.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/GameDatabase.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok45.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/12.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/9.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok27.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/item_time.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok47.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/arrow.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok67.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok15.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_star2_rate.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/30.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok37.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok51.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/68.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/tiitle
+        1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/wave3.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok37.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok61.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok8.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_upgrades.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/RoundHitYellow.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/12.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok40.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/zones/planet2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/arial.ttf
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/box.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_arrow.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/packageInapp/MultiplyBonus2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/61.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_boosters.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/map_4.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/Ico_Gold.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_time4.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/3.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok17.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok19.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/Sounds/194795__jim-ph__vintage-keyboard-1.wav
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/14.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/dialog.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok24.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/box_ads_yellow.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/SlotIconSpin.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/shop_header.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok54.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/5.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/circle_progrssbar_bg_white.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/5.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/PackageCreautre.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok25.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/64.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok48.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_noti.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/zone/maps/Map1_2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/11.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/4.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok23.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok46.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/46.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/52.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/56.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/24.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok14.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/shop/tru.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_time1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/7.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/13.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/44.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/Pack_Gems_Sack.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/12.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/Blend_CenterGlow.shader
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/Pack_Gold_Safe.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_name_era.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok20.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/ribbon.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/bubble.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/70.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/6.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_map.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/items/StartedKit.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/Add_CenterGlow.shader
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_spin.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/34.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/Pack_Gold_Mountain.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/29.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/Collection/CurrentMap.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok65.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok26.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/upgrade/item_mixingscale.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/50.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/41.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/66.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_facebook.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/7.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok66.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/btn_green.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/38.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_watchads
+        1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/items/Shop/PackageCrystal3.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/items/Shop/PackageCrystal1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/zones/planet1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/map_3.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok55.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/10.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/model_multiply_bonus.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/progress_bar1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok72.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok38.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/Package_Box_Emoji_large.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/15.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/19.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok33.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/54.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok49.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok67.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok16.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Egg1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok53.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok57.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok55.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/11.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/67.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok3.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok30.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/items/Shop/PackageCrystal5.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/Trail5cg.mat
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_lv_choose_current.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/item_sale25.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Atlas/zones.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/6.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/26.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok70.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok71.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/base_model_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/glow1_ADD.mat
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/zone/maps/Map1_1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_item_magiccase.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/bnt_close2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok34.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/18.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/box_lv_choose.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/model_started_kit_in_box.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/banner2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/3.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/items/Shop/PackageCrystal4.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/72.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/43.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok19.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/10.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/51.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/Circle_Simple.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/item_creatures.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/13.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok64.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/Pack_Gems_Case.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/21.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/icons/2.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/Pok/pok/Star5bcg.mat
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/creatures/40.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok18.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Prefabs/uiconfig/Pok72.prefab
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/upgrade/item_bonus_reward.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Data/creatures/Pok32.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/bg/maps/14.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Explicit:Assets/Pok/Textures/ui/newstyle/Button_shop.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Explicit:Assets/Pok/MainScene.unity
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Explicit:Assets/SplashScene.unity
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/Boing sound 1.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/Click back sounds
+        5.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/CoinReward.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/collect_item_03.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/newcreature.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/music/Casual
+        Theme #3 (Looped).wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/collect_item_04.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/music/Casual
+        Theme #1 (Looped).wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/Prize wheel spin
+        5.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/CreatureReward.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/coin_click.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/Notification
+        sound 8.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/Item purchase
+        5.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/btn_clik.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/upgrade.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/EggBreak.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/new_era.wav
+      m_Severity: 0
+    - m_ResultName: audio_assets_all.bundle:Explicit:Assets/Pok/sfx/Cash register
+        3.wav
+      m_Severity: 0
+    - m_ResultName: shader_assets_all.bundle:Explicit:Assets/NGUI/Resources_moved/Shaders/Unlit
+        - Transparent Colored.shader
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Crystal.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/egg_born_anim.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/normalBorn.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Textures/upgrade/box_item_upgrades.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Textures/upgrade/close.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Textures/upgrade/box_upgrades
+        1.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Textures/upgrade/header.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/Collection/TimeCounterInfoCollection.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Textures/zones/box_info_map.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopUpgrade/ShopUpgrade5.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/mission/MissionItem3.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopUpgrade/ShopUpgrade1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/zone/maps/Map1_5.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Booster/SuperIncome.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/TicketSpin.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/mission/MissionItem1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/zone/Zone6.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/RewardADS/PackSpinADS.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/zone/Zone4.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Coin.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopBooster.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/mission/MissionItem2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/zone/maps/Map1_3.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/CoinBankZone2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Upgrade/UpgradeMixScale.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/MagicCase/DiscountCreatureRewardADS.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Shop/PackageGold1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/zone/Zone3.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/mission/reward/MissionRewardPok.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/MagicCase/PackGoldMagicCase.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/mission/reward/MissionRewardCrystal5.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/MagicCase/SuperInCome.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/zone/Zone2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Shop/PackageGold2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Upgrade/UpgradeEgg.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Upgrade/UpgradeEggTime.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopUpgrade/ShopUpgrade2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/CoinBankZone4.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/RewardADS/PackGoldADS.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/MagicCase/PackRandomCreatureMagicCase.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/zone/maps/Map1_4.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopUpgrade/ShopUpgrade6.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopUpgrade/ShopUpgrade4.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/CoinBankZone5.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopCrystal.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/CoinBankZone1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/CoinBankZone3.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/zone/Zone5.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/RewardADS/PackRandomCreature
+        1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/RewardADS/PackDiamondADS.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/mission/reward/MissionRewardCrystal10.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/RewardADS/PackRandomCreature5.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/mission/reward/MissionRewardGold1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/CoinBankZone6.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/MagicCase/PackCrystalMagicCase.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Booster/ReduceTimeEgg.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/RewardADS/SuperInComeADS.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/zone/Zone1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopCreature1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopUpgrade/ShopUpgrade3.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/ShopGold.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Upgrade/UpgradeBank.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Shop/PackageGold3.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Booster/DiscountCreature.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Atlas/icons.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Textures/icons/vip_remove_ads.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Textures/icons/pack_x6.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Textures/icons/starter_pack.png
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/items/Booster/BlockADS.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/creatures/Pok2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/creatures/Pok1.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/creatures/Egg5.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/creatures/Egg2.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/creatures/Egg6.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/creatures/Egg4.asset
+      m_Severity: 0
+    - m_ResultName: texture_assets_all.bundle:Implicit:Assets/Pok/Data/creatures/Egg3.asset
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Material/New Material.mat
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/spine/treasure_Material.mat
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/missions/Blur.mat
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/box_upgrades.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/btn_blue.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/item_watchads.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/mask_magic_case.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/missions/item_mission2.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/spine/treasure.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/tiitle.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/btn_green.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/btn_close2.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/missions/box_missionrewar.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/missions/GaussianBlur.shader
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Spine/Runtime/spine-unity/Shaders/Spine-Skeleton.shader
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/spine/treasure.json
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/spine/treasure.atlas.txt
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/vip/btn_green.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/box_upgrades.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/bg_collection.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/btn_blue.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/wheel/btn_yellow.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/wheel/pregress_bar_spin2.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/wheel/bnt_close3.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/collection/dialog_collection.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/item_watchads.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/watchads_reward/banner_watch.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/wheel/btn_green
+        1.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/mask_magic_case.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/wheel/dialog_spin.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/watchads_reward/box_bonus_watch_choose.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/vip/btn_gray.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/missions/item_mission2.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/watchads_reward/box_watch.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/vip/VIP.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/tiitle.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/collection/box_collection.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/collection/btn_setting.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/bg/42592075_471510780033006_351611994517798912_n.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/btn_green.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/collection/box_info_collection.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/wheel/box_info_spin.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/wheel/btn_collection
+        1.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/wheel/pregress_bar_spin1.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/creatureui/btn_close2.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/wheel/item_watchads
+        1.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Textures/missions/box_missionrewar.png
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/wheel/item_wheel.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/wheel/item_wheel.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/wheel/item_wheel.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/wheel/item_wheel.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Atlas/bg_choose_zone.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Atlas/wheel.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Atlas/vip.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Atlas/Box_Collection.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Atlas/bg_blue.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Atlas/watch_ads_reward.spriteatlas
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/spine/treasure_Atlas.asset
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/spine/treasure_SkeletonData.asset
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/wheel/item_wheel.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/wheel/item_wheel.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/wheel/item_wheel.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_choose_map.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_mgic_case_roll.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/wheel/item_wheel.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward/item_reward.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/reward_ads/item_reward_ads.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/coin_jump.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_select_era.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/magic_case/item_contain.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/upgrade/itiemUpgrade.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/item_map_inzone_ui.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_gold.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_shop_Crystal.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcreature/item_shop_creature.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/boxunlock/item_unlock_small.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/shopcommon/item_booster.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/uiconfig/misssions/item_mission.prefab
+      m_Severity: 0
+    - m_ResultName: texture_scenes_all.bundle:Implicit:Assets/Pok/Prefabs/map/BaseBtnZone1.prefab
+      m_Severity: 0
+    - m_ResultName: c86accba2adb752cf41a3353a7b01388_scenes_all.bundle:Implicit:Assets/Pok/Textures/Home/loading2.png
+      m_Severity: 0
+    - m_ResultName: c86accba2adb752cf41a3353a7b01388_scenes_all.bundle:Implicit:Assets/Pok/Textures/Home/loading1.png
+      m_Severity: 0
+    - m_ResultName: c86accba2adb752cf41a3353a7b01388_scenes_all.bundle:Implicit:Assets/Pok/Textures/Home/Loading
+        bar.png
+      m_Severity: 0
+    - m_ResultName: c86accba2adb752cf41a3353a7b01388_scenes_all.bundle:Implicit:Assets/Pok/Textures/Home/Name.png
+      m_Severity: 0
+    - m_ResultName: c86accba2adb752cf41a3353a7b01388_scenes_all.bundle:Implicit:Assets/Pok/Textures/Home/home.png
+      m_Severity: 0
+    - m_ResultName: c86accba2adb752cf41a3353a7b01388_scenes_all.bundle:Implicit:Assets/Pok/Atlas/home.spriteatlas
+      m_Severity: 0
+  - RuleName: UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule
     Results: []

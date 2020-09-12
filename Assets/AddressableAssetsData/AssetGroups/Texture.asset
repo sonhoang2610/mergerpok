@@ -22,8 +22,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 2800000, guid: 0050bb8bad8d7af45b549d36663f527f, type: 3}
+    m_TargetAsset: {fileID: 2800000, guid: 0050bb8bad8d7af45b549d36663f527f, type: 3}
   - m_GUID: 00686fe8ceb6fee4f9872a215bebad19
     m_Address: Assets/Pok/Data/Collection/TimeMixing.asset
     m_ReadOnly: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
+    m_MainAsset: {fileID: 11400000, guid: 08afcca0bc4676b4fb47563b0205430e, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: 08afcca0bc4676b4fb47563b0205430e, type: 2}
   - m_GUID: 08afd025660ee014897d5af39d3a497c
     m_Address: pok1
     m_ReadOnly: 0
@@ -157,6 +157,15 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 0d20a90692fac484994e08eebce674c0
+    m_Address: Assets/Pok/Atlas/vip.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 4343727234628468602, guid: 0d20a90692fac484994e08eebce674c0,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: 0d20a90692fac484994e08eebce674c0,
+      type: 2}
   - m_GUID: 0df7303cd085f3740b547cf7c7b9f96f
     m_Address: Assets/Pok/Textures/ui/newstyle/btn_off.png
     m_ReadOnly: 0
@@ -241,6 +250,12 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 1545f6534308fbb47a94a8e41a08c065
+    m_Address: Assets/Pok/Atlas/Pok1.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 155840f6f4f451d45b78938b66d35f41
     m_Address: square32x32
     m_ReadOnly: 0
@@ -248,6 +263,15 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 163a58bdf26216144a1d19ee7ad87e59
+    m_Address: Assets/Pok/Atlas/home.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 4343727234628468602, guid: 163a58bdf26216144a1d19ee7ad87e59,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: 163a58bdf26216144a1d19ee7ad87e59,
+      type: 2}
   - m_GUID: 17965f043dd4be345b05c200216e612a
     m_Address: Assets/Pok/Textures/creatures/59.png
     m_ReadOnly: 0
@@ -347,13 +371,6 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 22abcfe72f2ae704b9de38b1f46c736d
-    m_Address: Creatures2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
   - m_GUID: 22ff0b867740d804ea2761e1a1462946
     m_Address: Assets/Pok/Textures/creatures/37.png
     m_ReadOnly: 0
@@ -415,8 +432,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
-    m_MainAsset: {fileID: 2800000, guid: 2bee262f4ea2ce7419a864dbbfa4d4e8, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 2bee262f4ea2ce7419a864dbbfa4d4e8, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2c8131e6a82529c46a977930391369fa
     m_Address: Assets/Pok/Textures/bg/maps/8.png
     m_ReadOnly: 0
@@ -622,6 +639,15 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 3bb12ef5951410244a5833a1bc7ef1f5
+    m_Address: Assets/Pok/Atlas/wheel.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 4343727234628468602, guid: 3bb12ef5951410244a5833a1bc7ef1f5,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: 3bb12ef5951410244a5833a1bc7ef1f5,
+      type: 2}
   - m_GUID: 3c006d2e09082eb4d8a52f35405cf1f8
     m_Address: Pok11
     m_ReadOnly: 0
@@ -699,15 +725,15 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 45401fe5ba242014e99513c1bc7d3532
-    m_Address: Assets/Pok/Atlas/Creatures1.spriteatlas
+  - m_GUID: 454a9b0fb0cc04849a6d77cd4804cc81
+    m_Address: Pok31
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
-  - m_GUID: 454a9b0fb0cc04849a6d77cd4804cc81
-    m_Address: Pok31
+  - m_GUID: 460ac524749f17f48861594505fef4e7
+    m_Address: Assets/SplashScene.unity
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
@@ -799,13 +825,6 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: 50b1910da57b5ca4aaa26f553db269d3
     m_Address: Pack_Gold_Sack
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - default
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 5167f85c2d81b1646aaee52ff739a286
-    m_Address: Creatures3
     m_ReadOnly: 0
     m_SerializedLabels:
     - default
@@ -937,6 +956,15 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 5dad30a1c1790c5449370ae41d429f91
+    m_Address: Assets/Pok/Atlas/bg_choose_zone.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 4343727234628468602, guid: 5dad30a1c1790c5449370ae41d429f91,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: 5dad30a1c1790c5449370ae41d429f91,
+      type: 2}
   - m_GUID: 5e52e487728a2104ca26901543c61988
     m_Address: planet4
     m_ReadOnly: 0
@@ -965,6 +993,15 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 61fec49c409cc9641a827195917e2d4b
+    m_Address: Assets/Pok/Atlas/watch_ads_reward.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 4343727234628468602, guid: 61fec49c409cc9641a827195917e2d4b,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: 61fec49c409cc9641a827195917e2d4b,
+      type: 2}
   - m_GUID: 62de05b91915e6346930432e63631877
     m_Address: Pok49
     m_ReadOnly: 0
@@ -1070,6 +1107,15 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 6903a9b6a33f06a4184612c3ba934a7a
+    m_Address: Assets/Pok/Atlas/Box_Collection.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 4343727234628468602, guid: 6903a9b6a33f06a4184612c3ba934a7a,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: 6903a9b6a33f06a4184612c3ba934a7a,
+      type: 2}
   - m_GUID: 69b63e4deb7478541be902383985a452
     m_Address: Assets/Pok/Textures/ui/newstyle/box_time.png
     m_ReadOnly: 0
@@ -1715,6 +1761,15 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: ad374ca2eb053a9479cf8abcf601708d
+    m_Address: Assets/Pok/Atlas/icons.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 4343727234628468602, guid: ad374ca2eb053a9479cf8abcf601708d,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: ad374ca2eb053a9479cf8abcf601708d,
+      type: 2}
   - m_GUID: ad4de65d623d94944b3bdd93ed0df52c
     m_Address: Assets/Pok/Textures/creatures/52.png
     m_ReadOnly: 0
@@ -2198,6 +2253,12 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: e1038b7bab1b6f348adc17052b8fb26b
+    m_Address: Assets/Pok/Textures/creatures/Pok2.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: e13323d8599dbb64bbbfe91e18708c6f
     m_Address: item_sale25
     m_ReadOnly: 0
@@ -2303,6 +2364,15 @@ MonoBehaviour:
     - default
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: efffaa58c5dd27e4aa8da7dedbccec90
+    m_Address: Assets/Pok/Atlas/bg_blue.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    m_MainAsset: {fileID: 4343727234628468602, guid: efffaa58c5dd27e4aa8da7dedbccec90,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: efffaa58c5dd27e4aa8da7dedbccec90,
+      type: 2}
   - m_GUID: f07aa179b5dc2004d99cb7e13eb902c9
     m_Address: Assets/Pok/Prefabs/model_started_kit_in_box.prefab
     m_ReadOnly: 0
