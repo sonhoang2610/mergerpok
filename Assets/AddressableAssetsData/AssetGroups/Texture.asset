@@ -20,121 +20,141 @@ MonoBehaviour:
   - m_GUID: 0050bb8bad8d7af45b549d36663f527f
     m_Address: item_goldx2
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 0050bb8bad8d7af45b549d36663f527f, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 0050bb8bad8d7af45b549d36663f527f, type: 3}
   - m_GUID: 00afe28750b35eb4dbd45ea642bde239
     m_Address: Assets/Pok/Textures/creatures/6.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 00afe28750b35eb4dbd45ea642bde239, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 00afe28750b35eb4dbd45ea642bde239, type: 3}
   - m_GUID: 00b45b1c22e21314790f95aed7f113b5
     m_Address: Assets/Pok/Textures/creatures/45.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 00b45b1c22e21314790f95aed7f113b5, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 00b45b1c22e21314790f95aed7f113b5, type: 3}
   - m_GUID: 021f4d46f4868bd41bf26703da023835
     m_Address: item_vip
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 021f4d46f4868bd41bf26703da023835, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 021f4d46f4868bd41bf26703da023835, type: 3}
   - m_GUID: 063cc5b0088d4c44d92a2f002e62cc53
     m_Address: Assets/Pok/Textures/creatures/27.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 063cc5b0088d4c44d92a2f002e62cc53, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 063cc5b0088d4c44d92a2f002e62cc53, type: 3}
   - m_GUID: 0a67e8000b2ffbd4786036f78addbc2b
     m_Address: item_creatureingegg
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 0a67e8000b2ffbd4786036f78addbc2b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 0a67e8000b2ffbd4786036f78addbc2b, type: 3}
   - m_GUID: 0afb872469fba904d87520301c8dff8b
     m_Address: Assets/Pok/Textures/creatures/4.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 0afb872469fba904d87520301c8dff8b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 0afb872469fba904d87520301c8dff8b, type: 3}
   - m_GUID: 0e02cb2944597f649a976bdef71488c9
     m_Address: 15
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 0e02cb2944597f649a976bdef71488c9, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 0e02cb2944597f649a976bdef71488c9, type: 3}
   - m_GUID: 12502fe9cd0be9a4d8bdcf79646e790e
     m_Address: 17
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 12502fe9cd0be9a4d8bdcf79646e790e, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 12502fe9cd0be9a4d8bdcf79646e790e, type: 3}
   - m_GUID: 155840f6f4f451d45b78938b66d35f41
     m_Address: square32x32
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 155840f6f4f451d45b78938b66d35f41, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 155840f6f4f451d45b78938b66d35f41, type: 3}
   - m_GUID: 17965f043dd4be345b05c200216e612a
     m_Address: Assets/Pok/Textures/creatures/59.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 17965f043dd4be345b05c200216e612a, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 17965f043dd4be345b05c200216e612a, type: 3}
   - m_GUID: 18282fe605a389441b1582d4265b8d90
     m_Address: Assets/Pok/Textures/creatures/17.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 18282fe605a389441b1582d4265b8d90, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 18282fe605a389441b1582d4265b8d90, type: 3}
   - m_GUID: 1a2b2367b71f0274c94309e0acabe407
     m_Address: Assets/Pok/Textures/creatures/39.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 1a2b2367b71f0274c94309e0acabe407, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 1a2b2367b71f0274c94309e0acabe407, type: 3}
   - m_GUID: 1a53ecab34399dc48aa516d5de45552d
     m_Address: Assets/Pok/Textures/creatures/47.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 1a53ecab34399dc48aa516d5de45552d, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 1a53ecab34399dc48aa516d5de45552d, type: 3}
   - m_GUID: 1d4648f5d49070f4097193f8751ce417
     m_Address: Assets/Pok/Textures/creatures/49.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 1d4648f5d49070f4097193f8751ce417, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 1d4648f5d49070f4097193f8751ce417, type: 3}
   - m_GUID: 1ef3cab83a328db40832d49726b5b437
     m_Address: Assets/Pok/Textures/creatures/28.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 1ef3cab83a328db40832d49726b5b437, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 1ef3cab83a328db40832d49726b5b437, type: 3}
   - m_GUID: 1f41860e7421a924e9b4699312449bc5
     m_Address: Assets/Pok/Textures/creatures/22.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 1f41860e7421a924e9b4699312449bc5, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 1f41860e7421a924e9b4699312449bc5, type: 3}
   - m_GUID: 21b10c3b6bee5944287f3bd7310bed7b
     m_Address: item_mission1
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 21b10c3b6bee5944287f3bd7310bed7b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 21b10c3b6bee5944287f3bd7310bed7b, type: 3}
   - m_GUID: 22928b375a343424298fbf8debb16222
     m_Address: 16
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 22928b375a343424298fbf8debb16222, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 22928b375a343424298fbf8debb16222, type: 3}
   - m_GUID: 22abcfe72f2ae704b9de38b1f46c736d
     m_Address: Creatures2
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 22abcfe72f2ae704b9de38b1f46c736d,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 22abcfe72f2ae704b9de38b1f46c736d,
@@ -142,91 +162,106 @@ MonoBehaviour:
   - m_GUID: 22ff0b867740d804ea2761e1a1462946
     m_Address: Assets/Pok/Textures/creatures/37.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 22ff0b867740d804ea2761e1a1462946, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 22ff0b867740d804ea2761e1a1462946, type: 3}
   - m_GUID: 25e1855b0b7f45e45b1e2c5451c1ffcb
     m_Address: Assets/Pok/Textures/creatures/25.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 25e1855b0b7f45e45b1e2c5451c1ffcb, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 25e1855b0b7f45e45b1e2c5451c1ffcb, type: 3}
   - m_GUID: 25f873e4f94e0ad4f87c8ee686718bd0
     m_Address: planet3
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 25f873e4f94e0ad4f87c8ee686718bd0, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 25f873e4f94e0ad4f87c8ee686718bd0, type: 3}
   - m_GUID: 2a6cd755c646e5e4c9948967f8c1a75f
     m_Address: planet6
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 2a6cd755c646e5e4c9948967f8c1a75f, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 2a6cd755c646e5e4c9948967f8c1a75f, type: 3}
   - m_GUID: 2bee262f4ea2ce7419a864dbbfa4d4e8
     m_Address: Assets/Pok/Textures/creatures/33.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 2bee262f4ea2ce7419a864dbbfa4d4e8, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 2bee262f4ea2ce7419a864dbbfa4d4e8, type: 3}
   - m_GUID: 2c8131e6a82529c46a977930391369fa
     m_Address: Assets/Pok/Textures/bg/maps/8.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 2c8131e6a82529c46a977930391369fa, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 2c8131e6a82529c46a977930391369fa, type: 3}
   - m_GUID: 2d8e2152d1d854b418fe8cc3bc55e269
     m_Address: Assets/Pok/Textures/creatures/15.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 2d8e2152d1d854b418fe8cc3bc55e269, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 2d8e2152d1d854b418fe8cc3bc55e269, type: 3}
   - m_GUID: 2dd3e1c69d63f2f4c89eeb3526df2073
     m_Address: Assets/Pok/Textures/creatures/60.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 2dd3e1c69d63f2f4c89eeb3526df2073, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 2dd3e1c69d63f2f4c89eeb3526df2073, type: 3}
   - m_GUID: 2edd77bc75f7175468c0443112cdf4b3
     m_Address: 1
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 2edd77bc75f7175468c0443112cdf4b3, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 2edd77bc75f7175468c0443112cdf4b3, type: 3}
   - m_GUID: 300db6ed3ba46ca42979f3685b3c5ac4
     m_Address: Assets/Pok/Textures/bg/maps/9.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 300db6ed3ba46ca42979f3685b3c5ac4, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 300db6ed3ba46ca42979f3685b3c5ac4, type: 3}
   - m_GUID: 302d40479643eb640b9cd607e4552986
     m_Address: Assets/Pok/Textures/creatures/8.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 302d40479643eb640b9cd607e4552986, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 302d40479643eb640b9cd607e4552986, type: 3}
   - m_GUID: 3039f11c63a451643ba4d28c254d3cf2
     m_Address: 14
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 3039f11c63a451643ba4d28c254d3cf2, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 3039f11c63a451643ba4d28c254d3cf2, type: 3}
   - m_GUID: 34f84f4869ac55a468e6901b5810b64b
     m_Address: Assets/Pok/Textures/creatures/23.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 34f84f4869ac55a468e6901b5810b64b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 34f84f4869ac55a468e6901b5810b64b, type: 3}
   - m_GUID: 37a7f791a92021c458b865437f28ad0f
     m_Address: Pok12
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 11400000, guid: 37a7f791a92021c458b865437f28ad0f, type: 2}
     m_TargetAsset: {fileID: 11400000, guid: 37a7f791a92021c458b865437f28ad0f, type: 2}
   - m_GUID: 38142ff94ae15e5409be6270ab960d7e
     m_Address: Assets/Pok/Atlas/map_7.spriteatlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 38142ff94ae15e5409be6270ab960d7e,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 38142ff94ae15e5409be6270ab960d7e,
@@ -234,37 +269,43 @@ MonoBehaviour:
   - m_GUID: 395e963787a7a2e46a8a427fc54784b4
     m_Address: Ico_Diamond_d1
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 395e963787a7a2e46a8a427fc54784b4, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 395e963787a7a2e46a8a427fc54784b4, type: 3}
   - m_GUID: 39b15957d44e82647b715edd444fab08
     m_Address: Assets/Pok/Textures/creatures/3.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 39b15957d44e82647b715edd444fab08, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 39b15957d44e82647b715edd444fab08, type: 3}
   - m_GUID: 3ad45795114ec7240b93e30c7f7964ef
     m_Address: Assets/Pok/Textures/creatures/42.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 3ad45795114ec7240b93e30c7f7964ef, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 3ad45795114ec7240b93e30c7f7964ef, type: 3}
   - m_GUID: 3b9e81427c2844748800c902b96bd811
     m_Address: Assets/Pok/Textures/creatures/57.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 3b9e81427c2844748800c902b96bd811, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 3b9e81427c2844748800c902b96bd811, type: 3}
   - m_GUID: 3cf5c09e1b284474babc5d8c034890d8
     m_Address: planet5
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 3cf5c09e1b284474babc5d8c034890d8, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 3cf5c09e1b284474babc5d8c034890d8, type: 3}
   - m_GUID: 40d649748680bcc4493868fe8fca4fdd
     m_Address: Assets/Pok/Atlas/map_1.spriteatlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 40d649748680bcc4493868fe8fca4fdd,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 40d649748680bcc4493868fe8fca4fdd,
@@ -272,19 +313,31 @@ MonoBehaviour:
   - m_GUID: 40e6e3c430f05b24b824e48e9303660c
     m_Address: Assets/Pok/Textures/creatures/20.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 40e6e3c430f05b24b824e48e9303660c, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 40e6e3c430f05b24b824e48e9303660c, type: 3}
   - m_GUID: 4417eb6d42c06064ba628aa7ed6a31d7
     m_Address: 13
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 4417eb6d42c06064ba628aa7ed6a31d7, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 4417eb6d42c06064ba628aa7ed6a31d7, type: 3}
+  - m_GUID: 45401fe5ba242014e99513c1bc7d3532
+    m_Address: Assets/Pok/Atlas/Creatures1.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Texture
+    m_MainAsset: {fileID: 4343727234628468602, guid: 45401fe5ba242014e99513c1bc7d3532,
+      type: 2}
+    m_TargetAsset: {fileID: 4343727234628468602, guid: 45401fe5ba242014e99513c1bc7d3532,
+      type: 2}
   - m_GUID: 49c5f532749065345a7737a166492c80
     m_Address: Assets/Pok/Atlas/map_8.spriteatlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 49c5f532749065345a7737a166492c80,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 49c5f532749065345a7737a166492c80,
@@ -292,37 +345,43 @@ MonoBehaviour:
   - m_GUID: 4bc5e97ae3c6c8d43919fb5b8d14bcf4
     m_Address: Assets/Pok/Textures/creatures/32.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 4bc5e97ae3c6c8d43919fb5b8d14bcf4, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 4bc5e97ae3c6c8d43919fb5b8d14bcf4, type: 3}
   - m_GUID: 4bca4e86ef929b041beca3866c308a36
     m_Address: Assets/Pok/Textures/creatures/48.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 4bca4e86ef929b041beca3866c308a36, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 4bca4e86ef929b041beca3866c308a36, type: 3}
   - m_GUID: 4f24d42489760bc4bb91fb88ed537e92
     m_Address: Assets/Pok/Textures/bg/maps/7.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 4f24d42489760bc4bb91fb88ed537e92, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 4f24d42489760bc4bb91fb88ed537e92, type: 3}
   - m_GUID: 5054841c31c69734d9c675fcc9664b51
     m_Address: Assets/Pok/Textures/creatures/36.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 5054841c31c69734d9c675fcc9664b51, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 5054841c31c69734d9c675fcc9664b51, type: 3}
   - m_GUID: 50b1910da57b5ca4aaa26f553db269d3
     m_Address: Pack_Gold_Sack
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 50b1910da57b5ca4aaa26f553db269d3, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 50b1910da57b5ca4aaa26f553db269d3, type: 3}
   - m_GUID: 5167f85c2d81b1646aaee52ff739a286
     m_Address: Creatures3
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 5167f85c2d81b1646aaee52ff739a286,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 5167f85c2d81b1646aaee52ff739a286,
@@ -330,91 +389,106 @@ MonoBehaviour:
   - m_GUID: 538f270d3fd3e3f469b94958d56fd47b
     m_Address: Pack_Gems_Box
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 538f270d3fd3e3f469b94958d56fd47b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 538f270d3fd3e3f469b94958d56fd47b, type: 3}
   - m_GUID: 550d17acec091274db6ae374e2256ccd
     m_Address: item_monsterbomb
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 550d17acec091274db6ae374e2256ccd, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 550d17acec091274db6ae374e2256ccd, type: 3}
   - m_GUID: 5613e06f3d46e3c4192b4fb46c724d3e
     m_Address: Assets/Pok/Textures/creatures/16.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 5613e06f3d46e3c4192b4fb46c724d3e, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 5613e06f3d46e3c4192b4fb46c724d3e, type: 3}
   - m_GUID: 568c554ba37417542aee52bb38ea2dfa
     m_Address: item_eggtime
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 568c554ba37417542aee52bb38ea2dfa, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 568c554ba37417542aee52bb38ea2dfa, type: 3}
   - m_GUID: 5747d4a4e0b19504aabfe8f5bf96df71
     m_Address: Assets/Pok/Textures/creatures/35.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 5747d4a4e0b19504aabfe8f5bf96df71, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 5747d4a4e0b19504aabfe8f5bf96df71, type: 3}
   - m_GUID: 57ddf0018b7d0b249a492014b9e5a6f4
     m_Address: 11
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 57ddf0018b7d0b249a492014b9e5a6f4, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 57ddf0018b7d0b249a492014b9e5a6f4, type: 3}
   - m_GUID: 58ef38842fab8b84eb5b318fe107bcac
     m_Address: Pok7
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 11400000, guid: 58ef38842fab8b84eb5b318fe107bcac, type: 2}
     m_TargetAsset: {fileID: 11400000, guid: 58ef38842fab8b84eb5b318fe107bcac, type: 2}
   - m_GUID: 5a64b31d3ab420949b3a53ba96371377
     m_Address: Assets/Pok/Textures/creatures/9.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 5a64b31d3ab420949b3a53ba96371377, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 5a64b31d3ab420949b3a53ba96371377, type: 3}
   - m_GUID: 5e52e487728a2104ca26901543c61988
     m_Address: planet4
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 5e52e487728a2104ca26901543c61988, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 5e52e487728a2104ca26901543c61988, type: 3}
   - m_GUID: 61bc952c33169d547b6c1b1d5d139d9e
     m_Address: Assets/Pok/Textures/creatures/55.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 61bc952c33169d547b6c1b1d5d139d9e, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 61bc952c33169d547b6c1b1d5d139d9e, type: 3}
   - m_GUID: 635a13f1fa5b7614a9d67c99c7ca3df7
     m_Address: Assets/Pok/Textures/bg/maps/4.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 635a13f1fa5b7614a9d67c99c7ca3df7, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 635a13f1fa5b7614a9d67c99c7ca3df7, type: 3}
   - m_GUID: 63852162139ace840974d7e29db6795e
     m_Address: Assets/Pok/Textures/creatures/58.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 63852162139ace840974d7e29db6795e, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 63852162139ace840974d7e29db6795e, type: 3}
   - m_GUID: 6404ba897a7d6ae49b2e098056f221dd
     m_Address: Assets/Pok/Textures/creatures/65.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 6404ba897a7d6ae49b2e098056f221dd, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 6404ba897a7d6ae49b2e098056f221dd, type: 3}
   - m_GUID: 6484a3ce4dfcf41488768c397c40bca0
     m_Address: Pack_Gems_Handful
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 6484a3ce4dfcf41488768c397c40bca0, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 6484a3ce4dfcf41488768c397c40bca0, type: 3}
   - m_GUID: 6597a236ad0edb94d949c6d5967b153d
     m_Address: Assets/Pok/Atlas/map_6.spriteatlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 6597a236ad0edb94d949c6d5967b153d,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 6597a236ad0edb94d949c6d5967b153d,
@@ -422,61 +496,71 @@ MonoBehaviour:
   - m_GUID: 683cc514b1c07d0459ec4de7e2889893
     m_Address: Assets/Pok/Textures/creatures/71.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 683cc514b1c07d0459ec4de7e2889893, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 683cc514b1c07d0459ec4de7e2889893, type: 3}
   - m_GUID: 68e165793dcd0074bbc158b9986c085a
     m_Address: 8
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 68e165793dcd0074bbc158b9986c085a, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 68e165793dcd0074bbc158b9986c085a, type: 3}
   - m_GUID: 6a4a3fe620e933142b6ec0f7e536ddb1
     m_Address: item_block
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 6a4a3fe620e933142b6ec0f7e536ddb1, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 6a4a3fe620e933142b6ec0f7e536ddb1, type: 3}
   - m_GUID: 6ae0be3e585b5cb4f81642c83fbddd61
     m_Address: Assets/Pok/Textures/icons/item_goldx4.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 6ae0be3e585b5cb4f81642c83fbddd61, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 6ae0be3e585b5cb4f81642c83fbddd61, type: 3}
   - m_GUID: 6b23dbd7d6421f04d8c61e694a201400
     m_Address: Assets/Pok/Textures/creatures/62.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 6b23dbd7d6421f04d8c61e694a201400, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 6b23dbd7d6421f04d8c61e694a201400, type: 3}
   - m_GUID: 6ec812450ac826c40960a3f6dbe37d16
     m_Address: Assets/Pok/Textures/bg/maps/10.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 6ec812450ac826c40960a3f6dbe37d16, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 6ec812450ac826c40960a3f6dbe37d16, type: 3}
   - m_GUID: 723bf4a0444256344a2750f9358ae175
     m_Address: Assets/Pok/Textures/bg/maps/5.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 723bf4a0444256344a2750f9358ae175, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 723bf4a0444256344a2750f9358ae175, type: 3}
   - m_GUID: 7408d0bd9aaa6eb4580744ea1fcf5d04
     m_Address: Assets/Pok/Textures/bg/maps/2.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 7408d0bd9aaa6eb4580744ea1fcf5d04, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 7408d0bd9aaa6eb4580744ea1fcf5d04, type: 3}
   - m_GUID: 776a73f538480b44bafcd6066d033c3f
     m_Address: Assets/Pok/Textures/creatures/53.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 776a73f538480b44bafcd6066d033c3f, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 776a73f538480b44bafcd6066d033c3f, type: 3}
   - m_GUID: 79d693c2e53a23840bc953a8c6c5a5ff
     m_Address: Assets/Pok/Atlas/upgrade.spriteatlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 79d693c2e53a23840bc953a8c6c5a5ff,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 79d693c2e53a23840bc953a8c6c5a5ff,
@@ -484,13 +568,15 @@ MonoBehaviour:
   - m_GUID: 7aaf978cb3ebfda4395f4ac35e718a70
     m_Address: Assets/Pok/Textures/creatures/69.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 7aaf978cb3ebfda4395f4ac35e718a70, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 7aaf978cb3ebfda4395f4ac35e718a70, type: 3}
   - m_GUID: 7acc57036a4fbe241b5635a58bf29577
     m_Address: Assets/Pok/Atlas/map_2.spriteatlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 7acc57036a4fbe241b5635a58bf29577,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 7acc57036a4fbe241b5635a58bf29577,
@@ -498,13 +584,15 @@ MonoBehaviour:
   - m_GUID: 7ae3e86200f709b42b5ab71e883aa37e
     m_Address: Assets/Pok/Textures/creatures/63.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 7ae3e86200f709b42b5ab71e883aa37e, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 7ae3e86200f709b42b5ab71e883aa37e, type: 3}
   - m_GUID: 800e7faa3cb8c6643a8631c955f0e043
     m_Address: Assets/Pok/Atlas/map_5.spriteatlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 800e7faa3cb8c6643a8631c955f0e043,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 800e7faa3cb8c6643a8631c955f0e043,
@@ -512,55 +600,64 @@ MonoBehaviour:
   - m_GUID: 850d3a85e3fe5c4429362d14ab1de57c
     m_Address: Assets/Pok/Textures/creatures/31.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 850d3a85e3fe5c4429362d14ab1de57c, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 850d3a85e3fe5c4429362d14ab1de57c, type: 3}
   - m_GUID: 85cf0bde7d847944a8c39ddf50271797
     m_Address: 12
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 85cf0bde7d847944a8c39ddf50271797, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 85cf0bde7d847944a8c39ddf50271797, type: 3}
   - m_GUID: 8641dc855fe5da64590a6b286647577b
     m_Address: 9
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 8641dc855fe5da64590a6b286647577b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 8641dc855fe5da64590a6b286647577b, type: 3}
   - m_GUID: 8cf547c3ca7f1814381a7e81f4b23aac
     m_Address: Assets/Pok/Textures/creatures/30.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 8cf547c3ca7f1814381a7e81f4b23aac, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 8cf547c3ca7f1814381a7e81f4b23aac, type: 3}
   - m_GUID: 8e6c1fae7d8dbcc48b85a34278183712
     m_Address: Assets/Pok/Textures/creatures/68.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 8e6c1fae7d8dbcc48b85a34278183712, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 8e6c1fae7d8dbcc48b85a34278183712, type: 3}
   - m_GUID: 9608f9e1a2521bf4aa3b21b91f627ce6
     m_Address: Assets/Pok/Textures/creatures/12.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 9608f9e1a2521bf4aa3b21b91f627ce6, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 9608f9e1a2521bf4aa3b21b91f627ce6, type: 3}
   - m_GUID: 969448ee610f59e4c887888b25198ffc
     m_Address: planet2
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 969448ee610f59e4c887888b25198ffc, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 969448ee610f59e4c887888b25198ffc, type: 3}
   - m_GUID: 9c7eff9a65d3faa41b6c8184f0f35173
     m_Address: Assets/Pok/Textures/creatures/61.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 9c7eff9a65d3faa41b6c8184f0f35173, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 9c7eff9a65d3faa41b6c8184f0f35173, type: 3}
   - m_GUID: 9d543a1a9e56bc045a66b6a050e4f1af
     m_Address: Assets/Pok/Atlas/map_4.spriteatlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: 9d543a1a9e56bc045a66b6a050e4f1af,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: 9d543a1a9e56bc045a66b6a050e4f1af,
@@ -568,211 +665,246 @@ MonoBehaviour:
   - m_GUID: 9daec04ca1271ac468cd4916c83fbe99
     m_Address: Ico_Gold
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 9daec04ca1271ac468cd4916c83fbe99, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 9daec04ca1271ac468cd4916c83fbe99, type: 3}
   - m_GUID: 9f3ae34103dbd30409461d599ca07a6d
     m_Address: Assets/Pok/Textures/creatures/2.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 9f3ae34103dbd30409461d599ca07a6d, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 9f3ae34103dbd30409461d599ca07a6d, type: 3}
   - m_GUID: 9f50fd10d81d5e146b6ec686d9dc0a16
     m_Address: 3
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: 9f50fd10d81d5e146b6ec686d9dc0a16, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: 9f50fd10d81d5e146b6ec686d9dc0a16, type: 3}
   - m_GUID: a0d9ccf1ea0e87d4794965b3fa230c65
     m_Address: Assets/ParadoxNotion/NodeCanvas/Modules/DialogueTrees/DialogueGUI/Sounds/194795__jim-ph__vintage-keyboard-1.wav
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 8300000, guid: a0d9ccf1ea0e87d4794965b3fa230c65, type: 3}
     m_TargetAsset: {fileID: 8300000, guid: a0d9ccf1ea0e87d4794965b3fa230c65, type: 3}
   - m_GUID: a24a35a03ef4d134a91fb198baf0e772
     m_Address: Assets/Pok/Textures/creatures/14.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: a24a35a03ef4d134a91fb198baf0e772, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: a24a35a03ef4d134a91fb198baf0e772, type: 3}
   - m_GUID: a37e1f860a9728f488524bf24f2e996a
     m_Address: SlotIconSpin
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: a37e1f860a9728f488524bf24f2e996a, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: a37e1f860a9728f488524bf24f2e996a, type: 3}
   - m_GUID: a52a6f97860b0e74fb1c88dab85976f0
     m_Address: 5
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: a52a6f97860b0e74fb1c88dab85976f0, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: a52a6f97860b0e74fb1c88dab85976f0, type: 3}
   - m_GUID: a63314bd6b7a25b4b877db2fb982b833
     m_Address: Assets/Pok/Textures/creatures/5.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: a63314bd6b7a25b4b877db2fb982b833, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: a63314bd6b7a25b4b877db2fb982b833, type: 3}
   - m_GUID: a775980759fb204499898d87dfe15462
     m_Address: Assets/Pok/Textures/creatures/64.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: a775980759fb204499898d87dfe15462, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: a775980759fb204499898d87dfe15462, type: 3}
   - m_GUID: a9bd1229e06f4c740a9a860e07bdd199
     m_Address: Assets/Pok/Textures/bg/maps/11.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: a9bd1229e06f4c740a9a860e07bdd199, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: a9bd1229e06f4c740a9a860e07bdd199, type: 3}
   - m_GUID: aba551a361f97c64caad54415fa7f3d4
     m_Address: 4
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: aba551a361f97c64caad54415fa7f3d4, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: aba551a361f97c64caad54415fa7f3d4, type: 3}
   - m_GUID: ad29fe3e415b9bc4a8f7ca57924066a0
     m_Address: Assets/Pok/Textures/creatures/46.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: ad29fe3e415b9bc4a8f7ca57924066a0, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: ad29fe3e415b9bc4a8f7ca57924066a0, type: 3}
   - m_GUID: ad4de65d623d94944b3bdd93ed0df52c
     m_Address: Assets/Pok/Textures/creatures/52.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: ad4de65d623d94944b3bdd93ed0df52c, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: ad4de65d623d94944b3bdd93ed0df52c, type: 3}
   - m_GUID: ae423e60814705e44b0742af11ad6494
     m_Address: Assets/Pok/Textures/creatures/56.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: ae423e60814705e44b0742af11ad6494, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: ae423e60814705e44b0742af11ad6494, type: 3}
   - m_GUID: ae8899e65578eec44b6313834a55092e
     m_Address: Assets/Pok/Textures/creatures/24.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: ae8899e65578eec44b6313834a55092e, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: ae8899e65578eec44b6313834a55092e, type: 3}
   - m_GUID: b087e95f4e68a6d4f8e16d39a366d4e0
     m_Address: Assets/Pok/Textures/creatures/7.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: b087e95f4e68a6d4f8e16d39a366d4e0, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: b087e95f4e68a6d4f8e16d39a366d4e0, type: 3}
   - m_GUID: b282842433d46ff4aab842b2432e3220
     m_Address: Assets/Pok/Textures/creatures/13.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: b282842433d46ff4aab842b2432e3220, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: b282842433d46ff4aab842b2432e3220, type: 3}
   - m_GUID: b46eb5221404d214c823a568e3303287
     m_Address: Assets/Pok/Textures/creatures/44.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: b46eb5221404d214c823a568e3303287, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: b46eb5221404d214c823a568e3303287, type: 3}
   - m_GUID: b54e4ff94ece21649b25b52f7269bb5e
     m_Address: Pack_Gems_Sack
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: b54e4ff94ece21649b25b52f7269bb5e, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: b54e4ff94ece21649b25b52f7269bb5e, type: 3}
   - m_GUID: b65a2bbf83fb1974599c5fcf41502f8a
     m_Address: Assets/Pok/Textures/bg/maps/12.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: b65a2bbf83fb1974599c5fcf41502f8a, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: b65a2bbf83fb1974599c5fcf41502f8a, type: 3}
   - m_GUID: b73115d67342c0946b8b742066fe58db
     m_Address: Pack_Gold_Safe
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: b73115d67342c0946b8b742066fe58db, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: b73115d67342c0946b8b742066fe58db, type: 3}
   - m_GUID: b912f0f227959284dae892d01258fb5a
     m_Address: Assets/Pok/Textures/creatures/bubble.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: b912f0f227959284dae892d01258fb5a, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: b912f0f227959284dae892d01258fb5a, type: 3}
   - m_GUID: bc50f82424bb6e540adfa8262ac7cb6c
     m_Address: Assets/Pok/Textures/creatures/70.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: bc50f82424bb6e540adfa8262ac7cb6c, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: bc50f82424bb6e540adfa8262ac7cb6c, type: 3}
   - m_GUID: bc5a89a5cbeb2734b9aa33d7480c118c
     m_Address: 6
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: bc5a89a5cbeb2734b9aa33d7480c118c, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: bc5a89a5cbeb2734b9aa33d7480c118c, type: 3}
   - m_GUID: c1f3ae3e634bc3e4a8e31dd843795b46
     m_Address: Assets/Pok/Textures/creatures/34.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: c1f3ae3e634bc3e4a8e31dd843795b46, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: c1f3ae3e634bc3e4a8e31dd843795b46, type: 3}
   - m_GUID: c2c40b7e3905b014bb5e1e11283dab47
     m_Address: Pack_Gold_Mountain
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: c2c40b7e3905b014bb5e1e11283dab47, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: c2c40b7e3905b014bb5e1e11283dab47, type: 3}
   - m_GUID: c322169d408711747b2f5879c287abff
     m_Address: Assets/Pok/Textures/creatures/29.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: c322169d408711747b2f5879c287abff, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: c322169d408711747b2f5879c287abff, type: 3}
   - m_GUID: c49cd93223ca06a42a107bc8472d58e4
     m_Address: item_mixingscale
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: c49cd93223ca06a42a107bc8472d58e4, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: c49cd93223ca06a42a107bc8472d58e4, type: 3}
   - m_GUID: c689c7e0203052e449744af8258e49d1
     m_Address: Assets/Pok/Textures/creatures/50.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: c689c7e0203052e449744af8258e49d1, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: c689c7e0203052e449744af8258e49d1, type: 3}
   - m_GUID: c74b83e36f3241a42b13659aa37ebc5d
     m_Address: Assets/Pok/Textures/creatures/41.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: c74b83e36f3241a42b13659aa37ebc5d, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: c74b83e36f3241a42b13659aa37ebc5d, type: 3}
   - m_GUID: c78029b7dae8333449457a0ff019fdff
     m_Address: Assets/Pok/Textures/creatures/66.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: c78029b7dae8333449457a0ff019fdff, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: c78029b7dae8333449457a0ff019fdff, type: 3}
   - m_GUID: ca37e3d3cb9702846823ca571b05c081
     m_Address: 7
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: ca37e3d3cb9702846823ca571b05c081, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: ca37e3d3cb9702846823ca571b05c081, type: 3}
   - m_GUID: cbdca4c8e4f791f4681c8f45cc4bc3df
     m_Address: Assets/Pok/Textures/creatures/38.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: cbdca4c8e4f791f4681c8f45cc4bc3df, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: cbdca4c8e4f791f4681c8f45cc4bc3df, type: 3}
   - m_GUID: ce776ba67bf7b6e4c867387f4d40f3bf
     m_Address: planet1
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: ce776ba67bf7b6e4c867387f4d40f3bf, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: ce776ba67bf7b6e4c867387f4d40f3bf, type: 3}
   - m_GUID: ced800f033f043b4cb9354023d06e1b9
     m_Address: Assets/Pok/Atlas/map_3.spriteatlas
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: ced800f033f043b4cb9354023d06e1b9,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: ced800f033f043b4cb9354023d06e1b9,
@@ -780,61 +912,71 @@ MonoBehaviour:
   - m_GUID: cfa35129173164d43b0e7fedc9dea5f6
     m_Address: Assets/Pok/Textures/creatures/10.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: cfa35129173164d43b0e7fedc9dea5f6, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: cfa35129173164d43b0e7fedc9dea5f6, type: 3}
   - m_GUID: d49e1499896606e439fe0a9419eb58be
     m_Address: Assets/Pok/Textures/creatures/Package_Box_Emoji_large.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: d49e1499896606e439fe0a9419eb58be, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: d49e1499896606e439fe0a9419eb58be, type: 3}
   - m_GUID: d672eb9eab6435843985c60d4e9cbd4b
     m_Address: Assets/Pok/Textures/bg/maps/15.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: d672eb9eab6435843985c60d4e9cbd4b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: d672eb9eab6435843985c60d4e9cbd4b, type: 3}
   - m_GUID: d67f8643a5e9f34489901af98ccd1b0d
     m_Address: Assets/Pok/Textures/creatures/19.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: d67f8643a5e9f34489901af98ccd1b0d, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: d67f8643a5e9f34489901af98ccd1b0d, type: 3}
   - m_GUID: d7a61d3c4aa42864ca5772ca4649b5f1
     m_Address: Assets/Pok/Textures/creatures/54.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: d7a61d3c4aa42864ca5772ca4649b5f1, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: d7a61d3c4aa42864ca5772ca4649b5f1, type: 3}
   - m_GUID: db56b6afb598b6a4c9c630ca6b20e1be
     m_Address: Assets/Pok/Textures/creatures/11.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: db56b6afb598b6a4c9c630ca6b20e1be, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: db56b6afb598b6a4c9c630ca6b20e1be, type: 3}
   - m_GUID: db6f4ea292d20a44dbb5aabf558be0c1
     m_Address: Assets/Pok/Textures/creatures/67.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: db6f4ea292d20a44dbb5aabf558be0c1, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: db6f4ea292d20a44dbb5aabf558be0c1, type: 3}
   - m_GUID: e059de8bf4bda604f94df656b311fdb6
     m_Address: Assets/Pok/Textures/creatures/1.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: e059de8bf4bda604f94df656b311fdb6, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: e059de8bf4bda604f94df656b311fdb6, type: 3}
   - m_GUID: e13323d8599dbb64bbbfe91e18708c6f
     m_Address: item_sale25
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: e13323d8599dbb64bbbfe91e18708c6f, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: e13323d8599dbb64bbbfe91e18708c6f, type: 3}
   - m_GUID: e2cbd09bc32c5f34191c918d5ba8d2d3
     m_Address: zones
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 4343727234628468602, guid: e2cbd09bc32c5f34191c918d5ba8d2d3,
       type: 2}
     m_TargetAsset: {fileID: 4343727234628468602, guid: e2cbd09bc32c5f34191c918d5ba8d2d3,
@@ -842,97 +984,113 @@ MonoBehaviour:
   - m_GUID: e2d6bd58f54ed724c8918e1f48146559
     m_Address: 6
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: e2d6bd58f54ed724c8918e1f48146559, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: e2d6bd58f54ed724c8918e1f48146559, type: 3}
   - m_GUID: e4bcd0108df817c4fb7aa34feae02b3b
     m_Address: Assets/Pok/Textures/creatures/26.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: e4bcd0108df817c4fb7aa34feae02b3b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: e4bcd0108df817c4fb7aa34feae02b3b, type: 3}
   - m_GUID: ef04e3167d4a1064fab7f8b88c630714
     m_Address: Assets/Pok/Textures/creatures/18.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: ef04e3167d4a1064fab7f8b88c630714, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: ef04e3167d4a1064fab7f8b88c630714, type: 3}
   - m_GUID: ef9e5ddf638b40f4c9a96a5a0e70af4a
     m_Address: 1
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: ef9e5ddf638b40f4c9a96a5a0e70af4a, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: ef9e5ddf638b40f4c9a96a5a0e70af4a, type: 3}
   - m_GUID: f17dedf48219e4a40a541ebb4cb3a7f9
     m_Address: Assets/Pok/Textures/bg/maps/3.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: f17dedf48219e4a40a541ebb4cb3a7f9, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: f17dedf48219e4a40a541ebb4cb3a7f9, type: 3}
   - m_GUID: f1da477dca1465c408b4002883fda09b
     m_Address: Assets/Pok/Textures/creatures/72.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: f1da477dca1465c408b4002883fda09b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: f1da477dca1465c408b4002883fda09b, type: 3}
   - m_GUID: f1ec882289623ab46ac8c6a5376d4f31
     m_Address: Assets/Pok/Textures/creatures/43.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: f1ec882289623ab46ac8c6a5376d4f31, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: f1ec882289623ab46ac8c6a5376d4f31, type: 3}
   - m_GUID: f2980f4895c7d3e4f904381c7a073b8c
     m_Address: 10
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: f2980f4895c7d3e4f904381c7a073b8c, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: f2980f4895c7d3e4f904381c7a073b8c, type: 3}
   - m_GUID: f423b4e8dd4f2b042a1684e429062e00
     m_Address: Assets/Pok/Textures/creatures/51.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: f423b4e8dd4f2b042a1684e429062e00, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: f423b4e8dd4f2b042a1684e429062e00, type: 3}
   - m_GUID: f4fa3942cc6f96a4892b10399cff94d8
     m_Address: Assets/Pok/Textures/bg/maps/13.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: f4fa3942cc6f96a4892b10399cff94d8, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: f4fa3942cc6f96a4892b10399cff94d8, type: 3}
   - m_GUID: f71041012d8db80498a18745d523e15d
     m_Address: Pack_Gems_Case
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: f71041012d8db80498a18745d523e15d, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: f71041012d8db80498a18745d523e15d, type: 3}
   - m_GUID: f81a2342b4466c441b41b5329b42d989
     m_Address: Assets/Pok/Textures/creatures/21.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: f81a2342b4466c441b41b5329b42d989, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: f81a2342b4466c441b41b5329b42d989, type: 3}
   - m_GUID: f89b92d69d2cd54498d1bbe31580a7b5
     m_Address: 2
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: f89b92d69d2cd54498d1bbe31580a7b5, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: f89b92d69d2cd54498d1bbe31580a7b5, type: 3}
   - m_GUID: fa3fc28c5407e9a409cb136ad6322ea5
     m_Address: Assets/Pok/Textures/creatures/40.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: fa3fc28c5407e9a409cb136ad6322ea5, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: fa3fc28c5407e9a409cb136ad6322ea5, type: 3}
   - m_GUID: fcb36d9ccecddb246be83784ff158be1
     m_Address: item_bonus_reward
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: fcb36d9ccecddb246be83784ff158be1, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: fcb36d9ccecddb246be83784ff158be1, type: 3}
   - m_GUID: fe85359aa4b44a5409856be882c73e1b
     m_Address: Assets/Pok/Textures/bg/maps/14.png
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Texture
     m_MainAsset: {fileID: 2800000, guid: fe85359aa4b44a5409856be882c73e1b, type: 3}
     m_TargetAsset: {fileID: 2800000, guid: fe85359aa4b44a5409856be882c73e1b, type: 3}
   m_ReadOnly: 0
