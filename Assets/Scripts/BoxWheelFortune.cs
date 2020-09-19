@@ -79,6 +79,7 @@ namespace Pok
         public GameObject creatureTo;
         public UI2DSprite rewardIcon;
         public UILabel labelRewardQuantiy, labelRewardType;
+        public UIButton btnWatchADS;
         public void OnEzEvent(GameDatabaseInventoryEvent eventType)
         {
             if (eventType.item.item.ItemID == "TicketSpin")
@@ -379,11 +380,25 @@ namespace Pok
         {
 
         }
-
+        float secCheck = 1;
         // Update is called once per frame
         void Update()
         {
+            secCheck -= Time.deltaTime;
+            if(secCheck <= 0)
+            {
+                secCheck = 1;
+              //  if (GameManager.Instance.isRewardADSReady("") != btnWatchADS.isEnabled)
+                {
 
+                    btnWatchADS.isEnabled = GameManager.Instance.isRewardADSReady("");
+                    if (GameManager.Instance.Database.getItem("TicketSpin").QuantityBig >= 12)
+                    {
+                        btnWatchADS.isEnabled = false;
+                    }
+                }
+            }
+          
         }
     }
 }

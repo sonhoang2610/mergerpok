@@ -307,10 +307,19 @@ public static class StringUtils
     {
         return int.Parse(v);
     }
+    public static long toLong(this string v)
+    {
+        return long.Parse(v);
+    }
+    public static ulong toULong(this string v)
+    {
+        return ulong.Parse(v);
+    }
     public static System.Numerics.BigInteger toBigInt(this string v)
     {
         return System.Numerics.BigInteger.Parse(v.clearDot());
     }
+
     public static string convertMoneyAndAddDot(long i)
     {
 
@@ -626,7 +635,7 @@ public static class objExtend
             charEnd -=2;
             str = str.Remove(str.Length - 2, 1);
             str = str.Insert(str.Length - 1, "000000000000");
-            string[] alphab = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o" };
+            string[] alphab = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t" };
             var index = System.Array.FindIndex(alphab, x => x == str.Substring(str.Length - 1, 1));
             str = str.Substring(0, str.Length - 1);
             for (int i = 0; i < index + 1; ++i)
@@ -643,13 +652,12 @@ public static class objExtend
         var num = System.Numerics.BigInteger.Parse(numstr);
         if (numstr.Length > 15)
         {
-            string[] alphab = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o" };
+            string[] alphab = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o","p","q","r","s","t" };
             string format = "#,##0";
             for(int i = 0; i <(numstr.Length/3)  -(numstr.Length % 3 == 0 ? 1 : 0); ++i)
             {
                 format += ",";
             }
-       
             format += "a" + alphab[((numstr.Length/3) - (numstr.Length % 3 ==0 ? 1 : 0)) - 5];
             return num.ToString(format, CultureInfo.InvariantCulture);
         }else
@@ -1145,7 +1153,7 @@ public static class TimeExtension
     public static IEnumerator GetNetTime(System.Action<string, string> pResult)
     {
 
-        string url = "http://34.94.28.183:1235/gettime/gettime";
+        string url = "https://api.molistudio.ai/getTime";
         UnityWebRequest www = new UnityWebRequest();
         Debug.Log(url);
         www.url = url;

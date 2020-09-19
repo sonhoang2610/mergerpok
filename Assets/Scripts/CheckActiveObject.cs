@@ -82,6 +82,14 @@ namespace Pok
             }
         }
 
+        public void reload()
+        {
+            foreach (var checkObject in checkObjects)
+            {
+                checkObject.checkCondition();
+            }
+        }
+
         public void OnEzEvent(AddCreatureEvent eventType)
         {
             foreach (var checkObject in checkObjects)

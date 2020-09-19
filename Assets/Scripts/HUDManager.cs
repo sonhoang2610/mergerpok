@@ -304,7 +304,7 @@ namespace Pok
         }
         public void showBoxShopBooster()
         {
-            BoxShopCommon.Instance.show();
+            BoxShopCommon.Instance.showBoxBooster();
         }
         // Start is called before the first frame update
         void Start()
@@ -346,24 +346,42 @@ namespace Pok
         }
         public void checkVip()
         {
-            boxVip.item.loadAssetWrapped<BaseItemGame>((o) =>
+            System.DateTime time = System.DateTime.Now;
+            if(TimeCounter.Instance.getCurrentTime(ref time))
             {
-                var product = InAppPurchasing.GetIAPProductById(o.ItemID.ToLower());
-                SubscriptionInfo infoPro = InAppPurchasing.GetSubscriptionInfo(product.Name);
-                if (infoPro != null)
+                boxVip.item.loadAssetWrapped<BaseItemGame>((o) =>
                 {
-                    if ((infoPro.isSubscribed() == Result.True || infoPro.isFreeTrial() == Result.True) && infoPro.isExpired() == Result.False)
+                    var product = InAppPurchasing.GetIAPProductById(o.ItemID.ToLower());
+                    SubscriptionInfo infoPro = InAppPurchasing.GetSubscriptionInfo(product.Name);
+                    if (infoPro != null)
                     {
-                        btnVip.GetComponent<UIButton>().isEnabled = true;
+                        if ((infoPro.isSubscribed() == Result.True || infoPro.isFreeTrial() == Result.True) && infoPro.isExpired() == Result.False)
+                        {
+                            btnVip.GetComponent<UIButton>().isEnabled = false;
+                        }
+                        else
+                        {
+                            btnVip.GetComponent<UIButton>().isEnabled = true;
+                            var exist = GameManager.Instance.Database.getItem(o.ItemID);
+                            exist.setQuantity("0");
+                        }
                     }
                     else
                     {
-                        btnVip.GetComponent<UIButton>().isEnabled = false;
-                        var exist = GameManager.Instance.Database.getItem(o.ItemID);
-                        exist.setQuantity("0");
+                        //var exist = GameManager.Instance.Database.getItem(o.ItemID);
+                        //if (exist.QuantityBig > 0)
+                        //{
+                        //    exist.setQuantity("0");
+                        //}
+
                     }
-                }
-            });
+                });
+            }
+            else
+            {
+                btnVip.GetComponent<UIButton>().isEnabled = false;
+            }
+         
         }
         public void PurchaseCompleted(IAPProduct pro)
         {

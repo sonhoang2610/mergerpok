@@ -20,65 +20,74 @@ namespace Pok
         {
             if (DG.Tweening.DOTween.IsTweening(id))
             {
-                DG.Tweening.DOTween.Kill(id,false);
+                DG.Tweening.DOTween.Kill(id, false);
             }
-          
+
         }
-        public static string calculateCreaturePrice(int indexWay,int numberBought,CreatureItem creauture)
+        public static string calculateCreaturePrice(int indexWay, int numberBought, CreatureItem creauture)
         {
             if (indexWay == 0)
             {
                 System.Numerics.BigInteger startMoney = 560;
                 int startIncrease = 5;
                 int percentIncrease = 16;
-                float startFactor = 1;
+                System.Numerics.BigInteger startFactor = 100;
                 if (GameManager.Instance.ZoneChoosed != "Zone1")
                 {
-                    
+
                     startMoney = creauture.goldAFKReward[GameManager.Instance.ZoneChoosed].toBigInt();
-               
+
                     switch (GameManager.Instance.ZoneChoosed)
                     {
                         case "Zone2":
                             startIncrease = 3;
-                            percentIncrease = 40;
-                            startFactor = 4.6f;
+                            percentIncrease = 39;
+                            startFactor = 423;
                             break;
                         case "Zone3":
                             startIncrease = 3;
-                            percentIncrease = 45;
-                            startFactor = 5.1f;
+                            percentIncrease = 46;
+                            startFactor = 490;
                             break;
                         case "Zone4":
                             startIncrease = 3;
-                            percentIncrease = 45;
-                            startFactor = 5.6f;
+                            percentIncrease = 50;
+                            startFactor = 568;
                             break;
                         case "Zone5":
                             startIncrease = 2;
-                            percentIncrease = 50;
-                            startFactor = 6.6f;
+                            percentIncrease = 53;
+                            startFactor = 660;
                             break;
                         case "Zone6":
-                            startIncrease =2;
-                            percentIncrease = 60;
-                            startFactor = 7.6f;
+                            startIncrease = 2;
+                            percentIncrease = 56;
+                            startFactor = 764;
                             break;
                     }
                     if (creauture.RankChild > 0)
                     {
                         var startCreature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == "Pok1");
-                        startMoney = startCreature.goldAFKReward[GameManager.Instance.ZoneChoosed].toBigInt()*((int)(Mathf.Pow( startFactor,creauture.RankChild)*100))/100;
+                        System.Numerics.BigInteger factorPow = startFactor;
+                        System.Numerics.BigInteger devine = 100;
+                        for (int i = 0; i < creauture.RankChild -1; ++i)
+                        {
+                            factorPow *= startFactor;
+                            devine *= 100;
+                        }
+
+                        startMoney = startCreature.goldAFKReward[GameManager.Instance.ZoneChoosed].toBigInt() * factorPow / devine;
                     }
                 }
                 else
                 {
-                    startMoney = (startMoney * (long)System.Math.Pow(2.82f, creauture.RankChild));
+                   
+                    startMoney = (startMoney * System.Numerics.BigInteger.Pow(282, creauture.RankChild) / System.Numerics.BigInteger.Pow(100, creauture.RankChild));
                 }
-               
+
                 if (numberBought >= startIncrease)
                 {
-                    for (int i = 0; i < (numberBought+1) - startIncrease; ++i)
+                    for (int i = 0; i < (numberBought + 1) - startIncrease; ++i)
                     {
                         if (i == 0)
                         {
@@ -110,7 +119,7 @@ namespace Pok
         void onRemoved(BaseItemGameInstanced itemSlot);
         void onDirtyChange(BaseItemGameInstanced itemSlot);
     }
-    public class VipModule: IMachineItem,EzEventListener<TimeEvent>
+    public class VipModule : IMachineItem, EzEventListener<TimeEvent>
     {
         public int quantityCrystal = 30;
         public float discountCrystal = 0.2f;
@@ -123,20 +132,25 @@ namespace Pok
             }
             GameManager.Instance.addFactorSuperIncome(2, -1);
             TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = "vip", destinyIfHave = timeClaimCrystal });
+            HUDManager.Instance.btnVip.GetComponent<UIButton>().isEnabled = false;
         }
         public void onAdded(BaseItemGameInstanced itemSlot)
         {
             ES3.Save("BlockADS", ES3.Load("BlockADS", 0) + 1);
-            var oldBonus =  ES3.Load("BonusCrystalVip", 0);
+            var oldBonus = ES3.Load("BonusCrystalVip", 0);
             ES3.Save("BonusCrystalVip", discountCrystal);
-            ES3.Save("BonusCrystal", ES3.Load<float>("BonusCrystal", 0) - oldBonus +  discountCrystal);
+            ES3.Save("BonusCrystal", ES3.Load<float>("BonusCrystal", 0) - oldBonus + discountCrystal);
             GameManager.Instance.StartCoroutine(execute(itemSlot));
             EzEventManager.AddListener(this);
+            
         }
 
         public void onDirtyChange(BaseItemGameInstanced itemSlot)
         {
-            GameManager.Instance.StartCoroutine(execute(itemSlot));
+            if (itemSlot.QuantityBig > 0)
+            {
+                GameManager.Instance.StartCoroutine(execute(itemSlot));
+            }
         }
 
         public void onEnable(BaseItemGameInstanced itemSlot)
@@ -147,11 +161,11 @@ namespace Pok
 
         public void OnEzEvent(TimeEvent eventType)
         {
-            if(eventType.timeInfo.id == "vip" && eventType.timeInfo.counterTime > eventType.timeInfo.destinyIfHave)
+            if (eventType.timeInfo.id == "vip" && eventType.timeInfo.counterTime > eventType.timeInfo.destinyIfHave)
             {
                 var crystal = GameManager.Instance.Database.getItem("Crystal");
                 crystal.addQuantity(quantityCrystal.ToString());
-                eventType.timeInfo.firstTimeAdd = eventType.timeInfo.firstTimeAdd + eventType.timeInfo.CounterTime -  eventType.timeInfo.CounterTime % timeClaimCrystal;
+                eventType.timeInfo.firstTimeAdd = eventType.timeInfo.firstTimeAdd + eventType.timeInfo.CounterTime - eventType.timeInfo.CounterTime % timeClaimCrystal;
                 HUDManager.Instance.boxReward.show(new ItemRewardInfo[] { new ItemRewardInfo() {
                     itemReward = new ItemWithQuantity()
                     {
@@ -166,20 +180,29 @@ namespace Pok
         {
             ES3.Save("BlockADS", ES3.Load("BlockADS", 0) - 1);
             var oldBonus = ES3.Load("BonusCrystalVip", 0.0f);
-            if(oldBonus == 0)
+            if (oldBonus == 0)
             {
                 oldBonus = discountCrystal;
             }
             ES3.Save("BonusCrystalVip", 0);
-            ES3.Save("BonusCrystal", ES3.Load<float>("BonusCrystal", 0) - oldBonus);
-            var timeX2 = GameManager.Instance.Database.timeRestore.Find(x => x.id == $"[SuperInCome]2" && x.destinyIfHave == -1);
-            GameManager.Instance.Database.removeTime(timeX2);
-            var time= TimeCounter.Instance.timeCollection.Value.Find(x => x.id == "vip");
-            GameManager.Instance.Database.removeTime(time);
+            var bonus = ES3.Load<float>("BonusCrystal", 0) - oldBonus;
+            if(bonus < 0) { bonus = 0; }
+            ES3.Save("BonusCrystal", bonus);
+            var timeX2s = GameManager.Instance.Database.timeRestore.FindAll(x => x.id == $"[SuperInCome]2" && x.destinyIfHave == -1);
+            foreach (var timeX2 in timeX2s)
+            {
+                GameManager.Instance.Database.removeTime(timeX2);
+            }
+            var times = TimeCounter.Instance.timeCollection.Value.FindAll(x => x.id == "vip");
+            foreach (var time in times)
+            {
+                GameManager.Instance.Database.removeTime(time);
+            }
+            HUDManager.Instance.btnVip.GetComponent<UIButton>().isEnabled = true;
         }
     }
 
- 
+
     public class UpgradeItemLevelEgg : IMachineItem
     {
         public string egg = "Egg";
@@ -196,15 +219,15 @@ namespace Pok
             var creautres = GameManager.Instance.Database.getCreatureExist(egg + GameManager.Instance.ZoneChoosed, GameManager.Instance.ZoneChoosed);
             var creatureOriginal = GameDatabase.Instance.getItemInventory(exist.id);
             var id = ((PackageCreatureObject)creatureOriginal).creatureExtra[itemSlot.CurrentLevel].ItemID;
-            foreach(var creature in creautres)
+            foreach (var creature in creautres)
             {
-                ((PackageCreatureInstanceSaved) creature).creature = id;
+                ((PackageCreatureInstanceSaved)creature).creature = id;
             }
             itemSlot.item.updateString = () => { return $"{ GameManager.Instance.getLevelItem(itemSlot.itemID) - 1} => {GameManager.Instance.getLevelItem(itemSlot.itemID)}"; };
         }
         public void onAdded(BaseItemGameInstanced itemSlot)
         {
-           GameManager.Instance.StartCoroutine( execute(itemSlot));
+            GameManager.Instance.StartCoroutine(execute(itemSlot));
         }
 
         public void onDirtyChange(BaseItemGameInstanced itemSlot)
@@ -226,14 +249,14 @@ namespace Pok
     {
         public string itemUprade;
         public bool varitantZone = true;
-        public string ItemUprade { get => itemUprade+(varitantZone ? GameManager.Instance.ZoneChoosed:"") ; set => itemUprade = value; }
+        public string ItemUprade { get => itemUprade + (varitantZone ? GameManager.Instance.ZoneChoosed : ""); set => itemUprade = value; }
         public void execute(BaseItemGameInstanced itemSlot)
         {
             var exist = GameDatabase.Instance.getItemInventory(ItemUprade);
             if (exist != null && exist.limitInInventory != null)
             {
                 exist.limitInInventory.setLevel(itemSlot.CurrentLevel);
-                itemSlot.item.updateString = ()=> {
+                itemSlot.item.updateString = () => {
                     return exist.limitInInventory.getUnit(itemSlot.CurrentLevel).toTimeHour() + " => " + exist.limitInInventory.getUnit(itemSlot.CurrentLevel + 1).toTimeHour();
                 };
             }
@@ -271,7 +294,7 @@ namespace Pok
             {
                 exist.timeToRestore.setLevel(itemSlot.CurrentLevel);
                 itemSlot.item.updateString = () => {
-                    return exist.timeToRestore.getUnit(itemSlot.CurrentLevel)+ " => " + exist.timeToRestore.getUnit(itemSlot.CurrentLevel + 1);
+                    return exist.timeToRestore.getUnit(itemSlot.CurrentLevel) + " => " + exist.timeToRestore.getUnit(itemSlot.CurrentLevel + 1);
                 };
             }
         }
@@ -337,11 +360,11 @@ namespace Pok
 
         public void OnEzEvent(AddCreatureEvent eventType)
         {
-     
+
             var zone = GameManager.Instance.Database.zoneInfos.Find(x => x.Id == GameManager.Instance.ZoneChoosed);
             if (string.IsNullOrEmpty(zone.CurentUnlock)) return;
-            string index =string.IsNullOrEmpty(zone.CurentUnlock) ? "1" : zone.CurentUnlock.Replace("Pok", "");
-            if (int.Parse( index) < 8)
+            string index = string.IsNullOrEmpty(zone.CurentUnlock) ? "1" : zone.CurentUnlock.Replace("Pok", "");
+            if (int.Parse(index) < 8)
             {
                 return;
             }
@@ -372,15 +395,15 @@ namespace Pok
                     NGUITools.BringForward(pObject);
                     Sequence seq = DOTween.Sequence();
                     seq.Append(pObject.transform.DOScale(1.5f, 0.75f));
-                    seq.Append( pObject.transform.DOMove(Home.transform.position, 0.5f));
-                    seq.Join( pObject.transform.DOScale(0, 0.6f).OnComplete(() =>
+                    seq.Append(pObject.transform.DOMove(Home.transform.position, 0.5f));
+                    seq.Join(pObject.transform.DOScale(0, 0.6f).OnComplete(() =>
                     {
                         GameObject.Destroy(pObject);
                     }));
                 }
             }
             HUDManager.Instance.updateTimeMixing();
-     
+
         }
 
         public void onRemoved(BaseItemGameInstanced itemSlot)
@@ -422,7 +445,6 @@ namespace Pok
         {
             if (!ItemBoosterObject.boosterType.ContainsKey(nameof(SuperInCome)))
             {
-                Debug.Log("register Type" + nameof(SuperInCome));
                 ItemBoosterObject.boosterType.Add(nameof(SuperInCome), typeof(SuperInCome));
             }
         }
@@ -434,9 +456,9 @@ namespace Pok
                 factor = 4;
             }
 
-            int factorTime = factor == 2 ? 1 : 60;
+            int factorTime = factor == 2 ? 1 : 40;
             double time = blackBoard["time"].GetType() == typeof(double) ? (double)blackBoard["time"] : Random.Range(((Vector2Int)blackBoard["time"]).x, ((Vector2Int)blackBoard["time"]).y);
-            GameManager.Instance.addFactorSuperIncome(factor, time/ factorTime);
+            GameManager.Instance.addFactorSuperIncome(factor, time / factorTime);
         }
 
         public string getContent(Dictionary<string, object> blackBoard)
@@ -446,7 +468,7 @@ namespace Pok
             {
                 factor = 4;
             }
-            int factorTime = factor == 2 ? 1 : 60;
+            int factorTime = factor == 2 ? 1 : 40;
             double time = blackBoard["time"].GetType() == typeof(double) ? (double)blackBoard["time"] : Random.Range(((Vector2Int)blackBoard["time"]).x, ((Vector2Int)blackBoard["time"]).y);
             time /= factorTime;
             return System.TimeSpan.FromSeconds(time).Hours == 0 ? (System.TimeSpan.FromSeconds(time).Minutes + "M") : (System.TimeSpan.FromSeconds(time).Hours + "H");
@@ -462,7 +484,7 @@ namespace Pok
         {
             if (!ItemBoosterObject.boosterType.ContainsKey(nameof(DiscountCreature)))
             {
-                Debug.Log("register Type"+ nameof(DiscountCreature));
+                Debug.Log("register Type" + nameof(DiscountCreature));
                 ItemBoosterObject.boosterType.Add(nameof(DiscountCreature), typeof(DiscountCreature));
             }
         }

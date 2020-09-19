@@ -1,0 +1,82 @@
+<linker>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.U2D.SpriteAtlas" preserve="all" />
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AudioClip" preserve="all" />
+  </assembly>
+  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Pok.CreatureItem" preserve="all" />
+    <type fullname="UIPanel" preserve="all" />
+    <type fullname="Pok.TimeCounter" preserve="all" />
+    <type fullname="UIWidget" preserve="all" />
+    <type fullname="UIDragObject" preserve="all" />
+    <type fullname="SoundManager" preserve="all" />
+    <type fullname="Pok.TimeListener" preserve="all" />
+    <type fullname="UILabel" preserve="all" />
+    <type fullname="UIButton" preserve="all" />
+    <type fullname="ParticleSystemAutoDestroy" preserve="all" />
+    <type fullname="UIElement" preserve="all" />
+    <type fullname="RenderQueueModifier" preserve="all" />
+    <type fullname="Pok.Creature" preserve="all" />
+    <type fullname="DG.Tweening.DOTweenAnimation" preserve="all" />
+    <type fullname="Pok.TimeCounterInfoCollection" preserve="all" />
+    <type fullname="UI2DSprite" preserve="all" />
+    <type fullname="Pok.GameManager" preserve="all" />
+    <type fullname="Pok.ItemPackageSimple" preserve="all" />
+    <type fullname="Pok.PackageCreatureObject" preserve="all" />
+    <type fullname="Pok.ItemMissionObject" preserve="all" />
+    <type fullname="Pok.PackageRamdom" preserve="all" />
+    <type fullname="EazyEngine.Audio.AudioDatabase" preserve="all" />
+    <type fullname="Pok.ItemUpgradeObject" preserve="all" />
+    <type fullname="Pok.PackRandomCreature" preserve="all" />
+    <type fullname="Pok.ZoneObject" preserve="all" />
+    <type fullname="Pok.ShopDatabase" preserve="all" />
+    <type fullname="Pok.BaseItemGame" preserve="all" />
+    <type fullname="Pok.ItemPackageGold" preserve="all" />
+    <type fullname="Pok.ItemBoosterObject" preserve="all" />
+    <type fullname="Pok.MapObject" preserve="all" />
+    <type fullname="Pok.GameDatabase" preserve="all" />
+    <type fullname="ScriptableObjectArchitecture.UnitDefineLevelIntVariable" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider" preserve="all" />
+  </assembly>
+  <assembly fullname="DOTweenPro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DG.Tweening.DOTweenVisualManager" preserve="all" />
+  </assembly>
+  <assembly fullname="ParadoxNotion, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="NodeCanvas.Framework.Blackboard" preserve="all" />
+    <type fullname="NodeCanvas.StateMachines.FSMOwner" preserve="all" />
+    <type fullname="FlowCanvas.FlowScript" preserve="all" />
+  </assembly>
+  <assembly fullname="ScriptableObject-Architecture, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="ScriptableObjectArchitecture.StringVariable" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEditor, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEditor.MonoScript" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Font" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.ParticleSystem" preserve="all" />
+    <type fullname="UnityEngine.ParticleSystemRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+  </assembly>
+</linker>

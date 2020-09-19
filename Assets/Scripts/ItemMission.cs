@@ -31,8 +31,8 @@ namespace Pok
         protected ItemRewardInfo[] cacheReward;
         public override void setInfo(ItemMissionObject pInfo)
         {
-            if(_info != pInfo)
-            {
+            //if(_info != pInfo)
+            //{
                 var listReward = new List<ItemRewardInfo>();
                 for (int i = 0; i < pInfo.itemReward.Length; ++i)
                 {
@@ -40,7 +40,7 @@ namespace Pok
                     listReward.Add(new ItemRewardInfo() { itemReward = extraItem[0], iconOverride = pInfo.itemReward[i].item.icons[0].Icon });
                 }
                 cacheReward = listReward.ToArray();
-            }
+            //}
             base.setInfo(pInfo);
          
             if (nameMission)

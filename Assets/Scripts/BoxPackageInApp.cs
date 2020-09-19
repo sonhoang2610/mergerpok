@@ -19,7 +19,9 @@ namespace Pok
         protected string listentTime;
         public void showData(ShopItemInfo info)
         {
-            _info = info;
+            //DateTime timeNow = DateTime.now
+            //if (TimeCounter.Instance.getCurrentTime())
+                _info = info;
             if (loading)
             {
                 loading.gameObject.SetActive(false);
@@ -30,6 +32,7 @@ namespace Pok
                 var random = UnityEngine.Random.Range(0, 2);
                 listentTime = $"[Package]{info.itemSell.ItemID}";
                 TimeCounter.Instance.addTimer(new TimeCounterInfo() { autoRemoveIfToDestiny = true, id = $"[Package]{info.itemSell.ItemID}/{GameManager.Instance.ZoneChoosed}", destinyIfHave = 86400 });
+                listentTime = $"[Package]{info.itemSell.ItemID}/{GameManager.Instance.ZoneChoosed}";
                 HUDManager.Instance.checkExistPackage();
             }
             else
@@ -43,7 +46,7 @@ namespace Pok
                 NGUITools.BringForward(model);
             },"Box");
             var localize = EasyMobile.InAppPurchasing.GetProductLocalizedData(EasyMobile.InAppPurchasing.GetIAPProductById(info.itemSell.ItemID.ToLower()).Name);
-            price.text = localize != null ? localize.localizedPriceString : "";
+            price.text = localize != null ? localize.localizedPriceString : "1$";
             namePackage.text = info.itemSell.displayNameItem.Value;
             container.show();
         }

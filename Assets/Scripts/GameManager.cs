@@ -134,16 +134,22 @@ namespace Pok
                     addFactorSuperIncome(factor, time);
                     return;
                 }
-                timing.destinyIfHave += time;
+                if (time != -1 && timing.destinyIfHave != -1)
+                {
+                    timing.destinyIfHave += time;
+                }
                 if (time == -1)
                 {
                     timing.destinyIfHave = -1;
+                    timing.autoRemoveIfToDestiny = false;
                 }
             }
             else
             {
-                TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[SuperInCome]{factor}", destinyIfHave = time, autoRemoveIfToDestiny = true });
+                TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[SuperInCome]{factor}", destinyIfHave = time, autoRemoveIfToDestiny = time != -1 });
             }
+            var quantitySecIncome = System.Numerics.BigInteger.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (int)GameManager.Instance.getFactorIncome().x;
+            HUDManager.Instance.quanityHour.text = quantitySecIncome.ToString().ToKMBTA();
         }
         public void DiscountCreature(float percent, double time)
         {
@@ -223,7 +229,7 @@ namespace Pok
             {
                 float factorTime = float.Parse(timing.id.Remove(0, ("[SuperInCome]").Length));
                 double timeLefxt = (timing.destinyIfHave - timing.CounterTime).Clamp(timing.destinyIfHave, 0);
-                if (factorTime > factor.x && timeLefxt > 0)
+                if (factorTime > factor.x && (timeLefxt > 0 || timing.destinyIfHave ==-1))
                 {
                     factor = new UnityEngine.Vector2(factorTime, (float)timeLefxt);
                 }
@@ -420,14 +426,17 @@ namespace Pok
             }
         }
         public CreatureItem[] items;
+        [ContextMenu("removeVip")]
+        public void removeVip()
+        {
+            var exist = GameManager.Instance.Database.getItem("VipItem");
+            exist.setQuantity("0");
+        }
         [ContextMenu("hack")]
         public void hack()
         {
-            var quantityAdd = (int)getFactorIncome().x * System.Numerics.BigInteger.Parse( getTotalGoldGrowthCurrentZone().clearDot()) * 180;
-            //if(quantityAdd < System.Numerics.BigInteger.Parse(("999ak").clearDot()))
-            //{
-            //    quantityAdd = System.Numerics.BigInteger.Parse(("999ak").clearDot());
-            //}
+            HUDManager.Instance.boxPackedInapp.showData(GameDatabase.Instance.startedKit);
+            var quantityAdd = System.Numerics.BigInteger.Parse(("999ao").clearDot());
             GameManager.Instance.Database.getItem("Coin").addQuantity(quantityAdd.ToString());
             //for (int i = 0; i < items.Length - 2; ++i)
             //{
@@ -483,24 +492,27 @@ namespace Pok
         public GameDatabaseInstanced LoadDatabaseGame()
         {
             GameDatabaseInstanced pDatabase = new GameDatabaseInstanced();
-            if (ES3.FileExists())
+            if (ES3.FileExists() || !ES3.FileExists(new ES3Settings() { path = SaveDataConstraint.ANOTHER }))
             {
                 pDatabase = ES3.Load<GameDatabaseInstanced>("Database", ES3.Deserialize<GameDatabaseInstanced>(ES3.Serialize(_defaultDatabase)));
                 breakComponentSaveDatabase(SaveDataConstraint.INVENTORY, pDatabase);
                 breakComponentSaveDatabase(SaveDataConstraint.WORLD_INFO, pDatabase);
                 breakComponentSaveDatabase(SaveDataConstraint.WORLD_DATA, pDatabase);
                 breakComponentSaveDatabase(SaveDataConstraint.TIME_DATA, pDatabase);
-                var keys = ES3.GetKeys();
-                foreach(var key in keys)
+                if (ES3.FileExists())
                 {
-                    if (key != "Database")
+                    var keys = ES3.GetKeys();
+                    foreach (var key in keys)
                     {
-                        var value = ES3.Load(key);
-                        ES3.Save(key: key, value, value.GetType(), new ES3Settings() { location = ES3.Location.Cache,path= SaveDataConstraint.ANOTHER });
-                        ES3.markDirty(SaveDataConstraint.ANOTHER);
+                        if (key != "Database")
+                        {
+                            var value = ES3.Load(key);
+                            ES3.Save(key: key, value, value.GetType(), new ES3Settings() { location = ES3.Location.Cache, path = SaveDataConstraint.ANOTHER });
+                            ES3.markDirty(SaveDataConstraint.ANOTHER);
+                        }
                     }
+                    ES3.DeleteFile();
                 }
-                ES3.DeleteFile();
             }
             else
             {
@@ -627,7 +639,7 @@ namespace Pok
             breakComponentSaveDatabase(SaveDataConstraint.TIME_DATA, _database);
             for (int i = 0; i < ES3.dirty.Count; ++i)
             {
-                if (ES3.dirty.Values.ElementAt(i))
+                if (ES3.dirty.Values.ElementAt(i) || ES3.dirty.Keys.ElementAt(i) == SaveDataConstraint.TIME_DATA)
                 {
                     ES3.StoreCachedFile(new ES3Settings() {path = ES3.dirty.Keys.ElementAt(i) });
                 }
@@ -1080,6 +1092,20 @@ namespace Pok
             {
                 Database.checkTimeItem(eventType.item.itemID);
             }
+            if (eventType.item.item.ItemID.Contains("TicketSpin"))
+            {
+               if( BigInteger.Parse(eventType.item.changeQuantity) > 0)
+                {
+                    if (eventType.item.QuantityBig >= eventType.item.item.limitInInventory.getCurrentUnit())
+                    {
+                        var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("TicketSpin"));
+                        if(time != null)
+                        {
+                            GameManager.Instance.Database.removeTime(time);
+                        }
+                    }
+                }
+            }
             if (eventType.item.item.ItemID.Contains("CoinBank"))
             {
                 var exist = GameManager.Instance.Database.getItem(eventType.item.item.ItemID);
@@ -1115,7 +1141,16 @@ namespace Pok
             {
                 HUDManager.Instance.factorGoldToBuy.text = (getFactorIncome().x < 2) ? "x2" : "x4";
                 HUDManager.Instance.factorGoldToBuyActive("LimitFactor", getFactorIncome().x < 4);
+                if (GameManager.readyForThisState("Main"))
+                {
+                    if (GameManager.InstanceRaw)
+                    {
+                        var quantitySecIncome = System.Numerics.BigInteger.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (int)GameManager.Instance.getFactorIncome().x;
+                        HUDManager.Instance.quanityHour.text = quantitySecIncome.ToString().ToKMBTA();
+                    }
+                }
             }
+      
         }
     }
 }

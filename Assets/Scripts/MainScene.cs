@@ -106,7 +106,7 @@ namespace Pok
         }
         public bool chooseZone(object pChoose)
         {
-         
+            currentChoose.y = -1;
             var pZone1 = (ZoneObject)pChoose;
             var zoneInfo1 = GameManager.Instance.Database.zoneInfos.Find(x => x.Id == pZone1.ItemID);
             System.Action<object> action = (object pChooseZone) =>
@@ -128,6 +128,11 @@ namespace Pok
                     change = true;
                 }
                 GameManager.Instance.ZoneChoosed = pZone.ItemID;
+                var obejects = GameObject.FindObjectsOfType<CheckActiveObject>();
+                foreach(var objectt in obejects)
+                {
+                    objectt.reload();
+                }
                 var quantitySecIncome = BigInt.Parse(GameManager.Instance.getTotalGoldGrowthCurrentZone()) * (int)GameManager.Instance.getFactorIncome().x;
                 HUDManager.Instance.quanityHour.text = quantitySecIncome.ToString().ToKMBTA();
                 for (int i = 0; i < GameManager.Instance.Database.inventory.Count; ++i)
@@ -370,23 +375,27 @@ namespace Pok
             }
 
         }
-
+        protected Vector2Int currentChoose = new Vector2Int(-1,-1);
         public void ChooseMap(int index)
         {
-            ES3.Save($"ChooseMap{GameManager.Instance.ZoneChoosed}", index);
-            MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);
-            if (mapPool[CurrentIndexPool].gameObject.activeSelf && mapPool[CurrentIndexPool]._info != null && index < MapObjects.Count && mapPool[CurrentIndexPool]._info.id != MapObjects[index].id)
+            if (currentChoose.x != index || currentChoose.y != int.Parse(GameManager.Instance.ZoneChoosed.Remove(0, 4)))
             {
-                CurrentIndexPool++;
-                if (CurrentIndexPool > 1)
+                currentChoose = new Vector2Int(index, int.Parse(GameManager.Instance.ZoneChoosed.Remove(0, 4)));
+                ES3.Save($"ChooseMap{GameManager.Instance.ZoneChoosed}", index);
+                MapObjects = GameManager.Instance.Database.getAllMapActiveInZone(GameManager.Instance.ZoneChoosed);
+                if (mapPool[CurrentIndexPool].gameObject.activeSelf && mapPool[CurrentIndexPool]._info != null && index < MapObjects.Count && mapPool[CurrentIndexPool]._info.id != MapObjects[index].id)
                 {
-                    CurrentIndexPool = 0;
+                    CurrentIndexPool++;
+                    if (CurrentIndexPool > 1)
+                    {
+                        CurrentIndexPool = 0;
+                    }
                 }
-            }
 
-            CurrentPageMapLayer = index;
-            cacheSizeDrag = 0;
-            updateMapLayer(true);
+                CurrentPageMapLayer = index;
+                cacheSizeDrag = 0;
+                updateMapLayer(true);
+            }
             //  ChoseMapLayer(index);
         }
         private void OnEnable()

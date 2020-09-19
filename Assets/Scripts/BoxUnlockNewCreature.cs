@@ -46,6 +46,7 @@ namespace Pok
         }
         public void showStartedKit()
         {
+      
             HUDManager.Instance.boxPackedInapp.showData(GameDatabase.Instance.startedKit);
             container.onStartClose.RemoveListener(showStartedKit);
         }

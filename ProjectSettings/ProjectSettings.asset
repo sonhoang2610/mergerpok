@@ -123,7 +123,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 2.3
+  bundleVersion: 2.4
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -169,7 +169,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.moli.f2p.games.free.poke.merge.evolution.casual
   buildNumber: {}
-  AndroidBundleVersionCode: 27
+  AndroidBundleVersionCode: 33
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 29
   AndroidPreferredInstallLocation: 1
@@ -671,6 +671,7 @@ PlayerSettings:
   gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform:
     Android: 3
+    Standalone: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Template_2D

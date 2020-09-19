@@ -220,7 +220,7 @@ namespace Pok
             if (!press && !dirty && Effecting <= 0)
             {
                 OnPressUp(creature);
-                addMoney(creature,1*(int)GameManager.Instance.getFactorIncome().x);
+                addMoney(creature, GameDatabase.Instance.ZoneCollection.Find(x => x.ItemID == GameManager.Instance.ZoneChoosed).factorTap * (int)GameManager.Instance.getFactorIncome().x   );
                 SoundManager.Instance.PlaySound("CoinClickPure");
                 if (Input.touchCount <= 1)
                 {

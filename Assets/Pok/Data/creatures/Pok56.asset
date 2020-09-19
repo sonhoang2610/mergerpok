@@ -21,6 +21,26 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
+    - Name: blackBoardVariable
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: limitInInventory
       Entry: 6
       Data: 
@@ -32,11 +52,11 @@ MonoBehaviour:
       Data: 
     - Name: goldAFKReward
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.String,
         mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
         mscorlib]], mscorlib
     - Name: 
       Entry: 8
@@ -64,7 +84,7 @@ MonoBehaviour:
       Data: Zone2
     - Name: $v
       Entry: 1
-      Data: 179.676.000.000.000
+      Data: 179676000000000
     - Name: 
       Entry: 8
       Data: 
@@ -76,7 +96,7 @@ MonoBehaviour:
       Data: Zone3
     - Name: $v
       Entry: 1
-      Data: 41.325ac
+      Data: 41325480000000000000000
     - Name: 
       Entry: 8
       Data: 
@@ -88,7 +108,7 @@ MonoBehaviour:
       Data: Zone4
     - Name: $v
       Entry: 1
-      Data: 94.603af
+      Data: 9452520000000000000000000000000
     - Name: 
       Entry: 8
       Data: 
@@ -100,7 +120,7 @@ MonoBehaviour:
       Data: Zone5
     - Name: $v
       Entry: 1
-      Data: 43.708ai
+      Data: 2109240000000000000000000000000000000000
     - Name: 
       Entry: 8
       Data: 
@@ -112,7 +132,7 @@ MonoBehaviour:
       Data: Zone6
     - Name: $v
       Entry: 1
-      Data: 25.116al
+      Data: 502780320000000000000000000000000000000000000000
     - Name: 
       Entry: 8
       Data: 
@@ -123,6 +143,8 @@ MonoBehaviour:
       Entry: 8
       Data: 
   variantItem: 0
+  variantLevel: 0
+  defaultLevel: 0
   itemID: Pok56
   displayNameItem:
     normalString: Oneshishi

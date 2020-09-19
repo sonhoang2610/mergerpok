@@ -15,7 +15,7 @@ namespace Pok
            var localize = InAppPurchasing.GetProductLocalizedData(packID.ToLower());
             if(localize != null)
             {
-                pricelbl.text = localize.localizedPriceString;
+                pricelbl.text = string.IsNullOrEmpty(localize.localizedPriceString) ? "2$" : localize.localizedPriceString;
             }
         }
 

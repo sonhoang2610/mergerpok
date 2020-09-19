@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1083080790592",
+    "firebase_url": "https://merger-pok.firebaseio.com",
+    "project_id": "merger-pok",
+    "storage_bucket": "merger-pok.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1083080790592:android:e57c853153784c083ac5a5",
+        "android_client_info": {
+          "package_name": "com.moli.f2p.games.free.poke.merge.evolution.casual"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1083080790592-40ducturvi7decmeu0smn9ev0pn0f4ga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moli.f2p.games.free.poke.merge.evolution.casual",
+            "certificate_hash": "63845b53850c38e8e7e2c55703583a90cdbd889b"
+          }
+        },
+        {
+          "client_id": "1083080790592-6h2ami9m7p5qfcsnu39s0drqaf1jh0tr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8-1J8VVJlDlFBtZhVNU1hqf6c2SXSUkw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1083080790592-6h2ami9m7p5qfcsnu39s0drqaf1jh0tr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

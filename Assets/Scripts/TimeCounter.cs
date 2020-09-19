@@ -109,7 +109,7 @@ namespace Pok
                {
                    getRealTime = true;
                    var pJson = JsonMapper.ToObject(time);
-                   firstTime = TimeExtension.UnixTimeStampToDateTime(double.Parse(JsonMapper.ToObject(pJson["data"].ToJson())["timestamp"].ToJson())).ToLocalTime();
+                   firstTime = TimeExtension.UnixTimeStampToDateTime(double.Parse(pJson["now"].ToJson())).ToLocalTime();
                    var lastime = ES3.Load<TimeModule>("LastTimeGame", defaultValue: null);
                    if (lastime != null)
                    {
@@ -125,6 +125,10 @@ namespace Pok
                        }
                    }
                }
+               else
+               {
+                   StartCoroutine(tryGetRealTime());
+               }
                for(int i = timeCollection.Value.Count -1; i >=0 ; --i)
                {
                    timeCollection.Value[i].firstTimeAdd -= timeCollection.Value[i].counterTime > 0? timeCollection.Value[i].counterTime  : 0;
@@ -138,6 +142,24 @@ namespace Pok
                GameManager.removeDirtyState("Main");
            }));
             StartCoroutine(UpdateLastTimeInGame());
+        }
+
+        public IEnumerator tryGetRealTime()
+        {
+            yield return new WaitForSeconds(6);
+            yield return TimeExtension.GetNetTime((time, error) =>
+            {
+                if (!string.IsNullOrEmpty(error))
+                {
+                    StartCoroutine(tryGetRealTime());
+                }
+                else
+                {
+                    getRealTime = true;
+                    var pJson = JsonMapper.ToObject(time);
+                    firstTime = TimeExtension.UnixTimeStampToDateTime(double.Parse(pJson["now"].ToJson())).ToLocalTime().AddSeconds(-Time.realtimeSinceStartup);
+                }
+            });
         }
 
         public IEnumerator timingShowBoxTreaure()

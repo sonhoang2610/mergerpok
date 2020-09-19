@@ -42,121 +42,46 @@ SpriteAtlas:
       enableTightPacking: 0
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: e059de8bf4bda604f94df656b311fdb6, type: 3}
-    - {fileID: 2800000, guid: 9f3ae34103dbd30409461d599ca07a6d, type: 3}
-    - {fileID: 2800000, guid: 39b15957d44e82647b715edd444fab08, type: 3}
-    - {fileID: 2800000, guid: 0afb872469fba904d87520301c8dff8b, type: 3}
-    - {fileID: 2800000, guid: a63314bd6b7a25b4b877db2fb982b833, type: 3}
-    - {fileID: 2800000, guid: 00afe28750b35eb4dbd45ea642bde239, type: 3}
-    - {fileID: 2800000, guid: b087e95f4e68a6d4f8e16d39a366d4e0, type: 3}
-    - {fileID: 2800000, guid: 302d40479643eb640b9cd607e4552986, type: 3}
-    - {fileID: 2800000, guid: 5a64b31d3ab420949b3a53ba96371377, type: 3}
-    - {fileID: 2800000, guid: cfa35129173164d43b0e7fedc9dea5f6, type: 3}
-    - {fileID: 2800000, guid: db56b6afb598b6a4c9c630ca6b20e1be, type: 3}
-    - {fileID: 2800000, guid: 9608f9e1a2521bf4aa3b21b91f627ce6, type: 3}
-    - {fileID: 2800000, guid: b282842433d46ff4aab842b2432e3220, type: 3}
-    - {fileID: 2800000, guid: a24a35a03ef4d134a91fb198baf0e772, type: 3}
-    - {fileID: 2800000, guid: 2d8e2152d1d854b418fe8cc3bc55e269, type: 3}
-    - {fileID: 2800000, guid: 5613e06f3d46e3c4192b4fb46c724d3e, type: 3}
-    - {fileID: 2800000, guid: 18282fe605a389441b1582d4265b8d90, type: 3}
-    - {fileID: 2800000, guid: ef04e3167d4a1064fab7f8b88c630714, type: 3}
-    - {fileID: 2800000, guid: d67f8643a5e9f34489901af98ccd1b0d, type: 3}
     - {fileID: 2800000, guid: 40e6e3c430f05b24b824e48e9303660c, type: 3}
+    - {fileID: 2800000, guid: d67f8643a5e9f34489901af98ccd1b0d, type: 3}
     - {fileID: 2800000, guid: f81a2342b4466c441b41b5329b42d989, type: 3}
     - {fileID: 2800000, guid: 1f41860e7421a924e9b4699312449bc5, type: 3}
     - {fileID: 2800000, guid: 34f84f4869ac55a468e6901b5810b64b, type: 3}
     - {fileID: 2800000, guid: ae8899e65578eec44b6313834a55092e, type: 3}
     - {fileID: 2800000, guid: 25e1855b0b7f45e45b1e2c5451c1ffcb, type: 3}
-    - {fileID: 2800000, guid: e4bcd0108df817c4fb7aa34feae02b3b, type: 3}
-    - {fileID: 2800000, guid: 063cc5b0088d4c44d92a2f002e62cc53, type: 3}
-    - {fileID: 2800000, guid: 1ef3cab83a328db40832d49726b5b437, type: 3}
-    - {fileID: 2800000, guid: c322169d408711747b2f5879c287abff, type: 3}
     - {fileID: 2800000, guid: 8cf547c3ca7f1814381a7e81f4b23aac, type: 3}
-    - {fileID: 2800000, guid: 850d3a85e3fe5c4429362d14ab1de57c, type: 3}
-    - {fileID: 2800000, guid: 4bc5e97ae3c6c8d43919fb5b8d14bcf4, type: 3}
-    - {fileID: 2800000, guid: 2bee262f4ea2ce7419a864dbbfa4d4e8, type: 3}
-    - {fileID: 2800000, guid: c1f3ae3e634bc3e4a8e31dd843795b46, type: 3}
-    - {fileID: 2800000, guid: 5747d4a4e0b19504aabfe8f5bf96df71, type: 3}
-    - {fileID: 2800000, guid: d49e1499896606e439fe0a9419eb58be, type: 3}
-    - {fileID: 2800000, guid: 5054841c31c69734d9c675fcc9664b51, type: 3}
-    totalSpriteSurfaceArea: 6297248
+    - {fileID: 2800000, guid: c322169d408711747b2f5879c287abff, type: 3}
+    - {fileID: 2800000, guid: 1ef3cab83a328db40832d49726b5b437, type: 3}
+    - {fileID: 2800000, guid: 063cc5b0088d4c44d92a2f002e62cc53, type: 3}
+    - {fileID: 2800000, guid: e4bcd0108df817c4fb7aa34feae02b3b, type: 3}
+    totalSpriteSurfaceArea: 2080434
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: e4bcd0108df817c4fb7aa34feae02b3b, type: 3}
-  - {fileID: 21300000, guid: a24a35a03ef4d134a91fb198baf0e772, type: 3}
   - {fileID: 21300000, guid: 063cc5b0088d4c44d92a2f002e62cc53, type: 3}
-  - {fileID: 21300000, guid: 9f3ae34103dbd30409461d599ca07a6d, type: 3}
-  - {fileID: 21300000, guid: 9608f9e1a2521bf4aa3b21b91f627ce6, type: 3}
   - {fileID: 21300000, guid: f81a2342b4466c441b41b5329b42d989, type: 3}
-  - {fileID: 21300000, guid: 2d8e2152d1d854b418fe8cc3bc55e269, type: 3}
   - {fileID: 21300000, guid: d67f8643a5e9f34489901af98ccd1b0d, type: 3}
   - {fileID: 21300000, guid: 8cf547c3ca7f1814381a7e81f4b23aac, type: 3}
-  - {fileID: 21300000, guid: b282842433d46ff4aab842b2432e3220, type: 3}
-  - {fileID: 21300000, guid: 0afb872469fba904d87520301c8dff8b, type: 3}
-  - {fileID: 21300000, guid: 5747d4a4e0b19504aabfe8f5bf96df71, type: 3}
   - {fileID: 21300000, guid: 40e6e3c430f05b24b824e48e9303660c, type: 3}
-  - {fileID: 21300000, guid: 850d3a85e3fe5c4429362d14ab1de57c, type: 3}
-  - {fileID: 21300000, guid: ef04e3167d4a1064fab7f8b88c630714, type: 3}
   - {fileID: 21300000, guid: ae8899e65578eec44b6313834a55092e, type: 3}
-  - {fileID: 21300000, guid: 18282fe605a389441b1582d4265b8d90, type: 3}
-  - {fileID: 21300000, guid: 302d40479643eb640b9cd607e4552986, type: 3}
-  - {fileID: 21300000, guid: 39b15957d44e82647b715edd444fab08, type: 3}
-  - {fileID: 21300000, guid: 00afe28750b35eb4dbd45ea642bde239, type: 3}
   - {fileID: 21300000, guid: 34f84f4869ac55a468e6901b5810b64b, type: 3}
   - {fileID: 21300000, guid: 1ef3cab83a328db40832d49726b5b437, type: 3}
-  - {fileID: 21300000, guid: cfa35129173164d43b0e7fedc9dea5f6, type: 3}
-  - {fileID: 21300000, guid: d49e1499896606e439fe0a9419eb58be, type: 3}
-  - {fileID: 21300000, guid: 4bc5e97ae3c6c8d43919fb5b8d14bcf4, type: 3}
   - {fileID: 21300000, guid: 25e1855b0b7f45e45b1e2c5451c1ffcb, type: 3}
-  - {fileID: 21300000, guid: e059de8bf4bda604f94df656b311fdb6, type: 3}
-  - {fileID: 21300000, guid: 5054841c31c69734d9c675fcc9664b51, type: 3}
-  - {fileID: 21300000, guid: 5a64b31d3ab420949b3a53ba96371377, type: 3}
   - {fileID: 21300000, guid: c322169d408711747b2f5879c287abff, type: 3}
-  - {fileID: 21300000, guid: a63314bd6b7a25b4b877db2fb982b833, type: 3}
   - {fileID: 21300000, guid: 1f41860e7421a924e9b4699312449bc5, type: 3}
-  - {fileID: 21300000, guid: c1f3ae3e634bc3e4a8e31dd843795b46, type: 3}
-  - {fileID: 21300000, guid: 2bee262f4ea2ce7419a864dbbfa4d4e8, type: 3}
-  - {fileID: 21300000, guid: b087e95f4e68a6d4f8e16d39a366d4e0, type: 3}
-  - {fileID: 21300000, guid: 5613e06f3d46e3c4192b4fb46c724d3e, type: 3}
-  - {fileID: 21300000, guid: db56b6afb598b6a4c9c630ca6b20e1be, type: 3}
   m_PackedSpriteNamesToIndex:
   - 26
-  - 14
   - 27
-  - 2
-  - 12
   - 21
-  - 15
   - 19
   - 30
-  - 13
-  - 4
-  - 35
   - 20
-  - 31
-  - 18
   - 24
-  - 17
-  - 8
-  - 3
-  - 6
   - 23
   - 28
-  - 10
-  - Package_Box_Emoji_large
-  - 32
   - 25
-  - 1
-  - 36
-  - 9
   - 29
-  - 5
   - 22
-  - 34
-  - 33
-  - 7
-  - 16
-  - 11
   m_Tag: Creatures1
   m_IsVariant: 0

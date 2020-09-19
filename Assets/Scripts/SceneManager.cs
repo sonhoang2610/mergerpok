@@ -125,7 +125,7 @@ namespace Pok
             base.Awake();
             Application.runInBackground = true;
 #if !UNITY_EDITOR
-          //  Debug.unityLogger.logEnabled = false;
+            Debug.unityLogger.logEnabled = false;
 #endif
             if (!FB.IsInitialized)
             {
@@ -186,6 +186,100 @@ namespace Pok
         }
 
         public int block { get; set; }
+
+#if UNITY_EDITOR
+        [ContextMenu("GenerateAFK")]
+        public void GenerateAFK()
+        {
+            for(int i = 2; i < 7; ++i)
+            {
+                for(int j = 1; j< 25; ++j)
+                {
+                    var zone1Creature = GameDatabase.Instance.CreatureCollection.Find(x => x.RankChild == j);
+                    var moneyNow = zone1Creature.goldAFKReward["Zone1"].clearDot().toBigInt();
+                    var moneyPrevious = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == "Pok1").goldAFKReward["Zone1"].clearDot().toDouble();
+                    var dict = GameDatabase.Instance.CreatureCollection.Find(x => x.RankChild == j - 1).goldAFKReward;
+                    if (dict.ContainsKey("Zone" + i.ToString()))
+                    {
+                        var moneyPrevioisCurrent = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID == "Pok1").goldAFKReward["Zone" + i.ToString()].toBigInt();
+                       // var factor = moneyNow / moneyPrevious;
+                        var final = moneyPrevioisCurrent * moneyNow;
+                        var changeCreature = GameDatabase.Instance.CreatureCollection.FindAll(x => x.RankChild == j);
+                        foreach(var creaturee in changeCreature)
+                        {
+                            creaturee.goldAFKReward["Zone" + i.ToString()] = final.toString();
+                            UnityEditor.EditorUtility.SetDirty(creaturee);
+                        }
+                     
+                        //if("Zone" + i.ToString() == "Zone2")
+                        //{
+                        Debug.Log("money zone" + i.ToString() + ": " + zone1Creature.ItemID);
+                        Debug.Log("money zone" + i.ToString() + ": " + final.toString());
+                        //}
+                      
+                    }
+                    else
+                    {
+                        Debug.Log("Zone" + i.ToString() + "not exist");
+                    }
+                }
+            }
+        }
+        [ContextMenu("dirty")]
+        public void dirty()
+        {
+          for(int i = 0;i < GameDatabase.Instance.CreatureCollection.Count; ++i)
+            {
+                UnityEditor.EditorUtility.SetDirty(GameDatabase.Instance.CreatureCollection[i]);
+            }
+        }
+        [ContextMenu("logzone1")]
+        public void logzone1()
+        {
+            for (int i = 0; i < 25; ++i)
+            {
+               var creature = GameDatabase.Instance.CreatureCollection.Find(x => x.ItemID.Contains("Pok") && x.RankChild == i);
+                //string total = "";
+                //for(int j = 0; j < 17; j++)
+                //{
+                //    string money = PokUltis.calculateCreaturePrice(0,j, creature);
+                //    total += money.toBigInt().toString().ToKMBTA() + ";";
+                //}
+                Debug.Log(creature.ItemID +": "+ creature.goldAFKReward["Zone1"].toBigInt().toString().ToKMBTA());
+            }
+
+        }
+        [ContextMenu("error")]
+        public void error()
+        {
+            for(int i = 0; i < 25; ++i)
+            {
+       
+                for(int j =1; j < 7; ++j)
+                {
+                    var creatures = GameDatabase.Instance.CreatureCollection.FindAll(x => x.ItemID.Contains("Pok") && x.RankChild == i);
+                    string start = "";
+                    foreach(var creature in creatures)
+                    {
+                        if (string.IsNullOrEmpty(start))
+                        {
+                            start = creature.goldAFKReward["Zone" + j].toBigInt().ToString();
+                        }
+                        if(start !=     creature.goldAFKReward["Zone" + j].toBigInt().ToString())
+                        {
+                            Debug.Log("wrong" + creature.ItemID + i + j);
+                        }
+                        else
+                        {
+                            Debug.Log(creature.ItemID  + "validate");
+                        }
+                    }
+                 
+                }
+            }
+ 
+        }
+#endif
         private void Update()
         {
             for(int i= loadingData.Count -1; i >=0; -- i) { 

@@ -467,15 +467,15 @@ MonoBehaviour:
     change: 0.15
   containerMagicCase:
   - item: {fileID: 11400000, guid: 40ee4c54d5fc2414e97c7431892f677d, type: 2}
-    rate: 0.25
+    rate: 0.2
   - item: {fileID: 11400000, guid: 5ddf471cc6d4db54aa84cc59af6e4c8b, type: 2}
-    rate: 0.25
+    rate: 0.2
   - item: {fileID: 11400000, guid: e56200353a1742b4fae0cf6b3b0bdbab, type: 2}
-    rate: 0.25
+    rate: 0.2
   - item: {fileID: 11400000, guid: 5dc092181133fe846ba797192966b0b5, type: 2}
-    rate: 0.25
+    rate: 0.2
   - item: {fileID: 11400000, guid: d21bbc653d9202c44887155967f8bdce, type: 2}
-    rate: 0.25
+    rate: 0.2
   containerRewardADS:
   - item: {fileID: 11400000, guid: 2144b90312c4b334e8c28d574f24f288, type: 2}
     rate: 0.1

@@ -62,6 +62,10 @@ namespace Pok
                 {
                     showBoxGold();
                 }
+                else if (planGoShop == "ShopBooster")
+                {
+                    showBoxBooster();
+                }
                 else
                 {
                     showBoxCrystal();
@@ -84,6 +88,19 @@ namespace Pok
             else
             {
                 planGoShop = "ShopGold";
+            }
+        }
+        public void showBoxBooster()
+        {
+            show();
+            if (reposition)
+            {
+                var element = System.Array.Find(elements, x => x.shopID() == "ShopBooster");
+                GetComponentInChildren<UICenterOnChild>(true).CenterOn(element.getContainer().transform);
+            }
+            else
+            {
+                planGoShop = "ShopBooster";
             }
         }
         public void showBoxCrystal()

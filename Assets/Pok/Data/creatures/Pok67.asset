@@ -84,7 +84,7 @@ MonoBehaviour:
       Data: Zone2
     - Name: $v
       Entry: 1
-      Data: 5.749.632.000.000.000
+      Data: 5749632000000000
     - Name: 
       Entry: 8
       Data: 
@@ -96,7 +96,7 @@ MonoBehaviour:
       Data: Zone3
     - Name: $v
       Entry: 1
-      Data: 1.322ad
+      Data: 1322415360000000000000000
     - Name: 
       Entry: 8
       Data: 
@@ -108,7 +108,7 @@ MonoBehaviour:
       Data: Zone4
     - Name: $v
       Entry: 1
-      Data: 3.027ag
+      Data: 302480640000000000000000000000000
     - Name: 
       Entry: 8
       Data: 
@@ -120,7 +120,7 @@ MonoBehaviour:
       Data: Zone5
     - Name: $v
       Entry: 1
-      Data: 1.399aj
+      Data: 67495680000000000000000000000000000000000
     - Name: 
       Entry: 8
       Data: 
@@ -132,7 +132,7 @@ MonoBehaviour:
       Data: Zone6
     - Name: $v
       Entry: 1
-      Data: 803.699al
+      Data: 16088970240000000000000000000000000000000000000000
     - Name: 
       Entry: 8
       Data: 

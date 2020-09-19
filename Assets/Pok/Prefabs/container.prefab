@@ -179,7 +179,7 @@ MonoBehaviour:
     inventory:
     - itemID: TicketSpin
       quantity: 12
-      EmptySlot: 1
+      EmptySlot: 0
       boughtNumber: 0
       address: 
       level: 0

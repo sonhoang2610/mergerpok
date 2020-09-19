@@ -40,6 +40,7 @@ namespace Pok
                 {
                     listentTime = $"[MultiplyBonus]{info.itemSell.ItemID}/{creature.ItemID}/{GameManager.Instance.ZoneChoosed}";
                     TimeCounter.Instance.addTimer(new TimeCounterInfo() { autoRemoveIfToDestiny = true, id = $"[MultiplyBonus]{info.itemSell.ItemID}/{creature.ItemID}/{GameManager.Instance.ZoneChoosed}", destinyIfHave = 10800 });
+                    listentTime = $"[MultiplyBonus]{info.itemSell.ItemID}/{creature.ItemID}/{GameManager.Instance.ZoneChoosed}";
                     HUDManager.Instance.checkExistMultiplyBonus();
                 }
             }
@@ -58,7 +59,7 @@ namespace Pok
                 }
             });
             var localize = EasyMobile.InAppPurchasing.GetProductLocalizedData(EasyMobile.InAppPurchasing.GetIAPProductById(info.itemSell.ItemID).Name);
-            price.text = localize != null ? localize .localizedPriceString : "";
+            price.text = localize != null ? localize .localizedPriceString : "1$";
             namePo.text = creature.displayNameItem.Value;
             container.show();
         }

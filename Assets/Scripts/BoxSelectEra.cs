@@ -92,13 +92,17 @@ namespace Pok
         public IEnumerator delayShowBoxMultiplyBonus(int index,CreatureItem creature)
         {
             yield return new WaitForSeconds(2);
-            if(index == 0)
+            var timeCounts = TimeCounter.Instance.timeCollection.Value.FindAll(x => x.id.Contains("[MultiplyBonus]"));
+            if (timeCounts.Count < 2)
             {
-                HUDManager.Instance.boxMultiplyBonus.showData(GameDatabase.Instance.packageMultiplyBonus1, creature);
-            }
-            else
-            {
-                HUDManager.Instance.boxMultiplyBonus.showData(GameDatabase.Instance.packageMultiplyBonus2, creature);
+                if (index == 0)
+                {
+                    HUDManager.Instance.boxMultiplyBonus.showData(GameDatabase.Instance.packageMultiplyBonus1, creature);
+                }
+                else
+                {
+                    HUDManager.Instance.boxMultiplyBonus.showData(GameDatabase.Instance.packageMultiplyBonus2, creature);
+                }
             }
 
         }

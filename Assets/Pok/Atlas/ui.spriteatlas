@@ -43,7 +43,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: a0c6df60d813f604a8b95083ffa39498, type: 3}
-    totalSpriteSurfaceArea: 1607725
+    totalSpriteSurfaceArea: 1632555
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -56,6 +56,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 3ad36dc222e43ae47bb39afdf59a706f, type: 3}
   - {fileID: 21300000, guid: 118213136520f5842a3c0cf2fc4d20fd, type: 3}
   - {fileID: 21300000, guid: 487cb083fa892cc47a767f28b8bcc963, type: 3}
+  - {fileID: 21300000, guid: fc78caf3bd8b3e244b10a809d043239b, type: 3}
   - {fileID: 21300000, guid: fe987924d0e39f04389d1aa45fe04894, type: 3}
   - {fileID: 21300000, guid: 0a25858492f1048499600091d5be04b0, type: 3}
   - {fileID: 21300000, guid: a8ad71943c382034a9f9addb822fb3c0, type: 3}
@@ -113,6 +114,7 @@ SpriteAtlas:
   - box_name_yellow
   - BG_Simple
   - item_hand
+  - btn_vip_disable
   - Button_shop
   - Button_Round_Green
   - item_noti
