@@ -492,6 +492,13 @@ namespace Pok
         public GameDatabaseInstanced LoadDatabaseGame()
         {
             GameDatabaseInstanced pDatabase = new GameDatabaseInstanced();
+            for(int i =0; i < ES3.dirty.Count; ++i)
+            {
+                if (!ES3.FileExists(ES3.dirty.Keys.ElementAt(i)))
+                {
+                    ES3.RestoreBackup(ES3.dirty.Keys.ElementAt(i));
+                }
+            }
             if (ES3.FileExists() || !ES3.FileExists(new ES3Settings() { path = SaveDataConstraint.ANOTHER }))
             {
                 pDatabase = ES3.Load<GameDatabaseInstanced>("Database", ES3.Deserialize<GameDatabaseInstanced>(ES3.Serialize(_defaultDatabase)));
@@ -644,7 +651,15 @@ namespace Pok
                     ES3.StoreCachedFile(new ES3Settings() {path = ES3.dirty.Keys.ElementAt(i) });
                 }
             }
-     
+            if(scheduletime >= 10)
+            {
+                scheduletime = 0;
+                   
+                for (int i = 0; i < ES3.dirty.Count; ++i)
+                {
+                    ES3.CreateBackup(new ES3Settings() { path =  ES3.dirty.Keys.ElementAt(i) });
+                }
+            }
             if (coroutineBlock != null)
             {
                 StopCoroutine(coroutineBlock);
@@ -682,9 +697,11 @@ namespace Pok
 
         }
         int blockDirty = 0;
+        int scheduletime = 0;
         public IEnumerator ScheduleSaveGame()
         {
             yield return new WaitForSeconds(2);
+            scheduletime += 2;
             if (ES3.isDirty())
             {
                 SaveGame();

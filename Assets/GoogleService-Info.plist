@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1083080790592-jtb3bg2mk7tn521v0v725ruc441g7oir.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1083080790592-jtb3bg2mk7tn521v0v725ruc441g7oir</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1083080790592-40ducturvi7decmeu0smn9ev0pn0f4ga.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCnuPYI5gdpctLRJMzRO4hK9d3LQoJz8PI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1083080790592</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.moli.f2p.games.free.poke.merge.evolution.casual</string>
+	<key>PROJECT_ID</key>
+	<string>merger-pok</string>
+	<key>STORAGE_BUCKET</key>
+	<string>merger-pok.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1083080790592:ios:37c074fdb79a53833ac5a5</string>
+	<key>DATABASE_URL</key>
+	<string>https://merger-pok.firebaseio.com</string>
+</dict>
+</plist>

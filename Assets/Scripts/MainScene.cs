@@ -323,6 +323,7 @@ namespace Pok
                     ChangingMap = false;
                     MovingMap = false;
                     AllowDrag = false;
+                    currentChoose = new Vector2Int(CurrentPageMapLayer, int.Parse(GameManager.Instance.ZoneChoosed.Remove(0, 4)));
                     blockTouch.gameObject.SetActive(false);
                     if (pAlphaDestiny == 0)
                     {
