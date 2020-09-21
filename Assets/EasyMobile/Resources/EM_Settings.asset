@@ -249,7 +249,7 @@ MonoBehaviour:
       _price: 
       _description: 
       _storeSpecificIds: []
-      _isEditingAdvanced: 0
+      _isEditingAdvanced: 1
     - _name: packagecrystal1
       _type: 0
       _id: packagecrystal1

@@ -40520,8 +40520,8 @@ MonoBehaviour:
     mMethodName: close
     mParameters: []
     oneShot: 0
-  - mTarget: {fileID: 1623464270}
-    mMethodName: show
+  - mTarget: {fileID: 609788346}
+    mMethodName: showBoxMagicCase
     mParameters: []
     oneShot: 0
 --- !u!65 &1260506121
