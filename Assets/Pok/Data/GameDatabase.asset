@@ -148,6 +148,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9bdb07e1a6b1ced42b471e34dfb7c1c2, type: 2}
   - {fileID: 11400000, guid: 0fc092fdaaf9e964abe382c212b3fec0, type: 2}
   - {fileID: 11400000, guid: bd5be043f3eb7644aa3f451e1fba81bb, type: 2}
+  - {fileID: 11400000, guid: 60957d7fbbbe76c40935d34b3775a837, type: 2}
   CreatureCollection:
   - {fileID: 11400000, guid: d91d602e1813b47458920cd15b1509ac, type: 2}
   - {fileID: 11400000, guid: a64f830ec9ff16f479268a567d8651de, type: 2}

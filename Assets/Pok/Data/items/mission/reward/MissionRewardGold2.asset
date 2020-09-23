@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 071e9366458eef44e9ccecef3990293c, type: 3}
-  m_Name: MissionItem3
+  m_Script: {fileID: 11500000, guid: e80a113cfb482bb48a92d0a363068201, type: 3}
+  m_Name: MissionRewardGold2
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -53,9 +53,9 @@ MonoBehaviour:
   variantItem: 0
   variantLevel: 0
   defaultLevel: 0
-  itemID: MissionItem3
+  itemID: MissionRewardGold2
   displayNameItem:
-    normalString: Rare Mission
+    normalString: 
     isI2String: 0
     value: 
   descriptionItem:
@@ -67,8 +67,8 @@ MonoBehaviour:
   icons:
   - State: Default
     Icon:
-      m_AssetGUID: 21b10c3b6bee5944287f3bd7310bed7b
-      m_SubObjectName: item_mission1
+      m_AssetGUID: 50b1910da57b5ca4aaa26f553db269d3
+      m_SubObjectName: Pack_Gold_Sack
     size: {x: 0, y: 0}
   model:
   - State: Default
@@ -84,14 +84,8 @@ MonoBehaviour:
     isSpecifiedUnit: 0
     unitDefines: []
   limitLevel: 1
-  timeMission: 43200
-  itemReward:
-  - typePayment: 0
-    item: {fileID: 11400000, guid: 60957d7fbbbe76c40935d34b3775a837, type: 2}
-    quantity: 1
-  - typePayment: 0
-    item: {fileID: 11400000, guid: 20f9d76b03eb0fd4893e14d7403419cd, type: 2}
-    quantity: 1
-  - typePayment: 0
-    item: {fileID: 11400000, guid: 1e07bf251a5afa34fb83750257ab5597, type: 2}
-    quantity: 1
+  extraWhenClaimed: 1
+  item:
+    isRandom: 0
+    secAFK: 21200
+    secAFKRandom: {x: 3600, y: 3600}

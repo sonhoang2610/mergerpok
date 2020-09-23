@@ -23,7 +23,8 @@ public class UIButtonEditor : UIButtonColorEditor
 	protected override void DrawProperties ()
 	{
 		SerializedProperty sp = serializedObject.FindProperty("dragHighlight");
-		Highlight ht = sp.boolValue ? Highlight.Press : Highlight.DoNothing;
+        NGUIEditorTools.DrawProperty("scaleStyle", serializedObject, "scaleStyle");
+        Highlight ht = sp.boolValue ? Highlight.Press : Highlight.DoNothing;
 		GUILayout.BeginHorizontal();
 		bool highlight = (Highlight)EditorGUILayout.EnumPopup("Drag Over", ht) == Highlight.Press;
 		NGUIEditorTools.DrawPadding();
@@ -33,7 +34,8 @@ public class UIButtonEditor : UIButtonColorEditor
 		DrawTransition();
 		DrawColors();
 
-		var btn = target as UIButton;
+
+        var btn = target as UIButton;
 
 		if (btn.tweenTarget != null)
 		{

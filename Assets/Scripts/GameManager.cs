@@ -27,6 +27,8 @@ namespace Pok
         public TimeCounterInfoCollection timeCollection;
         public StringVariable currentMap;
 
+        public double TimeCountDownAdsCreature { get; set; }
+        public double TimeDefaultCountdownAdsCreature { get; set; }
         public void deActiveBehaviors(string id, Collider[] behaviors)
         {
             if (!behaviorsDisable.ContainsKey(id))
@@ -781,6 +783,8 @@ namespace Pok
             arrayTime = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_switch_app").StringValue.Split(',');
             randomTimeSwitchApp = new Vector2Int(int.Parse(arrayTime[0]), int.Parse(arrayTime[1]));
             arrayTimeShowADS = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_delay_ads").StringValue.Split(',');
+
+            TimeDefaultCountdownAdsCreature =double.Parse( Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("shop_creature_ads").StringValue);
             StartCoroutine(showADS(0));
             var info = Firebase.RemoteConfig.FirebaseRemoteConfig.Info;
             switch (info.LastFetchStatus)
@@ -1074,6 +1078,10 @@ namespace Pok
         }
         private void LateUpdate()
         {
+            if(TimeCountDownAdsCreature > 0)
+            {
+                TimeCountDownAdsCreature -= Time.deltaTime;
+            }
             checkADSReady();
         }
 

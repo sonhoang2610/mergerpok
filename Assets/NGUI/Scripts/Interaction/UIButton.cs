@@ -24,12 +24,13 @@ public class UIButton : UIButtonColor
 	/// </summary>
 
 	public bool dragHighlight = false;
+    public bool scaleStyle = true;
 
-	/// <summary>
-	/// Name of the hover state sprite.
-	/// </summary>
+    /// <summary>
+    /// Name of the hover state sprite.
+    /// </summary>
 
-	public string hoverSprite;
+    public string hoverSprite;
 
 	/// <summary>
 	/// Name of the pressed sprite.
@@ -242,7 +243,7 @@ public class UIButton : UIButtonColor
     private void Awake()
     {
         var scale = gameObject.GetComponent<UIButtonScale>();
-        if (!scale)
+        if (!scale && scaleStyle)
         {
             hover = mInitDone ? mDefaultColor : GetComponent<UIWidget>().color;
              scale = gameObject.AddComponent<UIButtonScale>();

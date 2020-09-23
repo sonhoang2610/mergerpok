@@ -149,6 +149,7 @@ namespace Pok
                     defaults.Add("time_delay_ads", "200,230,240");
                     defaults.Add("time_switch_app", "300,1500");
                     defaults.Add("time_magic_case", "300");
+                    defaults.Add("shop_creature_ads", "60");
                     Firebase.RemoteConfig.FirebaseRemoteConfig.SetDefaults(defaults);
                     // Set a flag here to indicate whether Firebase is ready to use by your app.
                 }

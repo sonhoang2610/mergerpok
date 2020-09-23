@@ -106,6 +106,7 @@ namespace Pok
             cacheWayBuy = 2;
             if (GameManager.Instance.isRewardADSReady("BuyCreature"))
             {
+                GameManager.Instance.TimeCountDownAdsCreature = GameManager.Instance.TimeDefaultCountdownAdsCreature;
                 GameManager.Instance.WatchRewardADS("BuyCreature", (o) =>
                 {
                     if (o)

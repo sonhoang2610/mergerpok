@@ -44,17 +44,38 @@ namespace Pok
             }
         }
         protected Coroutine checkPanel;
+        bool activeAds = false;
         public void showBtnAds(bool pBool)
         {
-            btnAds.gameObject.SetActive(pBool);
-            if (pBool)
+            activeAds = pBool;
+            if (GameManager.InstanceRaw && GameManager.Instance.TimeCountDownAdsCreature <= 0)
             {
-                if(checkPanel != null)
+                btnAds.gameObject.SetActive(activeAds);
+                if (activeAds)
                 {
-                    StopCoroutine(checkPanel);
-                    checkPanel = null;
+                    if (checkPanel != null)
+                    {
+                        StopCoroutine(checkPanel);
+                        checkPanel = null;
+                    }
+                    checkPanel = StartCoroutine(checkPanelInit(btnAds.gameObject));
                 }
-                checkPanel = StartCoroutine(checkPanelInit(btnAds.gameObject));
+            }
+        }
+        private void Update()
+        {
+            if(GameManager.InstanceRaw && GameManager.Instance.TimeCountDownAdsCreature <= 0 )
+            {
+                btnAds.gameObject.SetActive(activeAds);
+                if (activeAds)
+                {
+                    if (checkPanel != null)
+                    {
+                        StopCoroutine(checkPanel);
+                        checkPanel = null;
+                    }
+                    checkPanel = StartCoroutine(checkPanelInit(btnAds.gameObject));
+                }
             }
         }
         public IEnumerator checkPanelInit(GameObject widget)
