@@ -61,7 +61,7 @@ namespace Pok
           // itemActive.Sort((a, b) => { return System.Array.IndexOf(datas, a._info).CompareTo(System.Array.IndexOf(datas, b._info)); });
            for (int i  = 0; i < itemActive.Count; ++i)
             {
-                itemActive[i].showBtnAds(i == itemActive.Count - 1 && GameManager.Instance.isRewardADSReady(""));
+                itemActive[i].showBtnAds(i == itemActive.Count - 1 );
             }
         }
         int cacheWayBuy = 0;

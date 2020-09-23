@@ -48,9 +48,10 @@ namespace Pok
         public void showBtnAds(bool pBool)
         {
             activeAds = pBool;
+            btnAds.gameObject.SetActive(activeAds&& GameManager.InstanceRaw && GameManager.Instance.TimeCountDownAdsCreature <= 0 && GameManager.Instance.isRewardADSReady(""));
             if (GameManager.InstanceRaw && GameManager.Instance.TimeCountDownAdsCreature <= 0)
             {
-                btnAds.gameObject.SetActive(activeAds);
+         
                 if (activeAds)
                 {
                     if (checkPanel != null)
@@ -62,19 +63,26 @@ namespace Pok
                 }
             }
         }
+        float time = 1;
         private void Update()
         {
-            if(GameManager.InstanceRaw && GameManager.Instance.TimeCountDownAdsCreature <= 0 )
+            time -= Time.deltaTime;
+            if (time <= 0)
             {
-                btnAds.gameObject.SetActive(activeAds);
-                if (activeAds)
+                time = 1;
+                btnAds.gameObject.SetActive(activeAds && GameManager.InstanceRaw && GameManager.Instance.TimeCountDownAdsCreature <= 0 && GameManager.Instance.isRewardADSReady(""));
+                if (GameManager.InstanceRaw && GameManager.Instance.TimeCountDownAdsCreature <= 0)
                 {
-                    if (checkPanel != null)
+
+                    if (activeAds)
                     {
-                        StopCoroutine(checkPanel);
-                        checkPanel = null;
+                        if (checkPanel != null)
+                        {
+                            StopCoroutine(checkPanel);
+                            checkPanel = null;
+                        }
+                        checkPanel = StartCoroutine(checkPanelInit(btnAds.gameObject));
                     }
-                    checkPanel = StartCoroutine(checkPanelInit(btnAds.gameObject));
                 }
             }
         }
