@@ -185,9 +185,11 @@ namespace Pok
                 minimizeTime = CounterValue;
                 minimize = true;
                 breakTime = 120;
+                Time.timeScale = 0;
             }
             else
             {
+                Time.timeScale = 1;
                 if (focus)
                 {
                     if (GameManager.Instance.IsShowingADS)
