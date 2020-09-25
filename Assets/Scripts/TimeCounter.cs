@@ -197,24 +197,24 @@ namespace Pok
                         GameManager.Instance.IsShowingADS = false;
                     }
                 }
-                var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("[Block]SwitchAppADS"));
-                if (time == null && (CounterValue - GameManager.lastTimeShowAds) > 120)
-                {
-                    GameManager.Instance.IsShowingADS = true;
-                    GameManager.Instance.StartCoroutine(GameManager.Instance.delayAction(1, () =>
-                    {
-                        TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]SwitchAppADS", autoRemoveIfToDestiny = true, destinyIfHave = GameManager.Instance.TimeDelayADSSwitchApp, resetOnStart = true });
-                        if (EasyMobile.Advertising.IsInterstitialAdReady())
-                        {
-                            EasyMobile.Advertising.ShowInterstitialAd();
-                        }
-                        else
-                        {
-                            GameManager.Instance.IsShowingADS = false;
-                        }
-                    }));
+                //var time = TimeCounter.Instance.timeCollection.Value.Find(x => x.id.Contains("[Block]SwitchAppADS"));
+                //if (time == null && (CounterValue - GameManager.lastTimeShowAds) > 120)
+                //{
+                //    GameManager.Instance.IsShowingADS = true;
+                //    GameManager.Instance.StartCoroutine(GameManager.Instance.delayAction(1, () =>
+                //    {
+                //        TimeCounter.Instance.addTimer(new TimeCounterInfo() { id = $"[Block]SwitchAppADS", autoRemoveIfToDestiny = true, destinyIfHave = GameManager.Instance.TimeDelayADSSwitchApp, resetOnStart = true });
+                //        if (EasyMobile.Advertising.IsInterstitialAdReady())
+                //        {
+                //            EasyMobile.Advertising.ShowInterstitialAd();
+                //        }
+                //        else
+                //        {
+                //            GameManager.Instance.IsShowingADS = false;
+                //        }
+                //    }));
                 
-                }
+                //}
                 minimize = false;
                 breakTime = 120;
             }
