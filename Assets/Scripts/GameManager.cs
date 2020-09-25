@@ -726,19 +726,30 @@ namespace Pok
             {
                 IsShowingADS = true;
                 Advertising.ShowInterstitialAd();
-                StartCoroutine(showADS());
+                if (corountineShowAds != null)
+                {
+                    StopCoroutine(corountineShowAds);
+                    corountineShowAds = null;
+                }
+                corountineShowAds =  StartCoroutine(showADS());
                 readyShowInterstitialAd = false;
             }
             else if(readyShowInterstitialAd)
             {
                 readyShowInterstitialAd = false;
-                StartCoroutine(showADS(5));
+                if (corountineShowAds != null)
+                {
+                    StopCoroutine(corountineShowAds);
+                    corountineShowAds = null;
+                }
+                corountineShowAds = StartCoroutine(showADS(5));
             }
         }
         [System.NonSerialized]
         public bool readyShowInterstitialAd = false;
         int indexShowADS = 0;
         string[] arrayTimeShowADS;
+        public Coroutine corountineShowAds;
 
         public IEnumerator showADS(float sec = 0)
         {
@@ -746,7 +757,12 @@ namespace Pok
             if (ES3.Load("BlockADS", 0) > 0) { yield return null; }
             if (IsShowingADS)
             {
-                StartCoroutine(showADS(5));
+                if (corountineShowAds != null)
+                {
+                    StopCoroutine(corountineShowAds);
+                    corountineShowAds = null;
+                }
+                corountineShowAds = StartCoroutine(showADS(5));
                 yield return null;
             }
             if (Advertising.IsInterstitialAdReady() && TimeCounter.Instance.breakTime <= 0)
@@ -761,11 +777,21 @@ namespace Pok
             else if (TimeCounter.Instance.breakTime <= 0)
             {
                 Advertising.LoadInterstitialAd();
-                StartCoroutine(showADS(5));
+                if (corountineShowAds != null)
+                {
+                    StopCoroutine(corountineShowAds);
+                    corountineShowAds = null;
+                }
+                corountineShowAds = StartCoroutine(showADS(5));
             }
             else 
             {
-                StartCoroutine(showADS(5));
+                if (corountineShowAds != null)
+                {
+                    StopCoroutine(corountineShowAds);
+                    corountineShowAds = null;
+                }
+                corountineShowAds = StartCoroutine(showADS(5));
             }
 
         }
@@ -785,7 +811,12 @@ namespace Pok
             arrayTimeShowADS = Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("time_delay_ads").StringValue.Split(',');
 
             TimeDefaultCountdownAdsCreature =double.Parse( Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("shop_creature_ads").StringValue);
-            StartCoroutine(showADS(0));
+            if (corountineShowAds != null)
+            {
+                StopCoroutine(corountineShowAds);
+                corountineShowAds = null;
+            }
+            corountineShowAds = StartCoroutine(showADS(0));
             var info = Firebase.RemoteConfig.FirebaseRemoteConfig.Info;
             switch (info.LastFetchStatus)
             {
