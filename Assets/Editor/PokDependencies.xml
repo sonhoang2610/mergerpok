@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dependencies>
+  <androidPackages>
+ <androidPackage spec="com.google.firebase:firebase-perf:19.0.8">
+      <repositories>
+        <repository>Assets/Firebase/m2repository</repository>
+      </repositories>
+</androidPackage>
+  </androidPackages>
+    <iosPods>
+   <iosPod name="Firebase/Performance" version="6.15.2" minTargetSdk="8.0">
+</iosPod>
+ </iosPods>
+</dependencies>
